@@ -1,0 +1,62 @@
+C:\Users\Hila\AppData\Local\Temporary Projects\Recorder\bin\Debug\Recorder.exe
+C:\Users\Hila\AppData\Local\Temporary Projects\Recorder\bin\Debug\Recorder.pdb
+C:\Users\Hila\AppData\Local\Temporary Projects\Recorder\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Hila\AppData\Local\Temporary Projects\Recorder\obj\Debug\Recorder.Form1.resources
+C:\Users\Hila\AppData\Local\Temporary Projects\Recorder\obj\Debug\Recorder.Properties.Resources.resources
+C:\Users\Hila\AppData\Local\Temporary Projects\Recorder\obj\Debug\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\AppData\Local\Temporary Projects\Recorder\obj\Debug\Recorder.exe
+C:\Users\Hila\AppData\Local\Temporary Projects\Recorder\obj\Debug\Recorder.pdb
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Debug\Recorder.exe
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Debug\Recorder.pdb
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\bin\Debug\Recorder.exe
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\bin\Debug\Recorder.pdb
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Debug\Recorder.Form1.resources
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Debug\Recorder.Properties.Resources.resources
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Debug\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Debug\Recorder.exe
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Debug\Recorder.pdb
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\bin\Debug\Recorder.exe
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\bin\Debug\Recorder.pdb
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Debug\Recorder.Form1.resources
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Debug\Recorder.Properties.Resources.resources
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Debug\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Debug\Recorder.exe
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Debug\Recorder.pdb
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\bin\Debug\Recorder.exe
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\bin\Debug\Recorder.pdb
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Debug\Recorder.Form1.resources
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Debug\Recorder.Properties.Resources.resources
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Debug\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\bin\Debug\Recorder.exe
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\bin\Debug\Recorder.pdb
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Debug\Recorder.Form1.resources
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Debug\Recorder.Properties.Resources.resources
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Debug\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Debug\Recorder.exe
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Debug\Recorder.pdb
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\bin\Debug\Recorder.exe
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\bin\Debug\Recorder.pdb
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Debug\Recorder.Form1.resources
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Debug\Recorder.Properties.Resources.resources
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Debug\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Debug\Recorder.exe
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Debug\Recorder.pdb
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\bin\Debug\Recorder.exe
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\bin\Debug\Recorder.pdb
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Debug\Interop.AcroPDFLib.dll
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Debug\Recorder.csproj.ResolveComReference.cache
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Debug\Recorder.Form1.resources
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Debug\Recorder.Properties.Resources.resources
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Debug\Recorder.exe
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Debug\Recorder.pdb

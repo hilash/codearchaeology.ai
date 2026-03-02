@@ -1,0 +1,455 @@
+// TODO - when adding item and the overlay is not there,
+// error. we need to add the overlay before, or check before update overlay
+package com.shvil.project.map;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Map;
+
+import org.mapsforge.android.maps.MapActivity;
+import org.mapsforge.android.maps.MapView;
+import org.mapsforge.android.maps.overlay.ArrayItemizedOverlay;
+import org.mapsforge.android.maps.overlay.ArrayWayOverlay;
+import org.mapsforge.android.maps.overlay.Overlay;
+import org.mapsforge.android.maps.overlay.OverlayItem;
+import org.mapsforge.core.GeoPoint;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.Environment;
+import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.PopupMenu;
+import android.widget.Toast;
+
+import com.shvil.project.MainActivity;
+import com.shvil.project.MyApplication;
+import com.shvil.project.R;
+import com.shvil.project.db.GeneralItem;
+import com.shvil.project.db.GeneralItem.GeneralItemType;
+import com.shvil.project.db.GeneralItemDao;
+import com.shvil.project.db.GeneralItemDao.Properties;
+import com.shvil.project.map.overlay.AngelOverlay;
+import com.shvil.project.map.overlay.GeneralMapOverlay;
+import com.shvil.project.map.overlay.ListeningOverlay;
+import com.shvil.project.map.overlay.ShvilOverlay;
+
+public class MyMapActivity extends MapActivity {
+	
+	private static final File MAP_FILE = new File(Environment.getExternalStorageDirectory().getPath(), "israel.map");
+	
+	MapView mapView;
+	Map<Integer,Boolean> overlaysMenuItemsChecks = new Hashtable<Integer,Boolean>();
+	Map<Integer, ArrayItemizedOverlay> MenuItemsIdOverlay = new Hashtable<Integer, ArrayItemizedOverlay>();
+	MyApplication myApplication;
+	MainActivity mainActivity;
+	GeoPoint LongPressGeoPoint;
+	
+	// Overlays
+	AngelOverlay angelOverlay;
+	ArrayWayOverlay shvilOverlay;
+	ListeningOverlay listeningOverlay;
+	GeneralMapOverlay errorOverlay;
+	
+	Map<GeneralItemType, Drawable> DrawableOfOverlay;
+	
+	// Intent request code
+	public final static int INTENT_REQ_CODE_ANGEL_EDIT = 0;
+	public final static int INTENT_REQ_CODE_ANGEL_INSERT = 1;
+	public final static int INTENT_REQ_CODE_ANGEL_VIEW = 2;
+	public final static int INTENT_REQ_CODE_GENERAL_EDIT = 3;
+	public final static int INTENT_REQ_CODE_GENERAL_INSERT = 4;
+	
+	@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+             
+        setContentView(R.layout.my_map_activity);
+        mapView = (MapView) findViewById(R.id.mapview);
+        mapView.setClickable(true);
+        mapView.setBuiltInZoomControls(true);
+        mapView.setMapFile(MAP_FILE);
+        
+        myApplication = (MyApplication) this.getApplicationContext();
+        mainActivity = (MainActivity) this.getParent();
+        myApplication.mapActivity = this;
+        
+    	DrawableOfOverlay = createDrawableOfOverlay();
+    	
+    	// Add constants overlays
+    	shvilOverlay = ShvilOverlay.getShvilOverlay(this);
+    	listeningOverlay = new ListeningOverlay(this);
+    	errorOverlay = getErrorOverlay();
+    	mapView.getOverlays().add(shvilOverlay);
+    	mapView.getOverlays().add(listeningOverlay);
+    	mapView.getOverlays().add(errorOverlay);
+
+    	// create list of temporary overlays (from check list)
+    	createMenuOverlays(); 
+    }
+	
+	////// OVERLAYS POPUP MENU ////////////////////////////////////////////////////////////
+	
+	private void createMenuOverlays()
+	{
+		// TODO - find more elegant solution
+        // assign Pop up item with overlay's
+		overlaysMenuItemsChecks.put(R.id.menu_overlay_angels, true);
+		overlaysMenuItemsChecks.put(R.id.menu_overlay_info, true);
+		overlaysMenuItemsChecks.put(R.id.menu_overlay_personal, false);
+		overlaysMenuItemsChecks.put(R.id.menu_overlay_travelers, true);
+		overlaysMenuItemsChecks.put(R.id.menu_overlay_water, true);
+		overlaysMenuItemsChecks.put(R.id.menu_overlay_water_hide, true);
+		
+		for (Integer id : overlaysMenuItemsChecks.keySet())
+		{
+            // add overlay if checked
+            if (overlaysMenuItemsChecks.get(id)){
+                Overlay overlay = getOverlayByID(id);
+                mapView.getOverlays().add(overlay);
+            	MenuItemsIdOverlay.put(id, (ArrayItemizedOverlay) overlay);
+            }
+        }
+	}
+	
+    public void showPopupOverlay(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.map_overlay_menu, popup.getMenu());
+        
+        // loop for menu items
+        for (int i = 0; i < popup.getMenu().size(); ++i)
+        {
+            MenuItem item = popup.getMenu().getItem(i);
+            int id = item.getItemId();
+            if (!overlaysMenuItemsChecks.containsKey(id))
+            {
+            	overlaysMenuItemsChecks.put(id, item.isChecked());
+            }
+            boolean check = overlaysMenuItemsChecks.get(id);
+            item.setChecked(check); 
+        }
+        
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
+            	int id = item.getItemId();
+
+                if (item.isChecked()){               	
+                	Overlay overlay = MenuItemsIdOverlay.get(id);
+                    mapView.getOverlays().remove(overlay);
+                    MenuItemsIdOverlay.remove(id);
+                }
+                else {
+                	// add it
+                    ArrayItemizedOverlay overlay = getOverlayByID(id);
+                    mapView.getOverlays().add(overlay);
+                	MenuItemsIdOverlay.put(id, overlay);
+                }
+                
+                // common
+                overlaysMenuItemsChecks.put(id, !item.isChecked());
+                item.setChecked(!item.isChecked());
+                return true;
+            }
+        });
+        popup.show();
+    }
+    
+	////// ON REPORT ////////////////////////////////////////////////////////////
+
+    public boolean onLongPress(GeoPoint geoPoint, MapView mapView) {
+    	// 	TODO check why here it's work and in 'onActivityresult' not
+		//Toast.makeText(this, "onLongPress: " + geoPoint.toString(), Toast.LENGTH_LONG).show();
+		//waterOverlay.addItem(new OverlayItem(geoPoint, "Title", "Text"));
+    	//this.angelOverlay.addItem(new OverlayItem(geoPoint, "Title", "Text"));
+    	
+    	// TODO - have to had option to delete personal and water hiding items
+    	LongPressGeoPoint = geoPoint;
+    	showReportDialog();
+		return true;
+	}
+    
+    AlertDialog report_dialog;
+	public void showReportDialog()
+	{
+		LayoutInflater inflater = this.getLayoutInflater();
+    	
+	    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setIcon(android.R.drawable.ic_menu_info_details);
+		builder.setTitle("Add");
+		builder.setMessage("presonal notes and water hiding places are private");
+		builder.setView(inflater.inflate(R.layout.report_dialog_layout, null));
+		report_dialog = builder.show();
+	}
+	
+	public void onReportDialogClick(View v) {
+		GeneralItemType type;
+		switch(v.getId()){
+			case R.id.report_dialog_button_angel:
+				Intent intent = new Intent(myApplication, AngelEditor.class);
+				intent.setAction(Intent.ACTION_INSERT);
+				intent.putExtra(AngelEditor.INTENT_IN_DATA_ANGEL_LAT, LongPressGeoPoint.getLatitude());
+				intent.putExtra(AngelEditor.INTENT_IN_DATA_ANGEL_LON, LongPressGeoPoint.getLongitude());
+				intent.putExtra(AngelEditor.INTENT_IN_DATA_ANGEL_POSITION, 0);
+				mainActivity.startActivityForResult(intent, INTENT_REQ_CODE_ANGEL_INSERT);
+				break;
+			case R.id.report_dialog_button_info:
+				type = GeneralItemType.GENERAL_ITEM_TYPE_INFORMATION;
+			case R.id.report_dialog_button_water:
+				type = GeneralItemType.GENERAL_ITEM_TYPE_WATER;
+			case R.id.report_dialog_button_water_hide:
+				type = GeneralItemType.GENERAL_ITEM_TYPE_WATER_HIDE;
+				Intent intent1 = new Intent(myApplication, GeneralItemEditor.class);
+				intent1.setAction(Intent.ACTION_INSERT);
+				intent1.putExtra(GeneralItemEditor.INTENT_IN_DATA_GENERAL_TYPE, type);
+				intent1.putExtra(GeneralItemEditor.INTENT_IN_DATA_GENERAL_LAT, LongPressGeoPoint.getLatitude());
+				intent1.putExtra(GeneralItemEditor.INTENT_IN_DATA_GENERAL_LON, LongPressGeoPoint.getLongitude());
+				mainActivity.startActivityForResult(intent1, INTENT_REQ_CODE_GENERAL_INSERT);
+			default:
+				break;
+		}
+		report_dialog.dismiss();	
+	}
+	
+
+	
+	private void onActivityResultAngel(int requestCode, int resultCode, Intent data)
+    {
+		// wait for activity
+		// if success, add new overlay, add to db to send?  - add new column to each angel, water - new (truefalse)
+		// so we know if to send it to DB or not. when the next update arrives, remove all the 'new items' 
+		// (since will be getting them from server. in update we need to receate all overlays)
+		
+		// can return from edit note or inserting a new one
+		if ((resultCode != Activity.RESULT_OK) || (data == null)){
+			return;
+		}
+		
+		Long angelID = data.getLongExtra(AngelEditor.INTENT_OUT_DATA_ANGEL_ID, Long.MAX_VALUE);
+	    double mAngelLatitude = data.getDoubleExtra(AngelEditor.INTENT_IN_DATA_ANGEL_LAT, Double.MAX_VALUE);
+	    double mAngelLongitude = data.getDoubleExtra(AngelEditor.INTENT_IN_DATA_ANGEL_LON, Double.MAX_VALUE);
+	    
+		if (angelID == Long.MAX_VALUE){
+			return;
+		}
+		if (requestCode == INTENT_REQ_CODE_ANGEL_INSERT){
+			GeoPoint geoPoint = new GeoPoint(mAngelLatitude, mAngelLongitude);
+			//angelOverlay.addItem(new OverlayItem(geoPoint, angelID.toString(), "text"));
+	    	this.angelOverlay.addItem(new OverlayItem(geoPoint, angelID.toString(), "Text"));
+
+			//angelOverlay.requestRedraw();
+		}
+		
+		//mApplication = (MyApplication) this.getApplication();
+        //mAngelDao = mApplication.daoSession.getAngelDao();
+        //mAngel = mAngelDao.load(mAngelID);
+    }
+	
+	private void onActivityResultGeneralItem(int requestCode, int resultCode, Intent data)
+    {
+		// can return from edit note or inserting a new one
+		if ((resultCode != Activity.RESULT_OK) || (data == null)){
+			return;
+		}
+		
+		Long itemID = data.getLongExtra(GeneralItemEditor.INTENT_OUT_DATA_GENERAL_ID, Long.MAX_VALUE);
+		byte itemType = data.getByteExtra(GeneralItemEditor.INTENT_OUT_DATA_GENERAL_TYPE, Byte.MAX_VALUE);
+	    double mItemLatitude = data.getDoubleExtra(GeneralItemEditor.INTENT_IN_DATA_GENERAL_LAT, Double.MAX_VALUE);
+	    double mItemLongitude = data.getDoubleExtra(GeneralItemEditor.INTENT_IN_DATA_GENERAL_LON, Double.MAX_VALUE);
+	    
+		if (itemID == Long.MAX_VALUE){
+			return;
+		}
+		if (requestCode == INTENT_REQ_CODE_GENERAL_INSERT){
+			GeoPoint geoPoint = new GeoPoint(mItemLatitude, mItemLongitude);
+			getOverlayByGeneralItemType(GeneralItemType.values()[itemType]).addItem(new OverlayItem(geoPoint, itemID.toString(), ""));
+		}
+    }
+	
+	private ArrayItemizedOverlay getOverlayByGeneralItemType(GeneralItemType type)
+	{
+		switch(type){
+		case GENERAL_ITEM_TYPE_ERROR:
+			return errorOverlay;
+		case GENERAL_ITEM_TYPE_INFORMATION:
+			return MenuItemsIdOverlay.get(R.id.menu_overlay_info);
+		case GENERAL_ITEM_TYPE_PEOPLE:
+			return MenuItemsIdOverlay.get(R.id.menu_overlay_travelers);
+		//case GENERAL_ITEM_TYPE_SLEEP:
+		//	return MenuItemsIdOverlay.get(R.id.menu);
+		case GENERAL_ITEM_TYPE_WATER:
+			return MenuItemsIdOverlay.get(R.id.menu_overlay_water);
+		case GENERAL_ITEM_TYPE_WATER_HIDE:
+			return MenuItemsIdOverlay.get(R.id.menu_overlay_water_hide);
+		}
+		return null;
+	}
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		// if overlay not exists, create it and show it (check = true)
+		// if exists, add and need to refresh (somehow..)
+		switch(requestCode){
+		case INTENT_REQ_CODE_ANGEL_EDIT:
+			onActivityResultAngel(requestCode, resultCode, data);
+			break;
+		case INTENT_REQ_CODE_ANGEL_INSERT:
+			onActivityResultAngel(requestCode, resultCode, data);
+			break;
+		case INTENT_REQ_CODE_ANGEL_VIEW:
+			onActivityResultAngel(requestCode, resultCode, data);
+			break;
+		case INTENT_REQ_CODE_GENERAL_EDIT:
+			onActivityResultGeneralItem(requestCode, resultCode, data);
+			break;
+		case INTENT_REQ_CODE_GENERAL_INSERT:
+			onActivityResultGeneralItem(requestCode, resultCode, data);
+			break;
+		default:
+			return;
+		}
+	}
+    
+	////// ON REPORT POPUP MENU - ////////////////////////////////////////////////////////////
+	// TODO - change it to just make a toast and launch the popup report dialog
+
+    public void showPopupReport(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.map_report_menu, popup.getMenu());
+        
+        final MyMapActivity map = this;
+        
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @SuppressWarnings("unused")
+			public boolean onMenuItemClick(MenuItem item) {
+            	
+            	// try to get current location
+            	// geoPoint current_location = get_current_location()
+            	// if geoPoint == null:
+            	// 		String desc = "Couldnot save current location"
+            	// else String desc = "current location saved"
+            	
+            	String description;
+            	GeoPoint current_location;
+            	current_location = null;
+            	
+            	if (current_location == null){
+            		description = "can't save current location";
+            	}
+            	else {
+            		description = "current location saved";
+            	}
+            	
+            	Toast.makeText(map, description, Toast.LENGTH_LONG).show();
+            	switch(item.getItemId())
+            	{
+	            	case R.id.menu_report_note:
+	            		// start notes fragment
+	            		ChangeFragemnt(2);
+	            		break;
+	            	case R.id.menu_report_problem:
+	            		showReportDialog();
+	            		break;
+            	}
+                return true;
+            }
+        });
+        
+        popup.show();
+        
+        // try to save current location, and show toast
+    }
+    
+    private void ChangeFragemnt(int index)
+    {
+    	MainActivity mainActivity = (MainActivity) this.getParent();
+    	mainActivity.switchTab(index);
+    }
+    
+    /////// OVERLAYS ///////////////////////////////////////////////////////////////
+	
+	private ArrayItemizedOverlay getOverlayByID(int id) {
+		
+		switch (id)
+		{		
+			case R.id.menu_overlay_angels:
+				return AngelOverlay.getAngelOverlay(this);
+			case R.id.menu_overlay_water:
+				return getWaterOverlay();
+			case R.id.menu_overlay_water_hide:
+				return getWaterHideOverlay();
+			case R.id.menu_overlay_info:
+				return getInfoOverlay();
+			case R.id.menu_overlay_travele
+				return getPeopleOverlay();
+			case R.id.menu_overlay_personal: //TODO add overlay for notes
+				return null;
+			default:
+				return null;
+		}
+	}
+	
+	private Map<GeneralItemType, Drawable> createDrawableOfOverlay()
+	{
+		Map<GeneralItemType, Drawable> map = new Hashtable<GeneralItemType, Drawable>();
+		Resources res = myApplication.getResources();
+		
+		map.put(GeneralItemType.GENERAL_ITEM_TYPE_ERROR, res.getDrawable(R.drawable.ic_map_warning_48));
+		map.put(GeneralItemType.GENERAL_ITEM_TYPE_INFORMATION, res.getDrawable(R.drawable.ic_map_marker_48));
+		map.put(GeneralItemType.GENERAL_ITEM_TYPE_PEOPLE, res.getDrawable(R.drawable.ic_map_people_sun_32));
+		map.put(GeneralItemType.GENERAL_ITEM_TYPE_SLEEP, res.getDrawable(R.drawable.ic_bed));
+		map.put(GeneralItemType.GENERAL_ITEM_TYPE_WATER, res.getDrawable(R.drawable.ic_water));
+		map.put(GeneralItemType.GENERAL_ITEM_TYPE_WATER_HIDE, res.getDrawable(R.drawable.ic_water_carrier));
+		return map;
+	}
+	
+	public GeneralMapOverlay getGeneralOverlay(GeneralItemType type)
+	{
+		
+	    Drawable defaultMarker = DrawableOfOverlay.get(type);
+	    GeneralMapOverlay generalMapOverlay = new GeneralMapOverlay(defaultMarker, true, this);
+	    GeneralItemDao dao =  myApplication.daoSession.getGeneralItemDao();
+	    List<GeneralItem> items = dao.queryBuilder().where(Properties.Type.eq(((byte)type.ordinal()))).list();
+	    List<OverlayItem> overlayItems = new ArrayList<OverlayItem>(items.size());
+	    for (GeneralItem item : items){
+			double latitude = item.getLatitude();
+			double longitude = item.getLongitude();
+			GeoPoint geoPoint = new GeoPoint(latitude,longitude);
+			overlayItems.add(new OverlayItem(geoPoint, item.getTitle(), item.getText()));
+		}
+	    items.clear();
+	    generalMapOverlay.addItems(overlayItems);
+	    return generalMapOverlay;        
+	}
+	
+	GeneralMapOverlay getErrorOverlay(){
+		return getGeneralOverlay(GeneralItemType.GENERAL_ITEM_TYPE_ERROR);
+	}
+	
+	GeneralMapOverlay getInfoOverlay(){
+		return getGeneralOverlay(GeneralItemType.GENERAL_ITEM_TYPE_INFORMATION);
+	}
+	
+	GeneralMapOverlay getPeopleOverlay(){
+		return getGeneralOverlay(GeneralItemType.GENERAL_ITEM_TYPE_PEOPLE);
+	}
+	
+	GeneralMapOverlay getWaterOverlay(){
+		return getGeneralOverlay(GeneralItemType.GENERAL_ITEM_TYPE_WATER);
+	}
+	
+	GeneralMapOverlay getWaterHideOverlay(){
+		return getGeneralOverlay(GeneralItemType.GENERAL_ITEM_TYPE_WATER_HIDE);
+	}
+
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/angel_editor_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+
+    <EditText
+        android:id="@+id/angel_editor_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:enabled="true"
+        android:hint="@string/angel_editor_name_hint"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+
+    <EditText
+        android:id="@+id/angel_editor_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/angel_editor_address_hint"
+        android:inputType="textPostalAddress" />
+
+    <EditText
+        android:id="@+id/angel_editor_phone1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/angel_editor_phone1_hint"
+        android:inputType="phone" />
+
+
+
+    <EditText
+        android:id="@+id/angel_editor_phone2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/angel_editor_phone2_hint"
+        android:inputType="phone" />
+
+
+
+
+    <CheckBox
+        android:id="@+id/angel_editor_religious"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/angel_editor_religious_text" />
+
+
+
+
+    <CheckBox
+        android:id="@+id/angel_editor_passport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/angel_editor_passport_text" />
+
+
+
+
+    <CheckBox
+        android:id="@+id/angel_editor_stamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/angel_editor_stamp_text" />
+
+    <EditText
+        android:id="@+id/angel_editor_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+	android:hint="@string/angel_editor_information_hint"
+        android:inputType="textMultiLine" />
+    
+</LinearLayout>

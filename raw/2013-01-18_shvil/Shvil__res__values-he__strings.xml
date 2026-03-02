@@ -1,0 +1,45 @@
+<resources>
+
+    <string name="app_name">שביל ישראל</string>
+    <string name="title_section3">חלק 3</string>
+    <string name="title_section2">חלק 2</string>
+    <string name="title_section1">חלק 1</string>
+    <string name="hello_world">שלום עולם!</string>
+    <string name="menu_settings">הגדרות</string>
+    <string name="title_activity_main">שביל ישראל</string>
+    <string name="title_activity_map">מפה</string>
+    <string name="title_activity_profile">הפרופיל שלי</string>
+    <string name="title_activity_messages">הודעות</string>
+    <string name="title_activity_people">מטיילים</string>
+    <string name="title_activity_angels">מלאכי השביל</string>
+    <string name="title_activity_settings">הגדרות</string>
+    <string name="title_activity_recent_messages">הודעות</string>
+    <string name="title_activity_note_editor">עורך טקסט</string>
+    
+    <string name="shit">שיט</string>
+    <string name="googlemaps_sdk_key">0T4xcx7NxlCMzlEeqE5jXKnh0w0tPLOFIQDFu-Q</string>
+    <string name="buttonMyLocation">המיקום שלי</string>
+    
+    <string name="menu_overlay_title_angels">מלאכי השביל</string>
+    <string name="menu_overlay_title_travelers">מטיילים</string>
+    <string name="menu_overlay_title_water">מים</string>
+    <string name="menu_overlay_title_info">מידע</string>
+    <string name="menu_overlay_title_personal">פתקים</string>
+    
+    <string name="menu_report_title_add_note">הוסף פתק</string>
+    <string name="menu_report_title_add_problem">בעיה!</string>
+    <string-array name="empty_array"></string-array>
+
+	<string-array name="pref_update_freq_array">
+		<item>פעם בשעה</item>
+		<item>פעם ב-5 שעות</item>
+		<item>פעם ביום</item>
+	</string-array>
+	<string-array name="pref_update_freq_values_array">
+		<item>1</item>
+		<item>5</item>
+		<item>24</item>
+	</string-array>
+
+    
+</resources>

@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mapsforge__mapsforge-map-writer__src__main__java__org__mapsforge__map__writer__util__GeoUtils.java - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ed007e; background-color: #1e0010 } /* Error */
+.highlight .esc { color: #f8f8f2 } /* Escape */
+.highlight .g { color: #f8f8f2 } /* Generic */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #ff4689 } /* Operator */
+.highlight .x { color: #f8f8f2 } /* Other */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #ff4689 } /* Generic.Deleted */
+.highlight .ge { color: #f8f8f2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #f8f8f2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #f8f8f2 } /* Generic.Error */
+.highlight .gh { color: #f8f8f2 } /* Generic.Heading */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .go { color: #66d9ef } /* Generic.Output */
+.highlight .gp { color: #ff4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #f8f8f2 } /* Generic.Traceback */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #ff4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #ff4689 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #ff4689 } /* Operator.Word */
+.highlight .pm { color: #f8f8f2 } /* Punctuation.Marker */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style>
+
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<a href="/project/2013-02-08_shvil-before-merging-overlays-to-2-3-overlays/" class="back-link">&laquo; Back to Shvil Before Merging Overlays To 2 3 Overlays</a>
+
+<div class="viewer-header">
+    <h1>mapsforge__mapsforge-map-writer__src__main__java__org__mapsforge__map__writer__util__GeoUtils.java</h1>
+    <div class="viewer-meta">
+        <span class="tag">Java</span>
+        <span>18.9 KB</span>
+        
+    </div>
+</div>
+
+
+<div class="code-container">
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span>
+<span class="normal">464</span>
+<span class="normal">465</span>
+<span class="normal">466</span>
+<span class="normal">467</span>
+<span class="normal">468</span>
+<span class="normal">469</span>
+<span class="normal">470</span>
+<span class="normal">471</span>
+<span class="normal">472</span>
+<span class="normal">473</span>
+<span class="normal">474</span>
+<span class="normal">475</span>
+<span class="normal">476</span>
+<span class="normal">477</span>
+<span class="normal">478</span>
+<span class="normal">479</span>
+<span class="normal">480</span>
+<span class="normal">481</span>
+<span class="normal">482</span>
+<span class="normal">483</span>
+<span class="normal">484</span>
+<span class="normal">485</span>
+<span class="normal">486</span>
+<span class="normal">487</span>
+<span class="normal">488</span>
+<span class="normal">489</span>
+<span class="normal">490</span>
+<span class="normal">491</span>
+<span class="normal">492</span>
+<span class="normal">493</span>
+<span class="normal">494</span>
+<span class="normal">495</span>
+<span class="normal">496</span>
+<span class="normal">497</span>
+<span class="normal">498</span>
+<span class="normal">499</span>
+<span class="normal">500</span>
+<span class="normal">501</span>
+<span class="normal">502</span>
+<span class="normal">503</span>
+<span class="normal">504</span>
+<span class="normal">505</span>
+<span class="normal">506</span>
+<span class="normal">507</span>
+<span class="normal">508</span>
+<span class="normal">509</span>
+<span class="normal">510</span>
+<span class="normal">511</span>
+<span class="normal">512</span>
+<span class="normal">513</span>
+<span class="normal">514</span>
+<span class="normal">515</span>
+<span class="normal">516</span>
+<span class="normal">517</span>
+<span class="normal">518</span>
+<span class="normal">519</span>
+<span class="normal">520</span>
+<span class="normal">521</span>
+<span class="normal">522</span></pre></div></td><td class="code"><div><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Copyright 2010, 2011, 2012 mapsforge.org</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software: you can redistribute it and/or modify it under the</span>
+<span class="cm"> * terms of the GNU Lesser General Public License as published by the Free Software</span>
+<span class="cm"> * Foundation, either version 3 of the License, or (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful, but WITHOUT ANY</span>
+<span class="cm"> * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A</span>
+<span class="cm"> * PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License along with</span>
+<span class="cm"> * this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="cm"> */</span>
+<span class="kn">package</span><span class="w"> </span><span class="nn">org.mapsforge.map.writer.util</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Collections</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashSet</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Set</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.logging.Level</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.logging.Logger</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.mapsforge.map.writer.model.GeoCoordinate</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.mapsforge.map.writer.model.MercatorProjection</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.mapsforge.map.writer.model.TDNode</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.mapsforge.map.writer.model.TDWay</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.mapsforge.map.writer.model.TileCoordinate</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.mapsforge.map.writer.model.WayDataBlock</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.vividsolutions.jts.geom.Coordinate</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.vividsolutions.jts.geom.Envelope</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.vividsolutions.jts.geom.Geometry</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.vividsolutions.jts.geom.GeometryCollection</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.vividsolutions.jts.geom.GeometryFactory</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.vividsolutions.jts.geom.LineString</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.vividsolutions.jts.geom.LinearRing</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.vividsolutions.jts.geom.MultiLineString</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.vividsolutions.jts.geom.MultiPolygon</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.vividsolutions.jts.geom.Point</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.vividsolutions.jts.geom.Polygon</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.vividsolutions.jts.geom.TopologyException</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.vividsolutions.jts.simplify.TopologyPreservingSimplifier</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Provides utility functions for the maps preprocessing.</span>
+<span class="cm"> * </span>
+<span class="cm"> * @author bross</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GeoUtils</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="nf">GeoUtils</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="c1">// private static final double DOUGLAS_PEUCKER_SIMPLIFICATION_TOLERANCE = 0.0000188;</span>
+<span class="w">	</span><span class="c1">// private static final double DOUGLAS_PEUCKER_SIMPLIFICATION_TOLERANCE = 0.00003;</span>
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * The minimum amount of nodes required for a valid closed polygon.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MIN_NODES_POLYGON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * The minimum amount of coordinates (lat/lon counted separately) required for a valid closed polygon.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MIN_COORDINATES_POLYGON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">byte</span><span class="w"> </span><span class="n">SUBTILE_ZOOMLEVEL_DIFFERENCE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">EPSILON_ZERO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span>
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">LOGGER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Logger</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">GeoUtils</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">TILE_BITMASK_VALUES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">32768</span><span class="p">,</span><span class="w"> </span><span class="mi">16384</span><span class="p">,</span><span class="w"> </span><span class="mi">8192</span><span class="p">,</span><span class="w"> </span><span class="mi">4096</span><span class="p">,</span><span class="w"> </span><span class="mi">2048</span><span class="p">,</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span><span class="w"> </span><span class="mi">512</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span>
+<span class="w">			</span><span class="mi">64</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">};</span>
+
+<span class="w">	</span><span class="c1">// JTS</span>
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">GeometryFactory</span><span class="w"> </span><span class="n">GEOMETRY_FACTORY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GeometryFactory</span><span class="p">();</span>
+
+<span class="w">	</span><span class="c1">// **************** WAY OR POI IN TILE *****************</span>
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Computes which tiles on the given base zoom level need to include the given way (which may be a polygon).</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param way</span>
+<span class="cm">	 *            the way that is mapped to tiles</span>
+<span class="cm">	 * @param baseZoomLevel</span>
+<span class="cm">	 *            the base zoom level which is used in the mapping</span>
+<span class="cm">	 * @param enlargementInMeter</span>
+<span class="cm">	 *            amount of pixels that is used to enlarge the bounding box of the way and the tiles in the mapping</span>
+<span class="cm">	 *            process</span>
+<span class="cm">	 * @return all tiles on the given base zoom level that need to include the given way, an empty set if no tiles are</span>
+<span class="cm">	 *         matched</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">TileCoordinate</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">mapWayToTiles</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">TDWay</span><span class="w"> </span><span class="n">way</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">byte</span><span class="w"> </span><span class="n">baseZoomLevel</span><span class="p">,</span>
+<span class="w">			</span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">enlargementInMeter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">way</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">LOGGER</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&quot;way is null in mapping to tiles&quot;</span><span class="p">);</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="n">Collections</span><span class="p">.</span><span class="na">emptySet</span><span class="p">();</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">TileCoordinate</span><span class="o">&gt;</span><span class="w"> </span><span class="n">matchedTiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">TileCoordinate</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">		</span><span class="n">Geometry</span><span class="w"> </span><span class="n">wayGeometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toJTSGeometry</span><span class="p">(</span><span class="n">way</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="n">way</span><span class="p">.</span><span class="na">isForcePolygonLine</span><span class="p">());</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">wayGeometry</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">LOGGER</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&quot;unable to create geometry from way: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">way</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="n">matchedTiles</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="n">TileCoordinate</span><span class="o">[]</span><span class="w"> </span><span class="n">bbox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getWayBoundingBox</span><span class="p">(</span><span class="n">way</span><span class="p">,</span><span class="w"> </span><span class="n">baseZoomLevel</span><span class="p">,</span><span class="w"> </span><span class="n">enlargementInMeter</span><span class="p">);</span>
+<span class="w">		</span><span class="c1">// calculate the tile coordinates and the corresponding bounding boxes</span>
+<span class="w">		</span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bbox</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">getX</span><span class="p">();</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">bbox</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">.</span><span class="na">getX</span><span class="p">();</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bbox</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">getY</span><span class="p">();</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">bbox</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">.</span><span class="na">getY</span><span class="p">();</span><span class="w"> </span><span class="n">l</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">					</span><span class="n">Geometry</span><span class="w"> </span><span class="n">bboxGeometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tileToJTSGeometry</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">baseZoomLevel</span><span class="p">,</span><span class="w"> </span><span class="n">enlargementInMeter</span><span class="p">);</span>
+<span class="w">					</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bboxGeometry</span><span class="p">.</span><span class="na">intersects</span><span class="p">(</span><span class="n">wayGeometry</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">						</span><span class="n">matchedTiles</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">TileCoordinate</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">baseZoomLevel</span><span class="p">));</span>
+<span class="w">					</span><span class="p">}</span>
+<span class="w">				</span><span class="p">}</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">TopologyException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">LOGGER</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">Level</span><span class="p">.</span><span class="na">FINE</span><span class="p">,</span>
+<span class="w">					</span><span class="s">&quot;encountered error during mapping of a way to corresponding tiles, way id: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">way</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="n">Collections</span><span class="p">.</span><span class="na">emptySet</span><span class="p">();</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">matchedTiles</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * @param point</span>
+<span class="cm">	 *            the point</span>
+<span class="cm">	 * @param tile</span>
+<span class="cm">	 *            the tile</span>
+<span class="cm">	 * @return true if the point is located in the given tile</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">pointInTile</span><span class="p">(</span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="n">point</span><span class="p">,</span><span class="w"> </span><span class="n">TileCoordinate</span><span class="w"> </span><span class="n">tile</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">point</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">tile</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">lon1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">doubleToInt</span><span class="p">(</span><span class="n">MercatorProjection</span><span class="p">.</span><span class="na">tileXToLongitude</span><span class="p">(</span><span class="n">tile</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span><span class="w"> </span><span class="n">tile</span><span class="p">.</span><span class="na">getZoomlevel</span><span class="p">()));</span>
+<span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">lon2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">doubleToInt</span><span class="p">(</span><span class="n">MercatorProjection</span><span class="p">.</span><span class="na">tileXToLongitude</span><span class="p">(</span><span class="n">tile</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">tile</span><span class="p">.</span><span class="na">getZoomlevel</span><span class="p">()));</span>
+<span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">lat1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">doubleToInt</span><span class="p">(</span><span class="n">MercatorProjection</span><span class="p">.</span><span class="na">tileYToLatitude</span><span class="p">(</span><span class="n">tile</span><span class="p">.</span><span class="na">getY</span><span class="p">(),</span><span class="w"> </span><span class="n">tile</span><span class="p">.</span><span class="na">getZoomlevel</span><span class="p">()));</span>
+<span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">lat2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">doubleToInt</span><span class="p">(</span><span class="n">MercatorProjection</span><span class="p">.</span><span class="na">tileYToLatitude</span><span class="p">(</span><span class="n">tile</span><span class="p">.</span><span class="na">getY</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">tile</span><span class="p">.</span><span class="na">getZoomlevel</span><span class="p">()));</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">point</span><span class="p">.</span><span class="na">getLatitudeE6</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">lat1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">point</span><span class="p">.</span><span class="na">getLatitudeE6</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">lat2</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">point</span><span class="p">.</span><span class="na">getLongitudeE6</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">lon1</span>
+<span class="w">				</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">point</span><span class="p">.</span><span class="na">getLongitudeE6</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">lon2</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="c1">// *********** PREPROCESSING OF WAYS **************</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Clips a geometry to a tile.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param way</span>
+<span class="cm">	 *            the way</span>
+<span class="cm">	 * @param geometry</span>
+<span class="cm">	 *            the geometry</span>
+<span class="cm">	 * @param tileCoordinate</span>
+<span class="cm">	 *            the tile coordinate</span>
+<span class="cm">	 * @param enlargementInMeters</span>
+<span class="cm">	 *            the bounding box buffer</span>
+<span class="cm">	 * @return the clipped geometry</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Geometry</span><span class="w"> </span><span class="nf">clipToTile</span><span class="p">(</span><span class="n">TDWay</span><span class="w"> </span><span class="n">way</span><span class="p">,</span><span class="w"> </span><span class="n">Geometry</span><span class="w"> </span><span class="n">geometry</span><span class="p">,</span><span class="w"> </span><span class="n">TileCoordinate</span><span class="w"> </span><span class="n">tileCoordinate</span><span class="p">,</span>
+<span class="w">			</span><span class="kt">int</span><span class="w"> </span><span class="n">enlargementInMeters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="c1">// clip geometry?</span>
+<span class="w">		</span><span class="n">Geometry</span><span class="w"> </span><span class="n">tileBBJTS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">		</span><span class="n">Geometry</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+<span class="w">		</span><span class="c1">// create tile bounding box</span>
+<span class="w">		</span><span class="n">tileBBJTS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tileToJTSGeometry</span><span class="p">(</span><span class="n">tileCoordinate</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span><span class="w"> </span><span class="n">tileCoordinate</span><span class="p">.</span><span class="na">getY</span><span class="p">(),</span><span class="w"> </span><span class="n">tileCoordinate</span><span class="p">.</span><span class="na">getZoomlevel</span><span class="p">(),</span>
+<span class="w">				</span><span class="n">enlargementInMeters</span><span class="p">);</span>
+
+<span class="w">		</span><span class="c1">// clip the polygon/ring by intersection with the bounding box of the tile</span>
+<span class="w">		</span><span class="c1">// may throw a TopologyException</span>
+<span class="w">		</span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="c1">// geometry = OverlayOp.overlayOp(tileBBJTS, geometry, OverlayOp.INTERSECTION);</span>
+<span class="w">			</span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tileBBJTS</span><span class="p">.</span><span class="na">intersection</span><span class="p">(</span><span class="n">geometry</span><span class="p">);</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">TopologyException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">LOGGER</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">Level</span><span class="p">.</span><span class="na">FINE</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;JTS cannot clip way, not storing it in data file: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">way</span><span class="p">.</span><span class="na">getId</span><span class="p">(),</span><span class="w"> </span><span class="n">e</span><span class="p">);</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Simplifies a geometry using the Douglas Peucker algorithm.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param way</span>
+<span class="cm">	 *            the way</span>
+<span class="cm">	 * @param geometry</span>
+<span class="cm">	 *            the geometry</span>
+<span class="cm">	 * @param zoomlevel</span>
+<span class="cm">	 *            the zoom level</span>
+<span class="cm">	 * @param simplificationFactor</span>
+<span class="cm">	 *            the simplification factor</span>
+<span class="cm">	 * @return the simplified geometry</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Geometry</span><span class="w"> </span><span class="nf">simplifyGeometry</span><span class="p">(</span><span class="n">TDWay</span><span class="w"> </span><span class="n">way</span><span class="p">,</span><span class="w"> </span><span class="n">Geometry</span><span class="w"> </span><span class="n">geometry</span><span class="p">,</span><span class="w"> </span><span class="kt">byte</span><span class="w"> </span><span class="n">zoomlevel</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">simplificationFactor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="n">Geometry</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+<span class="w">		</span><span class="n">Envelope</span><span class="w"> </span><span class="n">bbox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">geometry</span><span class="p">.</span><span class="na">getEnvelopeInternal</span><span class="p">();</span>
+<span class="w">		</span><span class="c1">// compute maximal absolute latitude (so that we don&#39;t need to care if we</span>
+<span class="w">		</span><span class="c1">// are on northern or southern hemisphere)</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">latMax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="n">bbox</span><span class="p">.</span><span class="na">getMaxY</span><span class="p">()),</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="n">bbox</span><span class="p">.</span><span class="na">getMinY</span><span class="p">()));</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">deltaLat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MercatorProjection</span><span class="p">.</span><span class="na">deltaLat</span><span class="p">(</span><span class="n">simplificationFactor</span><span class="p">,</span><span class="w"> </span><span class="n">latMax</span><span class="p">,</span><span class="w"> </span><span class="n">zoomlevel</span><span class="p">);</span>
+
+<span class="w">		</span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TopologyPreservingSimplifier</span><span class="p">.</span><span class="na">simplify</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span><span class="w"> </span><span class="n">deltaLat</span><span class="p">);</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">TopologyException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">LOGGER</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">Level</span><span class="p">.</span><span class="na">FINE</span><span class="p">,</span>
+<span class="w">					</span><span class="s">&quot;JTS cannot simplify way due to an error, not simplifying way with id: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">way</span><span class="p">.</span><span class="na">getId</span><span class="p">(),</span><span class="w"> </span><span class="n">e</span><span class="p">);</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="n">geometry</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * A tile on zoom level &lt;i&gt;z&lt;/i&gt; has exactly 16 sub tiles on zoom level &lt;i&gt;z+2&lt;/i&gt;. For each of these 16 sub tiles</span>
+<span class="cm">	 * it is analyzed if the given way needs to be included. The result is represented as a 16 bit short value. Each bit</span>
+<span class="cm">	 * represents one of the 16 sub tiles. A bit is set to 1 if the sub tile needs to include the way. Representation is</span>
+<span class="cm">	 * row-wise.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param geometry</span>
+<span class="cm">	 *            the geometry which is analyzed</span>
+<span class="cm">	 * @param tile</span>
+<span class="cm">	 *            the tile which is split into 16 sub tiles</span>
+<span class="cm">	 * @param enlargementInMeter</span>
+<span class="cm">	 *            amount of pixels that is used to enlarge the bounding box of the way and the tiles in the mapping</span>
+<span class="cm">	 *            process</span>
+<span class="cm">	 * @return a 16 bit short value that represents the information which of the sub tiles needs to include the way</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="nf">computeBitmask</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">Geometry</span><span class="w"> </span><span class="n">geometry</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">TileCoordinate</span><span class="w"> </span><span class="n">tile</span><span class="p">,</span><span class="w"> </span><span class="c1">// NOPMD by bross on</span>
+<span class="w">																							</span><span class="c1">// 25.12.11 13:30</span>
+<span class="w">			</span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">enlargementInMeter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="n">List</span><span class="o">&lt;</span><span class="n">TileCoordinate</span><span class="o">&gt;</span><span class="w"> </span><span class="n">subtiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tile</span>
+<span class="w">				</span><span class="p">.</span><span class="na">translateToZoomLevel</span><span class="p">((</span><span class="kt">byte</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">tile</span><span class="p">.</span><span class="na">getZoomlevel</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">SUBTILE_ZOOMLEVEL_DIFFERENCE</span><span class="p">));</span>
+
+<span class="w">		</span><span class="kt">short</span><span class="w"> </span><span class="n">bitmask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// NOPMD by bross on 25.12.11 13:30</span>
+<span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">tileCounter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">TileCoordinate</span><span class="w"> </span><span class="n">subtile</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">subtiles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">Geometry</span><span class="w"> </span><span class="n">bbox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tileToJTSGeometry</span><span class="p">(</span><span class="n">subtile</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span><span class="w"> </span><span class="n">subtile</span><span class="p">.</span><span class="na">getY</span><span class="p">(),</span><span class="w"> </span><span class="n">subtile</span><span class="p">.</span><span class="na">getZoomlevel</span><span class="p">(),</span>
+<span class="w">					</span><span class="n">enlargementInMeter</span><span class="p">);</span>
+<span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bbox</span><span class="p">.</span><span class="na">intersects</span><span class="p">(</span><span class="n">geometry</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="n">bitmask</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="n">TILE_BITMASK_VALUES</span><span class="o">[</span><span class="n">tileCounter</span><span class="o">]</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="n">tileCounter</span><span class="o">++</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">bitmask</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * @param geometry</span>
+<span class="cm">	 *            a JTS {@link Geometry} object representing the OSM entity</span>
+<span class="cm">	 * @param tile</span>
+<span class="cm">	 *            the tile</span>
+<span class="cm">	 * @param enlargementInMeter</span>
+<span class="cm">	 *            the enlargement of the tile in meters</span>
+<span class="cm">	 * @return true, if the geometry is covered completely by this tile</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">coveredByTile</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">Geometry</span><span class="w"> </span><span class="n">geometry</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">TileCoordinate</span><span class="w"> </span><span class="n">tile</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">enlargementInMeter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="n">Geometry</span><span class="w"> </span><span class="n">bbox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tileToJTSGeometry</span><span class="p">(</span><span class="n">tile</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span><span class="w"> </span><span class="n">tile</span><span class="p">.</span><span class="na">getY</span><span class="p">(),</span><span class="w"> </span><span class="n">tile</span><span class="p">.</span><span class="na">getZoomlevel</span><span class="p">(),</span><span class="w"> </span><span class="n">enlargementInMeter</span><span class="p">);</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bbox</span><span class="p">.</span><span class="na">covers</span><span class="p">(</span><span class="n">geometry</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * @param geometry</span>
+<span class="cm">	 *            the JTS {@link Geometry} object</span>
+<span class="cm">	 * @return the centroid of the given geometry</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="nf">computeCentroid</span><span class="p">(</span><span class="n">Geometry</span><span class="w"> </span><span class="n">geometry</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="n">Point</span><span class="w"> </span><span class="n">centroid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">geometry</span><span class="p">.</span><span class="na">getCentroid</span><span class="p">();</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">centroid</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">(</span><span class="n">centroid</span><span class="p">.</span><span class="na">getCoordinate</span><span class="p">().</span><span class="na">y</span><span class="p">,</span><span class="w"> </span><span class="n">centroid</span><span class="p">.</span><span class="na">getCoordinate</span><span class="p">().</span><span class="na">x</span><span class="p">);</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Convert a JTS Geometry to a WayDataBlock list.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param geometry</span>
+<span class="cm">	 *            a geometry object which should be converted</span>
+<span class="cm">	 * @return a list of WayBlocks which you can use to save the way.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">WayDataBlock</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">toWayDataBlockList</span><span class="p">(</span><span class="n">Geometry</span><span class="w"> </span><span class="n">geometry</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="n">List</span><span class="o">&lt;</span><span class="n">WayDataBlock</span><span class="o">&gt;</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">WayDataBlock</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">geometry</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">MultiPolygon</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">MultiPolygon</span><span class="w"> </span><span class="n">mp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">MultiPolygon</span><span class="p">)</span><span class="w"> </span><span class="n">geometry</span><span class="p">;</span>
+<span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mp</span><span class="p">.</span><span class="na">getNumGeometries</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="n">Polygon</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Polygon</span><span class="p">)</span><span class="w"> </span><span class="n">mp</span><span class="p">.</span><span class="na">getGeometryN</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">				</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">outer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toCoordinateList</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getExteriorRing</span><span class="p">());</span>
+<span class="w">				</span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">inner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="p">();</span>
+<span class="w">				</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">getNumInteriorRing</span><span class="p">();</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">					</span><span class="n">inner</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">toCoordinateList</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getInteriorRingN</span><span class="p">(</span><span class="n">j</span><span class="p">)));</span>
+<span class="w">				</span><span class="p">}</span>
+<span class="w">				</span><span class="n">res</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">WayDataBlock</span><span class="p">(</span><span class="n">outer</span><span class="p">,</span><span class="w"> </span><span class="n">inner</span><span class="p">));</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">geometry</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Polygon</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">Polygon</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Polygon</span><span class="p">)</span><span class="w"> </span><span class="n">geometry</span><span class="p">;</span>
+<span class="w">			</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">outer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toCoordinateList</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getExteriorRing</span><span class="p">());</span>
+<span class="w">			</span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">inner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="p">();</span>
+<span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">getNumInteriorRing</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="n">inner</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">toCoordinateList</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getInteriorRingN</span><span class="p">(</span><span class="n">i</span><span class="p">)));</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="n">res</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">WayDataBlock</span><span class="p">(</span><span class="n">outer</span><span class="p">,</span><span class="w"> </span><span class="n">inner</span><span class="p">));</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">geometry</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">MultiLineString</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">MultiLineString</span><span class="w"> </span><span class="n">ml</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">MultiLineString</span><span class="p">)</span><span class="w"> </span><span class="n">geometry</span><span class="p">;</span>
+<span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ml</span><span class="p">.</span><span class="na">getNumGeometries</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="n">LineString</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">LineString</span><span class="p">)</span><span class="w"> </span><span class="n">ml</span><span class="p">.</span><span class="na">getGeometryN</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">				</span><span class="n">res</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">WayDataBlock</span><span class="p">(</span><span class="n">toCoordinateList</span><span class="p">(</span><span class="n">l</span><span class="p">),</span><span class="w"> </span><span class="kc">null</span><span class="p">));</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">geometry</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">LinearRing</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">geometry</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">LineString</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">res</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">WayDataBlock</span><span class="p">(</span><span class="n">toCoordinateList</span><span class="p">(</span><span class="n">geometry</span><span class="p">),</span><span class="w"> </span><span class="kc">null</span><span class="p">));</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">geometry</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">GeometryCollection</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">GeometryCollection</span><span class="w"> </span><span class="n">gc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">GeometryCollection</span><span class="p">)</span><span class="w"> </span><span class="n">geometry</span><span class="p">;</span>
+<span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">gc</span><span class="p">.</span><span class="na">getNumGeometries</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="n">List</span><span class="o">&lt;</span><span class="n">WayDataBlock</span><span class="o">&gt;</span><span class="w"> </span><span class="n">recursiveResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toWayDataBlockList</span><span class="p">(</span><span class="n">gc</span><span class="p">.</span><span class="na">getGeometryN</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="w">				</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">WayDataBlock</span><span class="w"> </span><span class="n">wayDataBlock</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">recursiveResult</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">					</span><span class="n">res</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">wayDataBlock</span><span class="p">);</span>
+<span class="w">				</span><span class="p">}</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="c1">// **************** JTS CONVERSIONS *********************</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Converts a way with potential inner ways to a JTS geometry.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param way</span>
+<span class="cm">	 *            the way</span>
+<span class="cm">	 * @param innerWays</span>
+<span class="cm">	 *            the inner ways or null</span>
+<span class="cm">	 * @return the JTS geometry</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Geometry</span><span class="w"> </span><span class="nf">toJtsGeometry</span><span class="p">(</span><span class="n">TDWay</span><span class="w"> </span><span class="n">way</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">TDWay</span><span class="o">&gt;</span><span class="w"> </span><span class="n">innerWays</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">		</span><span class="n">Geometry</span><span class="w"> </span><span class="n">wayGeometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toJTSGeometry</span><span class="p">(</span><span class="n">way</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="n">way</span><span class="p">.</span><span class="na">isForcePolygonLine</span><span class="p">());</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">wayGeometry</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">innerWays</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">List</span><span class="o">&lt;</span><span class="n">LinearRing</span><span class="o">&gt;</span><span class="w"> </span><span class="n">innerWayGeometries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">LinearRing</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">wayGeometry</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Polygon</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="n">LOGGER</span><span class="p">.</span><span class="na">warning</span><span class="p">(</span><span class="s">&quot;outer way of multi polygon is not a polygon, skipping it: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">way</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="n">Polygon</span><span class="w"> </span><span class="n">outerPolygon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Polygon</span><span class="p">)</span><span class="w"> </span><span class="n">wayGeometry</span><span class="p">;</span>
+
+<span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">TDWay</span><span class="w"> </span><span class="n">innerWay</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">innerWays</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="c1">// in order to build the polygon with holes, we want to create</span>
+<span class="w">				</span><span class="c1">// linear rings of the inner ways</span>
+<span class="w">				</span><span class="n">Geometry</span><span class="w"> </span><span class="n">innerWayGeometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toJTSGeometry</span><span class="p">(</span><span class="n">innerWay</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="w">				</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">innerWayGeometry</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">					</span><span class="k">continue</span><span class="p">;</span>
+<span class="w">				</span><span class="p">}</span>
+
+<span class="w">				</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">innerWayGeometry</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">LinearRing</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">					</span><span class="n">LOGGER</span><span class="p">.</span><span class="na">warning</span><span class="p">(</span><span class="s">&quot;inner way of multi polygon is not a polygon, skipping it, inner id: &quot;</span>
+<span class="w">							</span><span class="o">+</span><span class="w"> </span><span class="n">innerWay</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, outer id: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">way</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span>
+<span class="w">					</span><span class="k">continue</span><span class="p">;</span>
+<span class="w">				</span><span class="p">}</span>
+
+<span class="w">				</span><span class="n">LinearRing</span><span class="w"> </span><span class="n">innerRing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">LinearRing</span><span class="p">)</span><span class="w"> </span><span class="n">innerWayGeometry</span><span class="p">;</span>
+
+<span class="w">				</span><span class="c1">// check if inner way is completely contained in outer way</span>
+<span class="w">				</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">outerPolygon</span><span class="p">.</span><span class="na">covers</span><span class="p">(</span><span class="n">innerRing</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">					</span><span class="n">innerWayGeometries</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">innerRing</span><span class="p">);</span>
+<span class="w">				</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">					</span><span class="n">LOGGER</span><span class="p">.</span><span class="na">warning</span><span class="p">(</span><span class="s">&quot;inner way is not contained in outer way, skipping inner way, inner id: &quot;</span>
+<span class="w">							</span><span class="o">+</span><span class="w"> </span><span class="n">innerWay</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, outer id: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">way</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span>
+<span class="w">				</span><span class="p">}</span>
+<span class="w">			</span><span class="p">}</span>
+
+<span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">innerWayGeometries</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="c1">// make wayGeometry a new Polygon that contains inner ways as holes</span>
+<span class="w">				</span><span class="n">LinearRing</span><span class="o">[]</span><span class="w"> </span><span class="n">holes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">innerWayGeometries</span><span class="p">.</span><span class="na">toArray</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">LinearRing</span><span class="o">[</span><span class="n">innerWayGeometries</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">]</span><span class="p">);</span>
+<span class="w">				</span><span class="n">LinearRing</span><span class="w"> </span><span class="n">exterior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GEOMETRY_FACTORY</span>
+<span class="w">						</span><span class="p">.</span><span class="na">createLinearRing</span><span class="p">(</span><span class="n">outerPolygon</span><span class="p">.</span><span class="na">getExteriorRing</span><span class="p">().</span><span class="na">getCoordinates</span><span class="p">());</span>
+<span class="w">				</span><span class="n">wayGeometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Polygon</span><span class="p">(</span><span class="n">exterior</span><span class="p">,</span><span class="w"> </span><span class="n">holes</span><span class="p">,</span><span class="w"> </span><span class="n">GEOMETRY_FACTORY</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">wayGeometry</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Internal conversion method to convert our internal data structure for ways to geometry objects in JTS. It will</span>
+<span class="cm">	 * care about ways and polygons and will create the right JTS onjects.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param way</span>
+<span class="cm">	 *            TDway which will be converted. Null if we were not able to convert the way to a Geometry object.</span>
+<span class="cm">	 * @param area</span>
+<span class="cm">	 *            true, if the way represents an area, i.e. a polygon instead of a linear ring</span>
+<span class="cm">	 * @return return Converted way as JTS object.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Geometry</span><span class="w"> </span><span class="nf">toJTSGeometry</span><span class="p">(</span><span class="n">TDWay</span><span class="w"> </span><span class="n">way</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">area</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">way</span><span class="p">.</span><span class="na">getWayNodes</span><span class="p">().</span><span class="na">length</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">LOGGER</span><span class="p">.</span><span class="na">fine</span><span class="p">(</span><span class="s">&quot;way has fewer than 2 nodes: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">way</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="n">Coordinate</span><span class="o">[]</span><span class="w"> </span><span class="n">coordinates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coordinate</span><span class="o">[</span><span class="n">way</span><span class="p">.</span><span class="na">getWayNodes</span><span class="p">().</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
+<span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">coordinates</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">TDNode</span><span class="w"> </span><span class="n">currentNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">way</span><span class="p">.</span><span class="na">getWayNodes</span><span class="p">()</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<span class="w">			</span><span class="n">coordinates</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coordinate</span><span class="p">(</span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">intToDouble</span><span class="p">(</span><span class="n">currentNode</span><span class="p">.</span><span class="na">getLongitude</span><span class="p">()),</span>
+<span class="w">					</span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">intToDouble</span><span class="p">(</span><span class="n">currentNode</span><span class="p">.</span><span class="na">getLatitude</span><span class="p">()));</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="n">Geometry</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+<span class="w">		</span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="c1">// check for closed polygon</span>
+<span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">way</span><span class="p">.</span><span class="na">isPolygon</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">area</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">					</span><span class="c1">// polygon</span>
+<span class="w">					</span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GEOMETRY_FACTORY</span><span class="p">.</span><span class="na">createPolygon</span><span class="p">(</span><span class="n">GEOMETRY_FACTORY</span><span class="p">.</span><span class="na">createLinearRing</span><span class="p">(</span><span class="n">coordinates</span><span class="p">),</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="w">				</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">					</span><span class="c1">// linear ring</span>
+<span class="w">					</span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GEOMETRY_FACTORY</span><span class="p">.</span><span class="na">createLinearRing</span><span class="p">(</span><span class="n">coordinates</span><span class="p">);</span>
+<span class="w">				</span><span class="p">}</span>
+<span class="w">			</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GEOMETRY_FACTORY</span><span class="p">.</span><span class="na">createLineString</span><span class="p">(</span><span class="n">coordinates</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">TopologyException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">LOGGER</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">Level</span><span class="p">.</span><span class="na">FINE</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;error creating JTS geometry from way: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">way</span><span class="p">.</span><span class="na">getId</span><span class="p">(),</span><span class="w"> </span><span class="n">e</span><span class="p">);</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">toCoordinateList</span><span class="p">(</span><span class="n">Geometry</span><span class="w"> </span><span class="n">jtsGeometry</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">		</span><span class="n">Coordinate</span><span class="o">[]</span><span class="w"> </span><span class="n">jtsCoords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jtsGeometry</span><span class="p">.</span><span class="na">getCoordinates</span><span class="p">();</span>
+
+<span class="w">		</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">jtsCoords</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="n">geoCoord</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">(</span><span class="n">jtsCoords</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">.</span><span class="na">y</span><span class="p">,</span><span class="w"> </span><span class="n">jtsCoords</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">.</span><span class="na">x</span><span class="p">);</span>
+<span class="w">			</span><span class="n">result</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">geoCoord</span><span class="p">.</span><span class="na">getLatitudeE6</span><span class="p">()));</span>
+<span class="w">			</span><span class="n">result</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">geoCoord</span><span class="p">.</span><span class="na">getLongitudeE6</span><span class="p">()));</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="nf">computeTileEnlargement</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">enlargementInPixel</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">enlargementInPixel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="n">EPSILON_ZERO</span><span class="p">;</span><span class="w"> </span><span class="c1">// NOPMD by bross on 25.12.11 13:32</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">epsilons</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
+
+<span class="w">		</span><span class="n">epsilons</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">latitudeDistance</span><span class="p">(</span><span class="n">enlargementInPixel</span><span class="p">);</span>
+<span class="w">		</span><span class="n">epsilons</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">longitudeDistance</span><span class="p">(</span><span class="n">enlargementInPixel</span><span class="p">,</span><span class="w"> </span><span class="n">lat</span><span class="p">);</span>
+
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">epsilons</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="nf">bufferInDegrees</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">tileY</span><span class="p">,</span><span class="w"> </span><span class="kt">byte</span><span class="w"> </span><span class="n">zoom</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">enlargementInMeter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">enlargementInMeter</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="n">EPSILON_ZERO</span><span class="p">;</span><span class="w"> </span><span class="c1">// NOPMD by bross on 25.12.11 13:32</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">epsilons</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MercatorProjection</span><span class="p">.</span><span class="na">tileYToLatitude</span><span class="p">(</span><span class="n">tileY</span><span class="p">,</span><span class="w"> </span><span class="n">zoom</span><span class="p">);</span>
+<span class="w">		</span><span class="n">epsilons</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">latitudeDistance</span><span class="p">(</span><span class="n">enlargementInMeter</span><span class="p">);</span>
+<span class="w">		</span><span class="n">epsilons</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">longitudeDistance</span><span class="p">(</span><span class="n">enlargementInMeter</span><span class="p">,</span><span class="w"> </span><span class="n">lat</span><span class="p">);</span>
+
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">epsilons</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Geometry</span><span class="w"> </span><span class="nf">tileToJTSGeometry</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">tileX</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">tileY</span><span class="p">,</span><span class="w"> </span><span class="kt">byte</span><span class="w"> </span><span class="n">zoom</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">enlargementInMeter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">minLat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MercatorProjection</span><span class="p">.</span><span class="na">tileYToLatitude</span><span class="p">(</span><span class="n">tileY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">zoom</span><span class="p">);</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">maxLat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MercatorProjection</span><span class="p">.</span><span class="na">tileYToLatitude</span><span class="p">(</span><span class="n">tileY</span><span class="p">,</span><span class="w"> </span><span class="n">zoom</span><span class="p">);</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">minLon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MercatorProjection</span><span class="p">.</span><span class="na">tileXToLongitude</span><span class="p">(</span><span class="n">tileX</span><span class="p">,</span><span class="w"> </span><span class="n">zoom</span><span class="p">);</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">maxLon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MercatorProjection</span><span class="p">.</span><span class="na">tileXToLongitude</span><span class="p">(</span><span class="n">tileX</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">zoom</span><span class="p">);</span>
+
+<span class="w">		</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">epsilons</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bufferInDegrees</span><span class="p">(</span><span class="n">tileY</span><span class="p">,</span><span class="w"> </span><span class="n">zoom</span><span class="p">,</span><span class="w"> </span><span class="n">enlargementInMeter</span><span class="p">);</span>
+
+<span class="w">		</span><span class="n">minLon</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">epsilons</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+<span class="w">		</span><span class="n">minLat</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">epsilons</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<span class="w">		</span><span class="n">maxLon</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">epsilons</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+<span class="w">		</span><span class="n">maxLat</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">epsilons</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+
+<span class="w">		</span><span class="n">Coordinate</span><span class="w"> </span><span class="n">bottomLeft</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coordinate</span><span class="p">(</span><span class="n">minLon</span><span class="p">,</span><span class="w"> </span><span class="n">minLat</span><span class="p">);</span>
+<span class="w">		</span><span class="n">Coordinate</span><span class="w"> </span><span class="n">topRight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coordinate</span><span class="p">(</span><span class="n">maxLon</span><span class="p">,</span><span class="w"> </span><span class="n">maxLat</span><span class="p">);</span>
+
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">GEOMETRY_FACTORY</span><span class="p">.</span><span class="na">createLineString</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Coordinate</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">bottomLeft</span><span class="p">,</span><span class="w"> </span><span class="n">topRight</span><span class="w"> </span><span class="p">}).</span><span class="na">getEnvelope</span><span class="p">();</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">TileCoordinate</span><span class="o">[]</span><span class="w"> </span><span class="nf">getWayBoundingBox</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">TDWay</span><span class="w"> </span><span class="n">way</span><span class="p">,</span><span class="w"> </span><span class="kt">byte</span><span class="w"> </span><span class="n">zoomlevel</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">enlargementInPixel</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">maxx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">NEGATIVE_INFINITY</span><span class="p">,</span><span class="w"> </span><span class="n">maxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">NEGATIVE_INFINITY</span><span class="p">,</span><span class="w"> </span><span class="n">minx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">POSITIVE_INFINITY</span><span class="p">,</span><span class="w"> </span><span class="n">miny</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">POSITIVE_INFINITY</span><span class="p">;</span>
+<span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">TDNode</span><span class="w"> </span><span class="n">coordinate</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">way</span><span class="p">.</span><span class="na">getWayNodes</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">maxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxy</span><span class="p">,</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">intToDouble</span><span class="p">(</span><span class="n">coordinate</span><span class="p">.</span><span class="na">getLatitude</span><span class="p">()));</span>
+<span class="w">			</span><span class="n">miny</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">miny</span><span class="p">,</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">intToDouble</span><span class="p">(</span><span class="n">coordinate</span><span class="p">.</span><span class="na">getLatitude</span><span class="p">()));</span>
+<span class="w">			</span><span class="n">maxx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxx</span><span class="p">,</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">intToDouble</span><span class="p">(</span><span class="n">coordinate</span><span class="p">.</span><span class="na">getLongitude</span><span class="p">()));</span>
+<span class="w">			</span><span class="n">minx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">minx</span><span class="p">,</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">intToDouble</span><span class="p">(</span><span class="n">coordinate</span><span class="p">.</span><span class="na">getLongitude</span><span class="p">()));</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">epsilonsTopLeft</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">computeTileEnlargement</span><span class="p">(</span><span class="n">maxy</span><span class="p">,</span><span class="w"> </span><span class="n">enlargementInPixel</span><span class="p">);</span>
+<span class="w">		</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">epsilonsBottomRight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">computeTileEnlargement</span><span class="p">(</span><span class="n">miny</span><span class="p">,</span><span class="w"> </span><span class="n">enlargementInPixel</span><span class="p">);</span>
+
+<span class="w">		</span><span class="n">TileCoordinate</span><span class="o">[]</span><span class="w"> </span><span class="n">bbox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TileCoordinate</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
+<span class="w">		</span><span class="n">bbox</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TileCoordinate</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">MercatorProjection</span><span class="p">.</span><span class="na">longitudeToTileX</span><span class="p">(</span><span class="n">minx</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">epsilonsTopLeft</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">zoomlevel</span><span class="p">),</span>
+<span class="w">				</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">MercatorProjection</span><span class="p">.</span><span class="na">latitudeToTileY</span><span class="p">(</span><span class="n">maxy</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">epsilonsTopLeft</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">zoomlevel</span><span class="p">),</span><span class="w"> </span><span class="n">zoomlevel</span><span class="p">);</span>
+<span class="w">		</span><span class="n">bbox</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TileCoordinate</span><span class="p">(</span>
+<span class="w">				</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">MercatorProjection</span><span class="p">.</span><span class="na">longitudeToTileX</span><span class="p">(</span><span class="n">maxx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">epsilonsBottomRight</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">zoomlevel</span><span class="p">),</span>
+<span class="w">				</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">MercatorProjection</span><span class="p">.</span><span class="na">latitudeToTileY</span><span class="p">(</span><span class="n">miny</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">epsilonsBottomRight</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">zoomlevel</span><span class="p">),</span><span class="w"> </span><span class="n">zoomlevel</span><span class="p">);</span>
+
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">bbox</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div></td></tr></table></div>
+
+</div>
+
+
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+
+
+</body>
+</html>

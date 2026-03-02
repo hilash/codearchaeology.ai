@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="שביל ישראל">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>שביל ישראל</title>
+<link rel="stylesheet" href="add2home.css">
+<script type="application/javascript" src="add2home.js"></script>
+<script type="text/javascript" data-dojo-config="'parseOnLoad':true,'async':true,'packages':[{'name':'gridx','location':'../gridx'},{'name':'clipart','location':'../../clipart'},{'name':'maqettaSamples','location':'../../../samples'},{'name':'maqetta','location':'../../maqetta'},{'name':'shapes','location':'../../shapes'},{'name':'zazl','location':'../../zazl'},{'name':'widgets','location':'../../custom'}],'themeMap':[['Android','',['themes/android/android.css']],['BlackBerry','',['themes/blackberry/blackberry.css']],['iPad','',['themes/ipad/ipad.css']],['iPhone','',['themes/iphone/iphone.css']],['.*','',['themes/iphone/iphone.css']]],'mblThemeFiles':[], mblLoadCompatPattern: /\/samples\/themes\/.*\.css$/" src="lib/dojo/dojo/dojo.js"></script>
+<script type="text/javascript">
+require([
+  "dijit/dijit",
+  "dojo/parser",
+  "maqetta/space",
+  "maqetta/AppStates",
+  "dojox/mobile",
+  "dojox/mobile/deviceTheme",
+  "dojox/mobile/compat",
+  "dojox/mobile/Accordion",
+  "dojox/mobile/ContentPane",
+  "dojox/mobile/TabBar",
+  "dojox/mobile/TabBarButton",
+  "dojo/hash",
+  "dojox/mobile/SwapView"
+]);
+</script>
+<style>@import "themes/claro/claro.css";@import "lib/dojo/dojox/mobile/themes/common/domButtons/DomButtonRedBadge.css";@import "app.css";
+</style>
+<style type="text/css">
+	  html { height: 100% }
+	  body { height: 100%; margin: 0; padding: 0 }
+	  #map-canvas { height: 100% }
+	</style>
+
+<script type="text/javascript" src="app.js"></script>
+<script src="geoPosition.js"></script>
+<script src="modernizr-latest.js"></script>
+<script src="infowindowformat.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=iw&region=IL"></script>
+    <script>
+      var map;
+      var angels = [];
+      var users  = [];
+      var general_items = [];
+      
+      var angels_markers = [];
+      var users_markers  = [];
+      var general_water_markers = [];
+      var general_error_markers = [];
+      var general_information_markers = [];
+      var general_sleep_markers = [];
+      
+	  var angel_image = 'http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/24/Emotes-face-angel-icon.png';
+	  var user_image  = 'http://icons.iconarchive.com/icons/fatcow/farm-fresh/32/walk-icon.png';
+	  var general_water_image = "http://icons.iconarchive.com/icons/yusuke-kamiyamane/fugue/16/water-icon.png";
+	  var general_error_image = "http://icons.iconarchive.com/icons/creative-freedom/shimmer/32/Warning-icon.png";
+	  var general_information_image = "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/32/Status-dialog-information-icon.png";
+	  var general_sleep_image = "http://icons.iconarchive.com/icons/fatcow/farm-fresh/32/bed-icon.png";
+
+      var GENERAL_ITEM_TYPE_WATER = 0
+      var GENERAL_ITEM_TYPE_WATER_HIDE = 1
+      var GENERAL_ITEM_TYPE_ERROR = 2
+      var GENERAL_ITEM_TYPE_INFORMATION = 3
+      var GENERAL_ITEM_TYPE_PEOPLE = 4
+      var GENERAL_ITEM_TYPE_SLEEP = 5
+      
+      var json_resp = [{"city":"\u0027קיבוץ אליפז(צמוד לפארק תמנע) ","name":"","phone1":"","phone2":"","information":"לינה על מזרנים בסלון מקלחת, מטבח , אינטרנט וכביסה. אין מכולת רק קיוסק עם בירות קרות :)","latitude":29.79466,"longitude":35.01525,"passport":false,"stamp":false,"religious":false,"id":84001,"counter":0,"record_state":0,"server_time":508381539},
+                       {"city":"שמשית","name":"","phone1":"","phone2":"","information":"לינה בחדר, מקלחת, ארוחה חמה, הסעה בתיאום מראש (מרחק דקות מצומת המוביל), אינטרנט","latitude":32.735027,"longitude":35.247952,"passport":false,"stamp":false,"religious":false,"id":11007,"counter":0,"record_state":0,"server_time":1364550271719}]      
+
+
+	  var infowindow = new google.maps.InfoWindow({
+		content: "",
+		maxWidth: 200,
+		disableAutoPan: false
+	  });
+	  
+	  	function hideAddressBar()
+		{
+		  if(!window.location.hash)
+		  {
+			  if(document.height < window.outerHeight)
+			  {
+				  document.body.style.height = (window.outerHeight + 50) + 'px';
+			  }
+
+			  setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
+		  }
+		}
+
+      function initialize() {
+	  
+		// hide address bar 
+		if(!window.pageYOffset){ hideAddressBar();}
+		
+        var location = new google.maps.LatLng(32.0930801, 34.7832606);
+        var mapOptions = {
+          zoom: 12,
+          center: location,
+          mapTypeId: google.maps.MapTypeId.TERRAIN
+        };
+        
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+        // TODO - add showReportDialog here
+        google.maps.event.addListener(map, 'click', function(event) {
+        	//addMarker(event.latLng);
+        });
+        google.maps.event.addListener(map, 'click', function() {
+            infowindow.close();
+          });
+        //var ctaLayer = new google.maps.KmlLayer("https://maps.google.com/maps/ms?ie=UTF8&oe=UTF8&authuser=0&msa=0&output=kml&msid=214509396816488912345.00047aecb73cd7499f5be");
+        var ctaLayer = new google.maps.KmlLayer("http://ftp.bquest.org/Temp/Israel.kml");
+        ctaLayer.setMap(map);
+        
+        getMapItemsFromServer("USER",  addUsersToMap);
+    	getMapItemsFromServer("ANGEL",  addAngelsToMap);
+    	getMapItemsFromServer("GENERAL_ITEM",  addGeneralItemsToMap);
+		
+		get_user_location();
+		toggleUsersCheckedLayers();
+      }
+	  
+	  function toggleUsersCheckedLayers(){
+		  if (Modernizr.localstorage) {
+			handleLayer(angels_markers, "layers.check.angels");
+			handleLayer(users_markers, "layers.check.users");
+			handleLayer(general_water_markers, "layers.check.general_water");
+			handleLayer(general_error_markers, "layers.check.general_error");
+			handleLayer(general_information_markers, "layers.check.general_information");
+			handleLayer(general_sleep_markers, "layers.check.general_sleep");	  
+		} else {
+		  // no native support for HTML5 storage :(
+		  // maybe try dojox.storage or a third-party solution
+		}
+	  }
+	  
+	 function handleLayer(markers, element_localstore_string){
+		var is_checked = localStorage[element_localstore_string];
+		if ((is_checked == null) || (is_checked == "true")) {
+			showOverlays(markers);
+			localStorage[element_localstore_string] = "true";
+		}
+		else {
+			clearOverlays(markers);
+			localStorage[element_localstore_string] = "false";
+		}
+	 }
+	  
+	 function get_user_location() {
+		function lookup_location() {
+			geoPosition.getCurrentPosition(show_map);
+			}
+
+		function show_map(loc) {
+		  var center = new google.maps.LatLng(loc.coords.latitude,loc.coords.longitude);
+		  map.setCenter(center);
+		  var marker = new google.maps.Marker({map: map, position: center, draggable: false, title: "You are here (more or less)"});
+		}
+
+		if (geoPosition.init())
+		{
+			lookup_location();
+		}
+	} 
+      
+      // Create the XHR object.
+	function createCORSRequest(method, url) {
+	  var xhr = new XMLHttpRequest();
+	  if ("withCredentials" in xhr) {
+		// XHR for Chrome/Firefox/Opera/Safari.
+		xhr.open(method, url, true);
+	  } else if (typeof XDomainRequest != "undefined") {
+		// XDomainRequest for IE.
+		xhr = new XDomainRequest();
+		xhr.open(method, url);
+	  } else {
+		// CORS not supported.
+		xhr = null;
+	  }
+	  return xhr;
+	}
+	
+
+	
+      function getMapItemsFromServer(record_type, output_handler_function)
+    	{
+			var url = "http://shvilisraelapp.appspot.com/shvilserver";
+			var xhr = createCORSRequest('POST', url);
+    		xhr.setRequestHeader("Content-Type", "text/plain; charset=utf-8");
+    		xhr.setRequestHeader("action", "sync");
+    		xhr.setRequestHeader("record_type", record_type);
+    		xhr.setRequestHeader("user_id", "0");
+    		xhr.setRequestHeader("max_server_time", "0");
+
+    	
+    		xhr.onreadystatechange = function() {
+    			if (xhr.readyState == 4 && xhr.status == 200) {
+    				output_handler_function(xhr.responseText);
+					toggleUsersCheckedLayers();
+    			}
+    		}
+
+    		xhr.send("[]");
+    	}
+      
+    function addUsersToMap(usersJSON)
+  	{
+  		users = JSON.parse(usersJSON);
+  		for (var i = 0; i < users.length; i++)
+  		{
+  			addUserToMap(i, users[i], map);
+  	    }
+  	}
+  	
+
+  	function addUserToMap(user_index, user, mymap) {
+          var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(user.latitude, user.longitude),
+            map: mymap,
+  		  icon: user_image
+          });
+          marker.user_index = user_index;
+          users_markers.push(marker);
+  		google.maps.event.addListener(marker, 'click', function() {
+  			user = users[marker.user_index];
+  			infowindow.content = "";
+  			//infowindow.open(map,marker);
+  		});
+  	}
+  	
+  	
+  	 function addGeneralItemsToMap(generalItemsJSON)
+  	{
+  		general_items = JSON.parse(generalItemsJSON);
+  		for (var i = 0; i < general_items.length; i++)
+  		{
+  			addGeneralItemToMap(i, general_items[i], map);
+  	    }
+  	}
+  	
+
+  	function addGeneralItemToMap(general_item_index, general_item, mymap) {
+  		
+  		var general_item_image = "";
+  		var current_general_item_markers = [];
+  		
+  		switch (general_item.type)
+  		{
+  		case GENERAL_ITEM_TYPE_WATER_HIDE:
+  		case GENERAL_ITEM_TYPE_PEOPLE:
+  			return;
+  			break;
+  		case GENERAL_ITEM_TYPE_WATER:
+  			general_item_image = general_water_image;
+  			current_general_item_markers = general_water_markers;
+  			break;
+  		case GENERAL_ITEM_TYPE_ERROR:
+  			general_item_image = general_error_image;
+  			current_general_item_markers = general_error_markers;
+  			break;
+  		case GENERAL_ITEM_TYPE_INFORMATION:
+  			general_item_image = general_information_image;
+  			current_general_item_markers = general_information_markers;
+  			break;
+  		case GENERAL_ITEM_TYPE_SLEEP:  			
+  			general_item_image = general_sleep_image;
+  			current_general_item_markers = general_sleep_markers;
+  			break;
+  		default:
+  		  return;
+  		  break;
+  		}
+  		
+          var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(general_item.latitude, general_item.longitude),
+            map: mymap,
+  		    icon: general_item_image
+          });
+          marker.general_item_index = general_item_index;
+          current_general_item_markers.push(marker);
+          
+  		google.maps.event.addListener(marker, 'click', function() {
+  			general_item = general_items[marker.general_item_index];
+  			infowindow.content = getGeneralItemHTMLDescription(general_item);
+			infowindow.open(map,marker);
+  		});
+  	}
+  	
+	function addAngelsToMap(angelsJSON)
+	{
+		angels = JSON.parse(angelsJSON);
+		//angels = json_resp;
+		for (var i = 0; i < angels.length; i++)
+		{
+			addAngelToMap(i, angels[i], map);
+	    }
+	}
+
+	function addAngelToMap(angel_index, angel, mymap) {
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(angel.latitude, angel.longitude),
+          map: mymap,
+		  icon: angel_image
+        });
+        marker.angel_index = angel_index;
+        angels_markers.push(marker);
+		google.maps.event.addListener(marker, 'click', function() {
+			angel = angels[marker.angel_index];
+			infowindow.content = getAngelHTMLDescription(angel);
+			infowindow.open(map,marker);
+		});
+	}
+	
+
+	
+	///// GENERAL add/remove markers
+      // Sets the map on all markers in the array.
+      function setAllMap(markers, map) {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(map);
+        }
+      }
+
+      // Removes the overlays from the map, but keeps them in the array.
+      function clearOverlays(markers) {
+        setAllMap(markers, null);
+      }
+
+      // Shows any overlays currently in the array.
+      function showOverlays(markers) {
+        setAllMap(markers, map);
+      }
+
+      // Deletes all markers in the array by removing references to them.
+      function deleteOverlays(markers) {
+        clearOverlays(markers);
+        markers = [];
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+	  window.addEventListener("orientationchange", hideAddressBar );
+
+    </script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"></meta>
+</head>
+<body class="claro" data-maq-device="iphone" data-maq-flow-layout="true" data-maq-comptype="mobile" data-maq-ws="collapse" id="myapp" data-maq-appstates="{}">
+ <h1 label="שביל ישראל" data-dojo-type="dojox.mobile.Heading">
+  <div label="הגדרות" data-dojo-type="dojox.mobile.ToolBarButton" onclick="location.href='shvilisraelmobilelayers.html'"></div>
+</h1>
+<div id="map-canvas"></div>
+
+</body>
+</html>

@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW5.html - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ed007e; background-color: #1e0010 } /* Error */
+.highlight .esc { color: #f8f8f2 } /* Escape */
+.highlight .g { color: #f8f8f2 } /* Generic */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #ff4689 } /* Operator */
+.highlight .x { color: #f8f8f2 } /* Other */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #ff4689 } /* Generic.Deleted */
+.highlight .ge { color: #f8f8f2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #f8f8f2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #f8f8f2 } /* Generic.Error */
+.highlight .gh { color: #f8f8f2 } /* Generic.Heading */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .go { color: #66d9ef } /* Generic.Output */
+.highlight .gp { color: #ff4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #f8f8f2 } /* Generic.Traceback */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #ff4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #ff4689 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #ff4689 } /* Operator.Word */
+.highlight .pm { color: #f8f8f2 } /* Punctuation.Marker */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style>
+
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<a href="/project/2017-12-18_numerical-analysis-hw5/" class="back-link">&laquo; Back to Numerical Analysis Hw5</a>
+
+<div class="viewer-header">
+    <h1>HW5.html</h1>
+    <div class="viewer-meta">
+        <span class="tag">HTML</span>
+        <span>20.5 KB</span>
+        
+        <button id="run-btn" class="gmail-action-btn client-runnable" onclick="runCode()">&#9654; Run Code</button>
+        
+    </div>
+</div>
+
+
+<div class="code-container">
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span></pre></div></td><td class="code"><div><pre><span></span><span class="cp">&lt;!DOCTYPE html</span>
+<span class="cp">  PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span><span class="p">&gt;</span>
+   <span class="cm">&lt;!--</span>
+<span class="cm">This HTML was auto-generated from MATLAB code.</span>
+<span class="cm">To make changes, update the MATLAB code and republish this document.</span>
+<span class="cm">      --&gt;</span><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>HW5<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;generator&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;MATLAB 8.5&quot;</span><span class="p">&gt;&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;schema.DC&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://purl.org/dc/elements/1.1/&quot;</span><span class="p">&gt;&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;DC.date&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;2017-12-18&quot;</span><span class="p">&gt;&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;DC.source&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;HW5.m&quot;</span><span class="p">&gt;&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
+<span class="nt">html</span><span class="o">,</span><span class="nt">body</span><span class="o">,</span><span class="nt">div</span><span class="o">,</span><span class="nt">span</span><span class="o">,</span><span class="nt">applet</span><span class="o">,</span><span class="nt">object</span><span class="o">,</span><span class="nt">iframe</span><span class="o">,</span><span class="nt">h1</span><span class="o">,</span><span class="nt">h2</span><span class="o">,</span><span class="nt">h3</span><span class="o">,</span><span class="nt">h4</span><span class="o">,</span><span class="nt">h5</span><span class="o">,</span><span class="nt">h6</span><span class="o">,</span><span class="nt">p</span><span class="o">,</span><span class="nt">blockquote</span><span class="o">,</span><span class="nt">pre</span><span class="o">,</span><span class="nt">a</span><span class="o">,</span><span class="nt">abbr</span><span class="o">,</span><span class="nt">acronym</span><span class="o">,</span><span class="nt">address</span><span class="o">,</span><span class="nt">big</span><span class="o">,</span><span class="nt">cite</span><span class="o">,</span><span class="nt">code</span><span class="o">,</span><span class="nt">del</span><span class="o">,</span><span class="nt">dfn</span><span class="o">,</span><span class="nt">em</span><span class="o">,</span><span class="nt">font</span><span class="o">,</span><span class="nt">img</span><span class="o">,</span><span class="nt">ins</span><span class="o">,</span><span class="nt">kbd</span><span class="o">,</span><span class="nt">q</span><span class="o">,</span><span class="nt">s</span><span class="o">,</span><span class="nt">samp</span><span class="o">,</span><span class="nt">small</span><span class="o">,</span><span class="nt">strike</span><span class="o">,</span><span class="nt">strong</span><span class="o">,</span><span class="nt">sub</span><span class="o">,</span><span class="nt">sup</span><span class="o">,</span><span class="nt">tt</span><span class="o">,</span><span class="nt">var</span><span class="o">,</span><span class="nt">b</span><span class="o">,</span><span class="nt">u</span><span class="o">,</span><span class="nt">i</span><span class="o">,</span><span class="nt">center</span><span class="o">,</span><span class="nt">dl</span><span class="o">,</span><span class="nt">dt</span><span class="o">,</span><span class="nt">dd</span><span class="o">,</span><span class="nt">ol</span><span class="o">,</span><span class="nt">ul</span><span class="o">,</span><span class="nt">li</span><span class="o">,</span><span class="nt">fieldset</span><span class="o">,</span><span class="nt">form</span><span class="o">,</span><span class="nt">label</span><span class="o">,</span><span class="nt">legend</span><span class="o">,</span><span class="nt">table</span><span class="o">,</span><span class="nt">caption</span><span class="o">,</span><span class="nt">tbody</span><span class="o">,</span><span class="nt">tfoot</span><span class="o">,</span><span class="nt">thead</span><span class="o">,</span><span class="nt">tr</span><span class="o">,</span><span class="nt">th</span><span class="o">,</span><span class="nt">td</span><span class="p">{</span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span><span class="k">padding</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span><span class="k">border</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span><span class="k">outline</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span><span class="k">font-size</span><span class="p">:</span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="k">vertical-align</span><span class="p">:</span><span class="kc">baseline</span><span class="p">;</span><span class="k">background</span><span class="p">:</span><span class="kc">transparent</span><span class="p">}</span><span class="nt">body</span><span class="p">{</span><span class="k">line-height</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span><span class="nt">ol</span><span class="o">,</span><span class="nt">ul</span><span class="p">{</span><span class="k">list-style</span><span class="p">:</span><span class="kc">none</span><span class="p">}</span><span class="nt">blockquote</span><span class="o">,</span><span class="nt">q</span><span class="p">{</span><span class="k">quotes</span><span class="p">:</span><span class="kc">none</span><span class="p">}</span><span class="nt">blockquote</span><span class="p">:</span><span class="nd">before</span><span class="o">,</span><span class="nt">blockquote</span><span class="p">:</span><span class="nd">after</span><span class="o">,</span><span class="nt">q</span><span class="p">:</span><span class="nd">before</span><span class="o">,</span><span class="nt">q</span><span class="p">:</span><span class="nd">after</span><span class="p">{</span><span class="k">content</span><span class="p">:</span><span class="s1">&#39;&#39;</span><span class="p">;</span><span class="k">content</span><span class="p">:</span><span class="kc">none</span><span class="p">}:</span><span class="nd">focus</span><span class="p">{</span><span class="n">outine</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="nt">ins</span><span class="p">{</span><span class="k">text-decoration</span><span class="p">:</span><span class="kc">none</span><span class="p">}</span><span class="nt">del</span><span class="p">{</span><span class="k">text-decoration</span><span class="p">:</span><span class="kc">line-through</span><span class="p">}</span><span class="nt">table</span><span class="p">{</span><span class="k">border-collapse</span><span class="p">:</span><span class="kc">collapse</span><span class="p">;</span><span class="k">border-spacing</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+
+<span class="nt">html</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">min-height</span><span class="p">:</span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"> </span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">html</span><span class="w"> </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">height</span><span class="p">:</span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">font-family</span><span class="p">:</span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="n">Helvetica</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#000</span><span class="p">;</span><span class="w"> </span><span class="k">line-height</span><span class="p">:</span><span class="mi">140</span><span class="kt">%</span><span class="p">;</span><span class="w"> </span><span class="k">background</span><span class="p">:</span><span class="mh">#fff</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"> </span><span class="k">overflow-y</span><span class="p">:</span><span class="kc">scroll</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">html</span><span class="w"> </span><span class="nt">body</span><span class="w"> </span><span class="nt">td</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">vertical-align</span><span class="p">:</span><span class="kc">top</span><span class="p">;</span><span class="w"> </span><span class="k">text-align</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="nt">h1</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">25</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">font-family</span><span class="p">:</span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="n">Helvetica</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="mf">1.5</span><span class="kt">em</span><span class="p">;</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#d55000</span><span class="p">;</span><span class="w"> </span><span class="k">line-height</span><span class="p">:</span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"> </span><span class="k">font-weight</span><span class="p">:</span><span class="kc">normal</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">h2</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">font-family</span><span class="p">:</span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="n">Helvetica</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="mf">1.2</span><span class="kt">em</span><span class="p">;</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#000</span><span class="p">;</span><span class="w"> </span><span class="k">font-weight</span><span class="p">:</span><span class="kc">bold</span><span class="p">;</span><span class="w"> </span><span class="k">line-height</span><span class="p">:</span><span class="mi">140</span><span class="kt">%</span><span class="p">;</span><span class="w"> </span><span class="k">border-bottom</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#d6d4d4</span><span class="p">;</span><span class="w"> </span><span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">h3</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">font-family</span><span class="p">:</span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="n">Helvetica</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="mf">1.1</span><span class="kt">em</span><span class="p">;</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#000</span><span class="p">;</span><span class="w"> </span><span class="k">font-weight</span><span class="p">:</span><span class="kc">bold</span><span class="p">;</span><span class="w"> </span><span class="k">line-height</span><span class="p">:</span><span class="mi">140</span><span class="kt">%</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="nt">a</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#005fce</span><span class="p">;</span><span class="w"> </span><span class="k">text-decoration</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">a</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#005fce</span><span class="p">;</span><span class="w"> </span><span class="k">text-decoration</span><span class="p">:</span><span class="kc">underline</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">a</span><span class="p">:</span><span class="nd">visited</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#004aa0</span><span class="p">;</span><span class="w"> </span><span class="k">text-decoration</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">img</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">border</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">p</span><span class="w"> </span><span class="nt">img</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="w"> </span><span class="nt">img</span><span class="o">,</span><span class="w"> </span><span class="nt">tt</span><span class="w"> </span><span class="nt">img</span><span class="o">,</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="nt">img</span><span class="o">,</span><span class="w"> </span><span class="nt">h1</span><span class="w"> </span><span class="nt">img</span><span class="o">,</span><span class="w"> </span><span class="nt">h2</span><span class="w"> </span><span class="nt">img</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
+
+<span class="nt">ul</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="w"> </span><span class="mi">23</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">list-style</span><span class="p">:</span><span class="kc">square</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">ul</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">7</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">ul</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">5</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">7</span><span class="kt">px</span><span class="w"> </span><span class="mi">23</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">ul</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">list-style</span><span class="p">:</span><span class="kc">decimal</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">ol</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">list-style</span><span class="p">:</span><span class="kc">decimal</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">7</span><span class="kt">px</span><span class="w"> </span><span class="mi">23</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">list-style-type</span><span class="p">:</span><span class="kc">decimal</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">5</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">7</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">list-style-type</span><span class="p">:</span><span class="kc">lower-alpha</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding-top</span><span class="p">:</span><span class="mi">7</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">list-style</span><span class="p">:</span><span class="kc">square</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="p">.</span><span class="nc">content</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="mf">1.2</span><span class="kt">em</span><span class="p">;</span><span class="w"> </span><span class="k">line-height</span><span class="p">:</span><span class="mi">140</span><span class="kt">%</span><span class="p">;</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="nt">pre</span><span class="o">,</span><span class="w"> </span><span class="nt">code</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">tt</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="kt">em</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">pre</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">pre</span><span class="p">.</span><span class="nc">codeinput</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">border</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#d3d3d3</span><span class="p">;</span><span class="w"> </span><span class="k">background</span><span class="p">:</span><span class="mh">#f7f7f7</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">pre</span><span class="p">.</span><span class="nc">codeoutput</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">11</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#4c4c4c</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">pre</span><span class="p">.</span><span class="nc">error</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="kc">red</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">print</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">codeinput</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="p">.</span><span class="nc">codeoutput</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">word-wrap</span><span class="p">:</span><span class="kc">break-word</span><span class="p">;</span><span class="w"> </span><span class="k">width</span><span class="p">:</span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+
+<span class="nt">span</span><span class="p">.</span><span class="nc">keyword</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#0000FF</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">span</span><span class="p">.</span><span class="nc">comment</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#228B22</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">span</span><span class="p">.</span><span class="nc">string</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#A020F0</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">span</span><span class="p">.</span><span class="nc">untermstring</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#B20000</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">span</span><span class="p">.</span><span class="nc">syscmd</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#B28C00</span><span class="w"> </span><span class="p">}</span>
+
+<span class="p">.</span><span class="nc">footer</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">width</span><span class="p">:</span><span class="kc">auto</span><span class="p">;</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">25</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">border-top</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">dotted</span><span class="w"> </span><span class="mh">#878787</span><span class="p">;</span><span class="w"> </span><span class="k">font-size</span><span class="p">:</span><span class="mf">0.8</span><span class="kt">em</span><span class="p">;</span><span class="w"> </span><span class="k">line-height</span><span class="p">:</span><span class="mi">140</span><span class="kt">%</span><span class="p">;</span><span class="w"> </span><span class="k">font-style</span><span class="p">:</span><span class="kc">italic</span><span class="p">;</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#878787</span><span class="p">;</span><span class="w"> </span><span class="k">text-align</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span><span class="w"> </span><span class="k">float</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">.</span><span class="nc">footer</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">.</span><span class="nc">footer</span><span class="w"> </span><span class="nt">a</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#878787</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">.</span><span class="nc">footer</span><span class="w"> </span><span class="nt">a</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#878787</span><span class="p">;</span><span class="w"> </span><span class="k">text-decoration</span><span class="p">:</span><span class="kc">underline</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">.</span><span class="nc">footer</span><span class="w"> </span><span class="nt">a</span><span class="p">:</span><span class="nd">visited</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="mh">#878787</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="nt">table</span><span class="w"> </span><span class="nt">th</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">7</span><span class="kt">px</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">text-align</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span><span class="w"> </span><span class="k">vertical-align</span><span class="p">:</span><span class="kc">middle</span><span class="p">;</span><span class="w"> </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#d6d4d4</span><span class="p">;</span><span class="w"> </span><span class="k">font-weight</span><span class="p">:</span><span class="kc">bold</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">table</span><span class="w"> </span><span class="nt">td</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">padding</span><span class="p">:</span><span class="mi">7</span><span class="kt">px</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="k">text-align</span><span class="p">:</span><span class="kc">left</span><span class="p">;</span><span class="w"> </span><span class="k">vertical-align</span><span class="p">:</span><span class="kc">top</span><span class="p">;</span><span class="w"> </span><span class="k">border</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#d6d4d4</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+
+
+
+
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;&lt;/</span><span class="nt">head</span><span class="p">&gt;&lt;</span><span class="nt">body</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Contents<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#1&quot;</span><span class="p">&gt;</span>HW5<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#2&quot;</span><span class="p">&gt;</span>(a) Solve the equation <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;HW5_eq02639061353444216815.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;$x^5-2x-10=0$&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#3&quot;</span><span class="p">&gt;</span>(b) Solve the equation <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;HW5_eq08265960400530253032.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;$f=x^5-2x-10=0$&quot;</span><span class="p">&gt;</span> using  the Newton, Secant, and Bisection methods<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#4&quot;</span><span class="p">&gt;</span>(b.1) Newton method: <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;HW5_eq15363082837471703614.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;$x_{0}=b,\quad x_{k+1}=x_{k}-\frac{f\left(x_{k}\right)}{f^{&#39;}\left(x_{k}\right)}=\frac{4x_{k}^{5}+10}{5x_{k}^{4}-2}$&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#5&quot;</span><span class="p">&gt;</span>(b.2) Secant method: <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;HW5_eq07322813218411459646.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;$x_{0}=b,\quad x_{k+1}=x_{k}-f\left(x_{k}\right)\frac{x_{k}-x_{k-1}}{f\left(x_{k}\right)-f\left(x_{k-1}\right)}=x_{k}-\left(x_{k}^{5}-2x_{k}-10\right)\frac{x_{k}-x_{k-1}}{x_{k}^{5}-x_{k-1}^{5}-2x_{k}+2x_{k-1}}$&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#6&quot;</span><span class="p">&gt;</span>(b.3) Bisection method: <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;HW5_eq09594336631528534196.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;$f\left(a\right)\cdot f\left(b\right)&lt;0 ,$&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;HW5_eq17332066737391003847.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;$c=\frac{a+b}{2}$&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#7&quot;</span><span class="p">&gt;</span>(b.4) - tests, verify that the code implments the algorithm correctly<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#12&quot;</span><span class="p">&gt;</span>(c) The convergence rate of the iterations for solving the equation<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>HW5<span class="p">&lt;</span><span class="nt">a</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeinput&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;comment&quot;</span><span class="p">&gt;</span>% print data nicely<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+format <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>long<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>;
+format <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>compact<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>;
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>(a) Solve the equation <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;HW5_eq02639061353444216815.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;$x^5-2x-10=0$&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>The real root in [1,3] is 1.6794<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeinput&quot;</span><span class="p">&gt;</span>p = [1 0 0 0 -2 -10];
+r = roots(p)
+root = r(imag(r)==0)
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeoutput&quot;</span><span class="p">&gt;</span>r =
+  1.679397315646853 + 0.000000000000000i
+  0.413747370254642 + 1.569735547129343i
+  0.413747370254642 - 1.569735547129343i
+ -1.253446028078067 + 0.829717913315591i
+ -1.253446028078067 - 0.829717913315591i
+root =
+   1.679397315646853
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>(b) Solve the equation <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;HW5_eq08265960400530253032.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;$f=x^5-2x-10=0$&quot;</span><span class="p">&gt;</span> using  the Newton, Secant, and Bisection methods<span class="p">&lt;</span><span class="nt">a</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;3&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeinput&quot;</span><span class="p">&gt;</span>a=1;
+b=3;
+iterations_num=20;
+tol=10^(-14);
+syms <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>f(x)<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>;
+f(x) = x^5-2*x-10;
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>(b.1) Newton method: <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;HW5_eq15363082837471703614.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;$x_{0}=b,\quad x_{k+1}=x_{k}-\frac{f\left(x_{k}\right)}{f^{&#39;}\left(x_{k}\right)}=\frac{4x_{k}^{5}+10}{5x_{k}^{4}-2}$&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;4&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeinput&quot;</span><span class="p">&gt;</span>[root,i,x,error]=newton(f,a,b,tol,iterations_num)
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeoutput&quot;</span><span class="p">&gt;</span>Netown method converge to the root: 1.6794 after 7 steps
+root =
+   1.679397315646853
+i =
+     8
+x =
+  Columns 1 through 3
+   3.000000000000000   2.436724565756824   2.029130597460316
+  Columns 4 through 6
+   1.783357809503184   1.691302619891177   1.679572300132953
+  Columns 7 through 8
+   1.679397354033717   1.679397315646852
+error =
+  Columns 1 through 3
+                   0   0.757327250109971   0.349733281813463
+  Columns 4 through 6
+   0.103960493856330   0.011905304244324   0.000174984486100
+  Columns 7 through 8
+   0.000000038386864   0.000000000000002
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>(b.2) Secant method: <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;HW5_eq07322813218411459646.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;$x_{0}=b,\quad x_{k+1}=x_{k}-f\left(x_{k}\right)\frac{x_{k}-x_{k-1}}{f\left(x_{k}\right)-f\left(x_{k-1}\right)}=x_{k}-\left(x_{k}^{5}-2x_{k}-10\right)\frac{x_{k}-x_{k-1}}{x_{k}^{5}-x_{k-1}^{5}-2x_{k}+2x_{k-1}}$&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;5&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeinput&quot;</span><span class="p">&gt;</span>[root,i,x,error]=secant(f,a,b,a,b, tol,iterations_num)
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeoutput&quot;</span><span class="p">&gt;</span>Secant method converge to the root: 1.6794 after 13 steps
+root =
+   1.679397315646853
+i =
+    15
+x =
+  Columns 1 through 3
+   1.000000000000000   3.000000000000000   1.092436974789916
+  Columns 4 through 6
+   1.177760896270846   2.773181928222976   1.279278969516385
+  Columns 7 through 9
+   1.365842105641307   1.964333811829041   1.570808013086686
+  Columns 10 through 12
+   1.645325437411965   1.684509147901910   1.679174724219964
+  Columns 13 through 15
+   1.679395893414492   1.679397316043883   1.679397315646849
+error =
+  Columns 1 through 3
+                   0                   0   0.586960340856937
+  Columns 4 through 6
+   0.501636419376008   1.093784612576123   0.400118346130468
+  Columns 7 through 9
+   0.313555210005547   0.284936496182187   0.108589302560167
+  Columns 10 through 12
+   0.034071878234889   0.005111832255056   0.000222591426889
+  Columns 13 through 15
+   0.000001422232361   0.000000000397030   0.000000000000004
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>(b.3) Bisection method: <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;HW5_eq09594336631528534196.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;$f\left(a\right)\cdot f\left(b\right)&lt;0 ,$&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;HW5_eq17332066737391003847.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;$c=\frac{a+b}{2}$&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;6&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeinput&quot;</span><span class="p">&gt;</span>[root,i,x,error]=bisection(f,a,b, tol,iterations_num)
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeoutput&quot;</span><span class="p">&gt;</span>Bisection method did not converge to the root: 1.6794 after 20 steps
+root =
+   1.679397315646853
+i =
+    20
+x =
+  Columns 1 through 3
+   2.000000000000000   1.500000000000000   1.750000000000000
+  Columns 4 through 6
+   1.625000000000000   1.687500000000000   1.656250000000000
+  Columns 7 through 9
+   1.671875000000000   1.679687500000000   1.675781250000000
+  Columns 10 through 12
+   1.677734375000000   1.678710937500000   1.679199218750000
+  Columns 13 through 15
+   1.679443359375000   1.679321289062500   1.679382324218750
+  Columns 16 through 18
+   1.679412841796875   1.679397583007813   1.679389953613281
+  Columns 19 through 20
+   1.679393768310547   1.679395675659180
+error =
+  Columns 1 through 3
+   0.320602684353147   0.179397315646853   0.070602684353147
+  Columns 4 through 6
+   0.054397315646853   0.008102684353147   0.023147315646853
+  Columns 7 through 9
+   0.007522315646853   0.000290184353147   0.003616065646853
+  Columns 10 through 12
+   0.001662940646853   0.000686378146853   0.000198096896853
+  Columns 13 through 15
+   0.000046043728147   0.000076026584353   0.000014991428103
+  Columns 16 through 18
+   0.000015526150022   0.000000267360959   0.000007362033572
+  Columns 19 through 20
+   0.000003547336306   0.000001639987674
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>(b.4) - tests, verify that the code implments the algorithm correctly<span class="p">&lt;</span><span class="nt">a</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;7&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>test 1 - check converge to root 1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeinput&quot;</span><span class="p">&gt;</span>a=0;
+b=1.1;
+iterations_num=100;
+tol=10^(-14);
+syms <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>f(x)<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>;
+f(x) = (x-1)*(x-2)*(x-3)*(x-4)*(x-5);
+newton(f,a,b,tol,iterations_num);
+secant(f,a,b,a,b, tol,iterations_num);
+bisection(f,a,b, tol,iterations_num);
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeoutput&quot;</span><span class="p">&gt;</span>Netown method converge to the root: 1 after 6 steps
+Secant method converge to the root: 1 after 8 steps
+Bisection method did not converge to the root: 1 after 100 steps
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>test 2- the bisection did not converge because of the problem of subtracting close number. so - let&#39;s take a more tolerace tolerace. (we take 10^(-6) which is the standart matlab tolerance, (as in &#39;fsolve&#39;)<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeinput&quot;</span><span class="p">&gt;</span>tol = 10^(-6);
+iterations_num=20;
+newton(f,a,b,tol,iterations_num);
+secant(f,a,b,a,b, tol,iterations_num);
+bisection(f,a,b, tol,iterations_num);
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeoutput&quot;</span><span class="p">&gt;</span>Netown method converge to the root: 1 after 4 steps
+Secant method converge to the root: 1 after 6 steps
+Bisection method converge to the root: 1 after 19 steps
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>test 3 - check what happens if (a,b) includes more than one root.          we should expect inconclusive results<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeinput&quot;</span><span class="p">&gt;</span>a = 1.7;
+b = 3.2;
+newton(f,a,b,tol,iterations_num);
+secant(f,a,b,a,b, tol,iterations_num);
+bisection(f,a,b, tol,iterations_num);
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeoutput&quot;</span><span class="p">&gt;</span>Netown method converge to the root: 3 after 3 steps
+Secant method converge to the root: 4 after 9 steps
+Bisection method failes: f(a)*f(b) <span class="ni">&amp;gt;</span> 0. please choose other values.
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>test 4 - check what happens if (a,b) is really close to root<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeinput&quot;</span><span class="p">&gt;</span>a = 2.9;
+b = 3.1;
+tol = 10^(-14);
+newton(f,a,b,tol,iterations_num);
+secant(f,a,b,a,b, tol,iterations_num);
+bisection(f,a,b, tol,iterations_num);
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeoutput&quot;</span><span class="p">&gt;</span>Netown method converge to the root: 3 after 4 steps
+Secant method converge to the root: 3 after 2 steps
+Bisection method did not converge to the root: 3 after 20 steps
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>test 5 - check a function that around 0, very different than          it&#39;s behavior elsewhere. newton and secant would           divide by zero (the slop of the direvative of tanh at 0).<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeinput&quot;</span><span class="p">&gt;</span>a = -1;
+b = 1;
+tol = 10^(-14);
+f(x) = tanh(5*x);
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;keyword&quot;</span><span class="p">&gt;</span>try<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    newton(f,a,b,tol,iterations_num);
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;keyword&quot;</span><span class="p">&gt;</span>catch<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> ME
+    warning(getReport(ME));
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;keyword&quot;</span><span class="p">&gt;</span>end<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;keyword&quot;</span><span class="p">&gt;</span>try<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    secant(f,a,b,a,b, tol,iterations_num);
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;keyword&quot;</span><span class="p">&gt;</span>catch<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> ME
+    warning(getReport(ME));
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;keyword&quot;</span><span class="p">&gt;</span>end<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+
+bisection(f,a,b, tol,iterations_num);
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeoutput&quot;</span><span class="p">&gt;</span>Warning: The following error occurred converting from sym to double:
+Error using symengine (line 59)
+Division by zero.
+Error in newton (line 34)
+        x(i) = x(i-1) - (f(x(i-1)))/(df(x(i-1)));
+Error in HW5 (line 84)
+    newton(f,a,b,tol,iterations_num);
+Error in evalmxdom<span class="ni">&amp;gt;</span>instrumentAndRun (line 97)
+text = evalc(evalstr);
+Error in evalmxdom (line 21)
+[data,text,laste] =
+instrumentAndRun(file,cellBoundaries,imageDir,imagePrefix,options);
+Error in publish (line 164)
+    dom = evalmxdom(file,dom,cellBoundaries,prefix,imageDir,outputDir,options);
+Error in mdbpublish (line 55)
+outputPath = publish(file, options); 
+Secant method converge to the root: 0 after 1 steps
+Bisection method converge to the root: 0 after 1 steps
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>(c) The convergence rate of the iterations for solving the equation<span class="p">&lt;</span><span class="nt">a</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;12&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>         $f=x^5-2x-10=0$ using  the Newton, Secant, and Bisection
+         methods.<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeinput&quot;</span><span class="p">&gt;</span>a=1;
+b=3;
+iterations_num=20;
+tol=10^(-14);
+syms <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>f(x)<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>;
+f(x) = x^5-2*x-10;
+
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;comment&quot;</span><span class="p">&gt;</span>% calculate the roots using all methods<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+[root,i,x,error]=newton(f,a,b,tol,iterations_num);
+error1 = error(2:end);
+[root,i,x,error]=secant(f,a,b,a,b, tol,iterations_num);
+error2 = error(3:end);
+[root,i,x,error]=bisection(f,a,b, tol,iterations_num);
+error3 = error;
+
+Errors = {error1, error2, error3};
+Titles = {<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;Newton&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>, <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;Secant&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>, <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;Bisection&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>};
+
+figure(<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;position&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>, [0, 0, 1000, 800]);
+
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;keyword&quot;</span><span class="p">&gt;</span>for<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> i=1:3
+
+    error = Errors{i};
+    x_n = log(error(1:end-1));
+    y_n = log(error(2:end));
+    x1 = linspace(min(x_n),max(x_n));
+
+    subplot(2,2,i);
+
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;comment&quot;</span><span class="p">&gt;</span>% calculate fit - only for error ranges<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    disp([<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;Linear fit of the error convergence of the &#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>, Titles{i}, <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39; method&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>]);
+    f = fit(x_n&#39;,y_n&#39;,<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;poly1&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>)
+
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;comment&quot;</span><span class="p">&gt;</span>% we can use &#39;fit&#39;, but we&#39;ll use &#39;polyfit&#39; and &#39;polyval&#39; as requested<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    p = polyfit(x_n,y_n,1);
+    f1 = polyval(p,x1);
+    plot(x_n,y_n,<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;o&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>,x1,f1,<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;-&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>);
+
+    title(sprintf(<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;Error convergence of %s method&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>, Titles{i}));
+    ylabel(<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;$$\log E_{n+1}$$&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>, <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;Interpreter&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>, <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;Latex&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>);
+    xlabel(<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;$$\log E_{n}$$&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>  ,<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;Interpreter&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>, <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;Latex&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>);
+    axis <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>tight<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>;
+    legend(<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;data&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>,sprintf(<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;fit: y=%f*x+%f&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>,p(1),p(2)));
+    legend(<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;Location&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>,<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;string&quot;</span><span class="p">&gt;</span>&#39;northwest&#39;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>);
+
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;keyword&quot;</span><span class="p">&gt;</span>end<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;codeoutput&quot;</span><span class="p">&gt;</span>Netown method converge to the root: 1.6794 after 7 steps
+Secant method converge to the root: 1.6794 after 13 steps
+Bisection method did not converge to the root: 1.6794 after 20 steps
+Linear fit of the error convergence of the Newton method
+f = 
+     Linear model Poly1:
+     f(x) = p1*x + p2
+     Coefficients (with 95% confidence bounds):
+       p1 =        1.98  (1.927, 2.033)
+       p2 =     -0.1258  (-0.5541, 0.3025)
+Linear fit of the error convergence of the Secant method
+f = 
+     Linear model Poly1:
+     f(x) = p1*x + p2
+     Coefficients (with 95% confidence bounds):
+       p1 =       1.558  (1.495, 1.622)
+       p2 =     0.01968  (-0.4874, 0.5267)
+Linear fit of the error convergence of the Bisection method
+f = 
+     Linear model Poly1:
+     f(x) = p1*x + p2
+     Coefficients (with 95% confidence bounds):
+       p1 =      0.8917  (0.6802, 1.103)
+       p2 =      -1.434  (-3.188, 0.3199)
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">vspace</span><span class="o">=</span><span class="s">&quot;5&quot;</span> <span class="na">hspace</span><span class="o">=</span><span class="s">&quot;5&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;HW5_01.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;footer&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://www.mathworks.com/products/matlab/&quot;</span><span class="p">&gt;</span>Published with MATLAB<span class="ni">&amp;reg;</span> R2015a<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span><span class="cm">&lt;!--</span>
+<span class="cm">##### SOURCE BEGIN #####</span>
+<span class="cm">%% HW5</span>
+
+<span class="cm">% print data nicely</span>
+<span class="cm">format long;</span>
+<span class="cm">format compact;</span>
+
+<span class="cm">%% (a) Solve the equation $x^5-2x-10=0$</span>
+<span class="cm">%  The real root in [1,3] is 1.6794</span>
+<span class="cm">p = [1 0 0 0 -2 -10];</span>
+<span class="cm">r = roots(p)</span>
+<span class="cm">root = r(imag(r)==0)</span>
+
+<span class="cm">%% (b) Solve the equation $f=x^5-2x-10=0$ using  the Newton, Secant, and Bisection methods</span>
+<span class="cm">a=1;</span>
+<span class="cm">b=3;</span>
+<span class="cm">iterations_num=20;</span>
+<span class="cm">tol=10^(-14);</span>
+<span class="cm">syms f(x);</span>
+<span class="cm">f(x) = x^5-2*x-10;</span>
+
+<span class="cm">%% (b.1) Newton method: $x_{0}=b,\quad x_{k+1}=x_{k}-\frac{f\left(x_{k}\right)}{f^{&#39;}\left(x_{k}\right)}=\frac{4x_{k}^{5}+10}{5x_{k}^{4}-2}$</span>
+<span class="cm">[root,i,x,error]=newton(f,a,b,tol,iterations_num)</span>
+
+<span class="cm">%% (b.2) Secant method: $x_{0}=b,\quad x_{k+1}=x_{k}-f\left(x_{k}\right)\frac{x_{k}-x_{k-1}}{f\left(x_{k}\right)-f\left(x_{k-1}\right)}=x_{k}-\left(x_{k}^{5}-2x_{k}-10\right)\frac{x_{k}-x_{k-1}}{x_{k}^{5}-x_{k-1}^{5}-2x_{k}+2x_{k-1}}$</span>
+<span class="cm">[root,i,x,error]=secant(f,a,b,a,b, tol,iterations_num)</span>
+
+
+<span class="cm">%% (b.3) Bisection method: $f\left(a\right)\cdot f\left(b\right)&lt;0 ,$ $c=\frac{a+b}{2}$</span>
+<span class="cm">[root,i,x,error]=bisection(f,a,b, tol,iterations_num)</span>
+
+<span class="cm">%% (b.4) - tests, verify that the code implments the algorithm correctly</span>
+<span class="cm">% test 1 - check converge to root 1</span>
+<span class="cm">a=0;</span>
+<span class="cm">b=1.1;</span>
+<span class="cm">iterations_num=100;</span>
+<span class="cm">tol=10^(-14);</span>
+<span class="cm">syms f(x);</span>
+<span class="cm">f(x) = (x-1)*(x-2)*(x-3)*(x-4)*(x-5);</span>
+<span class="cm">newton(f,a,b,tol,iterations_num);</span>
+<span class="cm">secant(f,a,b,a,b, tol,iterations_num);</span>
+<span class="cm">bisection(f,a,b, tol,iterations_num);</span>
+
+<span class="cm">%%</span>
+<span class="cm">% test 2- the bisection did not converge because of the problem of subtracting</span>
+<span class="cm">% close number. so - let&#39;s take a more tolerace tolerace. </span>
+<span class="cm">% (we take 10^(-6) which is the standart matlab tolerance, (as in &#39;fsolve&#39;)</span>
+
+<span class="cm">tol = 10^(-6);</span>
+<span class="cm">iterations_num=20;</span>
+<span class="cm">newton(f,a,b,tol,iterations_num);</span>
+<span class="cm">secant(f,a,b,a,b, tol,iterations_num);</span>
+<span class="cm">bisection(f,a,b, tol,iterations_num);</span>
+
+
+<span class="cm">%%</span>
+<span class="cm">% test 3 - check what happens if (a,b) includes more than one root.</span>
+<span class="cm">%          we should expect inconclusive results</span>
+<span class="cm">a = 1.7;</span>
+<span class="cm">b = 3.2;</span>
+<span class="cm">newton(f,a,b,tol,iterations_num);</span>
+<span class="cm">secant(f,a,b,a,b, tol,iterations_num);</span>
+<span class="cm">bisection(f,a,b, tol,iterations_num);</span>
+
+
+<span class="cm">%%</span>
+<span class="cm">% test 4 - check what happens if (a,b) is really close to root</span>
+<span class="cm">a = 2.9;</span>
+<span class="cm">b = 3.1;</span>
+<span class="cm">tol = 10^(-14); </span>
+<span class="cm">newton(f,a,b,tol,iterations_num);</span>
+<span class="cm">secant(f,a,b,a,b, tol,iterations_num);</span>
+<span class="cm">bisection(f,a,b, tol,iterations_num);</span>
+
+
+<span class="cm">%%</span>
+<span class="cm">% test 5 - check a function that around 0, very different than</span>
+<span class="cm">%          it&#39;s behavior elsewhere. newton and secant would</span>
+<span class="cm">%           divide by zero (the slop of the direvative of tanh at 0).</span>
+<span class="cm">a = -1;</span>
+<span class="cm">b = 1;</span>
+<span class="cm">tol = 10^(-14); </span>
+<span class="cm">f(x) = tanh(5*x);</span>
+<span class="cm">try</span>
+<span class="cm">    newton(f,a,b,tol,iterations_num);</span>
+<span class="cm">catch ME</span>
+<span class="cm">    warning(getReport(ME));</span>
+<span class="cm">end</span>
+<span class="cm">try</span>
+<span class="cm">    secant(f,a,b,a,b, tol,iterations_num);</span>
+<span class="cm">catch ME</span>
+<span class="cm">    warning(getReport(ME));</span>
+<span class="cm">end</span>
+
+<span class="cm">bisection(f,a,b, tol,iterations_num);</span>
+
+
+<span class="cm">%% (c) The convergence rate of the iterations for solving the equation</span>
+<span class="cm">%           $f=x^5-2x-10=0$ using  the Newton, Secant, and Bisection</span>
+<span class="cm">%           methods.</span>
+<span class="cm">a=1;</span>
+<span class="cm">b=3;</span>
+<span class="cm">iterations_num=20;</span>
+<span class="cm">tol=10^(-14);</span>
+<span class="cm">syms f(x);</span>
+<span class="cm">f(x) = x^5-2*x-10;</span>
+
+<span class="cm">% calculate the roots using all methods</span>
+<span class="cm">[root,i,x,error]=newton(f,a,b,tol,iterations_num);</span>
+<span class="cm">error1 = error(2:end);</span>
+<span class="cm">[root,i,x,error]=secant(f,a,b,a,b, tol,iterations_num);</span>
+<span class="cm">error2 = error(3:end);</span>
+<span class="cm">[root,i,x,error]=bisection(f,a,b, tol,iterations_num);</span>
+<span class="cm">error3 = error;</span>
+
+<span class="cm">Errors = {error1, error2, error3};</span>
+<span class="cm">Titles = {&#39;Newton&#39;, &#39;Secant&#39;, &#39;Bisection&#39;};</span>
+
+<span class="cm">figure(&#39;position&#39;, [0, 0, 1000, 800]);</span>
+
+<span class="cm">for i=1:3</span>
+<span class="cm">    </span>
+<span class="cm">    error = Errors{i};</span>
+<span class="cm">    x_n = log(error(1:end-1));</span>
+<span class="cm">    y_n = log(error(2:end));</span>
+<span class="cm">    x1 = linspace(min(x_n),max(x_n));</span>
+
+<span class="cm">    subplot(2,2,i);</span>
+<span class="cm">    </span>
+<span class="cm">    % calculate fit - only for error ranges</span>
+<span class="cm">    disp([&#39;Linear fit of the error convergence of the &#39;, Titles{i}, &#39; method&#39;]);</span>
+<span class="cm">    f = fit(x_n&#39;,y_n&#39;,&#39;poly1&#39;)</span>
+<span class="cm">    </span>
+<span class="cm">    % we can use &#39;fit&#39;, but we&#39;ll use &#39;polyfit&#39; and &#39;polyval&#39; as requested</span>
+<span class="cm">    p = polyfit(x_n,y_n,1);</span>
+<span class="cm">    f1 = polyval(p,x1);</span>
+<span class="cm">    plot(x_n,y_n,&#39;o&#39;,x1,f1,&#39;-&#39;);</span>
+
+<span class="cm">    title(sprintf(&#39;Error convergence of %s method&#39;, Titles{i}));</span>
+<span class="cm">    ylabel(&#39;$$\log E_{n+1}$$&#39;, &#39;Interpreter&#39;, &#39;Latex&#39;);</span>
+<span class="cm">    xlabel(&#39;$$\log E_{n}$$&#39;  ,&#39;Interpreter&#39;, &#39;Latex&#39;);</span>
+<span class="cm">    axis tight;</span>
+<span class="cm">    legend(&#39;data&#39;,sprintf(&#39;fit: y=%f*x+%f&#39;,p(1),p(2)));</span>
+<span class="cm">    legend(&#39;Location&#39;,&#39;northwest&#39;);</span>
+
+<span class="cm">end</span>
+
+<span class="cm">##### SOURCE END #####</span>
+<span class="cm">--&gt;</span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div></td></tr></table></div>
+
+</div>
+
+
+
+<div id="output-panel" class="output-panel client-runnable" style="display: none;">
+    <h3>Output</h3>
+    <div id="output-status" class="output-status"></div>
+    <pre id="output-stdout" class="output-stdout"></pre>
+    <pre id="output-stderr" class="output-stderr"></pre>
+</div>
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+
+<script>
+var _viewerFilename = "HW5.html";
+var _viewerProject = "2017-12-18_numerical-analysis-hw5";
+var _viewerExt = _viewerFilename.substring(_viewerFilename.lastIndexOf('.')).toLowerCase();
+var _isClientRunnable = ['.js', '.html', '.htm'].indexOf(_viewerExt) !== -1;
+
+function runCode() {
+    var btn = document.getElementById('run-btn');
+    var panel = document.getElementById('output-panel');
+    var status = document.getElementById('output-status');
+    var stdout = document.getElementById('output-stdout');
+    var stderr = document.getElementById('output-stderr');
+
+    btn.disabled = true;
+    btn.textContent = 'Running...';
+    panel.style.display = 'block';
+    status.textContent = 'Executing...';
+    status.className = 'output-status running';
+    stdout.textContent = '';
+    stderr.textContent = '';
+    stderr.style.display = 'none';
+
+    if (_viewerExt === '.js') {
+        // Client-side JS execution in sandboxed iframe
+        var codeEl = document.querySelector('.code-container .highlight pre');
+        var code = codeEl ? codeEl.textContent : '';
+        var logs = [];
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('sandbox', 'allow-scripts');
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+
+        function onMsg(e) {
+            if (e.source !== iframe.contentWindow) return;
+            if (e.data === '__DONE__') {
+                clearTimeout(timeout);
+                window.removeEventListener('message', onMsg);
+                document.body.removeChild(iframe);
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                status.textContent = 'Success';
+                status.className = 'output-status success';
+                stdout.textContent = logs.join('\n') || '(no output)';
+                return;
+            }
+            logs.push(e.data);
+        }
+        window.addEventListener('message', onMsg);
+
+        var wrappedCode = '(' + function() {
+            var _log = [];
+            console.log = function() {
+                var args = Array.prototype.slice.call(arguments);
+                var line = args.map(function(a) {
+                    return typeof a === 'object' ? JSON.stringify(a) : String(a);
+                }).join(' ');
+                _log.push(line);
+                parent.postMessage(line, '*');
+            };
+            console.error = console.warn = console.info = console.log;
+            try {
+                /* __CODE__ */
+            } catch(e) {
+                parent.postMessage('Error: ' + e.message, '*');
+            }
+            parent.postMessage('__DONE__', '*');
+        }.toString().replace('/* __CODE__ */', code) + ')()';
+
+        iframe.srcdoc = '<html><body class="static-mode"><script>' + wrappedCode + '<\/script></body></html>';
+
+        var timeout = setTimeout(function() {
+            window.removeEventListener('message', onMsg);
+            if (iframe.parentNode) document.body.removeChild(iframe);
+            btn.disabled = false;
+            btn.textContent = '\u25B6 Run Code';
+            status.textContent = 'Timed out (5s)';
+            status.className = 'output-status error';
+            stdout.textContent = logs.join('\n') + '\n(timed out after 5s)';
+        }, 5000);
+
+    } else if (_viewerExt === '.html' || _viewerExt === '.htm') {
+        // Client-side HTML rendering in iframe
+        status.textContent = '';
+        status.className = 'output-status success';
+        stdout.textContent = '';
+        var iframe = document.createElement('iframe');
+        iframe.className = 'run-iframe';
+        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+        iframe.src = '/raw/' + encodeURIComponent(_viewerProject) + '/' + encodeURIComponent(_viewerFilename);
+        stdout.style.display = 'none';
+        panel.appendChild(iframe);
+        btn.disabled = false;
+        btn.textContent = '\u25B6 Run Code';
+
+    } else {
+        // Server-side execution (Python, C, C++)
+        fetch('/run/' + encodeURIComponent(_viewerProject) + '/' + encodeURIComponent(_viewerFilename), { method: 'POST' })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                if (data.success) {
+                    status.textContent = 'Success (exit code: 0)';
+                    status.className = 'output-status success';
+                } else {
+                    status.textContent = 'Failed (exit code: ' + data.return_code + ')';
+                    status.className = 'output-status error';
+                }
+                stdout.textContent = data.stdout || '(no output)';
+                if (data.stderr) {
+                    stderr.textContent = data.stderr;
+                    stderr.style.display = 'block';
+                }
+            })
+            .catch(function(err) {
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                status.textContent = 'Error: ' + err.message;
+                status.className = 'output-status error';
+            });
+    }
+}
+</script>
+
+
+</body>
+</html>

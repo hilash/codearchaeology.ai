@@ -1,0 +1,172 @@
+-diary bitmap list not working too much memory
+-profile - unique user id
+-fix sync, add big sync
+-about - send mail
+-add location overlay to the regular overlay
+-help - contact - send mail
+-up/back button in all activities
+-show diary items on map
+-when you add diary item get last known location if enabled
+-overlays viewer and editor - update db and like dislike -
+	// zero counter on recieve (or on server side),
+		// and when added to server - add the counter manage counter on server side
+-add settings and help
+-localization
+
+
+-----------------------------------------------------------------------------------------------
+
+
+
+M2_REPO/org/mapsforge/mapsforge-map/0.3.1-SNAPSHOT/mapsforge-map-0.3.1-SNAPSHOT-jar-with-dependencies.jar
+
+זה הרפרס לגרסא המתקדמת ב
+refernce libraries
+
+////////////
+settings
+- share my location
+- get and send updates
+- languagh
+
+Open (Start) screen:
+register your user name, or register via facebook, or get a random name
+
+Maps:
+a map of the shvil, including a search bar above to search for locations/places on the shvil.
+display your location.
+it will include other users locations.
+when click on a user:
+	open a pop up message, and able to send him a message.
+	also, have a list of people you've chat with, and save the history of the messeges.
+	a user can choose to ignore recieving messeges.
+able to zoom in/out.
+when click on a place:
+	show info about special spots on the shvil.
+	users can leave public notes about a place, or public.
+option: to turn on/off gps.
+use sliding drawer for options?
+button for report on the map
+
+
+Diary Notes:
+display a map of the trip, with points to display each note.
+an alternative display of list.
+Notes can be private or public - you can add notes about a place.
+also, update recording (voice & video)
+
+when 3g is on, update from time to time.
+
+also, have a hall of fame - people whom finished the track
+במפה - שיהיה אפשר לסמן איפה הטמנת דברים
+שכל דבר שמסמנים במפה יהיה פומבי\אישי
+
+מלאכי השביל
+------------
+programming:
+it's important to be able to use the application without online connection.
+so, start with offline data, and update if can (or via 'Update' button)
+use google maps API, ItemizedOverlay.
+check if we must use google maps, since it's just one piece of land.
+
+מקומות זולים לישון
+
+
+--------
+איפה יש חשמל חינם? בoverlays
+--------
+
+מלאכים - 
+חותמת
+מרחק מהשביל
+שם
+ישוב
+ג'יפיאס
+פלאפון
+שומר מצוות
+פירוט
+
+לכל מלאך יהיה דף תגובות
+
+* לשים פופ אפ בשבתות וחגים
+כדי שלא יתקשרו למלאכים דתיים
+
+
+* דרכון שביל
+
+functions:
+turnOnGPS()
+turnOffGPS()
+
+
+
+ב-notes:
+שמים 
+תמונות,
+סאונד
+לכתוב
+catch - Avner app
+
+
+data from server:
+-getPath()
+-getLocationsOnPath(current path section)
+-retieveUsersOnPath(current path section)
+
+data to server:
+-updateUserLocation(location, UID)
+
+
+
+--------
+screens:
+options, map, notes, start
+
+
+!!!!!!!!!!!1
+יש בעיה של עדכון הפתקים ממצב עריכה.
+
+
+
+
+
+
+
+
+
+לצבוע את המלאכים שהכי קרובים למיקום הידוע האחרון ברשימת המלאכים
+
+
+
+
+httpapachiclient
+
+להוסיף בשרת
+עמודת הודעות
+Tomcat + servlets
+
+json
+
+
+uniqe user id:
+private key and public key
+
+userID - 
+
+כשהאפליקציה יורדת מבקשים 
+give me uniqe user ID
+
+אוטנטיקציה
+לעשות שIP יוכל ליצור משתמש פעם ב-5 דקות
+
+deviceID
+
+אובונטו server
+DMZ
+
+
+
+לבדוק מה המצב של הרשת צריך הרשאה
+android.permission.ACCESS_NETWORK_STATE
+check why the GPS enable/disable popup not showing
+update the locale preference according to the given locale of the android device

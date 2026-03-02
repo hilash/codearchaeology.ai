@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item android:id="@+id/menu_overlay_angels"
+          android:icon="@android:drawable/ic_menu_myplaces"
+          android:checkable="true"
+          android:checked="true"
+          android:title="@string/menu_overlay_title_angels"/>
+    
+    <item android:id="@+id/menu_overlay_travelers"
+          android:icon="@android:drawable/ic_menu_myplaces"
+          android:checkable="true"
+          android:checked="true"
+          android:title="@string/menu_overlay_title_travelers" />
+    
+    <item android:id="@+id/menu_overlay_water"
+          android:icon="@android:drawable/ic_menu_myplaces"
+          android:checkable="true"
+          android:checked="true"
+          android:title="@string/menu_overlay_title_water" />
+    
+    <item android:id="@+id/menu_overlay_info"
+          android:icon="@android:drawable/ic_menu_myplaces"
+          android:checkable="true"
+          android:checked="true"
+          android:title="@string/menu_overlay_title_info" />
+    
+    <item android:id="@+id/menu_overlay_personal"
+          android:icon="@android:drawable/ic_menu_myplaces"
+          android:checkable="true"
+          android:checked="true"
+          android:title="@string/menu_overlay_title_personal" />
+
+</menu>

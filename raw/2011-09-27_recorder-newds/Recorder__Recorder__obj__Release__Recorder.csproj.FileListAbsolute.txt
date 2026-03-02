@@ -1,0 +1,96 @@
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Release\Recorder.Form1.resources
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Release\Recorder.Properties.Resources.resources
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Release\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\bin\Release\Recorder.exe
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\bin\Release\Recorder.pdb
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Release\Recorder.exe
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Release\Recorder.pdb
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\bin\Release\Recorder.exe
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\bin\Release\Recorder.pdb
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Release\Recorder.Form1.resources
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Release\Recorder.Properties.Resources.resources
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Release\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Release\Recorder.exe
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Release\Recorder.pdb
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\bin\Release\Recorder.exe
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\bin\Release\Recorder.pdb
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Release\Recorder.Form1.resources
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Release\Recorder.Properties.Resources.resources
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Release\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Release\Recorder.exe
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Release\Recorder.pdb
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Release\Recorder.exe
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Release\Recorder.pdb
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\bin\Release\Recorder.exe
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\bin\Release\Recorder.pdb
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Release\Recorder.Form1.resources
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Release\Recorder.Properties.Resources.resources
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Release\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.exe
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.pdb
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.Form1.resources
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.Properties.Resources.resources
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\bin\Release\Recorder.exe
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\bin\Release\Recorder.pdb
+C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.exe
+C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.pdb
+C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\bin\Release\Recorder.exe
+C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\bin\Release\Recorder.pdb
+C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.Form1.resources
+C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.Properties.Resources.resources
+C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\GenerateResource-ResGen.read.1.tlog
+C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\GenerateResource-ResGen.write.1.tlog
+C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\bin\Release\Interop.AcroPDFLib.dll
+C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\bin\Release\AxInterop.AcroPDFLib.dll
+C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Interop.AcroPDFLib.dll
+C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\AxInterop.AcroPDFLib.dll
+C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.csproj.ResolveComReference.cache
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\bin\Release\Recorder.exe
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\bin\Release\Recorder.pdb
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\bin\Release\Interop.AcroPDFLib.dll
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\bin\Release\AxInterop.AcroPDFLib.dll
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\obj\Release\Interop.AcroPDFLib.dll
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\obj\Release\AxInterop.AcroPDFLib.dll
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\obj\Release\Recorder.csproj.ResolveComReference.cache
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\obj\Release\Recorder.Form1.resources
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\obj\Release\Recorder.Properties.Resources.resources
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\obj\Release\GenerateResource-ResGen.read.1.tlog
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\obj\Release\GenerateResource-ResGen.write.1.tlog
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\obj\Release\Recorder.exe
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\obj\Release\Recorder.pdb
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\bin\Release\Recorder.exe
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\bin\Release\Recorder.pdb
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\bin\Release\Interop.AcroPDFLib.dll
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\bin\Release\AxInterop.AcroPDFLib.dll
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Release\Interop.AcroPDFLib.dll
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Release\AxInterop.AcroPDFLib.dll
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Release\Recorder.csproj.ResolveComReference.cache
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Release\Recorder.Form1.resources
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Release\Recorder.Properties.Resources.resources
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Release\GenerateResource-ResGen.read.1.tlog
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Release\GenerateResource-ResGen.write.1.tlog
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Release\Recorder.exe
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder\Recorder\Recorder\obj\Release\Recorder.pdb
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder2\Recorder\Recorder\bin\Release\Recorder.exe.config
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder2\Recorder\Recorder\bin\Release\Recorder.XML
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder2\Recorder\Recorder\bin\Release\Recorder.exe
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder2\Recorder\Recorder\bin\Release\Recorder.pdb
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder2\Recorder\Recorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder2\Recorder\Recorder\obj\Release\Recorder.AboutForm.resources
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder2\Recorder\Recorder\obj\Release\Recorder.ConfigurationForm.resources
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder2\Recorder\Recorder\obj\Release\Recorder.MainForm.resources
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder2\Recorder\Recorder\obj\Release\Recorder.Properties.Resources.resources
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder2\Recorder\Recorder\obj\Release\Recorder.SavingRecordForm.resources
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder2\Recorder\Recorder\obj\Release\GenerateResource-ResGen.read.1.tlog
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder2\Recorder\Recorder\obj\Release\GenerateResource-ResGen.write.1.tlog
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder2\Recorder\Recorder\obj\Release\Recorder.exe
+C:\Users\Purple Fire\Documents\Visual Studio 2010\Projects\Recorder2\Recorder\Recorder\obj\Release\Recorder.pdb

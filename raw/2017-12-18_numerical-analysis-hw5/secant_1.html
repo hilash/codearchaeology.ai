@@ -1,0 +1,158 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Secant method: </title><meta name="generator" content="MATLAB 8.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-12-18"><meta name="DC.source" content="secant.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Secant method: <img src="secant_eq15129433201524106349.png" alt="$x_{k+1}=x_{k}-f\left(x_{k}\right)\frac{x_{k}-x_{k-1}}{f\left(x_{k}\right)-f\left(x_{k-1}\right)}$"></h1><pre class="codeinput"><span class="comment">% [root,i,x,error]=secant(@(x) x^5-2*x - 10,1,3, 1,3 ,10^(-14),20);</span>
+
+<span class="keyword">function</span> [root,i,x,error]=secant(f,a,b, x0,x1,tol,n)
+<span class="comment">% SECANT calculates the root of function f.</span>
+<span class="comment">% INPUT</span>
+<span class="comment">%       f     - function. definded by: syms f(x); f(x) = sin(x^2)</span>
+<span class="comment">%       a,b   - function range</span>
+<span class="comment">%       x0,x1 - intial guesses</span>
+<span class="comment">%       tol   - maximal error for convergence (tolerance)</span>
+<span class="comment">%       n     - maximal number of iterations</span>
+<span class="comment">% OUTPUT</span>
+<span class="comment">%       x    - iterations values</span>
+<span class="comment">%       error- iterations errors values</span>
+<span class="comment">%       i    - number of iterations for convergence</span>
+<span class="comment">%       root - the real root, calculated by fsolve.</span>
+
+    x=zeros(1,n+2);
+    error=zeros(1,n+2);
+    i=0;
+    root = NaN;
+    x(1)=x0;
+    x(2)=x1;
+    roots = fsolve(matlabFunction(f),x1,optimoptions(<span class="string">'fsolve'</span>,<span class="string">'Display'</span>,<span class="string">'none'</span>,<span class="string">'TolX'</span>,tol));
+    roots = roots(imag(roots)==0);
+    root = roots(a&lt;=roots &amp; roots&lt;=b);
+    <span class="keyword">if</span> size(root) ~= 1
+        disp (<span class="string">'no single root at given range.'</span>);
+        <span class="keyword">return</span>
+    <span class="keyword">end</span>
+    <span class="keyword">for</span> i=3:n+2
+        x(i) = x(i-1) - (f(x(i-1)))*((x(i-1) - x(i-2))/(f(x(i-1)) - f(x(i-2))));
+        error(i)=abs(x(i)-root);
+        <span class="keyword">if</span> error(i) &lt; tol || f(x(i)) == f(x(i-1))
+            disp ([<span class="string">'Secant method converge to the root: '</span> , num2str(x(i)), <span class="string">' after '</span>, num2str(i-2), <span class="string">' steps'</span>]);
+            x = x(1:i);
+            error = error(1:i);
+            <span class="keyword">return</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    disp ([<span class="string">'Secant method did not converge to the root: '</span> , num2str(root), <span class="string">' after '</span>, num2str(i-2), <span class="string">' steps'</span>]);
+<span class="keyword">end</span>
+</pre><pre class="codeoutput error">Error using secant (line 19)
+Not enough input arguments.</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Secant method: $x_{k+1}=x_{k}-f\left(x_{k}\right)\frac{x_{k}-x_{k-1}}{f\left(x_{k}\right)-f\left(x_{k-1}\right)}$
+
+% [root,i,x,error]=secant(@(x) x^5-2*x - 10,1,3, 1,3 ,10^(-14),20);
+
+function [root,i,x,error]=secant(f,a,b, x0,x1,tol,n)
+% SECANT calculates the root of function f. 
+% INPUT
+%       f     - function. definded by: syms f(x); f(x) = sin(x^2)
+%       a,b   - function range
+%       x0,x1 - intial guesses
+%       tol   - maximal error for convergence (tolerance)
+%       n     - maximal number of iterations
+% OUTPUT
+%       x    - iterations values
+%       error- iterations errors values
+%       i    - number of iterations for convergence
+%       root - the real root, calculated by fsolve.
+
+    x=zeros(1,n+2);
+    error=zeros(1,n+2);
+    i=0;
+    root = NaN;
+    x(1)=x0;
+    x(2)=x1;
+    roots = fsolve(matlabFunction(f),x1,optimoptions('fsolve','Display','none','TolX',tol));
+    roots = roots(imag(roots)==0);
+    root = roots(a<=roots & roots<=b);
+    if size(root) ~= 1
+        disp ('no single root at given range.');
+        return
+    end
+    for i=3:n+2
+        x(i) = x(i-1) - (f(x(i-1)))*((x(i-1) - x(i-2))/(f(x(i-1)) - f(x(i-2))));
+        error(i)=abs(x(i)-root);
+        if error(i) < tol || f(x(i)) == f(x(i-1))
+            disp (['Secant method converge to the root: ' , num2str(x(i)), ' after ', num2str(i-2), ' steps']);
+            x = x(1:i);
+            error = error(1:i);
+            return
+        end
+    end
+    disp (['Secant method did not converge to the root: ' , num2str(root), ' after ', num2str(i-2), ' steps']);
+end
+
+##### SOURCE END #####
+--></body></html>

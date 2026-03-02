@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShvilIsraelWebapp__lib__dojo__dojox__charting__action2d___IndicatorElement.js - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ed007e; background-color: #1e0010 } /* Error */
+.highlight .esc { color: #f8f8f2 } /* Escape */
+.highlight .g { color: #f8f8f2 } /* Generic */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #ff4689 } /* Operator */
+.highlight .x { color: #f8f8f2 } /* Other */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #ff4689 } /* Generic.Deleted */
+.highlight .ge { color: #f8f8f2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #f8f8f2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #f8f8f2 } /* Generic.Error */
+.highlight .gh { color: #f8f8f2 } /* Generic.Heading */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .go { color: #66d9ef } /* Generic.Output */
+.highlight .gp { color: #ff4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #f8f8f2 } /* Generic.Traceback */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #ff4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #ff4689 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #ff4689 } /* Operator.Word */
+.highlight .pm { color: #f8f8f2 } /* Punctuation.Marker */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style>
+
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<a href="/project/2013-04-04_web-app-version-1/" class="back-link">&laquo; Back to Web App Version 1</a>
+
+<div class="viewer-header">
+    <h1>ShvilIsraelWebapp__lib__dojo__dojox__charting__action2d___IndicatorElement.js</h1>
+    <div class="viewer-meta">
+        <span class="tag">JavaScript</span>
+        <span>7.0 KB</span>
+        
+        <button id="run-btn" class="gmail-action-btn client-runnable" onclick="runCode()">&#9654; Run Code</button>
+        
+    </div>
+</div>
+
+
+<div class="code-container">
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span></pre></div></td><td class="code"><div><pre><span></span><span class="c1">//&gt;&gt;built</span>
+<span class="nx">define</span><span class="p">(</span><span class="s2">&quot;dojox/charting/action2d/_IndicatorElement&quot;</span><span class="p">,[</span><span class="s2">&quot;dojo/_base/lang&quot;</span><span class="p">,</span><span class="s2">&quot;dojo/_base/declare&quot;</span><span class="p">,</span><span class="s2">&quot;../plot2d/Base&quot;</span><span class="p">,</span><span class="s2">&quot;../plot2d/common&quot;</span><span class="p">,</span><span class="s2">&quot;../axis2d/common&quot;</span><span class="p">,</span><span class="s2">&quot;dojox/gfx&quot;</span><span class="p">],</span><span class="kd">function</span><span class="p">(</span><span class="nx">_1</span><span class="p">,</span><span class="nx">_2</span><span class="p">,</span><span class="nx">_3</span><span class="p">,</span><span class="nx">_4</span><span class="p">,</span><span class="nx">_5</span><span class="p">,</span><span class="nx">_6</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_7</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">_8</span><span class="p">){</span>
+<span class="k">return</span><span class="w"> </span><span class="nx">_9</span><span class="p">(</span><span class="nx">_8</span><span class="p">,</span><span class="nx">_8</span><span class="p">.</span><span class="nx">getShape</span><span class="p">().</span><span class="nx">text</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_9</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span><span class="nx">t</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">c</span><span class="o">=</span><span class="nx">s</span><span class="p">.</span><span class="nx">declaredClass</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">w</span><span class="p">,</span><span class="nx">h</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span><span class="o">!=-</span><span class="mf">1</span><span class="p">){</span>
+<span class="k">try</span><span class="p">{</span>
+<span class="k">return</span><span class="w"> </span><span class="nx">_1</span><span class="p">.</span><span class="nx">mixin</span><span class="p">({},</span><span class="nx">s</span><span class="p">.</span><span class="nx">rawNode</span><span class="p">.</span><span class="nx">getBBox</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+<span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;vml&quot;</span><span class="p">)</span><span class="o">!=-</span><span class="mf">1</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_a</span><span class="o">=</span><span class="nx">s</span><span class="p">.</span><span class="nx">rawNode</span><span class="p">,</span><span class="nx">_b</span><span class="o">=</span><span class="nx">_a</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="p">;</span>
+<span class="nx">_a</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="o">=</span><span class="s2">&quot;inline&quot;</span><span class="p">;</span>
+<span class="nx">w</span><span class="o">=</span><span class="nx">_6</span><span class="p">.</span><span class="nx">pt2px</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">_a</span><span class="p">.</span><span class="nx">currentStyle</span><span class="p">.</span><span class="nx">width</span><span class="p">));</span>
+<span class="nx">h</span><span class="o">=</span><span class="nx">_6</span><span class="p">.</span><span class="nx">pt2px</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">_a</span><span class="p">.</span><span class="nx">currentStyle</span><span class="p">.</span><span class="nx">height</span><span class="p">));</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">sz</span><span class="o">=</span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="mf">0</span><span class="p">,</span><span class="nx">y</span><span class="o">:</span><span class="mf">0</span><span class="p">,</span><span class="nx">width</span><span class="o">:</span><span class="nx">w</span><span class="p">,</span><span class="nx">height</span><span class="o">:</span><span class="nx">h</span><span class="p">};</span>
+<span class="nx">_c</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span><span class="nx">sz</span><span class="p">);</span>
+<span class="nx">_a</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="o">=</span><span class="nx">_b</span><span class="p">;</span>
+<span class="k">return</span><span class="w"> </span><span class="nx">sz</span><span class="p">;</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;silverlight&quot;</span><span class="p">)</span><span class="o">!=-</span><span class="mf">1</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">bb</span><span class="o">=</span><span class="p">{</span><span class="nx">width</span><span class="o">:</span><span class="nx">s</span><span class="p">.</span><span class="nx">rawNode</span><span class="p">.</span><span class="nx">actualWidth</span><span class="p">,</span><span class="nx">height</span><span class="o">:</span><span class="nx">s</span><span class="p">.</span><span class="nx">rawNode</span><span class="p">.</span><span class="nx">actualHeight</span><span class="p">};</span>
+<span class="k">return</span><span class="w"> </span><span class="nx">_c</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span><span class="nx">bb</span><span class="p">,</span><span class="mf">0.75</span><span class="p">);</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">getTextWidth</span><span class="p">){</span>
+<span class="nx">w</span><span class="o">=</span><span class="nx">s</span><span class="p">.</span><span class="nx">getTextWidth</span><span class="p">();</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_d</span><span class="o">=</span><span class="nx">s</span><span class="p">.</span><span class="nx">getFont</span><span class="p">();</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">fz</span><span class="o">=</span><span class="nx">_d</span><span class="o">?</span><span class="nx">_d</span><span class="p">.</span><span class="nx">size</span><span class="o">:</span><span class="nx">_6</span><span class="p">.</span><span class="nx">defaultFont</span><span class="p">.</span><span class="nx">size</span><span class="p">;</span>
+<span class="nx">h</span><span class="o">=</span><span class="nx">_6</span><span class="p">.</span><span class="nx">normalizedLength</span><span class="p">(</span><span class="nx">fz</span><span class="p">);</span>
+<span class="nx">sz</span><span class="o">=</span><span class="p">{</span><span class="nx">width</span><span class="o">:</span><span class="nx">w</span><span class="p">,</span><span class="nx">height</span><span class="o">:</span><span class="nx">h</span><span class="p">};</span>
+<span class="nx">_c</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span><span class="nx">sz</span><span class="p">,</span><span class="mf">0.75</span><span class="p">);</span>
+<span class="k">return</span><span class="w"> </span><span class="nx">sz</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_c</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span><span class="nx">sz</span><span class="p">,</span><span class="nx">_e</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_f</span><span class="o">=</span><span class="nx">sz</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span><span class="nx">_10</span><span class="o">=</span><span class="nx">sz</span><span class="p">.</span><span class="nx">height</span><span class="p">,</span><span class="nx">sh</span><span class="o">=</span><span class="nx">s</span><span class="p">.</span><span class="nx">getShape</span><span class="p">(),</span><span class="nx">_11</span><span class="o">=</span><span class="nx">sh</span><span class="p">.</span><span class="nx">align</span><span class="p">;</span>
+<span class="k">switch</span><span class="p">(</span><span class="nx">_11</span><span class="p">){</span>
+<span class="k">case</span><span class="w"> </span><span class="s2">&quot;end&quot;</span><span class="o">:</span>
+<span class="nx">sz</span><span class="p">.</span><span class="nx">x</span><span class="o">=</span><span class="nx">sh</span><span class="p">.</span><span class="nx">x</span><span class="o">-</span><span class="nx">_f</span><span class="p">;</span>
+<span class="k">break</span><span class="p">;</span>
+<span class="k">case</span><span class="w"> </span><span class="s2">&quot;middle&quot;</span><span class="o">:</span>
+<span class="nx">sz</span><span class="p">.</span><span class="nx">x</span><span class="o">=</span><span class="nx">sh</span><span class="p">.</span><span class="nx">x</span><span class="o">-</span><span class="nx">_f</span><span class="o">/</span><span class="mf">2</span><span class="p">;</span>
+<span class="k">break</span><span class="p">;</span>
+<span class="k">case</span><span class="w"> </span><span class="s2">&quot;start&quot;</span><span class="o">:</span>
+<span class="k">default</span><span class="o">:</span>
+<span class="nx">sz</span><span class="p">.</span><span class="nx">x</span><span class="o">=</span><span class="nx">sh</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+<span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">_e</span><span class="o">=</span><span class="nx">_e</span><span class="o">||</span><span class="mf">1</span><span class="p">;</span>
+<span class="nx">sz</span><span class="p">.</span><span class="nx">y</span><span class="o">=</span><span class="nx">sh</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="nx">_10</span><span class="o">*</span><span class="nx">_e</span><span class="p">;</span>
+<span class="k">return</span><span class="w"> </span><span class="nx">sz</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="k">return</span><span class="w"> </span><span class="nx">_2</span><span class="p">(</span><span class="nx">_3</span><span class="p">,{</span><span class="kr">constructor</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">_12</span><span class="p">,</span><span class="nx">_13</span><span class="p">){</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">_13</span><span class="p">){</span>
+<span class="nx">_13</span><span class="o">=</span><span class="p">{};</span>
+<span class="p">}</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">inter</span><span class="o">=</span><span class="nx">_13</span><span class="p">.</span><span class="nx">inter</span><span class="p">;</span>
+<span class="p">},</span><span class="nx">_updateVisibility</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">cp</span><span class="p">,</span><span class="nx">_14</span><span class="p">,</span><span class="nx">_15</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_16</span><span class="o">=</span><span class="nx">_15</span><span class="o">==</span><span class="s2">&quot;x&quot;</span><span class="o">?</span><span class="k">this</span><span class="p">.</span><span class="nx">inter</span><span class="p">.</span><span class="nx">plot</span><span class="p">.</span><span class="nx">_hAxis</span><span class="o">:</span><span class="k">this</span><span class="p">.</span><span class="nx">inter</span><span class="p">.</span><span class="nx">plot</span><span class="p">.</span><span class="nx">_vAxis</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_17</span><span class="o">=</span><span class="nx">_16</span><span class="p">.</span><span class="nx">getWindowScale</span><span class="p">();</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">setAxisWindow</span><span class="p">(</span><span class="nx">_16</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span><span class="nx">_17</span><span class="p">,</span><span class="nx">_16</span><span class="p">.</span><span class="nx">getWindowOffset</span><span class="p">()</span><span class="o">+</span><span class="p">(</span><span class="nx">cp</span><span class="p">[</span><span class="nx">_15</span><span class="p">]</span><span class="o">-</span><span class="nx">_14</span><span class="p">[</span><span class="nx">_15</span><span class="p">])</span><span class="o">/</span><span class="nx">_17</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">_noDirty</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">_noDirty</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">_tracker</span><span class="p">){</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">initTrack</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="p">},</span><span class="nx">_trackMove</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">_updateIndicator</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">pageCoord</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_initTrackPhase</span><span class="p">){</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">_initTrackPhase</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">_tracker</span><span class="o">=</span><span class="nx">setInterval</span><span class="p">(</span><span class="nx">_1</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="k">this</span><span class="p">.</span><span class="nx">_trackMove</span><span class="p">),</span><span class="mf">100</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">},</span><span class="nx">initTrack</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">_initTrackPhase</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">_tracker</span><span class="o">=</span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">_1</span><span class="p">.</span><span class="nx">hitch</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="k">this</span><span class="p">.</span><span class="nx">_trackMove</span><span class="p">),</span><span class="mf">500</span><span class="p">);</span>
+<span class="p">},</span><span class="nx">stopTrack</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
+<span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_tracker</span><span class="p">){</span>
+<span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_initTrackPhase</span><span class="p">){</span>
+<span class="nx">clearTimeout</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_tracker</span><span class="p">);</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="nx">clearInterval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_tracker</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">_tracker</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">},</span><span class="nx">render</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">isDirty</span><span class="p">()){</span>
+<span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">cleanGroup</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">pageCoord</span><span class="p">){</span>
+<span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">_updateIndicator</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">pageCoord</span><span class="p">,</span><span class="k">this</span><span class="p">.</span><span class="nx">secondCoord</span><span class="p">);</span>
+<span class="p">},</span><span class="nx">_updateIndicator</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">cp1</span><span class="p">,</span><span class="nx">cp2</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_18</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">inter</span><span class="p">,</span><span class="nx">_19</span><span class="o">=</span><span class="nx">_18</span><span class="p">.</span><span class="nx">plot</span><span class="p">,</span><span class="nx">v</span><span class="o">=</span><span class="nx">_18</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">vertical</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_1a</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">getAxis</span><span class="p">(</span><span class="nx">_19</span><span class="p">.</span><span class="nx">hAxis</span><span class="p">),</span><span class="nx">_1b</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">getAxis</span><span class="p">(</span><span class="nx">_19</span><span class="p">.</span><span class="nx">vAxis</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">hn</span><span class="o">=</span><span class="nx">_1a</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span><span class="nx">vn</span><span class="o">=</span><span class="nx">_1b</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span><span class="nx">hb</span><span class="o">=</span><span class="nx">_1a</span><span class="p">.</span><span class="nx">getScaler</span><span class="p">().</span><span class="nx">bounds</span><span class="p">,</span><span class="nx">vb</span><span class="o">=</span><span class="nx">_1b</span><span class="p">.</span><span class="nx">getScaler</span><span class="p">().</span><span class="nx">bounds</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_1c</span><span class="o">=</span><span class="nx">v</span><span class="o">?</span><span class="s2">&quot;x&quot;</span><span class="o">:</span><span class="s2">&quot;y&quot;</span><span class="p">,</span><span class="nx">n</span><span class="o">=</span><span class="nx">v</span><span class="o">?</span><span class="nx">hn</span><span class="o">:</span><span class="nx">vn</span><span class="p">,</span><span class="nx">_1d</span><span class="o">=</span><span class="nx">v</span><span class="o">?</span><span class="nx">hb</span><span class="o">:</span><span class="nx">vb</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">cp2</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">tmp</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">v</span><span class="p">){</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">cp1</span><span class="p">.</span><span class="nx">x</span><span class="o">&gt;</span><span class="nx">cp2</span><span class="p">.</span><span class="nx">x</span><span class="p">){</span>
+<span class="nx">tmp</span><span class="o">=</span><span class="nx">cp2</span><span class="p">;</span>
+<span class="nx">cp2</span><span class="o">=</span><span class="nx">cp1</span><span class="p">;</span>
+<span class="nx">cp1</span><span class="o">=</span><span class="nx">tmp</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">cp1</span><span class="p">.</span><span class="nx">y</span><span class="o">&gt;</span><span class="nx">cp2</span><span class="p">.</span><span class="nx">y</span><span class="p">){</span>
+<span class="nx">tmp</span><span class="o">=</span><span class="nx">cp2</span><span class="p">;</span>
+<span class="nx">cp2</span><span class="o">=</span><span class="nx">cp1</span><span class="p">;</span>
+<span class="nx">cp1</span><span class="o">=</span><span class="nx">tmp</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">cd1</span><span class="o">=</span><span class="nx">_19</span><span class="p">.</span><span class="nx">toData</span><span class="p">(</span><span class="nx">cp1</span><span class="p">),</span><span class="nx">cd2</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">cp2</span><span class="p">){</span>
+<span class="nx">cd2</span><span class="o">=</span><span class="nx">_19</span><span class="p">.</span><span class="nx">toData</span><span class="p">(</span><span class="nx">cp2</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">o</span><span class="o">=</span><span class="p">{};</span>
+<span class="nx">o</span><span class="p">[</span><span class="nx">hn</span><span class="p">]</span><span class="o">=</span><span class="nx">hb</span><span class="p">.</span><span class="kr">from</span><span class="p">;</span>
+<span class="nx">o</span><span class="p">[</span><span class="nx">vn</span><span class="p">]</span><span class="o">=</span><span class="nx">vb</span><span class="p">.</span><span class="kr">from</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">min</span><span class="o">=</span><span class="nx">_19</span><span class="p">.</span><span class="nx">toPage</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span>
+<span class="nx">o</span><span class="p">[</span><span class="nx">hn</span><span class="p">]</span><span class="o">=</span><span class="nx">hb</span><span class="p">.</span><span class="nx">to</span><span class="p">;</span>
+<span class="nx">o</span><span class="p">[</span><span class="nx">vn</span><span class="p">]</span><span class="o">=</span><span class="nx">vb</span><span class="p">.</span><span class="nx">to</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">max</span><span class="o">=</span><span class="nx">_19</span><span class="p">.</span><span class="nx">toPage</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">cd1</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span><span class="o">&lt;</span><span class="nx">_1d</span><span class="p">.</span><span class="kr">from</span><span class="p">){</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">cd2</span><span class="o">&amp;&amp;</span><span class="nx">_18</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">autoScroll</span><span class="p">){</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">_updateVisibility</span><span class="p">(</span><span class="nx">cp1</span><span class="p">,</span><span class="nx">min</span><span class="p">,</span><span class="nx">_1c</span><span class="p">);</span>
+<span class="k">return</span><span class="p">;</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="nx">cp1</span><span class="p">[</span><span class="nx">_1c</span><span class="p">]</span><span class="o">=</span><span class="nx">min</span><span class="p">[</span><span class="nx">_1c</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="nx">cd1</span><span class="o">=</span><span class="nx">_19</span><span class="p">.</span><span class="nx">toData</span><span class="p">(</span><span class="nx">cp1</span><span class="p">);</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">cd1</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span><span class="o">&gt;</span><span class="nx">_1d</span><span class="p">.</span><span class="nx">to</span><span class="p">){</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">cd2</span><span class="o">&amp;&amp;</span><span class="nx">_18</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">autoScroll</span><span class="p">){</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">_updateVisibility</span><span class="p">(</span><span class="nx">cp1</span><span class="p">,</span><span class="nx">max</span><span class="p">,</span><span class="nx">_1c</span><span class="p">);</span>
+<span class="k">return</span><span class="p">;</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="nx">cp1</span><span class="p">[</span><span class="nx">_1c</span><span class="p">]</span><span class="o">=</span><span class="nx">max</span><span class="p">[</span><span class="nx">_1c</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="nx">cd1</span><span class="o">=</span><span class="nx">_19</span><span class="p">.</span><span class="nx">toData</span><span class="p">(</span><span class="nx">cp1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">c1</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">_getData</span><span class="p">(</span><span class="nx">cd1</span><span class="p">,</span><span class="nx">_1c</span><span class="p">,</span><span class="nx">v</span><span class="p">),</span><span class="nx">c2</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">c1</span><span class="p">.</span><span class="nx">y</span><span class="o">==</span><span class="kc">null</span><span class="p">){</span>
+<span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">cp2</span><span class="p">){</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">cd2</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span><span class="o">&lt;</span><span class="nx">_1d</span><span class="p">.</span><span class="kr">from</span><span class="p">){</span>
+<span class="nx">cp2</span><span class="p">[</span><span class="nx">_1c</span><span class="p">]</span><span class="o">=</span><span class="nx">min</span><span class="p">[</span><span class="nx">_1c</span><span class="p">];</span>
+<span class="nx">cd2</span><span class="o">=</span><span class="nx">_19</span><span class="p">.</span><span class="nx">toData</span><span class="p">(</span><span class="nx">cp2</span><span class="p">);</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">cd2</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span><span class="o">&gt;</span><span class="nx">_1d</span><span class="p">.</span><span class="nx">to</span><span class="p">){</span>
+<span class="nx">cp2</span><span class="p">[</span><span class="nx">_1c</span><span class="p">]</span><span class="o">=</span><span class="nx">max</span><span class="p">[</span><span class="nx">_1c</span><span class="p">];</span>
+<span class="nx">cd2</span><span class="o">=</span><span class="nx">_19</span><span class="p">.</span><span class="nx">toData</span><span class="p">(</span><span class="nx">cp2</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">c2</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">_getData</span><span class="p">(</span><span class="nx">cd2</span><span class="p">,</span><span class="nx">_1c</span><span class="p">,</span><span class="nx">v</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">c2</span><span class="p">.</span><span class="nx">y</span><span class="o">==</span><span class="kc">null</span><span class="p">){</span>
+<span class="nx">cp2</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">t1</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">_renderIndicator</span><span class="p">(</span><span class="nx">c1</span><span class="p">,</span><span class="nx">cp2</span><span class="o">?</span><span class="mf">1</span><span class="o">:</span><span class="mf">0</span><span class="p">,</span><span class="nx">hn</span><span class="p">,</span><span class="nx">vn</span><span class="p">,</span><span class="nx">min</span><span class="p">,</span><span class="nx">max</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">cp2</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">t2</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">_renderIndicator</span><span class="p">(</span><span class="nx">c2</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="nx">hn</span><span class="p">,</span><span class="nx">vn</span><span class="p">,</span><span class="nx">min</span><span class="p">,</span><span class="nx">max</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_1e</span><span class="o">=</span><span class="nx">v</span><span class="o">?</span><span class="nx">c2</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="nx">c1</span><span class="p">.</span><span class="nx">y</span><span class="o">:</span><span class="nx">c2</span><span class="p">.</span><span class="nx">x</span><span class="o">-</span><span class="nx">c1</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_1f</span><span class="o">=</span><span class="nx">_18</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">labelFunc</span><span class="o">?</span><span class="nx">_18</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">labelFunc</span><span class="p">(</span><span class="nx">c1</span><span class="p">,</span><span class="nx">c2</span><span class="p">,</span><span class="nx">_18</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">fixed</span><span class="p">,</span><span class="nx">_18</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">precision</span><span class="p">)</span><span class="o">:</span><span class="p">(</span><span class="nx">_4</span><span class="p">.</span><span class="nx">getLabel</span><span class="p">(</span><span class="nx">_1e</span><span class="p">,</span><span class="nx">_18</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">fixed</span><span class="p">,</span><span class="nx">_18</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">precision</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; (&quot;</span><span class="o">+</span><span class="nx">_4</span><span class="p">.</span><span class="nx">getLabel</span><span class="p">(</span><span class="mf">100</span><span class="o">*</span><span class="nx">_1e</span><span class="o">/</span><span class="p">(</span><span class="nx">v</span><span class="o">?</span><span class="nx">c1</span><span class="p">.</span><span class="nx">y</span><span class="o">:</span><span class="nx">c1</span><span class="p">.</span><span class="nx">x</span><span class="p">),</span><span class="kc">true</span><span class="p">,</span><span class="mf">2</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;%)&quot;</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">_renderText</span><span class="p">(</span><span class="nx">_1f</span><span class="p">,</span><span class="nx">_18</span><span class="p">,</span><span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">theme</span><span class="p">,</span><span class="nx">v</span><span class="o">?</span><span class="p">(</span><span class="nx">t1</span><span class="p">.</span><span class="nx">x</span><span class="o">+</span><span class="nx">t2</span><span class="p">.</span><span class="nx">x</span><span class="p">)</span><span class="o">/</span><span class="mf">2</span><span class="o">:</span><span class="nx">t1</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="nx">v</span><span class="o">?</span><span class="nx">t1</span><span class="p">.</span><span class="nx">y</span><span class="o">:</span><span class="p">(</span><span class="nx">t1</span><span class="p">.</span><span class="nx">y</span><span class="o">+</span><span class="nx">t2</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span><span class="o">/</span><span class="mf">2</span><span class="p">,</span><span class="nx">c1</span><span class="p">,</span><span class="nx">c2</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">},</span><span class="nx">_renderIndicator</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">_20</span><span class="p">,</span><span class="nx">_21</span><span class="p">,</span><span class="nx">hn</span><span class="p">,</span><span class="nx">vn</span><span class="p">,</span><span class="nx">min</span><span class="p">,</span><span class="nx">max</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">t</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">theme</span><span class="p">,</span><span class="nx">c</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">getCoords</span><span class="p">(),</span><span class="nx">_22</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">inter</span><span class="p">,</span><span class="nx">_23</span><span class="o">=</span><span class="nx">_22</span><span class="p">.</span><span class="nx">plot</span><span class="p">,</span><span class="nx">v</span><span class="o">=</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">vertical</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_24</span><span class="o">=</span><span class="p">{};</span>
+<span class="nx">_24</span><span class="p">[</span><span class="nx">hn</span><span class="p">]</span><span class="o">=</span><span class="nx">_20</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+<span class="nx">_24</span><span class="p">[</span><span class="nx">vn</span><span class="p">]</span><span class="o">=</span><span class="nx">_20</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+<span class="nx">_24</span><span class="o">=</span><span class="nx">_23</span><span class="p">.</span><span class="nx">toPage</span><span class="p">(</span><span class="nx">_24</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">cx</span><span class="o">=</span><span class="nx">_24</span><span class="p">.</span><span class="nx">x</span><span class="o">-</span><span class="nx">c</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="nx">cy</span><span class="o">=</span><span class="nx">_24</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="nx">c</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">x1</span><span class="o">=</span><span class="nx">v</span><span class="o">?</span><span class="nx">cx</span><span class="o">:</span><span class="nx">min</span><span class="p">.</span><span class="nx">x</span><span class="o">-</span><span class="nx">c</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="nx">y1</span><span class="o">=</span><span class="nx">v</span><span class="o">?</span><span class="nx">min</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="nx">c</span><span class="p">.</span><span class="nx">y</span><span class="o">:</span><span class="nx">cy</span><span class="p">,</span><span class="nx">x2</span><span class="o">=</span><span class="nx">v</span><span class="o">?</span><span class="nx">x1</span><span class="o">:</span><span class="nx">max</span><span class="p">.</span><span class="nx">x</span><span class="o">-</span><span class="nx">c</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="nx">y2</span><span class="o">=</span><span class="nx">v</span><span class="o">?</span><span class="nx">max</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="nx">c</span><span class="p">.</span><span class="nx">y</span><span class="o">:</span><span class="nx">y1</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">sh</span><span class="o">=</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">lineShadow</span><span class="o">?</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">lineShadow</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">lineShadow</span><span class="p">,</span><span class="nx">ls</span><span class="o">=</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">lineStroke</span><span class="o">?</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">lineStroke</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">lineStroke</span><span class="p">,</span><span class="nx">ol</span><span class="o">=</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">lineOutline</span><span class="o">?</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">lineOutline</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">lineOutline</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">sh</span><span class="p">){</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">createLine</span><span class="p">({</span><span class="nx">x1</span><span class="o">:</span><span class="nx">x1</span><span class="o">+</span><span class="nx">sh</span><span class="p">.</span><span class="nx">dx</span><span class="p">,</span><span class="nx">y1</span><span class="o">:</span><span class="nx">y1</span><span class="o">+</span><span class="nx">sh</span><span class="p">.</span><span class="nx">dy</span><span class="p">,</span><span class="nx">x2</span><span class="o">:</span><span class="nx">x2</span><span class="o">+</span><span class="nx">sh</span><span class="p">.</span><span class="nx">dx</span><span class="p">,</span><span class="nx">y2</span><span class="o">:</span><span class="nx">y2</span><span class="o">+</span><span class="nx">sh</span><span class="p">.</span><span class="nx">dy</span><span class="p">}).</span><span class="nx">setStroke</span><span class="p">(</span><span class="nx">sh</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">ol</span><span class="p">){</span>
+<span class="nx">ol</span><span class="o">=</span><span class="nx">_4</span><span class="p">.</span><span class="nx">makeStroke</span><span class="p">(</span><span class="nx">ol</span><span class="p">);</span>
+<span class="nx">ol</span><span class="p">.</span><span class="nx">width</span><span class="o">=</span><span class="mf">2</span><span class="o">*</span><span class="nx">ol</span><span class="p">.</span><span class="nx">width</span><span class="o">+</span><span class="nx">ls</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">createLine</span><span class="p">({</span><span class="nx">x1</span><span class="o">:</span><span class="nx">x1</span><span class="p">,</span><span class="nx">y1</span><span class="o">:</span><span class="nx">y1</span><span class="p">,</span><span class="nx">x2</span><span class="o">:</span><span class="nx">x2</span><span class="p">,</span><span class="nx">y2</span><span class="o">:</span><span class="nx">y2</span><span class="p">}).</span><span class="nx">setStroke</span><span class="p">(</span><span class="nx">ol</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">createLine</span><span class="p">({</span><span class="nx">x1</span><span class="o">:</span><span class="nx">x1</span><span class="p">,</span><span class="nx">y1</span><span class="o">:</span><span class="nx">y1</span><span class="p">,</span><span class="nx">x2</span><span class="o">:</span><span class="nx">x2</span><span class="p">,</span><span class="nx">y2</span><span class="o">:</span><span class="nx">y2</span><span class="p">}).</span><span class="nx">setStroke</span><span class="p">(</span><span class="nx">ls</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">ms</span><span class="o">=</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">markerSymbol</span><span class="o">?</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">markerSymbol</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">markerSymbol</span><span class="p">,</span><span class="nx">_25</span><span class="o">=</span><span class="s2">&quot;M&quot;</span><span class="o">+</span><span class="nx">cx</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="nx">cy</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="nx">ms</span><span class="p">;</span>
+<span class="nx">sh</span><span class="o">=</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">markerShadow</span><span class="o">?</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">markerShadow</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">markerShadow</span><span class="p">;</span>
+<span class="nx">ls</span><span class="o">=</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">markerStroke</span><span class="o">?</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">markerStroke</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">markerStroke</span><span class="p">;</span>
+<span class="nx">ol</span><span class="o">=</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">markerOutline</span><span class="o">?</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">markerOutline</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">markerOutline</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">sh</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">sp</span><span class="o">=</span><span class="s2">&quot;M&quot;</span><span class="o">+</span><span class="p">(</span><span class="nx">cx</span><span class="o">+</span><span class="nx">sh</span><span class="p">.</span><span class="nx">dx</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="p">(</span><span class="nx">cy</span><span class="o">+</span><span class="nx">sh</span><span class="p">.</span><span class="nx">dy</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="nx">ms</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">createPath</span><span class="p">(</span><span class="nx">sp</span><span class="p">).</span><span class="nx">setFill</span><span class="p">(</span><span class="nx">sh</span><span class="p">.</span><span class="nx">color</span><span class="p">).</span><span class="nx">setStroke</span><span class="p">(</span><span class="nx">sh</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">ol</span><span class="p">){</span>
+<span class="nx">ol</span><span class="o">=</span><span class="nx">_4</span><span class="p">.</span><span class="nx">makeStroke</span><span class="p">(</span><span class="nx">ol</span><span class="p">);</span>
+<span class="nx">ol</span><span class="p">.</span><span class="nx">width</span><span class="o">=</span><span class="mf">2</span><span class="o">*</span><span class="nx">ol</span><span class="p">.</span><span class="nx">width</span><span class="o">+</span><span class="nx">ls</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">createPath</span><span class="p">(</span><span class="nx">_25</span><span class="p">).</span><span class="nx">setStroke</span><span class="p">(</span><span class="nx">ol</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_26</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">createPath</span><span class="p">(</span><span class="nx">_25</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">sf</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">_shapeFill</span><span class="p">(</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">markerFill</span><span class="o">?</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">markerFill</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">markerFill</span><span class="p">,</span><span class="nx">_26</span><span class="p">.</span><span class="nx">getBoundingBox</span><span class="p">());</span>
+<span class="nx">_26</span><span class="p">.</span><span class="nx">setFill</span><span class="p">(</span><span class="nx">sf</span><span class="p">).</span><span class="nx">setStroke</span><span class="p">(</span><span class="nx">ls</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">_21</span><span class="o">==</span><span class="mf">0</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_27</span><span class="o">=</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">labelFunc</span><span class="o">?</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">labelFunc</span><span class="p">(</span><span class="nx">_20</span><span class="p">,</span><span class="kc">null</span><span class="p">,</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">fixed</span><span class="p">,</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">precision</span><span class="p">)</span><span class="o">:</span><span class="nx">_4</span><span class="p">.</span><span class="nx">getLabel</span><span class="p">(</span><span class="nx">v</span><span class="o">?</span><span class="nx">_20</span><span class="p">.</span><span class="nx">y</span><span class="o">:</span><span class="nx">_20</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">fixed</span><span class="p">,</span><span class="nx">_22</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">precision</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">_renderText</span><span class="p">(</span><span class="nx">_27</span><span class="p">,</span><span class="nx">_22</span><span class="p">,</span><span class="nx">t</span><span class="p">,</span><span class="nx">v</span><span class="o">?</span><span class="nx">x1</span><span class="o">:</span><span class="nx">x2</span><span class="o">+</span><span class="mf">5</span><span class="p">,</span><span class="nx">v</span><span class="o">?</span><span class="nx">y2</span><span class="o">+</span><span class="mf">5</span><span class="o">:</span><span class="nx">y1</span><span class="p">,</span><span class="nx">_20</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">return</span><span class="w"> </span><span class="nx">v</span><span class="o">?</span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="nx">x1</span><span class="p">,</span><span class="nx">y</span><span class="o">:</span><span class="nx">y2</span><span class="o">+</span><span class="mf">5</span><span class="p">}</span><span class="o">:</span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="nx">x2</span><span class="o">+</span><span class="mf">5</span><span class="p">,</span><span class="nx">y</span><span class="o">:</span><span class="nx">y1</span><span class="p">};</span>
+<span class="p">},</span><span class="nx">_renderText</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">_28</span><span class="p">,</span><span class="nx">_29</span><span class="p">,</span><span class="nx">t</span><span class="p">,</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">c1</span><span class="p">,</span><span class="nx">c2</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_2a</span><span class="o">=</span><span class="nx">_5</span><span class="p">.</span><span class="nx">createText</span><span class="p">.</span><span class="nx">gfx</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">,</span><span class="k">this</span><span class="p">.</span><span class="nx">group</span><span class="p">,</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="s2">&quot;middle&quot;</span><span class="p">,</span><span class="nx">_28</span><span class="p">,</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">font</span><span class="o">?</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">font</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">font</span><span class="p">,</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">fontColor</span><span class="o">?</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">fontColor</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">fontColor</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">b</span><span class="o">=</span><span class="nx">_7</span><span class="p">(</span><span class="nx">_2a</span><span class="p">);</span>
+<span class="nx">b</span><span class="p">.</span><span class="nx">x</span><span class="o">-=</span><span class="mf">2</span><span class="p">;</span>
+<span class="nx">b</span><span class="p">.</span><span class="nx">y</span><span class="o">-=</span><span class="mf">1</span><span class="p">;</span>
+<span class="nx">b</span><span class="p">.</span><span class="nx">width</span><span class="o">+=</span><span class="mf">4</span><span class="p">;</span>
+<span class="nx">b</span><span class="p">.</span><span class="nx">height</span><span class="o">+=</span><span class="mf">2</span><span class="p">;</span>
+<span class="nx">b</span><span class="p">.</span><span class="nx">r</span><span class="o">=</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">radius</span><span class="o">?</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">radius</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">radius</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">sh</span><span class="o">=</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">shadow</span><span class="o">?</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">shadow</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">shadow</span><span class="p">,</span><span class="nx">ls</span><span class="o">=</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">stroke</span><span class="o">?</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">stroke</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">stroke</span><span class="p">,</span><span class="nx">ol</span><span class="o">=</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">outline</span><span class="o">?</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">outline</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">outline</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">sh</span><span class="p">){</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">createRect</span><span class="p">(</span><span class="nx">b</span><span class="p">).</span><span class="nx">setFill</span><span class="p">(</span><span class="nx">sh</span><span class="p">.</span><span class="nx">color</span><span class="p">).</span><span class="nx">setStroke</span><span class="p">(</span><span class="nx">sh</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">ol</span><span class="p">){</span>
+<span class="nx">ol</span><span class="o">=</span><span class="nx">_4</span><span class="p">.</span><span class="nx">makeStroke</span><span class="p">(</span><span class="nx">ol</span><span class="p">);</span>
+<span class="nx">ol</span><span class="p">.</span><span class="nx">width</span><span class="o">=</span><span class="mf">2</span><span class="o">*</span><span class="nx">ol</span><span class="p">.</span><span class="nx">width</span><span class="o">+</span><span class="nx">ls</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">createRect</span><span class="p">(</span><span class="nx">b</span><span class="p">).</span><span class="nx">setStroke</span><span class="p">(</span><span class="nx">ol</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">f</span><span class="o">=</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">fillFunc</span><span class="o">?</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">fillFunc</span><span class="p">(</span><span class="nx">c1</span><span class="p">,</span><span class="nx">c2</span><span class="p">)</span><span class="o">:</span><span class="p">(</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">fill</span><span class="o">?</span><span class="nx">_29</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">fill</span><span class="o">:</span><span class="nx">t</span><span class="p">.</span><span class="nx">indicator</span><span class="p">.</span><span class="nx">fill</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">createRect</span><span class="p">(</span><span class="nx">b</span><span class="p">).</span><span class="nx">setFill</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_shapeFill</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span><span class="nx">b</span><span class="p">)).</span><span class="nx">setStroke</span><span class="p">(</span><span class="nx">ls</span><span class="p">);</span>
+<span class="nx">_2a</span><span class="p">.</span><span class="nx">moveToFront</span><span class="p">();</span>
+<span class="p">},</span><span class="nx">_getData</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">cd</span><span class="p">,</span><span class="nx">_2b</span><span class="p">,</span><span class="nx">v</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">_2c</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">chart</span><span class="p">.</span><span class="nx">getSeries</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">inter</span><span class="p">.</span><span class="nx">opt</span><span class="p">.</span><span class="nx">series</span><span class="p">).</span><span class="nx">data</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="nx">r</span><span class="p">,</span><span class="nx">l</span><span class="o">=</span><span class="nx">_2c</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">l</span><span class="p">;</span><span class="o">++</span><span class="nx">i</span><span class="p">){</span>
+<span class="nx">r</span><span class="o">=</span><span class="nx">_2c</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">r</span><span class="o">==</span><span class="kc">null</span><span class="p">){</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="k">if</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">r</span><span class="o">==</span><span class="s2">&quot;number&quot;</span><span class="p">){</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="mf">1</span><span class="o">&gt;</span><span class="nx">cd</span><span class="p">[</span><span class="nx">_2b</span><span class="p">]){</span>
+<span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">r</span><span class="p">[</span><span class="nx">_2b</span><span class="p">]</span><span class="o">&gt;</span><span class="nx">cd</span><span class="p">[</span><span class="nx">_2b</span><span class="p">]){</span>
+<span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">px</span><span class="p">,</span><span class="nx">py</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">r</span><span class="o">==</span><span class="s2">&quot;number&quot;</span><span class="p">){</span>
+<span class="nx">x</span><span class="o">=</span><span class="nx">i</span><span class="o">+</span><span class="mf">1</span><span class="p">;</span>
+<span class="nx">y</span><span class="o">=</span><span class="nx">r</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">i</span><span class="o">&gt;</span><span class="mf">0</span><span class="p">){</span>
+<span class="nx">px</span><span class="o">=</span><span class="nx">i</span><span class="p">;</span>
+<span class="nx">py</span><span class="o">=</span><span class="nx">_2c</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mf">1</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="nx">x</span><span class="o">=</span><span class="nx">r</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+<span class="nx">y</span><span class="o">=</span><span class="nx">r</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">i</span><span class="o">&gt;</span><span class="mf">0</span><span class="p">){</span>
+<span class="nx">px</span><span class="o">=</span><span class="nx">_2c</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mf">1</span><span class="p">].</span><span class="nx">x</span><span class="p">;</span>
+<span class="nx">py</span><span class="o">=</span><span class="nx">_2c</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mf">1</span><span class="p">].</span><span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">i</span><span class="o">&gt;</span><span class="mf">0</span><span class="p">){</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">m</span><span class="o">=</span><span class="nx">v</span><span class="o">?</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">px</span><span class="p">)</span><span class="o">/</span><span class="mf">2</span><span class="o">:</span><span class="p">(</span><span class="nx">y</span><span class="o">+</span><span class="nx">py</span><span class="p">)</span><span class="o">/</span><span class="mf">2</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">cd</span><span class="p">[</span><span class="nx">_2b</span><span class="p">]</span><span class="o">&lt;=</span><span class="nx">m</span><span class="p">){</span>
+<span class="nx">x</span><span class="o">=</span><span class="nx">px</span><span class="p">;</span>
+<span class="nx">y</span><span class="o">=</span><span class="nx">py</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="o">:</span><span class="nx">y</span><span class="p">};</span>
+<span class="p">},</span><span class="nx">cleanGroup</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">_2d</span><span class="p">){</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">inherited</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">moveToFront</span><span class="p">();</span>
+<span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+<span class="p">},</span><span class="nx">getSeriesStats</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
+<span class="k">return</span><span class="w"> </span><span class="nx">_1</span><span class="p">.</span><span class="nx">delegate</span><span class="p">(</span><span class="nx">_4</span><span class="p">.</span><span class="nx">defaultStats</span><span class="p">);</span>
+<span class="p">},</span><span class="nx">isDirty</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
+<span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">_noDirty</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dirty</span><span class="o">||</span><span class="k">this</span><span class="p">.</span><span class="nx">inter</span><span class="p">.</span><span class="nx">plot</span><span class="p">.</span><span class="nx">isDirty</span><span class="p">());</span>
+<span class="p">}});</span>
+<span class="p">});</span>
+</pre></div></td></tr></table></div>
+
+</div>
+
+
+
+<div id="output-panel" class="output-panel client-runnable" style="display: none;">
+    <h3>Output</h3>
+    <div id="output-status" class="output-status"></div>
+    <pre id="output-stdout" class="output-stdout"></pre>
+    <pre id="output-stderr" class="output-stderr"></pre>
+</div>
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+
+<script>
+var _viewerFilename = "ShvilIsraelWebapp__lib__dojo__dojox__charting__action2d___IndicatorElement.js";
+var _viewerProject = "2013-04-04_web-app-version-1";
+var _viewerExt = _viewerFilename.substring(_viewerFilename.lastIndexOf('.')).toLowerCase();
+var _isClientRunnable = ['.js', '.html', '.htm'].indexOf(_viewerExt) !== -1;
+
+function runCode() {
+    var btn = document.getElementById('run-btn');
+    var panel = document.getElementById('output-panel');
+    var status = document.getElementById('output-status');
+    var stdout = document.getElementById('output-stdout');
+    var stderr = document.getElementById('output-stderr');
+
+    btn.disabled = true;
+    btn.textContent = 'Running...';
+    panel.style.display = 'block';
+    status.textContent = 'Executing...';
+    status.className = 'output-status running';
+    stdout.textContent = '';
+    stderr.textContent = '';
+    stderr.style.display = 'none';
+
+    if (_viewerExt === '.js') {
+        // Client-side JS execution in sandboxed iframe
+        var codeEl = document.querySelector('.code-container .highlight pre');
+        var code = codeEl ? codeEl.textContent : '';
+        var logs = [];
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('sandbox', 'allow-scripts');
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+
+        function onMsg(e) {
+            if (e.source !== iframe.contentWindow) return;
+            if (e.data === '__DONE__') {
+                clearTimeout(timeout);
+                window.removeEventListener('message', onMsg);
+                document.body.removeChild(iframe);
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                status.textContent = 'Success';
+                status.className = 'output-status success';
+                stdout.textContent = logs.join('\n') || '(no output)';
+                return;
+            }
+            logs.push(e.data);
+        }
+        window.addEventListener('message', onMsg);
+
+        var wrappedCode = '(' + function() {
+            var _log = [];
+            console.log = function() {
+                var args = Array.prototype.slice.call(arguments);
+                var line = args.map(function(a) {
+                    return typeof a === 'object' ? JSON.stringify(a) : String(a);
+                }).join(' ');
+                _log.push(line);
+                parent.postMessage(line, '*');
+            };
+            console.error = console.warn = console.info = console.log;
+            try {
+                /* __CODE__ */
+            } catch(e) {
+                parent.postMessage('Error: ' + e.message, '*');
+            }
+            parent.postMessage('__DONE__', '*');
+        }.toString().replace('/* __CODE__ */', code) + ')()';
+
+        iframe.srcdoc = '<html><body class="static-mode"><script>' + wrappedCode + '<\/script></body></html>';
+
+        var timeout = setTimeout(function() {
+            window.removeEventListener('message', onMsg);
+            if (iframe.parentNode) document.body.removeChild(iframe);
+            btn.disabled = false;
+            btn.textContent = '\u25B6 Run Code';
+            status.textContent = 'Timed out (5s)';
+            status.className = 'output-status error';
+            stdout.textContent = logs.join('\n') + '\n(timed out after 5s)';
+        }, 5000);
+
+    } else if (_viewerExt === '.html' || _viewerExt === '.htm') {
+        // Client-side HTML rendering in iframe
+        status.textContent = '';
+        status.className = 'output-status success';
+        stdout.textContent = '';
+        var iframe = document.createElement('iframe');
+        iframe.className = 'run-iframe';
+        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+        iframe.src = '/raw/' + encodeURIComponent(_viewerProject) + '/' + encodeURIComponent(_viewerFilename);
+        stdout.style.display = 'none';
+        panel.appendChild(iframe);
+        btn.disabled = false;
+        btn.textContent = '\u25B6 Run Code';
+
+    } else {
+        // Server-side execution (Python, C, C++)
+        fetch('/run/' + encodeURIComponent(_viewerProject) + '/' + encodeURIComponent(_viewerFilename), { method: 'POST' })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                if (data.success) {
+                    status.textContent = 'Success (exit code: 0)';
+                    status.className = 'output-status success';
+                } else {
+                    status.textContent = 'Failed (exit code: ' + data.return_code + ')';
+                    status.className = 'output-status error';
+                }
+                stdout.textContent = data.stdout || '(no output)';
+                if (data.stderr) {
+                    stderr.textContent = data.stderr;
+                    stderr.style.display = 'block';
+                }
+            })
+            .catch(function(err) {
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                status.textContent = 'Error: ' + err.message;
+                status.className = 'output-status error';
+            });
+    }
+}
+</script>
+
+
+</body>
+</html>

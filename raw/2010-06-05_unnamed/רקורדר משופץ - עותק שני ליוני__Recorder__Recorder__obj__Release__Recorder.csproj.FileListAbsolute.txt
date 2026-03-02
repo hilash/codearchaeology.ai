@@ -1,0 +1,40 @@
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Release\Recorder.Form1.resources
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Release\Recorder.Properties.Resources.resources
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Release\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\bin\Release\Recorder.exe
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\bin\Release\Recorder.pdb
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Release\Recorder.exe
+C:\Users\Hila\Documents\Visual Studio 2008\Projects\Recorder\Recorder\obj\Release\Recorder.pdb
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\bin\Release\Recorder.exe
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\bin\Release\Recorder.pdb
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Release\Recorder.Form1.resources
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Release\Recorder.Properties.Resources.resources
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Release\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Release\Recorder.exe
+C:\Users\Hila\Desktop\פרוייקט אבנר\Recorder\Recorder\obj\Release\Recorder.pdb
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\bin\Release\Recorder.exe
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\bin\Release\Recorder.pdb
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Release\Recorder.Form1.resources
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Release\Recorder.Properties.Resources.resources
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Release\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Release\Recorder.exe
+C:\Users\Hila\Desktop\פרוייקט אבנר - עותק\Recorder\Recorder\obj\Release\Recorder.pdb
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Release\Recorder.exe
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Release\Recorder.pdb
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\bin\Release\Recorder.exe
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\bin\Release\Recorder.pdb
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Release\Recorder.Form1.resources
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Release\Recorder.Properties.Resources.resources
+C:\Users\Hila\Desktop\רקורדר משופץ\Recorder\Recorder\obj\Release\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.exe
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.pdb
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.Form1.resources
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.Properties.Resources.resources
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\obj\Release\Recorder.csproj.GenerateResource.Cache
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\bin\Release\Recorder.exe
+C:\Users\Hila\Desktop\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder\bin\Release\Recorder.pdb

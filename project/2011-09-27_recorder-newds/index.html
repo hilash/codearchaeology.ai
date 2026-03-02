@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2011-09-27_recorder-newds - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<!-- Gmail email action bar -->
+<div class="email-action-bar">
+    <a href="/" class="back-link">&laquo; Back to Inbox</a>
+    <div class="email-action-buttons">
+        <a href="/project/2011-09-29_notey/" class="gmail-action-btn" id="prev-btn">&lsaquo; Newer</a>
+        <a href="/project/2011-09-17_recorder-new-2/" class="gmail-action-btn" id="next-btn">Older &rsaquo;</a>
+        <form method="post" action="/delete/2011-09-27_recorder-newds" onsubmit="return confirm('Delete this project permanently?');" style="display:inline;">
+            <button type="submit" class="gmail-action-btn" style="color:var(--gmail-red);">Delete</button>
+        </form>
+    </div>
+</div>
+
+<!-- Subject line (like Gmail email subject) -->
+<div class="email-subject-bar">
+    <h1 class="email-subject">Music Recorder and ABC Parser</h1>
+    
+    
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    
+    
+        
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+    
+    
+    <div class="email-labels">
+        
+        <span class="email-label">C#</span>
+        
+        <span class="email-label">music notation</span>
+        
+        <span class="email-label">audio recording</span>
+        
+        <span class="email-label">Fourier transform</span>
+        
+        <span class="email-label">parser</span>
+        
+        <span class="email-label">Executable</span>
+        
+        <span class="email-label">XML</span>
+        
+    </div>
+    
+</div>
+
+<!-- Sender info (like Gmail email header) -->
+<div class="email-message">
+    <div class="email-sender-bar">
+        <div class="email-sender-left">
+            <span class="email-sender-avatar">H</span>
+            <div class="email-sender-info">
+                <div class="email-sender-name">
+                    <strong>Hila Shmuel &lt;&gt;</strong>
+                    
+                </div>
+                <div class="email-sender-subject">
+                    recorder Newds
+                </div>
+            </div>
+        </div>
+        <div class="email-date">
+            Tue, 27 Sep 2011 22:51:07 +0300
+        </div>
+    </div>
+
+    <!-- Message body -->
+    <div class="email-message-body">
+        
+            This codebase consists of multiple C# files that handle various components of a music recorder application. The &#39;AbcParser&#39; class is responsible for parsing ABC file formats to extract musical notes, while the &#39;FurierTransform&#39; class performs Fourier Transforms for frequency analysis of sound waves. Moreover, it provides user interface elements for displaying information about the application and managing recordings. The overall application allows users to record audio from a microphone, parse music notation, and analyze sound frequencies.
+        
+    </div>
+
+    
+
+    <!-- Attachments (files styled like Gmail attachment cards) -->
+    
+    <div class="email-attachments">
+        <div class="email-attachments-header">
+            <span class="attachment-icon">&#128206;</span> 113 attachments
+        </div>
+        <div class="email-attachment-list">
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__AbcParser.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__AbcParser.cs</div>
+                        <div class="attachment-card-size">8.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__AbcParser.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__AboutForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__AboutForm.Designer.cs</div>
+                        <div class="attachment-card-size">5.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__AboutForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__AboutForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__AboutForm.cs</div>
+                        <div class="attachment-card-size">0.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__AboutForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Analysis.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Analysis.cs</div>
+                        <div class="attachment-card-size">7.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Analysis.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__ConfigurationForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__ConfigurationForm.Designer.cs</div>
+                        <div class="attachment-card-size">17.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__ConfigurationForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__ConfigurationForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__ConfigurationForm.cs</div>
+                        <div class="attachment-card-size">2.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__ConfigurationForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Delegates.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Delegates.cs</div>
+                        <div class="attachment-card-size">2.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Delegates.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__FilesHandler.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__FilesHandler.cs</div>
+                        <div class="attachment-card-size">6.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__FilesHandler.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__FingeringChart.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__FingeringChart.cs</div>
+                        <div class="attachment-card-size">1.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__FingeringChart.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__FingeringsPicture.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__FingeringsPicture.cs</div>
+                        <div class="attachment-card-size">5.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__FingeringsPicture.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__IPlayRecord.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__IPlayRecord.cs</div>
+                        <div class="attachment-card-size">7.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__IPlayRecord.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__MCI.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__MCI.cs</div>
+                        <div class="attachment-card-size">8.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__MCI.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__MainForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__MainForm.Designer.cs</div>
+                        <div class="attachment-card-size">64.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__MainForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__MainForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__MainForm.cs</div>
+                        <div class="attachment-card-size">35.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__MainForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Memory.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Memory.cs</div>
+                        <div class="attachment-card-size">3.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Memory.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__NoteDrawer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__NoteDrawer.cs</div>
+                        <div class="attachment-card-size">16.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__NoteDrawer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__NotesDB.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__NotesDB.cs</div>
+                        <div class="attachment-card-size">7.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__NotesDB.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__NotesDetector.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__NotesDetector.cs</div>
+                        <div class="attachment-card-size">3.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__NotesDetector.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Program.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Program.cs</div>
+                        <div class="attachment-card-size">0.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Program.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Properties__Resources.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Properties__Resources.Designer.cs</div>
+                        <div class="attachment-card-size">9.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Properties__Resources.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Properties__Settings.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Properties__Settings.Designer.cs</div>
+                        <div class="attachment-card-size">2.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Properties__Settings.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__RecorderHero.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__RecorderHero.cs</div>
+                        <div class="attachment-card-size">10.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__RecorderHero.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__AssemblyInfo.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__AssemblyInfo.cs</div>
+                        <div class="attachment-card-size">1.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__AssemblyInfo.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__SavingRecordForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__SavingRecordForm.Designer.cs</div>
+                        <div class="attachment-card-size">13.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__SavingRecordForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__SavingRecordForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__SavingRecordForm.cs</div>
+                        <div class="attachment-card-size">8.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__SavingRecordForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__WaveGraphics.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__WaveGraphics.cs</div>
+                        <div class="attachment-card-size">2.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__WaveGraphics.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__WaveIn.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__WaveIn.cs</div>
+                        <div class="attachment-card-size">12.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__WaveIn.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Win32Waveform.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Win32Waveform.cs</div>
+                        <div class="attachment-card-size">6.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Win32Waveform.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__bin__Release__Recorder.XML">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__bin__Release__Recorder.XML</div>
+                        <div class="attachment-card-size">33.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__bin__Release__Recorder.XML.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">XML</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__configuration.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__configuration.cs</div>
+                        <div class="attachment-card-size">2.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__configuration.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__UpgradeLog.XML">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__UpgradeLog.XML</div>
+                        <div class="attachment-card-size">6.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__UpgradeLog.XML.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">XML</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder.sln">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder.sln</div>
+                        <div class="attachment-card-size">1.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder.sln.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">sln</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__AbcParser.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__AbcParser.cs</div>
+                        <div class="attachment-card-size">8.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__AbcParser.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__AboutForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__AboutForm.Designer.cs</div>
+                        <div class="attachment-card-size">5.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__AboutForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__AboutForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__AboutForm.cs</div>
+                        <div class="attachment-card-size">0.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__AboutForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__AboutForm.resx">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__AboutForm.resx</div>
+                        <div class="attachment-card-size">169.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__AboutForm.resx.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">resx</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Analysis.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Analysis.cs</div>
+                        <div class="attachment-card-size">7.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Analysis.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__App.config">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__App.config</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__App.config.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">config</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__ConfigurationForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__ConfigurationForm.Designer.cs</div>
+                        <div class="attachment-card-size">17.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__ConfigurationForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__ConfigurationForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__ConfigurationForm.cs</div>
+                        <div class="attachment-card-size">2.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__ConfigurationForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__ConfigurationForm.resx">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__ConfigurationForm.resx</div>
+                        <div class="attachment-card-size">6.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__ConfigurationForm.resx.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">resx</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Delegates.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Delegates.cs</div>
+                        <div class="attachment-card-size">3.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Delegates.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__FilesHandler.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__FilesHandler.cs</div>
+                        <div class="attachment-card-size">6.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__FilesHandler.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__FingeringChart.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__FingeringChart.cs</div>
+                        <div class="attachment-card-size">1.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__FingeringChart.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__FingeringsPicture.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__FingeringsPicture.cs</div>
+                        <div class="attachment-card-size">5.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__FingeringsPicture.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__IPlayRecord.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__IPlayRecord.cs</div>
+                        <div class="attachment-card-size">7.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__IPlayRecord.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__MCI.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__MCI.cs</div>
+                        <div class="attachment-card-size">8.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__MCI.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__MainForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__MainForm.Designer.cs</div>
+                        <div class="attachment-card-size">64.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__MainForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__MainForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__MainForm.cs</div>
+                        <div class="attachment-card-size">36.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__MainForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__MainForm.resx">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__MainForm.resx</div>
+                        <div class="attachment-card-size">175.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__MainForm.resx.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">resx</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Memory.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Memory.cs</div>
+                        <div class="attachment-card-size">3.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Memory.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__NoteDrawer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__NoteDrawer.cs</div>
+                        <div class="attachment-card-size">16.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__NoteDrawer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__NotesDB.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__NotesDB.cs</div>
+                        <div class="attachment-card-size">7.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__NotesDB.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__NotesDetector.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__NotesDetector.cs</div>
+                        <div class="attachment-card-size">3.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__NotesDetector.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Program.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Program.cs</div>
+                        <div class="attachment-card-size">0.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Program.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Properties__Resources.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Properties__Resources.Designer.cs</div>
+                        <div class="attachment-card-size">9.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Properties__Resources.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Properties__Resources.resx">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Properties__Resources.resx</div>
+                        <div class="attachment-card-size">78.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Properties__Resources.resx.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">resx</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Properties__Settings.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Properties__Settings.Designer.cs</div>
+                        <div class="attachment-card-size">2.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Properties__Settings.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Properties__Settings.settings">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Properties__Settings.settings</div>
+                        <div class="attachment-card-size">0.8 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Properties__Settings.settings.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">settings</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Recorder.csproj">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Recorder.csproj</div>
+                        <div class="attachment-card-size">9.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Recorder.csproj.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">csproj</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__RecorderHero.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__RecorderHero.cs</div>
+                        <div class="attachment-card-size">10.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__RecorderHero.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__RecorderHeroOld.txt">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__RecorderHeroOld.txt</div>
+                        <div class="attachment-card-size">7.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__RecorderHeroOld.txt.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">txt</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__AssemblyInfo.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__AssemblyInfo.cs</div>
+                        <div class="attachment-card-size">1.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__AssemblyInfo.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__BalanceTheStraw.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__BalanceTheStraw.png</div>
+                        <div class="attachment-card-size">3.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__BalanceTheStraw.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__Devices-media-floppy-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__Devices-media-floppy-icon.png</div>
+                        <div class="attachment-card-size">2.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__Devices-media-floppy-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__File-Types-MIDI-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__File-Types-MIDI-icon.png</div>
+                        <div class="attachment-card-size">3.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__File-Types-MIDI-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__Flute-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__Flute-icon.png</div>
+                        <div class="attachment-card-size">1.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__Flute-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__Flute.ico">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__Flute.ico</div>
+                        <div class="attachment-card-size">108.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__Flute.ico.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">ico</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__GClef.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__GClef.png</div>
+                        <div class="attachment-card-size">2.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__GClef.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__Icon-Save-Small.jpg">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__Icon-Save-Small.jpg</div>
+                        <div class="attachment-card-size">2.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__Icon-Save-Small.jpg.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">jpg</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__Icon-Save.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__Icon-Save.png</div>
+                        <div class="attachment-card-size">24.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__Icon-Save.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__Microphone-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__Microphone-icon.png</div>
+                        <div class="attachment-card-size">2.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__Microphone-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__Pause-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__Pause-icon.png</div>
+                        <div class="attachment-card-size">1.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__Pause-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__Places-folder-orange-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__Places-folder-orange-icon.png</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__Places-folder-orange-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__Play-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__Play-icon.png</div>
+                        <div class="attachment-card-size">2.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__Play-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__Recorder picture.jpg">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__Recorder picture.jpg</div>
+                        <div class="attachment-card-size">42.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__Recorder picture.jpg.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">jpg</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__Stop-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__Stop-icon.png</div>
+                        <div class="attachment-card-size">2.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__Stop-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__directoryIcon.gif">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__directoryIcon.gif</div>
+                        <div class="attachment-card-size">0.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__directoryIcon.gif.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">gif</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__folder1.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__folder1.png</div>
+                        <div class="attachment-card-size">0.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__folder1.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__ghostscript_med.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__ghostscript_med.png</div>
+                        <div class="attachment-card-size">2.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__ghostscript_med.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__lock (noteDrawer).png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__lock (noteDrawer).png</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__lock (noteDrawer).png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__new_page.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__new_page.png</div>
+                        <div class="attachment-card-size">1.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__new_page.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__new_page1.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__new_page1.png</div>
+                        <div class="attachment-card-size">0.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__new_page1.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__note.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__note.png</div>
+                        <div class="attachment-card-size">1.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__note.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__noteflag.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__noteflag.png</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__noteflag.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__noteflagdown.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__noteflagdown.png</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__noteflagdown.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__noteflagup.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__noteflagup.png</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__noteflagup.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__notey1.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__notey1.png</div>
+                        <div class="attachment-card-size">142.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__notey1.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__notey2.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__notey2.png</div>
+                        <div class="attachment-card-size">113.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__notey2.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__notey3.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__notey3.png</div>
+                        <div class="attachment-card-size">119.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__notey3.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__open.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__open.png</div>
+                        <div class="attachment-card-size">2.8 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__open.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__pause.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__pause.png</div>
+                        <div class="attachment-card-size">2.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__pause.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__play.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__play.png</div>
+                        <div class="attachment-card-size">2.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__play.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__recorderFingering.txt">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__recorderFingering.txt</div>
+                        <div class="attachment-card-size">0.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__recorderFingering.txt.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">txt</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__recorderPictureHoles.txt">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__recorderPictureHoles.txt</div>
+                        <div class="attachment-card-size">0.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__recorderPictureHoles.txt.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">txt</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__refresh.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__refresh.png</div>
+                        <div class="attachment-card-size">2.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__refresh.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__save.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__save.png</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__save.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__save1.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__save1.png</div>
+                        <div class="attachment-card-size">0.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__save1.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__stop-red-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__stop-red-icon.png</div>
+                        <div class="attachment-card-size">1.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__stop-red-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Resources__stop.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Resources__stop.png</div>
+                        <div class="attachment-card-size">2.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Resources__stop.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__SavingRecordForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__SavingRecordForm.Designer.cs</div>
+                        <div class="attachment-card-size">13.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__SavingRecordForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__SavingRecordForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__SavingRecordForm.cs</div>
+                        <div class="attachment-card-size">8.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__SavingRecordForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__SavingRecordForm.resx">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__SavingRecordForm.resx</div>
+                        <div class="attachment-card-size">6.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__SavingRecordForm.resx.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">resx</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__WaveGraphics.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__WaveGraphics.cs</div>
+                        <div class="attachment-card-size">2.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__WaveGraphics.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__WaveIn.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__WaveIn.cs</div>
+                        <div class="attachment-card-size">12.8 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__WaveIn.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__Win32Waveform.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__Win32Waveform.cs</div>
+                        <div class="attachment-card-size">6.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__Win32Waveform.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__bin__Release__Recorder.XML">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__bin__Release__Recorder.XML</div>
+                        <div class="attachment-card-size">33.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__bin__Release__Recorder.XML.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">XML</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__bin__Release__Recorder.exe.config">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__bin__Release__Recorder.exe.config</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__bin__Release__Recorder.exe.config.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">config</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__bin__Release__Recorder.vshost.exe.Config">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__bin__Release__Recorder.vshost.exe.Config</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__bin__Release__Recorder.vshost.exe.Config.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">Config</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__configuration.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__configuration.cs</div>
+                        <div class="attachment-card-size">2.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__configuration.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__obj__Debug__Recorder.csproj.FileListAbsolute.txt">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__obj__Debug__Recorder.csproj.FileListAbsolute.txt</div>
+                        <div class="attachment-card-size">8.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__obj__Debug__Recorder.csproj.FileListAbsolute.txt.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">txt</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__Recorder__obj__Release__Recorder.csproj.FileListAbsolute.txt">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__Recorder__obj__Release__Recorder.csproj.FileListAbsolute.txt</div>
+                        <div class="attachment-card-size">11.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__Recorder__obj__Release__Recorder.csproj.FileListAbsolute.txt.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">txt</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-27_recorder-newds" data-filename="Recorder__UpgradeLog.XML">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Recorder__UpgradeLog.XML</div>
+                        <div class="attachment-card-size">6.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-27_recorder-newds/Recorder__UpgradeLog.XML.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">XML</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <!-- Gmail-style reply/forward bar -->
+    <div class="email-reply-bar">
+        <a href="/project/2011-09-29_notey/" class="gmail-action-btn">&lsaquo; Newer</a>
+        <a href="/project/2011-09-17_recorder-new-2/" class="gmail-action-btn">Older &rsaquo;</a>
+    </div>
+</div>
+
+
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+<script>
+document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
+    if (e.key === 'ArrowLeft') {
+        var prev = document.getElementById('prev-btn');
+        if (prev) window.location.href = prev.href;
+    } else if (e.key === 'ArrowRight') {
+        var next = document.getElementById('next-btn');
+        if (next) window.location.href = next.href;
+    }
+});
+
+/* Expandable file content */
+var imgExts = ['.jpg','.jpeg','.png','.gif','.bmp','.svg','.webp'];
+var fileItems = document.querySelectorAll('.email-attachment-card');
+
+fileItems.forEach(function(item) {
+    item.style.cursor = 'pointer';
+    item.addEventListener('click', function() {
+        var area = item.closest('.file-expandable').querySelector('.file-content-area');
+        if (!area) return;
+        if (area.style.display !== 'none') {
+            area.style.display = 'none';
+            item.classList.remove('attachment-active');
+        } else {
+            area.style.display = 'block';
+            item.classList.add('attachment-active');
+        }
+    });
+});
+
+/* Load and expand all files on page load with a single API call */
+var projectName = fileItems.length > 0 ? fileItems[0].getAttribute('data-project') : null;
+if (projectName) {
+    fetch('/api/project/' + encodeURIComponent(projectName) + '.json')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            var fileMap = {};
+            data.files.forEach(function(f) { fileMap[f.filename] = f; });
+
+            fileItems.forEach(function(item) {
+                var wrapper = item.closest('.file-expandable');
+                var area = wrapper.querySelector('.file-content-area');
+                if (!area) return;
+                var filename = item.getAttribute('data-filename');
+                var ext = filename.substring(filename.lastIndexOf('.')).toLowerCase();
+
+                if (imgExts.indexOf(ext) !== -1) {
+                    area.innerHTML = '<div class="file-preview-img"><img src="/raw/' + encodeURIComponent(projectName) + '/' + encodeURIComponent(filename) + '" alt="' + filename + '"></div>';
+                } else {
+                    var file = fileMap[filename];
+                    if (!file || file.binary) {
+                        area.innerHTML = '<div class="file-preview-loading">' + (file ? 'Binary file' : 'File not found') + '</div>';
+                    } else if (!file.content) {
+                        area.innerHTML = '<div class="file-preview-loading">Empty file</div>';
+                    } else {
+                        var langClass = file.language ? ' class="language-' + file.language.toLowerCase() + '"' : '';
+                        area.innerHTML = '<pre class="file-preview-code"><code' + langClass + '>' + escapeHtml(file.content) + '</code></pre>';
+                        area.querySelectorAll('pre code').forEach(function(block) { hljs.highlightElement(block); });
+                        addRunButton(area, projectName, filename, file.content);
+                    }
+                }
+
+                area.setAttribute('data-loaded', '1');
+                area.style.display = 'block';
+                item.classList.add('attachment-active');
+            });
+        })
+        .catch(function() {
+            fileItems.forEach(function(item) {
+                var wrapper = item.closest('.file-expandable');
+                var area = wrapper.querySelector('.file-content-area');
+                if (area) area.innerHTML = '<div class="file-preview-loading">Failed to load</div>';
+            });
+        });
+}
+
+function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+</script>
+
+</body>
+</html>

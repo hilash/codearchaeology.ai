@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShvilIsraelWebapp__lib__dojo__dojox__calc___ExecutorIframe.html - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ed007e; background-color: #1e0010 } /* Error */
+.highlight .esc { color: #f8f8f2 } /* Escape */
+.highlight .g { color: #f8f8f2 } /* Generic */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #ff4689 } /* Operator */
+.highlight .x { color: #f8f8f2 } /* Other */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #ff4689 } /* Generic.Deleted */
+.highlight .ge { color: #f8f8f2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #f8f8f2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #f8f8f2 } /* Generic.Error */
+.highlight .gh { color: #f8f8f2 } /* Generic.Heading */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .go { color: #66d9ef } /* Generic.Output */
+.highlight .gp { color: #ff4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #f8f8f2 } /* Generic.Traceback */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #ff4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #ff4689 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #ff4689 } /* Operator.Word */
+.highlight .pm { color: #f8f8f2 } /* Punctuation.Marker */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style>
+
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<a href="/project/2013-04-04_web-app-version-1/" class="back-link">&laquo; Back to Web App Version 1</a>
+
+<div class="viewer-header">
+    <h1>ShvilIsraelWebapp__lib__dojo__dojox__calc___ExecutorIframe.html</h1>
+    <div class="viewer-meta">
+        <span class="tag">HTML</span>
+        <span>19.6 KB</span>
+        
+        <button id="run-btn" class="gmail-action-btn client-runnable" onclick="runCode()">&#9654; Run Code</button>
+        
+    </div>
+</div>
+
+
+<div class="code-container">
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span>
+<span class="normal">464</span>
+<span class="normal">465</span>
+<span class="normal">466</span>
+<span class="normal">467</span>
+<span class="normal">468</span>
+<span class="normal">469</span>
+<span class="normal">470</span>
+<span class="normal">471</span>
+<span class="normal">472</span>
+<span class="normal">473</span>
+<span class="normal">474</span>
+<span class="normal">475</span>
+<span class="normal">476</span>
+<span class="normal">477</span>
+<span class="normal">478</span>
+<span class="normal">479</span>
+<span class="normal">480</span>
+<span class="normal">481</span>
+<span class="normal">482</span>
+<span class="normal">483</span>
+<span class="normal">484</span>
+<span class="normal">485</span>
+<span class="normal">486</span>
+<span class="normal">487</span>
+<span class="normal">488</span>
+<span class="normal">489</span>
+<span class="normal">490</span>
+<span class="normal">491</span>
+<span class="normal">492</span>
+<span class="normal">493</span>
+<span class="normal">494</span>
+<span class="normal">495</span>
+<span class="normal">496</span>
+<span class="normal">497</span>
+<span class="normal">498</span>
+<span class="normal">499</span>
+<span class="normal">500</span>
+<span class="normal">501</span>
+<span class="normal">502</span>
+<span class="normal">503</span>
+<span class="normal">504</span>
+<span class="normal">505</span>
+<span class="normal">506</span>
+<span class="normal">507</span>
+<span class="normal">508</span>
+<span class="normal">509</span>
+<span class="normal">510</span>
+<span class="normal">511</span>
+<span class="normal">512</span>
+<span class="normal">513</span>
+<span class="normal">514</span>
+<span class="normal">515</span>
+<span class="normal">516</span>
+<span class="normal">517</span>
+<span class="normal">518</span>
+<span class="normal">519</span>
+<span class="normal">520</span>
+<span class="normal">521</span>
+<span class="normal">522</span>
+<span class="normal">523</span>
+<span class="normal">524</span>
+<span class="normal">525</span>
+<span class="normal">526</span>
+<span class="normal">527</span>
+<span class="normal">528</span>
+<span class="normal">529</span>
+<span class="normal">530</span>
+<span class="normal">531</span>
+<span class="normal">532</span>
+<span class="normal">533</span></pre></div></td><td class="code"><div><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+<span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_toString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toString</span><span class="p">;</span>
+<span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(){</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;[&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_toString</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;]&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+
+<span class="nb">Number</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_toString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toString</span><span class="p">;</span>
+<span class="nb">Number</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">radix</span><span class="p">){</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">radix</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">radix</span><span class="o">==</span><span class="mf">10</span><span class="p">){</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">_toString</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="nx">radix</span><span class="o">==</span><span class="mf">2</span><span class="p">){</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;0b&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">_toString</span><span class="p">(</span><span class="nx">radix</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="nx">radix</span><span class="o">==</span><span class="mf">8</span><span class="p">){</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;0o&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">_toString</span><span class="p">(</span><span class="nx">radix</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="nx">radix</span><span class="o">==</span><span class="mf">16</span><span class="p">){</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;0x&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">_toString</span><span class="p">(</span><span class="nx">radix</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_toString</span><span class="p">(</span><span class="nx">radix</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;#&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">radix</span><span class="p">.</span><span class="nx">_toString</span><span class="p">();</span><span class="w"> </span><span class="p">};</span>
+
+<span class="p">(</span><span class="kd">function</span><span class="p">(){</span><span class="w"> </span><span class="c1">// env is private</span>
+<span class="w">	</span><span class="nb">parseFloat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">){</span>
+<span class="w">	</span><span class="kd">var</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">	</span><span class="kd">function</span><span class="w"> </span><span class="nx">getRadixObject</span><span class="p">(</span><span class="nx">whole</span><span class="p">,</span><span class="w"> </span><span class="nx">numberStr</span><span class="p">,</span><span class="w"> </span><span class="nx">base</span><span class="p">){</span>
+<span class="w">		</span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">number</span><span class="o">:</span><span class="nx">numberStr</span><span class="p">,</span><span class="w"> </span><span class="nx">radix</span><span class="o">:</span><span class="nx">base</span><span class="p">};</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+<span class="w">	</span><span class="kd">function</span><span class="w"> </span><span class="nx">getBaseString</span><span class="p">(</span><span class="nx">whole</span><span class="p">,</span><span class="w"> </span><span class="nx">base</span><span class="p">,</span><span class="w"> </span><span class="nx">numberStr</span><span class="p">){</span>
+<span class="w">		</span><span class="kd">var</span><span class="w"> </span><span class="nx">baseNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">base</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;0b&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">base</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;0o&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">8</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">16</span><span class="p">;</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="nx">numberStr</span><span class="o">+</span><span class="s2">&quot;#&quot;</span><span class="o">+</span><span class="nx">baseNum</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+
+<span class="w">	</span><span class="kd">var</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(0b|0o|0x)(([0-9a-zA-Z]+\.[0-9a-zA-Z]*|\.[0-9a-zA-Z]+|[0-9a-zA-Z]+))/</span><span class="p">,</span><span class="w"> </span><span class="nx">getBaseString</span><span class="p">);</span>
+
+<span class="w">	</span><span class="kd">var</span><span class="w"> </span><span class="nx">radix</span><span class="p">;</span>
+
+<span class="w">	</span><span class="kd">var</span><span class="w"> </span><span class="nx">poundRegExp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/([0-9a-zA-Z]+\.[0-9a-zA-Z]*|\.[0-9a-zA-Z]+|[0-9a-zA-Z]+)\#([0-9a-zA-Z]+)/g</span><span class="p">;</span>
+<span class="w">	</span><span class="k">if</span><span class="p">(</span><span class="nx">poundRegExp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">)){</span>
+<span class="w">		</span><span class="c1">// define obj in getRadixObject</span>
+<span class="w">		</span><span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">poundRegExp</span><span class="p">,</span><span class="w"> </span><span class="nx">getRadixObject</span><span class="p">);</span>
+<span class="w">		</span><span class="nx">radix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">obj</span><span class="p">.</span><span class="nx">radix</span><span class="p">;</span>
+<span class="w">		</span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">obj</span><span class="p">.</span><span class="nx">number</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+<span class="w">	</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">radix</span><span class="p">){</span>
+<span class="w">		</span><span class="nx">radix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+<span class="w">	</span><span class="kd">var</span><span class="w"> </span><span class="nx">decimal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">);</span>
+<span class="w">	</span><span class="k">if</span><span class="p">(</span><span class="nx">decimal</span><span class="o">&gt;=</span><span class="mf">0</span><span class="p">){</span>
+<span class="w">		</span><span class="kd">var</span><span class="w"> </span><span class="nx">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="nx">decimal</span><span class="p">);</span>
+<span class="w">		</span><span class="k">if</span><span class="p">(</span><span class="nx">left</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">){</span>
+<span class="w">			</span><span class="nx">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+<span class="w">		</span><span class="kd">var</span><span class="w"> </span><span class="nx">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">str</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">decimal</span><span class="o">+</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="w">		</span><span class="k">if</span><span class="p">(</span><span class="nx">right</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">){</span>
+<span class="w">			</span><span class="nx">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+<span class="w">		</span><span class="kd">var</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span><span class="w"> </span><span class="nx">radix</span><span class="p">);</span>
+
+<span class="w">		</span><span class="kd">var</span><span class="w"> </span><span class="nx">dec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">right</span><span class="p">,</span><span class="w"> </span><span class="nx">radix</span><span class="p">);</span>
+<span class="w">		</span><span class="kd">var</span><span class="w"> </span><span class="nx">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dec</span><span class="p">.</span><span class="nx">_toString</span><span class="p">().</span><span class="nx">length</span><span class="p">;</span>
+<span class="w">		</span><span class="nx">dec</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">radix</span><span class="p">,</span><span class="w"> </span><span class="nx">right</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="nx">num</span><span class="o">+</span><span class="nx">dec</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+<span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span><span class="w"> </span><span class="nx">radix</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="w">	</span><span class="kd">var</span><span class="w"> </span><span class="nx">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="nb">window</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;delete&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="c1">// invalidate access to the globals for security so that window.blah is invalid as is delete window</span>
+
+<span class="w">		</span><span class="nx">prompt</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">label</span><span class="p">,</span><span class="w"> </span><span class="nx">defaultValue</span><span class="p">){</span>
+<span class="w">			</span><span class="c1">// summary:</span>
+<span class="w">			</span><span class="c1">//		prompt the user for input without making IE8 mad.</span>
+<span class="w">			</span><span class="c1">// label:</span>
+<span class="w">			</span><span class="c1">//		the String name of the variable you are asking the user to input</span>
+<span class="w">			</span><span class="c1">// defaultValue: primitive</span>
+<span class="w">			</span><span class="c1">//		the prompt will show this value initially</span>
+
+<span class="w">			</span><span class="nx">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">label</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="w">			</span><span class="nx">defaultValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">defaultValue</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="w">			</span><span class="k">try</span><span class="p">{</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">outerPrompt</span><span class="p">(</span><span class="nx">label</span><span class="p">,</span><span class="w"> </span><span class="nx">defaultValue</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">prompt</span><span class="p">(</span><span class="nx">label</span><span class="p">,</span><span class="w"> </span><span class="nx">defaultValue</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">		</span><span class="p">},</span>
+<span class="w">		</span><span class="nx">val</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">local</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">obj</span><span class="p">){</span>
+<span class="w">			</span><span class="c1">// summary:</span>
+<span class="w">			</span><span class="c1">//		allow the user to use locals, globals, or give input for undefined values</span>
+<span class="w">			</span><span class="c1">// local: a primitive object</span>
+<span class="w">			</span><span class="c1">//		what value might&#39;ve been passed to val as a local parameter.</span>
+<span class="w">			</span><span class="c1">// name: String</span>
+<span class="w">			</span><span class="c1">//		String name of the object.  It is passed to see if there is an available global or to set the global.</span>
+<span class="w">			</span><span class="kd">var</span><span class="w"> </span><span class="nx">objValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">obj</span><span class="p">[</span><span class="nx">name</span><span class="p">];</span>
+<span class="w">			</span><span class="nx">local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">objValue</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="nx">local</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nb">window</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">local</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">objValue</span><span class="w"> </span><span class="p">;</span>
+
+<span class="w">			</span><span class="k">if</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">local</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;undefined&#39;</span><span class="p">){</span>
+<span class="w">				</span><span class="k">if</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">graphing</span><span class="p">){</span>
+<span class="w">					</span><span class="k">return</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<span class="w">				</span><span class="p">}</span>
+<span class="w">				</span><span class="nx">local</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">prompt</span><span class="p">(</span><span class="s1">&#39;Enter the value for &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span>
+
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">local</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">local</span><span class="p">))</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">local</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">local</span><span class="p">));</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="nx">local</span><span class="p">;</span>
+<span class="w">		</span><span class="p">},</span>
+<span class="w">		</span><span class="nx">_makeKeywordsLiteral</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">			</span><span class="c1">// summary:</span>
+<span class="w">			</span><span class="c1">//		surround reserved words with hex characters</span>
+
+<span class="w">			</span><span class="c1">// ==, then &gt;=. the &lt;=, then !=, then = and surround them with \x0n first</span>
+<span class="w">			</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(!=(?!=)|==|&gt;=|&lt;=|=)/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;\x02$1\x02&quot;</span><span class="p">);</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\b(abstract|boolean|break|byte|case|catch|char|class|const|continue|debugger|default|do|double|else|enum|export|extends|false|final|finally|float|for|function|goto|if|implements|import|in| instanceof|int|interface|long|native|null|package|private|protected|public|return|short|static|super| switch|synchronized|this|throw|throws|transient|true|try|typeof|var|void|volatile|while|with)\b/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;\x02$1\x02&quot;</span><span class="p">);</span>
+<span class="w">		</span><span class="p">},</span>
+<span class="w">		</span><span class="nx">switchToGermanNumbers</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">			</span><span class="c1">// summary:</span>
+<span class="w">			</span><span class="c1">//		change the format of some javascript allowed numbers to an alternate form 3.5 goes to 3,5</span>
+<span class="w">			</span><span class="kd">var</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">			</span><span class="kd">var</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">substituteCommas</span><span class="p">(</span><span class="nx">whole</span><span class="p">,</span><span class="w"> </span><span class="nx">junk</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="nx">numbers</span><span class="p">[</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="nx">num</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\,/g</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;;&#39;</span><span class="p">);</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">junk</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="p">(</span><span class="nx">num</span><span class="o">++</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">substituteNumbers</span><span class="p">(</span><span class="nx">wholematch</span><span class="p">,</span><span class="w"> </span><span class="nx">stuff</span><span class="p">,</span><span class="w"> </span><span class="nx">junk</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">,</span><span class="w"> </span><span class="nx">stuff2</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">stuff</span><span class="o">+</span><span class="nx">numbers</span><span class="p">[</span><span class="nx">text</span><span class="p">]</span><span class="o">+</span><span class="nx">stuff2</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="k">if</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">){</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="k">if</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;\x02&#39;</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">0</span><span class="p">){</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_makeKeywordsLiteral</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">				</span><span class="c1">//text = text.replace(/(!=(?!=)|==|&gt;=|&lt;=|=)/g, &quot;\x02$1\x02&quot;);</span>
+<span class="w">			</span><span class="p">}</span>
+
+<span class="w">			</span><span class="c1">// same as semiColonRegExp</span>
+<span class="w">			</span><span class="kd">var</span><span class="w"> </span><span class="nx">commaRegExp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/([^\x02\s]*)(\([^\(\)]+\)|\[[^\[\]]+\])/</span><span class="p">;</span>
+<span class="w">			</span><span class="k">while</span><span class="p">(</span><span class="nx">commaRegExp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)){</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">commaRegExp</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nx">substituteCommas</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+
+<span class="w">			</span><span class="k">while</span><span class="p">(</span><span class="sr">/((\W)*)(\_[0-9]+\_)((\W)*)/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)){</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/((\W)*)(\_[0-9]+\_)((\W)*)/g</span><span class="p">,</span><span class="w"> </span><span class="nx">substituteNumbers</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+
+<span class="w">			</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/([0-9]*)\.([0-9]+)/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$1&quot;</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">+</span><span class="s2">&quot;$2&quot;</span><span class="p">);</span>
+
+<span class="w">			</span><span class="c1">// get rid of keyword characters (duplicate code from parse())</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\x02((.|\s)*?)\x02/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$1&quot;</span><span class="p">);</span>
+<span class="w">		</span><span class="p">},</span>
+<span class="w">		</span><span class="nx">normalizeTextLanguage</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">			</span><span class="c1">// summary:</span>
+<span class="w">			</span><span class="c1">//		change text to use javascript list separators and decimal points instead of commas</span>
+<span class="w">			</span><span class="c1">// text: String</span>
+<span class="w">			</span><span class="c1">//		string like &quot;pow(3,1; 4);&quot;</span>
+<span class="w">			</span><span class="c1">//		for that input, this method should return &quot;pow(3.1, 4);&quot;</span>
+
+<span class="w">			</span><span class="kd">var</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">			</span><span class="kd">var</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">substituteSemicolons</span><span class="p">(</span><span class="nx">whole</span><span class="p">,</span><span class="w"> </span><span class="nx">junk</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="nx">numbers</span><span class="p">[</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="nx">num</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\;/g</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="p">);</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">junk</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="p">(</span><span class="nx">num</span><span class="o">++</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">substituteNumbers</span><span class="p">(</span><span class="nx">wholematch</span><span class="p">,</span><span class="w"> </span><span class="nx">stuff</span><span class="p">,</span><span class="w"> </span><span class="nx">junk</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">,</span><span class="w"> </span><span class="nx">stuff2</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">stuff</span><span class="o">+</span><span class="nx">numbers</span><span class="p">[</span><span class="nx">text</span><span class="p">]</span><span class="o">+</span><span class="nx">stuff2</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="k">if</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;\x02&#39;</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">0</span><span class="p">){</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_makeKeywordsLiteral</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="c1">// change all comma-type decimals into periods</span>
+<span class="w">			</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/([0-9]*)\,([0-9]+)/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$1&quot;</span><span class="o">+</span><span class="s1">&#39;.&#39;</span><span class="o">+</span><span class="s2">&quot;$2&quot;</span><span class="p">);</span>
+<span class="w">			</span><span class="c1">//alert(text);</span>
+<span class="w">			</span><span class="kd">var</span><span class="w"> </span><span class="nx">semiColonRegExp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/([^\x02\s]*)(\([^\(\)]+\)|\[[^\[\]]+\])/</span><span class="p">;</span><span class="w"> </span><span class="c1">// /([^\x02\s]+)(\([^\(\)]+\)|\[[^\[\]]+\])/; // /[^\x02\s]+\([^\(\)]+\)|[^\x02\s]+\[[^\[\]]+\]/; // /[^\x02]\s*\([^\(]+\)/;</span>
+<span class="w">			</span><span class="k">while</span><span class="p">(</span><span class="nx">semiColonRegExp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)){</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">semiColonRegExp</span><span class="p">,</span><span class="w"> </span><span class="nx">substituteSemicolons</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="k">while</span><span class="p">(</span><span class="sr">/((\W)*)(\_[0-9]+\_)((\W)*)/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)){</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/((\W)*)(\_[0-9]+\_)((\W)*)/g</span><span class="p">,</span><span class="w"> </span><span class="nx">substituteNumbers</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="c1">// get rid of keyword characters (duplicate code from parse())</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\x02((.|\s)*?)\x02/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$1&quot;</span><span class="p">);</span>
+<span class="w">		</span><span class="p">},</span>
+<span class="w">		</span><span class="nx">preparse</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">			</span><span class="c1">// summary:</span>
+<span class="w">			</span><span class="c1">//		change the numbers to javascript allowed numbers if it is from a different locale</span>
+<span class="w">			</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">isJavaScriptLanguage</span><span class="p">){</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">normalizeTextLanguage</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">;</span>
+<span class="w">		</span><span class="p">},</span>
+<span class="w">		</span><span class="c1">// parseFloat(Number(4.5).toString(3)) should return 4.5</span>
+
+<span class="w">		</span><span class="nx">postparse</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">			</span><span class="c1">// summary:</span>
+<span class="w">			</span><span class="c1">//		make the javascript numbers match the locale</span>
+<span class="w">			</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">isJavaScriptLanguage</span><span class="p">){</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">switchToGermanNumbers</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">;</span>
+<span class="w">		</span><span class="p">},</span>
+<span class="w">		</span><span class="nx">toDecimalRegExp</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">whole</span><span class="p">,</span><span class="w"> </span><span class="nx">base</span><span class="p">,</span><span class="w"> </span><span class="nx">number</span><span class="p">){</span>
+<span class="w">			</span><span class="c1">// summary:</span>
+<span class="w">			</span><span class="c1">//		get the decimal number from a float</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">getBase</span><span class="p">(</span><span class="nx">base</span><span class="p">){</span>
+<span class="w">				</span><span class="k">switch</span><span class="p">(</span><span class="nx">base</span><span class="p">){</span>
+<span class="w">					</span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;0b&#39;</span><span class="o">:</span>
+<span class="w">						</span><span class="k">return</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="w">					</span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;0o&#39;</span><span class="o">:</span>
+<span class="w">						</span><span class="k">return</span><span class="w"> </span><span class="mf">8</span><span class="p">;</span>
+<span class="w">					</span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;0x&#39;</span><span class="o">:</span>
+<span class="w">						</span><span class="k">return</span><span class="w"> </span><span class="mf">16</span><span class="p">;</span>
+<span class="w">					</span><span class="k">default</span><span class="o">:</span>
+<span class="w">						</span><span class="k">return</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="w">				</span><span class="p">}</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="c1">//return parseInt(base, getBase(base));</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">base</span><span class="o">+</span><span class="nx">number</span><span class="p">);</span>
+<span class="w">		</span><span class="p">},</span>
+<span class="w">		</span><span class="nx">parse</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">			</span><span class="c1">// summary:</span>
+<span class="w">			</span><span class="c1">//		This parses augmented mathematical syntax and converts it to executable JavaScript.</span>
+<span class="w">			</span><span class="c1">// text: String</span>
+<span class="w">			</span><span class="c1">//		should be a String which represents an expression, a function, a number, etc</span>
+
+<span class="w">			</span><span class="c1">// this array holds the substitutions that represent an expression&#39;s parentheses and functions in a simplified way.</span>
+<span class="w">			</span><span class="kd">var</span><span class="w">	</span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">				</span><span class="c1">// characters</span>
+<span class="w">				</span><span class="nx">functionContentsChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;\x03&#39;</span><span class="p">,</span>
+<span class="w">			</span><span class="c1">// these are the regular expression needed to find and replace operators</span>
+<span class="w">				</span><span class="nx">factorialRE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/((\w|\.)+)\s*\!/</span><span class="p">,</span>
+<span class="w">				</span><span class="nx">unaryRightsideRE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/(^|[\+\-\/\*\!\^\u221A]+\s*)([\+\-]+)\s*((\w|\.)+)(?!.*[\+\-])/</span><span class="p">,</span>
+<span class="w">				</span><span class="nx">unaryRE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/(^|[^a-zA-Z0-9_\.\s]+\s*)([\+\-]+|\u221A)\s*((\w|\.)+)/</span><span class="p">,</span><span class="w">		 </span><span class="c1">// /(^|[^a-zA-Z0-9_\.]\s*)([\+\-]+|\u221A)\s*((\w|\.)+)/,</span>
+<span class="w">				</span><span class="nx">caretRE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/((\w|\.)+)\s*([\^])\s*((\w|\.)+)/</span><span class="p">,</span><span class="w"> </span><span class="c1">// /((\w|\.)+)\s*([\^])\s*(-?\s*(\w|\.)+)/, </span>
+<span class="w">				</span><span class="nx">radicalRE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/((\w|\.)+)\s*(\u221A)\s*([+-]?\s*(\w|\.)+)/</span><span class="p">,</span><span class="w"> </span><span class="c1">// /((\w|\.)+)\s*(\u221A)\s*([+-]?\s*(\w|\.)+)(?!.*\u221A)/,</span>
+<span class="w">				</span><span class="nx">binaryHighRE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/((\w|\.)+)\s*([*/])\s*((\w|\.)+)/</span><span class="p">,</span>
+<span class="w">				</span><span class="nx">binaryLowRE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/((\w|\.)+)\s*([\+\-])+\s*((\w|\.)+)/</span><span class="p">;</span>
+
+<span class="w">			</span><span class="c1">// get rid of all new and delete statements</span>
+<span class="w">			</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">exterminateNewAndDelete</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">			</span><span class="c1">// make all keywords and operators literal (like &#39;!=&#39; or &#39;return&#39;) by surrounding them with unprintable characters</span>
+<span class="w">			</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_makeKeywordsLiteral</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+
+
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">getBaseTen</span><span class="p">(</span><span class="nx">whole</span><span class="p">,</span><span class="w"> </span><span class="nx">numberStr</span><span class="p">,</span><span class="w"> </span><span class="nx">base</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="o">+</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">numberStr</span><span class="o">+</span><span class="s2">&quot;#&quot;</span><span class="o">+</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">base</span><span class="p">));</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(0b)([0-1]+\.[0-1]*|\.[0-1]+|[0-1]+)/g</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">toDecimalRegExp</span><span class="p">);</span>
+<span class="w">			</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(0o)([0-7]+\.[0-7]*|\.[0-7]+|[0-7]+)/g</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">toDecimalRegExp</span><span class="p">);</span>
+<span class="w">			</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(0x)([0-9a-zA-Z]+\.[0-9a-zA-Z]*|\.[0-9a-zA-Z]+|[0-9a-zA-Z]+)/g</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">toDecimalRegExp</span><span class="p">);</span>
+
+<span class="w">			</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/([0-9a-zA-Z]+\.[0-9a-zA-Z]*|\.[0-9a-zA-Z]+|[0-9a-zA-Z]+)\#([0-9a-zA-Z]+)/g</span><span class="p">,</span><span class="w"> </span><span class="nx">getBaseTen</span><span class="p">);</span>
+
+<span class="w">			</span><span class="c1">// parse the input to form JavaScript</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="nx">MathParser</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">MathParser</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="c1">// Pi is better represented by \u03C0, but isn&#39;t computable</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\u03C0/g</span><span class="p">,</span><span class="s2">&quot;Math.PI&quot;</span><span class="p">);</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\u03F5/g</span><span class="p">,</span><span class="s2">&quot;Math.E&quot;</span><span class="p">);</span>
+
+<span class="w">				</span><span class="c1">// Microsoft word will give you these &#39;\u2013&#39; for a subtraction sign sometimes, so I&#39;ll fix that here</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\u2013/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="p">);</span>
+<span class="w">				</span><span class="c1">// add unreadable characters in front of functions so it is easier to manipulate</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(((\w|\.)+\s*)\()/g</span><span class="p">,</span><span class="nx">putFuncChar</span><span class="p">);</span>
+
+<span class="w">				</span><span class="c1">// change 10e-10 or 10e10 or 10e+10 to an constant right away</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">scientificNotationSimplifier</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">				</span><span class="c1">// recursively track down and replace all simplified parts of the expression until everything is simple; then move the simple text into the correct JavaScript format</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parseRecursive</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">				</span><span class="c1">// now resubstitute the real text back into the string now that it is arranged correctly</span>
+<span class="w">				</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">hasArrayIndexBasedOnUnderscore</span><span class="p">(</span><span class="nx">text</span><span class="p">)){</span>
+<span class="w">					</span><span class="nx">text</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\_(\d+)\_/g</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">whole</span><span class="p">,</span><span class="w"> </span><span class="nx">one</span><span class="p">){</span><span class="k">return</span><span class="w"> </span><span class="nx">numbers</span><span class="p">[</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">one</span><span class="p">)]});</span>
+<span class="w">				</span><span class="p">}</span>
+<span class="w">				</span><span class="c1">// get rid of the function character from the functions now</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\x01/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">				</span><span class="c1">// get rid of keyword characters too</span>
+<span class="w">				</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\x02((.|\s)*?)\x02/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$1&quot;</span><span class="p">);</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">exterminateNewAndDelete</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\b(delete|new|this\.*)\b/</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="c1">// A simple grouping has no parentheses inside the initial pair.</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">isSimpleGrouping</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="sr">/^\([^()]*\)|\W\([^()]*\)/</span><span class="p">).</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">ReplaceSimpleGrouping</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">((</span><span class="sr">/(^|\W)(\([^()]*\))/</span><span class="p">),</span><span class="w"> </span><span class="nx">replaceWithNum</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">replaceWithNum</span><span class="p">(</span><span class="nx">wholeMatch</span><span class="p">,</span><span class="w"> </span><span class="nx">partMatch1</span><span class="p">,</span><span class="w"> </span><span class="nx">partMatch2</span><span class="p">){</span>
+<span class="w">				</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">partMatch2</span><span class="p">);</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">partMatch1</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">replaceFuncWithNum</span><span class="p">(</span><span class="nx">wholeMatch</span><span class="p">){</span>
+<span class="w">				</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">wholeMatch</span><span class="p">);</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="c1">// A simple function has no parentheses within its parentheses, and has the special character \x01 leading up to the name and (...)</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">isSimpleFunction</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="sr">/\x01((\w|\.)+\s*)\([^()]*\)/</span><span class="p">).</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">ReplaceSimpleFunction</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\x01((\w|\.)+\s*)\([^()]*\)/</span><span class="p">,</span><span class="w"> </span><span class="nx">replaceFuncWithNum</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">FactorialParser</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="c1">// loop this untill all ! are gone (in main)</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">factorialRE</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;\x01&quot;</span><span class="o">+</span><span class="s2">&quot;factorial($1)&quot;</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">putFuncChar</span><span class="p">(</span><span class="nx">wholematch</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;\x01&#39;</span><span class="o">+</span><span class="nx">wholematch</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">putInPiece</span><span class="p">(</span><span class="nx">wholematch</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">numbers</span><span class="p">[</span><span class="nx">currentNum</span><span class="p">];</span>
+<span class="w">			</span><span class="p">}</span>
+
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">caretParser</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">caretRE</span><span class="p">,</span><span class="w"> </span><span class="nx">replaceBinaryOp</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="c1">// the unary radical is inside the unaryOperatorParse(text) function</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">radicalOperatorParse</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">radicalRE</span><span class="p">,</span><span class="w"> </span><span class="nx">replaceBinaryOp</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">replaceBinaryOp</span><span class="p">(</span><span class="nx">wholeMatch</span><span class="p">,</span><span class="w"> </span><span class="nx">operand1</span><span class="p">,</span><span class="w"> </span><span class="nx">nothing1</span><span class="p">,</span><span class="w"> </span><span class="nx">operator</span><span class="p">,</span><span class="w"> </span><span class="nx">operand2</span><span class="p">){</span>
+
+<span class="w">				</span><span class="k">switch</span><span class="p">(</span><span class="nx">operator</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mf">0</span><span class="p">)){</span>
+<span class="w">					</span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;^&#39;</span><span class="o">:</span>
+<span class="w">						</span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;\x01&quot;</span><span class="o">+</span><span class="s2">&quot;pow(&quot;</span><span class="o">+</span><span class="nx">operand1</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nx">operand2</span><span class="o">+</span><span class="s2">&quot;)&quot;</span><span class="p">;</span>
+<span class="w">					</span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;\u221A&#39;</span><span class="o">:</span>
+<span class="w">						</span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;\x01&quot;</span><span class="o">+</span><span class="s2">&quot;pow(&quot;</span><span class="o">+</span><span class="nx">operand2</span><span class="o">+</span><span class="s2">&quot;, 1/&quot;</span><span class="o">+</span><span class="nx">operand1</span><span class="o">+</span><span class="s2">&quot;)&quot;</span><span class="p">;</span>
+<span class="w">					</span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="o">:</span>
+<span class="w">					</span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;/&#39;</span><span class="o">:</span>
+<span class="w">						</span><span class="k">return</span><span class="w"> </span><span class="nx">replaceFuncWithNum</span><span class="p">(</span><span class="nx">wholeMatch</span><span class="p">);</span>
+<span class="w">					</span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;+&#39;</span><span class="o">:</span>
+<span class="w">					</span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="o">:</span>
+<span class="w">					</span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;e&#39;</span><span class="o">:</span>
+<span class="w">						</span><span class="k">return</span><span class="w"> </span><span class="nx">replaceFuncWithNum</span><span class="p">(</span><span class="nx">simplifyPlusAnsMinus</span><span class="p">(</span><span class="nx">wholeMatch</span><span class="p">));</span>
+<span class="w">				</span><span class="p">}</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="c1">// e is treated as a binary operator</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">scientificNotationSimplifier</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="c1">//return text.replace(/((\w|\.)+)\s*([\e])\s*([+-]*\s*(\w|\.)+)/g, replaceBinaryOp);</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(([0-9]+\.?[0-9]*))(e)([+-]*([0-9]+))/g</span><span class="p">,</span><span class="w"> </span><span class="nx">replaceBinaryOp</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="c1">// this handles * and /</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">binaryHighPriorityOperatorParse</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">binaryHighRE</span><span class="p">,</span><span class="w"> </span><span class="nx">replaceBinaryOp</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="c1">// this handles + and - with two operands</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">binaryLowPriorityOperatorParse</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">binaryLowRE</span><span class="p">,</span><span class="w"> </span><span class="nx">replaceBinaryOp</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="c1">// this replaces the one operand +&#39;s, -&#39;s, and radicals</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">replaceUnaryOp</span><span class="p">(</span><span class="nx">wholeMatch</span><span class="p">,</span><span class="w"> </span><span class="nx">garbage</span><span class="p">,</span><span class="w"> </span><span class="nx">operator0</span><span class="p">,</span><span class="w"> </span><span class="nx">operand0</span><span class="p">){</span>
+<span class="w">				</span><span class="c1">// see what operator it is</span>
+<span class="w">				</span><span class="k">switch</span><span class="p">(</span><span class="nx">operator0</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mf">0</span><span class="p">)){</span>
+<span class="w">					</span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;\u221A&#39;</span><span class="o">:</span>
+<span class="w">						</span><span class="k">return</span><span class="w"> </span><span class="nx">garbage</span><span class="o">+</span><span class="s2">&quot;\x01&quot;</span><span class="o">+</span><span class="s2">&quot;sqrt(&quot;</span><span class="o">+</span><span class="nx">operand0</span><span class="o">+</span><span class="s2">&quot;)&quot;</span><span class="p">;</span>
+<span class="w">					</span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;+&#39;</span><span class="o">:</span>
+<span class="w">					</span><span class="k">case</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="o">:</span>
+<span class="w">						</span><span class="k">return</span><span class="w"> </span><span class="nx">garbage</span><span class="o">+</span><span class="nx">replaceFuncWithNum</span><span class="p">(</span><span class="nx">simplifyPlusAnsMinus</span><span class="p">(</span><span class="nx">wholeMatch</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="nx">garbage</span><span class="p">.</span><span class="nx">length</span><span class="p">)));</span>
+<span class="w">				</span><span class="p">}</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="c1">// this handles one operand operators -, +, radical</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">unaryOperatorParse</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">unaryRE</span><span class="p">,</span><span class="w"> </span><span class="nx">replaceUnaryOp</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="c1">// this handles one operand operators on the right side of everything</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">unaryOperatorRightsideParse</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">unaryRightsideRE</span><span class="p">,</span><span class="w"> </span><span class="nx">replaceUnaryOp</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">parseRecursive</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="c1">// keep going until there is nothing left that can be simplified</span>
+<span class="w">				</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">isSimpleGrouping</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="o">||</span><span class="nx">isSimpleFunction</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="o">||</span><span class="nx">factorialRE</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="o">||</span><span class="nx">caretRE</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="o">||</span><span class="nx">radicalRE</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="o">||</span><span class="nx">unaryRE</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="o">||</span><span class="nx">binaryHighRE</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="o">||</span><span class="nx">binaryLowRE</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)){</span>
+
+<span class="w">					</span><span class="kd">var</span><span class="w"> </span><span class="nx">sTextOrginal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">;</span>
+
+<span class="w">					</span><span class="k">if</span><span class="p">(</span><span class="nx">isSimpleFunction</span><span class="p">(</span><span class="nx">text</span><span class="p">)){</span>
+<span class="w">						</span><span class="kd">var</span><span class="w"> </span><span class="nx">debugText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">;</span>
+
+<span class="w">						</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ReplaceSimpleFunction</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">						</span><span class="kd">var</span><span class="w">	</span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">[</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mf">1</span><span class="p">],</span>
+<span class="w">							</span><span class="nx">pL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">),</span>
+<span class="w">							</span><span class="nx">funcName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;\x01&quot;</span><span class="p">)</span><span class="o">+</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">pL</span><span class="p">),</span><span class="c1">//take out the function character</span>
+<span class="w">							</span><span class="nx">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">pL</span><span class="o">+</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mf">1</span><span class="p">);</span>
+
+<span class="w">						</span><span class="nx">numbers</span><span class="p">[</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">funcName</span><span class="o">+</span><span class="s2">&quot;(&quot;</span><span class="o">+</span><span class="nx">parseRecursive</span><span class="p">(</span><span class="nx">functionContentsChar</span><span class="o">+</span><span class="nx">content</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;)&quot;</span><span class="p">;</span>
+<span class="w">						</span><span class="k">continue</span><span class="p">;</span>
+<span class="w">					</span><span class="p">}</span>
+<span class="w">					</span><span class="k">if</span><span class="p">(</span><span class="nx">isSimpleGrouping</span><span class="p">(</span><span class="nx">text</span><span class="p">)){</span>
+<span class="w">						</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ReplaceSimpleGrouping</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">						</span><span class="kd">var</span><span class="w">	</span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">[</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mf">1</span><span class="p">],</span>
+<span class="w">							</span><span class="nx">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mf">1</span><span class="p">);</span>
+<span class="w">						</span><span class="nx">numbers</span><span class="p">[</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;(&quot;</span><span class="o">+</span><span class="nx">parseRecursive</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;)&quot;</span><span class="p">;</span>
+<span class="w">						</span><span class="k">continue</span><span class="p">;</span>
+<span class="w">					</span><span class="p">}</span>
+
+<span class="w">					</span><span class="c1">// factorials must come first for 5^2! cases, it equals 25</span>
+<span class="w">					</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">FactorialParser</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">					</span><span class="k">if</span><span class="p">(</span><span class="nx">text</span><span class="o">!=</span><span class="nx">sTextOrginal</span><span class="p">){</span>
+<span class="w">						</span><span class="k">continue</span><span class="p">;</span>
+<span class="w">					</span><span class="p">}</span>
+
+<span class="w">					</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">caretParser</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">					</span><span class="k">if</span><span class="p">(</span><span class="nx">text</span><span class="o">!=</span><span class="nx">sTextOrginal</span><span class="p">){</span>
+<span class="w">						</span><span class="k">continue</span><span class="p">;</span>
+<span class="w">					</span><span class="p">}</span>
+
+<span class="w">					</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">radicalOperatorParse</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">					</span><span class="k">if</span><span class="p">(</span><span class="nx">text</span><span class="o">!=</span><span class="nx">sTextOrginal</span><span class="p">){</span>
+<span class="w">						</span><span class="k">continue</span><span class="p">;</span>
+<span class="w">					</span><span class="p">}</span>
+<span class="w">					</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unaryOperatorRightsideParse</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">					</span><span class="k">if</span><span class="p">(</span><span class="nx">text</span><span class="o">!=</span><span class="nx">sTextOrginal</span><span class="p">){</span>
+<span class="w">						</span><span class="c1">// put parentheses around the unary operators so 0--2 will pass</span>
+<span class="w">						</span><span class="nx">numbers</span><span class="p">[</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;(&quot;</span><span class="o">+</span><span class="nx">numbers</span><span class="p">[</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mf">1</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;)&quot;</span><span class="p">;</span>
+<span class="w">						</span><span class="k">continue</span><span class="p">;</span>
+<span class="w">					</span><span class="p">}</span>
+<span class="w">					</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unaryOperatorParse</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">					</span><span class="k">if</span><span class="p">(</span><span class="nx">text</span><span class="o">!=</span><span class="nx">sTextOrginal</span><span class="p">){</span>
+<span class="w">						</span><span class="c1">// put parentheses around the unary operators so 0--2 will pass</span>
+<span class="w">						</span><span class="nx">numbers</span><span class="p">[</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;(&quot;</span><span class="o">+</span><span class="nx">numbers</span><span class="p">[</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mf">1</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;)&quot;</span><span class="p">;</span>
+<span class="w">						</span><span class="k">continue</span><span class="p">;</span>
+<span class="w">					</span><span class="p">}</span>
+
+<span class="w">					</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">binaryHighPriorityOperatorParse</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">					</span><span class="k">if</span><span class="p">(</span><span class="nx">text</span><span class="o">!=</span><span class="nx">sTextOrginal</span><span class="p">){</span>
+<span class="w">						</span><span class="k">continue</span><span class="p">;</span>
+<span class="w">					</span><span class="p">}</span>
+<span class="w">					</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">binaryLowPriorityOperatorParse</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">					</span><span class="k">if</span><span class="p">(</span><span class="nx">text</span><span class="o">!=</span><span class="nx">sTextOrginal</span><span class="p">){</span>
+<span class="w">						</span><span class="k">continue</span><span class="p">;</span>
+<span class="w">					</span><span class="p">}</span>
+<span class="w">					</span><span class="c1">// it should never ever make it to this point.  If it does, I&#39;ll want to know about it.</span>
+<span class="w">					</span><span class="k">throw</span><span class="p">(</span><span class="s2">&quot;Parse Error&quot;</span><span class="p">);</span>
+<span class="w">				</span><span class="p">}</span>
+<span class="w">				</span><span class="c1">// make assignments within function calls be arranged to be (x=y, undefined)</span>
+<span class="w">				</span><span class="k">if</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">functionContentsChar</span><span class="p">){</span>
+<span class="w">					</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="w">					</span><span class="k">if</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">0</span><span class="p">){</span>
+<span class="w">						</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ReplaceFunctionContentAssignments</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">					</span><span class="p">}</span>
+<span class="w">				</span><span class="p">}</span>
+
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">ReplaceFunctionContentAssignments</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/((\w|\.)+)\x02=\x02((\w|\.)+)/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;(&quot;</span><span class="o">+</span><span class="s2">&quot;$1&quot;</span><span class="o">+</span><span class="s1">&#39;\x02=\x02&#39;</span><span class="o">+</span><span class="s2">&quot;$3&quot;</span><span class="o">+</span><span class="s2">&quot;, {_name:&#39;&quot;</span><span class="o">+</span><span class="s2">&quot;$1&quot;</span><span class="o">+</span><span class="s2">&quot;&#39;, _value:&quot;</span><span class="o">+</span><span class="s2">&quot;$3&quot;</span><span class="o">+</span><span class="s2">&quot;})&quot;</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">hasArrayIndexBasedOnUnderscore</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="sr">/\_\d+\_/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span>
+<span class="w">			</span><span class="kd">function</span><span class="w"> </span><span class="nx">simplifyPlusAnsMinus</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">				</span><span class="kd">function</span><span class="w"> </span><span class="nx">hasUnsimplifiedPlusMinus</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">					</span><span class="k">return</span><span class="w"> </span><span class="sr">/\-\s*\-/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="o">||</span><span class="sr">/\+\s*\+/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="o">||</span><span class="sr">/\+\s*\-/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="o">||</span><span class="sr">/\-\s*\+/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+<span class="w">				</span><span class="p">}</span>
+<span class="w">				</span><span class="k">while</span><span class="p">(</span><span class="nx">hasUnsimplifiedPlusMinus</span><span class="p">(</span><span class="nx">text</span><span class="p">)){</span>
+<span class="w">					</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/((\-\s*\-)|(\+\s*\+))/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;+&quot;</span><span class="p">);</span>
+<span class="w">					</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/((\+\s*\-)|(\-\s*\+))/g</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="p">);</span>
+<span class="w">				</span><span class="p">}</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="nx">text</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+
+<span class="w">		</span><span class="p">},</span>
+<span class="w">		</span><span class="nb">eval</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">){</span>
+<span class="w">			</span><span class="c1">// summary:</span>
+<span class="w">			</span><span class="c1">//		create an anonymous function to run the code the parser generates from the user input.</span>
+<span class="w">			</span><span class="c1">// text: String</span>
+<span class="w">			</span><span class="c1">//		is the user input that needs to be parsed</span>
+
+<span class="w">			</span><span class="c1">// this try catch is necessary to ensure that any incorrect input will receive NaN (it won&#39;t cause a self destruct from a user typo)</span>
+<span class="w">			</span><span class="k">try</span><span class="p">{</span>
+<span class="w">				</span><span class="kd">var</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nb">Function</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;return &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">text</span><span class="p">).</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"> </span><span class="c1">// make sure it is called within the correct scope.</span>
+<span class="w">				</span><span class="c1">//value = ((value instanceof Array || typeof value == &quot;array&quot;) ? (&quot;[&quot;+value+&quot;]&quot;) : value.toString())</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">postparse</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="w">			</span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="kc">NaN</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">		</span><span class="p">},</span>
+<span class="w">		</span><span class="nx">normalizedFunction</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="p">){</span>
+<span class="w">			</span><span class="c1">// summary:</span>
+<span class="w">			</span><span class="c1">//		create an anonymous function to run the code the parser generates from the user input.</span>
+<span class="w">			</span><span class="c1">// name: String</span>
+<span class="w">			</span><span class="c1">//		this argument is simply a String that represents the name of the function being evaluated. It can be undefined, but in that case the function is a one time use.</span>
+<span class="w">			</span><span class="c1">// args: String</span>
+<span class="w">			</span><span class="c1">//		the function arguments</span>
+<span class="w">			</span><span class="c1">// body: String</span>
+<span class="w">			</span><span class="c1">//		the function body</span>
+<span class="w">			</span><span class="kd">var</span><span class="w">	</span><span class="nx">argMultiVals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="w">			</span><span class="c1">// make an array of parameters with what&#39;s given (if nothing is given, make an empty array)</span>
+<span class="w">				</span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">args</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="nx">args</span><span class="o">||</span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="sr">/\W+/</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="w">			</span><span class="nx">argMultiVals</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;var _localObjectContainer = {};\n&#39;</span><span class="o">+</span>
+<span class="w">						</span><span class="s1">&#39;for(var _objCnt = 0; _objCnt &lt; arguments.length; _objCnt++){\n&#39;</span><span class="o">+</span>
+<span class="w">						</span><span class="s1">&#39;if(typeof arguments[_objCnt] == &quot;object&quot; &amp;&amp; &quot;_name&quot; in arguments[_objCnt] &amp;&amp; &quot;_value&quot; in arguments[_objCnt]){\n&#39;</span><span class="o">+</span>
+<span class="w">							</span><span class="s1">&#39;_localObjectContainer.graphing = arguments[_objCnt]._graphing;\n&#39;</span><span class="o">+</span>
+<span class="w">							</span><span class="s1">&#39;_localObjectContainer[arguments[_objCnt]._name]=arguments[_objCnt]._value;\n&#39;</span><span class="o">+</span>
+<span class="w">							</span><span class="s1">&#39;arguments[_objCnt]=undefined;\n}\n}\n&#39;</span><span class="p">;</span>
+
+<span class="w">			</span><span class="c1">// make the parameters fit into the val function so it can use either globals, locals, or if all are null, prompt the user for input</span>
+<span class="w">			</span><span class="k">for</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">params</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+<span class="w">				</span><span class="kd">var</span><span class="w"> </span><span class="nx">param</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">params</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="w">				</span><span class="nx">argMultiVals</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">param</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;=val(&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">param</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;,&quot;&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">param</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;&quot;, _localObjectContainer);\n&#39;</span><span class="p">;</span>
+<span class="w">				</span><span class="nx">argMultiVals</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;if(typeof &#39;</span><span class="o">+</span><span class="nx">param</span><span class="o">+</span><span class="s1">&#39; == &quot;undefined&quot;){\n&#39;</span><span class="o">+</span>
+<span class="w">						</span><span class="s1">&#39;return null;}\n&#39;</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kd">var</span><span class="w"> </span><span class="nx">_f_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nb">Function</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span>
+<span class="w">				</span><span class="p">[</span>
+<span class="w">					</span><span class="nx">args</span><span class="p">,</span>
+<span class="w">					</span><span class="s1">&#39;with(Math){with(this.dojox.math){with(this){\n&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">						</span><span class="nx">argMultiVals</span><span class="w"> </span><span class="o">+</span>
+<span class="w">						</span><span class="k">this</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">					</span><span class="s1">&#39;\n}}}&#39;</span>
+<span class="w">				</span><span class="p">]</span>
+<span class="w">			</span><span class="p">);</span>
+<span class="w">			</span><span class="k">if</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">_f_</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="nx">_f_</span><span class="p">;</span>
+<span class="w">		</span><span class="p">},</span>
+<span class="w">		</span><span class="nb">Function</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="p">){</span>
+<span class="w">			</span><span class="c1">// summary:</span>
+<span class="w">			</span><span class="c1">//		create an anonymous function to run the code the parser generates from the user input.  It also normalizes the language format.</span>
+<span class="w">			</span><span class="c1">// name: String</span>
+<span class="w">			</span><span class="c1">//		this argument is simply a String that represents the name of the function being evaluated. It can be undefined, but in that case the function is a one time use.</span>
+<span class="w">			</span><span class="c1">// args: String</span>
+<span class="w">			</span><span class="c1">//		the function arguments</span>
+<span class="w">			</span><span class="c1">// body: String</span>
+<span class="w">			</span><span class="c1">//		the function body</span>
+
+<span class="w">			</span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">preparse</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">normalizedFunction</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="p">);</span>
+
+<span class="w">		</span><span class="p">}</span>
+<span class="w">	</span><span class="p">};</span>
+<span class="w">	</span><span class="k">for</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">window</span><span class="p">){</span>
+<span class="w">        	</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">env</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;alert&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;confirm&quot;</span><span class="p">){</span><span class="w"> </span><span class="nx">env</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// invalidate access to the window object&#39;s attributes for security so that document.blah is invalid</span>
+<span class="w">	</span><span class="p">}</span>
+<span class="w">	</span><span class="nx">frameElement</span><span class="p">.</span><span class="nx">onload</span><span class="p">(</span><span class="nx">env</span><span class="p">);</span>
+<span class="p">})();</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+<span class="w">	</span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">);</span><span class="w"> </span><span class="c1">// remove HEAD to remove debugger access for extra security</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div></td></tr></table></div>
+
+</div>
+
+
+
+<div id="output-panel" class="output-panel client-runnable" style="display: none;">
+    <h3>Output</h3>
+    <div id="output-status" class="output-status"></div>
+    <pre id="output-stdout" class="output-stdout"></pre>
+    <pre id="output-stderr" class="output-stderr"></pre>
+</div>
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+
+<script>
+var _viewerFilename = "ShvilIsraelWebapp__lib__dojo__dojox__calc___ExecutorIframe.html";
+var _viewerProject = "2013-04-04_web-app-version-1";
+var _viewerExt = _viewerFilename.substring(_viewerFilename.lastIndexOf('.')).toLowerCase();
+var _isClientRunnable = ['.js', '.html', '.htm'].indexOf(_viewerExt) !== -1;
+
+function runCode() {
+    var btn = document.getElementById('run-btn');
+    var panel = document.getElementById('output-panel');
+    var status = document.getElementById('output-status');
+    var stdout = document.getElementById('output-stdout');
+    var stderr = document.getElementById('output-stderr');
+
+    btn.disabled = true;
+    btn.textContent = 'Running...';
+    panel.style.display = 'block';
+    status.textContent = 'Executing...';
+    status.className = 'output-status running';
+    stdout.textContent = '';
+    stderr.textContent = '';
+    stderr.style.display = 'none';
+
+    if (_viewerExt === '.js') {
+        // Client-side JS execution in sandboxed iframe
+        var codeEl = document.querySelector('.code-container .highlight pre');
+        var code = codeEl ? codeEl.textContent : '';
+        var logs = [];
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('sandbox', 'allow-scripts');
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+
+        function onMsg(e) {
+            if (e.source !== iframe.contentWindow) return;
+            if (e.data === '__DONE__') {
+                clearTimeout(timeout);
+                window.removeEventListener('message', onMsg);
+                document.body.removeChild(iframe);
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                status.textContent = 'Success';
+                status.className = 'output-status success';
+                stdout.textContent = logs.join('\n') || '(no output)';
+                return;
+            }
+            logs.push(e.data);
+        }
+        window.addEventListener('message', onMsg);
+
+        var wrappedCode = '(' + function() {
+            var _log = [];
+            console.log = function() {
+                var args = Array.prototype.slice.call(arguments);
+                var line = args.map(function(a) {
+                    return typeof a === 'object' ? JSON.stringify(a) : String(a);
+                }).join(' ');
+                _log.push(line);
+                parent.postMessage(line, '*');
+            };
+            console.error = console.warn = console.info = console.log;
+            try {
+                /* __CODE__ */
+            } catch(e) {
+                parent.postMessage('Error: ' + e.message, '*');
+            }
+            parent.postMessage('__DONE__', '*');
+        }.toString().replace('/* __CODE__ */', code) + ')()';
+
+        iframe.srcdoc = '<html><body class="static-mode"><script>' + wrappedCode + '<\/script></body></html>';
+
+        var timeout = setTimeout(function() {
+            window.removeEventListener('message', onMsg);
+            if (iframe.parentNode) document.body.removeChild(iframe);
+            btn.disabled = false;
+            btn.textContent = '\u25B6 Run Code';
+            status.textContent = 'Timed out (5s)';
+            status.className = 'output-status error';
+            stdout.textContent = logs.join('\n') + '\n(timed out after 5s)';
+        }, 5000);
+
+    } else if (_viewerExt === '.html' || _viewerExt === '.htm') {
+        // Client-side HTML rendering in iframe
+        status.textContent = '';
+        status.className = 'output-status success';
+        stdout.textContent = '';
+        var iframe = document.createElement('iframe');
+        iframe.className = 'run-iframe';
+        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+        iframe.src = '/raw/' + encodeURIComponent(_viewerProject) + '/' + encodeURIComponent(_viewerFilename);
+        stdout.style.display = 'none';
+        panel.appendChild(iframe);
+        btn.disabled = false;
+        btn.textContent = '\u25B6 Run Code';
+
+    } else {
+        // Server-side execution (Python, C, C++)
+        fetch('/run/' + encodeURIComponent(_viewerProject) + '/' + encodeURIComponent(_viewerFilename), { method: 'POST' })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                if (data.success) {
+                    status.textContent = 'Success (exit code: 0)';
+                    status.className = 'output-status success';
+                } else {
+                    status.textContent = 'Failed (exit code: ' + data.return_code + ')';
+                    status.className = 'output-status error';
+                }
+                stdout.textContent = data.stdout || '(no output)';
+                if (data.stderr) {
+                    stderr.textContent = data.stderr;
+                    stderr.style.display = 'block';
+                }
+            })
+            .catch(function(err) {
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                status.textContent = 'Error: ' + err.message;
+                status.className = 'output-status error';
+            });
+    }
+}
+</script>
+
+
+</body>
+</html>

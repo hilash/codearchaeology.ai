@@ -1,0 +1,75 @@
+<resources>
+
+    <string name="app_name">Shvil</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section1">Section 1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main"> Shvil</string>
+    <string name="title_activity_map"> Map</string>
+    <string name="title_activity_profile"> My Profile</string>
+    <string name="title_activity_messages"> Messages</string>
+    <string name="title_activity_people"> People</string>
+    <string name="title_activity_angels"> Angels</string>
+    <string name="title_activity_settings"> Settings</string>
+    <string name="title_activity_recent_messages"> Messages</string>
+    <string name="title_activity_note_editor"> Notes Editor</string>
+    <string name="title_activity_angel_editor"> Angels Editor</string>
+    <string name="title_activity_general_item_editor"> General Editor</string>
+    
+    
+    <string name="shit">SHIT</string>
+    <string name="googlemaps_sdk_key">0T4xcx7NxlCMzlEeqE5jXKnh0w0tPLOFIQDFu-Q</string>
+    <string name="buttonMyLocation">location</string>
+    
+    <string name="menu_overlay_title_angels">Angels</string>
+    <string name="menu_overlay_title_people">Travelers</string>
+    <string name="menu_overlay_title_water">Water</string>
+    <string name="menu_overlay_title_info">Shvil info</string>
+    <string name="menu_overlay_title_diary">My Notes</string>
+    <string name="menu_overlay_title_sleep">Sleep</string>
+    
+    
+    <string name="menu_report_title_add_note">Add Note</string>
+    <string name="menu_report_title_add_problem">Shvils problem</string>
+    <string-array name="empty_array"></string-array>
+
+	<string-array name="pref_update_freq_array">
+		<item>Every 1 hour</item>
+		<item>Every 5 hours</item>
+		<item>Every 24 hours</item>
+	</string-array>
+	<string-array name="pref_update_freq_values_array">
+		<item>1</item>
+		<item>5</item>
+		<item>24</item>
+	</string-array>
+	
+	<string-array name="pref_locale_array">
+		<item>English</item>
+		<item>עברית</item>
+	</string-array>
+	<string-array name="pref_locale_values_array">
+		<item>en</item>
+		<item>il</item>
+	</string-array>
+	<string name="angel_editor_name_hint">Angels Name</string>
+	<string name="angel_editor_phone1_hint">Phone</string>
+	<string name="angel_editor_phone2_hint">Another phone</string>
+	<string name="angel_editor_address_hint">Address</string>
+	<string name="angel_editor_religious_text">Religious</string>
+	<string name="angel_editor_passport_text">Passport</string>
+	<string name="angel_editor_stamp_text">Stamp</string>
+	<string name="angel_editor_information_hint">Angels infomation</string>
+	<string name="angel_editor_dialog_error">Angels name, adress and first phone cant be empty</string>
+	<string name="save">Save</string>
+	<string name="error">Error</string>
+	<string name="refresh">refresh</string>
+	<string name="menu_overlay_title_water_hide">Water hiding</string>
+	<string name="general_item_editor_title_hint">Title</string>
+	<string name="general_item_editor_text_hint">Text</string>
+	<string name="general_item_editor_dialog_error">You can\'t leave title or text empty!</string>
+
+    
+</resources>

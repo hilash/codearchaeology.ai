@@ -1,0 +1,7 @@
+﻿private long ttime()
+        {
+
+            System.TimeSpan timeDifference = DateTime.UtcNow -
+                new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            return System.Convert.ToInt64(timeDifference.TotalSeconds);
+        }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item android:id="@+id/menu_overlay_angels"
+          android:checkable="true"
+          android:checked="true"
+          android:title="@string/menu_overlay_title_angels"/>
+    
+    <item android:id="@+id/menu_overlay_info" android:checkable="true" android:checked="true" android:title="@string/menu_overlay_title_info" /><item android:id="@+id/menu_overlay_diary" android:checkable="true" android:checked="true" android:title="@string/menu_overlay_title_diary" /><item android:id="@+id/menu_overlay_people"
+          android:checkable="true"
+          android:checked="true"
+          android:title="@string/menu_overlay_title_people" />
+    
+    <item android:id="@+id/menu_overlay_water"
+          android:checkable="true"
+          android:checked="true"
+          android:title="@string/menu_overlay_title_water" />
+    
+    <item android:id="@+id/menu_overlay_water_hide"
+          android:checkable="true"
+          android:checked="true"
+          android:title="@string/menu_overlay_title_water_hide" />
+    
+    
+    
+    
+    <item android:id="@+id/menu_overlay_sleep" android:checked="true" android:title="@string/menu_overlay_title_sleep" android:checkable="true"></item>
+
+</menu>

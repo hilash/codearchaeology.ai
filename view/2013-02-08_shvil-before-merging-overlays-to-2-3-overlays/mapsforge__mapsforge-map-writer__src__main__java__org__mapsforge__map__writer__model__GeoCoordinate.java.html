@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mapsforge__mapsforge-map-writer__src__main__java__org__mapsforge__map__writer__model__GeoCoordinate.java - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ed007e; background-color: #1e0010 } /* Error */
+.highlight .esc { color: #f8f8f2 } /* Escape */
+.highlight .g { color: #f8f8f2 } /* Generic */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #ff4689 } /* Operator */
+.highlight .x { color: #f8f8f2 } /* Other */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #ff4689 } /* Generic.Deleted */
+.highlight .ge { color: #f8f8f2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #f8f8f2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #f8f8f2 } /* Generic.Error */
+.highlight .gh { color: #f8f8f2 } /* Generic.Heading */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .go { color: #66d9ef } /* Generic.Output */
+.highlight .gp { color: #ff4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #f8f8f2 } /* Generic.Traceback */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #ff4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #ff4689 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #ff4689 } /* Operator.Word */
+.highlight .pm { color: #f8f8f2 } /* Punctuation.Marker */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style>
+
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<a href="/project/2013-02-08_shvil-before-merging-overlays-to-2-3-overlays/" class="back-link">&laquo; Back to Shvil Before Merging Overlays To 2 3 Overlays</a>
+
+<div class="viewer-header">
+    <h1>mapsforge__mapsforge-map-writer__src__main__java__org__mapsforge__map__writer__model__GeoCoordinate.java</h1>
+    <div class="viewer-meta">
+        <span class="tag">Java</span>
+        <span>15.7 KB</span>
+        
+    </div>
+</div>
+
+
+<div class="code-container">
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span>
+<span class="normal">464</span>
+<span class="normal">465</span>
+<span class="normal">466</span>
+<span class="normal">467</span>
+<span class="normal">468</span>
+<span class="normal">469</span>
+<span class="normal">470</span></pre></div></td><td class="code"><div><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Copyright 2010, 2011, 2012 mapsforge.org</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is free software: you can redistribute it and/or modify it under the</span>
+<span class="cm"> * terms of the GNU Lesser General Public License as published by the Free Software</span>
+<span class="cm"> * Foundation, either version 3 of the License, or (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program is distributed in the hope that it will be useful, but WITHOUT ANY</span>
+<span class="cm"> * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A</span>
+<span class="cm"> * PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public License along with</span>
+<span class="cm"> * this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="cm"> */</span>
+<span class="kn">package</span><span class="w"> </span><span class="nn">org.mapsforge.map.writer.model</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.regex.Matcher</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.regex.Pattern</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * This immutable class represents a geographic coordinate with a latitude and longitude value.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GeoCoordinate</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">GeoCoordinate</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * The multiplication factor to convert from double to int.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">FACTOR_DOUBLE_TO_INT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000000</span><span class="p">;</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * The largest possible latitude value.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">LATITUDE_MAX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">90</span><span class="p">;</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * The smallest possible latitude value.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">LATITUDE_MIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">90</span><span class="p">;</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * The largest possible longitude value.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">LONGITUDE_MAX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">180</span><span class="p">;</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * The smallest possible longitude value.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">LONGITUDE_MIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">180</span><span class="p">;</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * The internal latitude value.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">latitude</span><span class="p">;</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * The internal longitude value.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">longitude</span><span class="p">;</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * The RegEx pattern to read WKT points.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Pattern</span><span class="w"> </span><span class="n">wktPointPattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;.*POINT\\s?\\(([\\d\\.]+)\\s([\\d\\.]+)\\).*&quot;</span><span class="p">);</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Constructs a new GeoCoordinate with the given latitude and longitude values, measured in degrees.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param latitude</span>
+<span class="cm">	 *            the latitude value in degrees.</span>
+<span class="cm">	 * @param longitude</span>
+<span class="cm">	 *            the longitude value in degrees.</span>
+<span class="cm">	 * @throws IllegalArgumentException</span>
+<span class="cm">	 *             if the latitude or longitude value is invalid.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="nf">GeoCoordinate</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">latitude</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">longitude</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">this</span><span class="p">.</span><span class="na">latitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">validateLatitude</span><span class="p">(</span><span class="n">latitude</span><span class="p">);</span>
+<span class="w">		</span><span class="k">this</span><span class="p">.</span><span class="na">longitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">validateLongitude</span><span class="p">(</span><span class="n">longitude</span><span class="p">);</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Constructs a new GeoCoordinate with the given latitude and longitude values, measured in microdegrees.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param latitudeE6</span>
+<span class="cm">	 *            the latitude value in microdegrees.</span>
+<span class="cm">	 * @param longitudeE6</span>
+<span class="cm">	 *            the longitude value in microdegrees.</span>
+<span class="cm">	 * @throws IllegalArgumentException</span>
+<span class="cm">	 *             if the latitude or longitude value is invalid.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="nf">GeoCoordinate</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">latitudeE6</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">longitudeE6</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">this</span><span class="p">.</span><span class="na">latitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">validateLatitude</span><span class="p">(</span><span class="n">intToDouble</span><span class="p">(</span><span class="n">latitudeE6</span><span class="p">));</span>
+<span class="w">		</span><span class="k">this</span><span class="p">.</span><span class="na">longitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">validateLongitude</span><span class="p">(</span><span class="n">intToDouble</span><span class="p">(</span><span class="n">longitudeE6</span><span class="p">));</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Constructs a new GeoCoordinate from a Well-Known-Text (WKT) representation of a point For example: POINT(13.4125</span>
+<span class="cm">	 * 52.52235) WKT is used in PostGIS and other spatial databases.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param wellKnownText</span>
+<span class="cm">	 *            is the WKT point which describes the new GeoCoordinate, this needs to be in degrees using a WGS84</span>
+<span class="cm">	 *            representation. The coordinate order in the POINT is defined as POINT(long lat)</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="nf">GeoCoordinate</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">wellKnownText</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="n">Matcher</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wktPointPattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">wellKnownText</span><span class="p">);</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">m</span><span class="p">.</span><span class="na">matches</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;coordinate not in wellknown text format&quot;</span><span class="p">);</span>
+<span class="w">		</span><span class="p">}</span>
+<span class="w">		</span><span class="k">this</span><span class="p">.</span><span class="na">longitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">validateLongitude</span><span class="p">(</span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="na">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)));</span>
+<span class="w">		</span><span class="k">this</span><span class="p">.</span><span class="na">latitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">validateLatitude</span><span class="p">(</span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="na">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)));</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Constructs a new GeoCoordinate from a comma-separated String containing latitude and longitude values (also &#39;;&#39;,</span>
+<span class="cm">	 * &#39;:&#39; and whitespace work as separator). First latitude and longitude are interpreted as measured in degrees. If</span>
+<span class="cm">	 * the coordinate is invalid, it is tried to interpret values as measured in microdegrees.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param latLonString</span>
+<span class="cm">	 *            the String containing the latitude and longitude values</span>
+<span class="cm">	 * @return the GeoCoordinate</span>
+<span class="cm">	 * @throws IllegalArgumentException</span>
+<span class="cm">	 *             if the latLonString could not be interpreted as a coordinate</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="nf">fromString</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">latLonString</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">splitted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">latLonString</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;[,;:\\s]&quot;</span><span class="p">);</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">splitted</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;cannot read coordinate, not a valid format&quot;</span><span class="p">);</span>
+<span class="w">		</span><span class="p">}</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">latitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">splitted</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">longitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">splitted</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+<span class="w">		</span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">(</span><span class="n">latitude</span><span class="p">,</span><span class="w"> </span><span class="n">longitude</span><span class="p">);</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IllegalArgumentException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">(</span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">doubleToInt</span><span class="p">(</span><span class="n">latitude</span><span class="p">),</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">.</span><span class="na">doubleToInt</span><span class="p">(</span><span class="n">longitude</span><span class="p">));</span>
+<span class="w">		</span><span class="p">}</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Checks the given latitude value and throws an exception if the value is out of range.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param lat</span>
+<span class="cm">	 *            the latitude value that should be checked.</span>
+<span class="cm">	 * @return the latitude value.</span>
+<span class="cm">	 * @throws IllegalArgumentException</span>
+<span class="cm">	 *             if the latitude value is &lt; LATITUDE_MIN or &gt; LATITUDE_MAX.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">validateLatitude</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">lat</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lat</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">LATITUDE_MIN</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;invalid latitude value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lat</span><span class="p">);</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">LATITUDE_MAX</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;invalid latitude value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lat</span><span class="p">);</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="n">lat</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Checks the given longitude value and throws an exception if the value is out of range.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param lon</span>
+<span class="cm">	 *            the longitude value that should be checked.</span>
+<span class="cm">	 * @return the longitude value.</span>
+<span class="cm">	 * @throws IllegalArgumentException</span>
+<span class="cm">	 *             if the longitude value is &lt; LONGITUDE_MIN or &gt; LONGITUDE_MAX.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">validateLongitude</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">lon</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lon</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">LONGITUDE_MIN</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;invalid longitude value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lon</span><span class="p">);</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lon</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">LONGITUDE_MAX</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;invalid longitude value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lon</span><span class="p">);</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="n">lon</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Returns the latitude value of this coordinate.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @return the latitude value of this coordinate.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getLatitude</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">latitude</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Returns the longitude value of this coordinate.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @return the longitude value of this coordinate.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getLongitude</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">longitude</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Returns the latitude value in microdegrees of this coordinate.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @return the latitude value in microdegrees of this coordinate.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getLatitudeE6</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">doubleToInt</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">latitude</span><span class="p">);</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Returns the longitude value in microdegrees of this coordinate.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @return the longitude value in microdegrees of this coordinate.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getLongitudeE6</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">doubleToInt</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">longitude</span><span class="p">);</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Calculate the spherical distance from this GeoCoordinate to another Use vincentyDistance for more accuracy but</span>
+<span class="cm">	 * less performance.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param other</span>
+<span class="cm">	 *            The GeoCoordinate to calculate the distance to</span>
+<span class="cm">	 * @return the distance in meters as a double</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">sphericalDistance</span><span class="p">(</span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">sphericalDistance</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">other</span><span class="p">);</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Calculate the spherical distance between two GeoCoordinates in meters using the Haversine formula This</span>
+<span class="cm">	 * calculation is done using the assumption, that the earth is a sphere, it is not though. If you need a higher</span>
+<span class="cm">	 * precision and can afford a longer execution time you might want to use vincentyDistance</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param gc1</span>
+<span class="cm">	 *            first GeoCoordinate</span>
+<span class="cm">	 * @param gc2</span>
+<span class="cm">	 *            second GeoCoordinate</span>
+<span class="cm">	 * @return distance in meters as a double</span>
+<span class="cm">	 * @throws IllegalArgumentException</span>
+<span class="cm">	 *             if one of the arguments is null</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">sphericalDistance</span><span class="p">(</span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="n">gc1</span><span class="p">,</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="n">gc2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">gc1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">gc2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;The GeoCoordinates for distance calculations may not be null.&quot;</span><span class="p">);</span>
+<span class="w">		</span><span class="p">}</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">sphericalDistance</span><span class="p">(</span><span class="n">gc1</span><span class="p">.</span><span class="na">getLongitude</span><span class="p">(),</span><span class="w"> </span><span class="n">gc1</span><span class="p">.</span><span class="na">getLatitude</span><span class="p">(),</span><span class="w"> </span><span class="n">gc2</span><span class="p">.</span><span class="na">getLongitude</span><span class="p">(),</span><span class="w"> </span><span class="n">gc2</span><span class="p">.</span><span class="na">getLatitude</span><span class="p">());</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Calculate the spherical distance between two GeoCoordinates in meters using the Haversine formula. This</span>
+<span class="cm">	 * calculation is done using the assumption, that the earth is a sphere, it is not though. If you need a higher</span>
+<span class="cm">	 * precision and can afford a longer execution time you might want to use vincentyDistance</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param lon1</span>
+<span class="cm">	 *            longitude of first coordinate</span>
+<span class="cm">	 * @param lat1</span>
+<span class="cm">	 *            latitude of first coordinate</span>
+<span class="cm">	 * @param lon2</span>
+<span class="cm">	 *            longitude of second coordinate</span>
+<span class="cm">	 * @param lat2</span>
+<span class="cm">	 *            latitude of second coordinate</span>
+<span class="cm">	 * @return distance in meters as a double</span>
+<span class="cm">	 * @throws IllegalArgumentException</span>
+<span class="cm">	 *             if one of the arguments is null</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">sphericalDistance</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">lon1</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">lat1</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">lon2</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">lat2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">dLat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">lat2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lat1</span><span class="p">);</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">dLon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">lon2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lon1</span><span class="p">);</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sin</span><span class="p">(</span><span class="n">dLat</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sin</span><span class="p">(</span><span class="n">dLat</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">cos</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">lat1</span><span class="p">))</span>
+<span class="w">				</span><span class="o">*</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">cos</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">lat2</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sin</span><span class="p">(</span><span class="n">dLon</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sin</span><span class="p">(</span><span class="n">dLon</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">atan2</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">));</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">WGS84</span><span class="p">.</span><span class="na">EQUATORIALRADIUS</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Distance based on the assumption that the earth is a sphere.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param lon1</span>
+<span class="cm">	 *            longitude of 1st coordinate.</span>
+<span class="cm">	 * @param lat1</span>
+<span class="cm">	 *            latitude of 1st coordinate.</span>
+<span class="cm">	 * @param lon2</span>
+<span class="cm">	 *            longitude of 2nd coordinate.</span>
+<span class="cm">	 * @param lat2</span>
+<span class="cm">	 *            latitude of 2nd coordinate.</span>
+<span class="cm">	 * @return distance in meters.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">sphericalDistance</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lon1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lat1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lon2</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lat2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">sphericalDistance</span><span class="p">(</span><span class="n">intToDouble</span><span class="p">(</span><span class="n">lon1</span><span class="p">),</span><span class="w"> </span><span class="n">intToDouble</span><span class="p">(</span><span class="n">lat1</span><span class="p">),</span><span class="w"> </span><span class="n">intToDouble</span><span class="p">(</span><span class="n">lon2</span><span class="p">),</span><span class="w"> </span><span class="n">intToDouble</span><span class="p">(</span><span class="n">lat2</span><span class="p">));</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Calculate the spherical distance from this GeoCoordinate to another Use &quot;distance&quot; for faster computation with</span>
+<span class="cm">	 * less accuracy.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param other</span>
+<span class="cm">	 *            The GeoCoordinate to calculate the distance to</span>
+<span class="cm">	 * @return the distance in meters as a double</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">vincentyDistance</span><span class="p">(</span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">vincentyDistance</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">other</span><span class="p">);</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Calculates geodetic distance between two GeoCoordinates using Vincenty inverse formula for ellipsoids. This is</span>
+<span class="cm">	 * very accurate but consumes more resources and time than the sphericalDistance method Adaptation of Chriss Veness&#39;</span>
+<span class="cm">	 * JavaScript Code on http://www.movable-type.co.uk/scripts/latlong-vincenty.html Paper: Vincenty inverse formula -</span>
+<span class="cm">	 * T Vincenty, &quot;Direct and Inverse Solutions of Geodesics on the Ellipsoid with application of nested equations&quot;,</span>
+<span class="cm">	 * Survey Review, vol XXII no 176, 1975 (http://www.ngs.noaa.gov/PUBS_LIB/inverse.pdf)</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param gc1</span>
+<span class="cm">	 *            first GeoCoordinate</span>
+<span class="cm">	 * @param gc2</span>
+<span class="cm">	 *            second GeoCoordinate</span>
+<span class="cm">	 * @return distance in meters between points as a double</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">vincentyDistance</span><span class="p">(</span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="n">gc1</span><span class="p">,</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="n">gc2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">WGS84</span><span class="p">.</span><span class="na">INVERSEFLATTENING</span><span class="p">;</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">gc2</span><span class="p">.</span><span class="na">getLongitude</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">gc1</span><span class="p">.</span><span class="na">getLongitude</span><span class="p">());</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">u1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">atan</span><span class="p">((</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">tan</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">gc1</span><span class="p">.</span><span class="na">getLatitude</span><span class="p">())));</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">u2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">atan</span><span class="p">((</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">tan</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">gc2</span><span class="p">.</span><span class="na">getLatitude</span><span class="p">())));</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">sinU1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sin</span><span class="p">(</span><span class="n">u1</span><span class="p">),</span><span class="w"> </span><span class="n">cosU1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">cos</span><span class="p">(</span><span class="n">u1</span><span class="p">);</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">sinU2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sin</span><span class="p">(</span><span class="n">u2</span><span class="p">),</span><span class="w"> </span><span class="n">cosU2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">cos</span><span class="p">(</span><span class="n">u2</span><span class="p">);</span>
+
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">lambdaP</span><span class="p">,</span><span class="w"> </span><span class="n">iterLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">cosSqAlpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">sinSigma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">cosSigma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">cos2SigmaM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">sigma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">sinLambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">sinAlpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">cosLambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">		</span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">sinLambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sin</span><span class="p">(</span><span class="n">lambda</span><span class="p">);</span>
+<span class="w">			</span><span class="n">cosLambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">cos</span><span class="p">(</span><span class="n">lambda</span><span class="p">);</span>
+<span class="w">			</span><span class="n">sinSigma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">((</span><span class="n">cosU2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sinLambda</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">cosU2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sinLambda</span><span class="p">)</span>
+<span class="w">					</span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">cosU1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sinU2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sinU1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cosU2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cosLambda</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">cosU1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sinU2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sinU1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cosU2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cosLambda</span><span class="p">));</span>
+<span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sinSigma</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// co-incident points</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="n">cosSigma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sinU1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sinU2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cosU1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cosU2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cosLambda</span><span class="p">;</span>
+<span class="w">			</span><span class="n">sigma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">atan2</span><span class="p">(</span><span class="n">sinSigma</span><span class="p">,</span><span class="w"> </span><span class="n">cosSigma</span><span class="p">);</span>
+<span class="w">			</span><span class="n">sinAlpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cosU1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cosU2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sinLambda</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">sinSigma</span><span class="p">;</span>
+<span class="w">			</span><span class="n">cosSqAlpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sinAlpha</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sinAlpha</span><span class="p">;</span>
+<span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cosSqAlpha</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="n">cos2SigmaM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cosSigma</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sinU1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sinU2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">cosSqAlpha</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="n">cos2SigmaM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="kt">double</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cosSqAlpha</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cosSqAlpha</span><span class="p">));</span>
+<span class="w">			</span><span class="n">lambdaP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lambda</span><span class="p">;</span>
+<span class="w">			</span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sinAlpha</span>
+<span class="w">					</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">sigma</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sinSigma</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">cos2SigmaM</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cosSigma</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cos2SigmaM</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cos2SigmaM</span><span class="p">)));</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lambdaP</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1e-12</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">--</span><span class="n">iterLimit</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">iterLimit</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// formula failed to converge</span>
+<span class="w">		</span><span class="p">}</span>
+
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">uSq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cosSqAlpha</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="n">WGS84</span><span class="p">.</span><span class="na">EQUATORIALRADIUS</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="n">WGS84</span><span class="p">.</span><span class="na">POLARRADIUS</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
+<span class="w">				</span><span class="o">/</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="n">WGS84</span><span class="p">.</span><span class="na">POLARRADIUS</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">uSq</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">16384</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">4096</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">uSq</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">768</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">uSq</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">320</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">175</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">uSq</span><span class="p">)));</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uSq</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">256</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">uSq</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">128</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">uSq</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">74</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">47</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">uSq</span><span class="p">)));</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">deltaSigma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span>
+<span class="w">				</span><span class="o">*</span><span class="w"> </span><span class="n">sinSigma</span>
+<span class="w">				</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">cos2SigmaM</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+<span class="w">						</span><span class="o">/</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">						</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">cosSigma</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cos2SigmaM</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cos2SigmaM</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cos2SigmaM</span>
+<span class="w">								</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sinSigma</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sinSigma</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cos2SigmaM</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cos2SigmaM</span><span class="p">)));</span>
+<span class="w">		</span><span class="kt">double</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WGS84</span><span class="p">.</span><span class="na">POLARRADIUS</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">sigma</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">deltaSigma</span><span class="p">);</span>
+
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Calculate the amount of degrees of latitude for a given distance in meters.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param meters</span>
+<span class="cm">	 *            distance in meters</span>
+<span class="cm">	 * @return latitude degrees</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">latitudeDistance</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">meters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">meters</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">360</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">WGS84</span><span class="p">.</span><span class="na">EQUATORIALRADIUS</span><span class="p">);</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Calculate the amount of degrees of longitude for a given distance in meters.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param meters</span>
+<span class="cm">	 *            distance in meters</span>
+<span class="cm">	 * @param latitude</span>
+<span class="cm">	 *            the latitude at which the calculation should be performed</span>
+<span class="cm">	 * @return longitude degrees</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">longitudeDistance</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">meters</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">latitude</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">meters</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">360</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">WGS84</span><span class="p">.</span><span class="na">EQUATORIALRADIUS</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">cos</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">latitude</span><span class="p">)));</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Calculate the amount of degrees of longitude for a given distance in meters.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param meters</span>
+<span class="cm">	 *            distance in meters</span>
+<span class="cm">	 * @param latitude</span>
+<span class="cm">	 *            the latitude at which the calculation should be performed</span>
+<span class="cm">	 * @return longitude degrees</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">longitudeDistance</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">meters</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">latitude</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">meters</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">360</span><span class="p">)</span>
+<span class="w">				</span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">WGS84</span><span class="p">.</span><span class="na">EQUATORIALRADIUS</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">cos</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">intToDouble</span><span class="p">(</span><span class="n">latitude</span><span class="p">))));</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Converts a coordinate from degrees to microdegrees.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param coordinate</span>
+<span class="cm">	 *            the coordinate in degrees.</span>
+<span class="cm">	 * @return the coordinate in microdegrees.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">doubleToInt</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">coordinate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">coordinate</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">FACTOR_DOUBLE_TO_INT</span><span class="p">);</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * Converts a coordinate from microdegrees to degrees.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param coordinate</span>
+<span class="cm">	 *            the coordinate in microdegrees.</span>
+<span class="cm">	 * @return the coordinate in degrees.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">intToDouble</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">coordinate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">coordinate</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">FACTOR_DOUBLE_TO_INT</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="nd">@Override</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">obj</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">GeoCoordinate</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">GeoCoordinate</span><span class="p">)</span><span class="w"> </span><span class="n">obj</span><span class="p">;</span>
+<span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">latitude</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="na">latitude</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">longitude</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="na">longitude</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">			</span><span class="p">}</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="cm">/**</span>
+<span class="cm">	 * This method is necessary for inserting GeoCoordinates into tree data structures.</span>
+<span class="cm">	 */</span>
+<span class="w">	</span><span class="nd">@Override</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">GeoCoordinate</span><span class="w"> </span><span class="n">geoCoordinate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">latitude</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">geoCoordinate</span><span class="p">.</span><span class="na">latitude</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">longitude</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">geoCoordinate</span><span class="p">.</span><span class="na">longitude</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">latitude</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">geoCoordinate</span><span class="p">.</span><span class="na">latitude</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">longitude</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">geoCoordinate</span><span class="p">.</span><span class="na">longitude</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="w">		</span><span class="p">}</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="nd">@Override</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hashCode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">prime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">31</span><span class="p">;</span>
+<span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">		</span><span class="kt">long</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<span class="w">		</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">doubleToLongBits</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">latitude</span><span class="p">);</span>
+<span class="w">		</span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prime</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">temp</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="p">(</span><span class="n">temp</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="mi">32</span><span class="p">));</span>
+<span class="w">		</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">doubleToLongBits</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">longitude</span><span class="p">);</span>
+<span class="w">		</span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prime</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">temp</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="p">(</span><span class="n">temp</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="mi">32</span><span class="p">));</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="nd">@Override</span>
+<span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="s">&quot;latitude: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">latitude</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, longitude: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">longitude</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div></td></tr></table></div>
+
+</div>
+
+
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+
+
+</body>
+</html>

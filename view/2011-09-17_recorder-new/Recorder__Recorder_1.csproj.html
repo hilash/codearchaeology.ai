@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorder__Recorder_1.csproj - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ed007e; background-color: #1e0010 } /* Error */
+.highlight .esc { color: #f8f8f2 } /* Escape */
+.highlight .g { color: #f8f8f2 } /* Generic */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #ff4689 } /* Operator */
+.highlight .x { color: #f8f8f2 } /* Other */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #ff4689 } /* Generic.Deleted */
+.highlight .ge { color: #f8f8f2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #f8f8f2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #f8f8f2 } /* Generic.Error */
+.highlight .gh { color: #f8f8f2 } /* Generic.Heading */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .go { color: #66d9ef } /* Generic.Output */
+.highlight .gp { color: #ff4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #f8f8f2 } /* Generic.Traceback */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #ff4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #ff4689 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #ff4689 } /* Operator.Word */
+.highlight .pm { color: #f8f8f2 } /* Punctuation.Marker */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style>
+
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<a href="/project/2011-09-17_recorder-new/" class="back-link">&laquo; Back to Recorder New</a>
+
+<div class="viewer-header">
+    <h1>Recorder__Recorder_1.csproj</h1>
+    <div class="viewer-meta">
+        <span class="tag">Unknown</span>
+        <span>6.6 KB</span>
+        
+    </div>
+</div>
+
+
+<div class="code-container">
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span></pre></div></td><td class="code"><div><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Project ToolsVersion=&quot;4.0&quot; DefaultTargets=&quot;Build&quot; xmlns=&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;&gt;
+  &lt;PropertyGroup&gt;
+    &lt;Configuration Condition=&quot; &#39;$(Configuration)&#39; == &#39;&#39; &quot;&gt;Debug&lt;/Configuration&gt;
+    &lt;Platform Condition=&quot; &#39;$(Platform)&#39; == &#39;&#39; &quot;&gt;AnyCPU&lt;/Platform&gt;
+    &lt;ProductVersion&gt;9.0.30729&lt;/ProductVersion&gt;
+    &lt;SchemaVersion&gt;2.0&lt;/SchemaVersion&gt;
+    &lt;ProjectGuid&gt;{9FA2F4F8-3E40-485E-AE2C-0CA12EE7BFA2}&lt;/ProjectGuid&gt;
+    &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+    &lt;AppDesignerFolder&gt;Properties&lt;/AppDesignerFolder&gt;
+    &lt;RootNamespace&gt;Recorder&lt;/RootNamespace&gt;
+    &lt;AssemblyName&gt;Recorder&lt;/AssemblyName&gt;
+    &lt;TargetFrameworkVersion&gt;v3.5&lt;/TargetFrameworkVersion&gt;
+    &lt;FileAlignment&gt;512&lt;/FileAlignment&gt;
+    &lt;FileUpgradeFlags&gt;
+    &lt;/FileUpgradeFlags&gt;
+    &lt;UpgradeBackupLocation&gt;
+    &lt;/UpgradeBackupLocation&gt;
+    &lt;OldToolsVersion&gt;3.5&lt;/OldToolsVersion&gt;
+    &lt;PublishUrl&gt;publish\&lt;/PublishUrl&gt;
+    &lt;Install&gt;true&lt;/Install&gt;
+    &lt;InstallFrom&gt;Disk&lt;/InstallFrom&gt;
+    &lt;UpdateEnabled&gt;false&lt;/UpdateEnabled&gt;
+    &lt;UpdateMode&gt;Foreground&lt;/UpdateMode&gt;
+    &lt;UpdateInterval&gt;7&lt;/UpdateInterval&gt;
+    &lt;UpdateIntervalUnits&gt;Days&lt;/UpdateIntervalUnits&gt;
+    &lt;UpdatePeriodically&gt;false&lt;/UpdatePeriodically&gt;
+    &lt;UpdateRequired&gt;false&lt;/UpdateRequired&gt;
+    &lt;MapFileExtensions&gt;true&lt;/MapFileExtensions&gt;
+    &lt;ApplicationRevision&gt;0&lt;/ApplicationRevision&gt;
+    &lt;ApplicationVersion&gt;1.0.0.%2a&lt;/ApplicationVersion&gt;
+    &lt;IsWebBootstrapper&gt;false&lt;/IsWebBootstrapper&gt;
+    &lt;UseApplicationTrust&gt;false&lt;/UseApplicationTrust&gt;
+    &lt;BootstrapperEnabled&gt;true&lt;/BootstrapperEnabled&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;PropertyGroup Condition=&quot; &#39;$(Configuration)|$(Platform)&#39; == &#39;Debug|AnyCPU&#39; &quot;&gt;
+    &lt;DebugSymbols&gt;true&lt;/DebugSymbols&gt;
+    &lt;DebugType&gt;full&lt;/DebugType&gt;
+    &lt;Optimize&gt;false&lt;/Optimize&gt;
+    &lt;OutputPath&gt;bin\Debug\&lt;/OutputPath&gt;
+    &lt;DefineConstants&gt;DEBUG;TRACE&lt;/DefineConstants&gt;
+    &lt;ErrorReport&gt;prompt&lt;/ErrorReport&gt;
+    &lt;WarningLevel&gt;4&lt;/WarningLevel&gt;
+    &lt;AllowUnsafeBlocks&gt;true&lt;/AllowUnsafeBlocks&gt;
+    &lt;CodeAnalysisRuleSet&gt;AllRules.ruleset&lt;/CodeAnalysisRuleSet&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;PropertyGroup Condition=&quot; &#39;$(Configuration)|$(Platform)&#39; == &#39;Release|AnyCPU&#39; &quot;&gt;
+    &lt;DebugType&gt;pdbonly&lt;/DebugType&gt;
+    &lt;Optimize&gt;true&lt;/Optimize&gt;
+    &lt;OutputPath&gt;bin\Release\&lt;/OutputPath&gt;
+    &lt;DefineConstants&gt;TRACE&lt;/DefineConstants&gt;
+    &lt;ErrorReport&gt;prompt&lt;/ErrorReport&gt;
+    &lt;WarningLevel&gt;4&lt;/WarningLevel&gt;
+    &lt;AllowUnsafeBlocks&gt;true&lt;/AllowUnsafeBlocks&gt;
+    &lt;CodeAnalysisRuleSet&gt;AllRules.ruleset&lt;/CodeAnalysisRuleSet&gt;
+    &lt;DocumentationFile&gt;bin\Release\Recorder.XML&lt;/DocumentationFile&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;Reference Include=&quot;System&quot; /&gt;
+    &lt;Reference Include=&quot;System.configuration&quot; /&gt;
+    &lt;Reference Include=&quot;System.Core&quot;&gt;
+      &lt;RequiredTargetFramework&gt;3.5&lt;/RequiredTargetFramework&gt;
+    &lt;/Reference&gt;
+    &lt;Reference Include=&quot;System.DirectoryServices&quot; /&gt;
+    &lt;Reference Include=&quot;System.Messaging&quot; /&gt;
+    &lt;Reference Include=&quot;System.Xml.Linq&quot;&gt;
+      &lt;RequiredTargetFramework&gt;3.5&lt;/RequiredTargetFramework&gt;
+    &lt;/Reference&gt;
+    &lt;Reference Include=&quot;System.Data.DataSetExtensions&quot;&gt;
+      &lt;RequiredTargetFramework&gt;3.5&lt;/RequiredTargetFramework&gt;
+    &lt;/Reference&gt;
+    &lt;Reference Include=&quot;System.Data&quot; /&gt;
+    &lt;Reference Include=&quot;System.Deployment&quot; /&gt;
+    &lt;Reference Include=&quot;System.Drawing&quot; /&gt;
+    &lt;Reference Include=&quot;System.Windows.Forms&quot; /&gt;
+    &lt;Reference Include=&quot;System.Xml&quot; /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;Compile Include=&quot;AboutForm.cs&quot;&gt;
+      &lt;SubType&gt;Form&lt;/SubType&gt;
+    &lt;/Compile&gt;
+    &lt;Compile Include=&quot;AboutForm.Designer.cs&quot;&gt;
+      &lt;DependentUpon&gt;AboutForm.cs&lt;/DependentUpon&gt;
+    &lt;/Compile&gt;
+    &lt;Compile Include=&quot;configuration.cs&quot; /&gt;
+    &lt;Compile Include=&quot;ConfigurationForm.cs&quot;&gt;
+      &lt;SubType&gt;Form&lt;/SubType&gt;
+    &lt;/Compile&gt;
+    &lt;Compile Include=&quot;ConfigurationForm.Designer.cs&quot;&gt;
+      &lt;DependentUpon&gt;ConfigurationForm.cs&lt;/DependentUpon&gt;
+    &lt;/Compile&gt;
+    &lt;Compile Include=&quot;FilesHandler.cs&quot; /&gt;
+    &lt;Compile Include=&quot;Analysis.cs&quot; /&gt;
+    &lt;Compile Include=&quot;Delegates.cs&quot; /&gt;
+    &lt;Compile Include=&quot;FingeringChart.cs&quot; /&gt;
+    &lt;Compile Include=&quot;FingeringsPicture.cs&quot; /&gt;
+    &lt;Compile Include=&quot;MainForm.cs&quot;&gt;
+      &lt;SubType&gt;Form&lt;/SubType&gt;
+    &lt;/Compile&gt;
+    &lt;Compile Include=&quot;MainForm.Designer.cs&quot;&gt;
+      &lt;DependentUpon&gt;MainForm.cs&lt;/DependentUpon&gt;
+    &lt;/Compile&gt;
+    &lt;Compile Include=&quot;IPlayRecord.cs&quot; /&gt;
+    &lt;Compile Include=&quot;MCI.cs&quot; /&gt;
+    &lt;Compile Include=&quot;Memory.cs&quot; /&gt;
+    &lt;Compile Include=&quot;NoteDrawer.cs&quot; /&gt;
+    &lt;Compile Include=&quot;NotesDetector.cs&quot; /&gt;
+    &lt;Compile Include=&quot;RecorderHero.cs&quot; /&gt;
+    &lt;Compile Include=&quot;SavingRecordForm.cs&quot;&gt;
+      &lt;SubType&gt;Form&lt;/SubType&gt;
+    &lt;/Compile&gt;
+    &lt;Compile Include=&quot;SavingRecordForm.Designer.cs&quot;&gt;
+      &lt;DependentUpon&gt;SavingRecordForm.cs&lt;/DependentUpon&gt;
+    &lt;/Compile&gt;
+    &lt;Compile Include=&quot;WaveGraphics.cs&quot; /&gt;
+    &lt;Compile Include=&quot;NotesDB.cs&quot; /&gt;
+    &lt;Compile Include=&quot;Program.cs&quot; /&gt;
+    &lt;Compile Include=&quot;Resources\AssemblyInfo.cs&quot; /&gt;
+    &lt;Compile Include=&quot;WaveIn.cs&quot; /&gt;
+    &lt;Compile Include=&quot;Win32Waveform.cs&quot;&gt;
+      &lt;SubType&gt;Code&lt;/SubType&gt;
+    &lt;/Compile&gt;
+    &lt;EmbeddedResource Include=&quot;AboutForm.resx&quot;&gt;
+      &lt;DependentUpon&gt;AboutForm.cs&lt;/DependentUpon&gt;
+    &lt;/EmbeddedResource&gt;
+    &lt;EmbeddedResource Include=&quot;ConfigurationForm.resx&quot;&gt;
+      &lt;DependentUpon&gt;ConfigurationForm.cs&lt;/DependentUpon&gt;
+    &lt;/EmbeddedResource&gt;
+    &lt;EmbeddedResource Include=&quot;MainForm.resx&quot;&gt;
+      &lt;DependentUpon&gt;MainForm.cs&lt;/DependentUpon&gt;
+      &lt;SubType&gt;Designer&lt;/SubType&gt;
+    &lt;/EmbeddedResource&gt;
+    &lt;EmbeddedResource Include=&quot;Properties\Resources.resx&quot;&gt;
+      &lt;Generator&gt;ResXFileCodeGenerator&lt;/Generator&gt;
+      &lt;LastGenOutput&gt;Resources.Designer.cs&lt;/LastGenOutput&gt;
+      &lt;SubType&gt;Designer&lt;/SubType&gt;
+    &lt;/EmbeddedResource&gt;
+    &lt;Compile Include=&quot;Properties\Resources.Designer.cs&quot;&gt;
+      &lt;AutoGen&gt;True&lt;/AutoGen&gt;
+      &lt;DependentUpon&gt;Resources.resx&lt;/DependentUpon&gt;
+      &lt;DesignTime&gt;True&lt;/DesignTime&gt;
+    &lt;/Compile&gt;
+    &lt;EmbeddedResource Include=&quot;SavingRecordForm.resx&quot;&gt;
+      &lt;DependentUpon&gt;SavingRecordForm.cs&lt;/DependentUpon&gt;
+    &lt;/EmbeddedResource&gt;
+    &lt;None Include=&quot;App.config&quot; /&gt;
+    &lt;None Include=&quot;Properties\Settings.settings&quot;&gt;
+      &lt;Generator&gt;SettingsSingleFileGenerator&lt;/Generator&gt;
+      &lt;LastGenOutput&gt;Settings.Designer.cs&lt;/LastGenOutput&gt;
+    &lt;/None&gt;
+    &lt;Compile Include=&quot;Properties\Settings.Designer.cs&quot;&gt;
+      &lt;AutoGen&gt;True&lt;/AutoGen&gt;
+      &lt;DependentUpon&gt;Settings.settings&lt;/DependentUpon&gt;
+      &lt;DesignTimeSharedInput&gt;True&lt;/DesignTimeSharedInput&gt;
+    &lt;/Compile&gt;
+  &lt;/ItemGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;None Include=&quot;Resources\Recorder picture.jpg&quot; /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;COMReference Include=&quot;AcroPDFLib&quot;&gt;
+      &lt;Guid&gt;{05BFD3F1-6319-4F30-B752-C7A22889BCC4}&lt;/Guid&gt;
+      &lt;VersionMajor&gt;1&lt;/VersionMajor&gt;
+      &lt;VersionMinor&gt;0&lt;/VersionMinor&gt;
+      &lt;Lcid&gt;0&lt;/Lcid&gt;
+      &lt;WrapperTool&gt;tlbimp&lt;/WrapperTool&gt;
+      &lt;Isolated&gt;False&lt;/Isolated&gt;
+      &lt;EmbedInteropTypes&gt;True&lt;/EmbedInteropTypes&gt;
+    &lt;/COMReference&gt;
+    &lt;COMReference Include=&quot;AxAcroPDFLib&quot;&gt;
+      &lt;Guid&gt;{05BFD3F1-6319-4F30-B752-C7A22889BCC4}&lt;/Guid&gt;
+      &lt;VersionMajor&gt;1&lt;/VersionMajor&gt;
+      &lt;VersionMinor&gt;0&lt;/VersionMinor&gt;
+      &lt;Lcid&gt;0&lt;/Lcid&gt;
+      &lt;WrapperTool&gt;aximp&lt;/WrapperTool&gt;
+      &lt;Isolated&gt;False&lt;/Isolated&gt;
+    &lt;/COMReference&gt;
+  &lt;/ItemGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;Content Include=&quot;extra methods.txt&quot; /&gt;
+    &lt;None Include=&quot;Resources\lock %28noteDrawer%29.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\Stop-icon.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\Play-icon.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\Pause-icon.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\stop-red-icon.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\Microphone-icon.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\new_page1.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\save1.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\save.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\new_page.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\pause.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\stop.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\play.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\open.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\refresh.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\recorderPictureHoles.txt&quot; /&gt;
+    &lt;None Include=&quot;Resources\recorderFingering.txt&quot; /&gt;
+    &lt;EmbeddedResource Include=&quot;Resources\abcm2ps.exe&quot; /&gt;
+    &lt;None Include=&quot;Resources\Devices-media-floppy-icon.png&quot; /&gt;
+    &lt;Content Include=&quot;Resources\directoryIcon.gif&quot; /&gt;
+    &lt;None Include=&quot;Resources\folder1.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\Flute-icon.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\File-Types-MIDI-icon.png&quot; /&gt;
+    &lt;Content Include=&quot;Resources\Flute.ico&quot; /&gt;
+    &lt;Content Include=&quot;Resources\GClef.png&quot; /&gt;
+    &lt;None Include=&quot;Resources\Icon-Save-Small.jpg&quot; /&gt;
+    &lt;Content Include=&quot;Resources\ghostscript_med.png&quot; /&gt;
+    &lt;Content Include=&quot;Resources\Icon-Save.png&quot; /&gt;
+    &lt;None Include=&quot;TODO&quot; /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;BootstrapperPackage Include=&quot;Microsoft.Net.Client.3.5&quot;&gt;
+      &lt;Visible&gt;False&lt;/Visible&gt;
+      &lt;ProductName&gt;.NET Framework 3.5 SP1 Client Profile&lt;/ProductName&gt;
+      &lt;Install&gt;false&lt;/Install&gt;
+    &lt;/BootstrapperPackage&gt;
+    &lt;BootstrapperPackage Include=&quot;Microsoft.Net.Framework.3.5.SP1&quot;&gt;
+      &lt;Visible&gt;False&lt;/Visible&gt;
+      &lt;ProductName&gt;.NET Framework 3.5 SP1&lt;/ProductName&gt;
+      &lt;Install&gt;true&lt;/Install&gt;
+    &lt;/BootstrapperPackage&gt;
+    &lt;BootstrapperPackage Include=&quot;Microsoft.Windows.Installer.3.1&quot;&gt;
+      &lt;Visible&gt;False&lt;/Visible&gt;
+      &lt;ProductName&gt;Windows Installer 3.1&lt;/ProductName&gt;
+      &lt;Install&gt;true&lt;/Install&gt;
+    &lt;/BootstrapperPackage&gt;
+  &lt;/ItemGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;WCFMetadata Include=&quot;Service References\&quot; /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;Folder Include=&quot;bin\Release\&quot; /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;Import Project=&quot;$(MSBuildToolsPath)\Microsoft.CSharp.targets&quot; /&gt;
+  &lt;!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  &lt;Target Name=&quot;BeforeBuild&quot;&gt;
+  &lt;/Target&gt;
+  &lt;Target Name=&quot;AfterBuild&quot;&gt;
+  &lt;/Target&gt;
+  --&gt;
+&lt;/Project&gt;
+</pre></div></td></tr></table></div>
+
+</div>
+
+
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+
+
+</body>
+</html>

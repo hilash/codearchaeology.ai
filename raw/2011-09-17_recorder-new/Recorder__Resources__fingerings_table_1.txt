@@ -1,0 +1,12 @@
+﻿72;c;c;c;c;c;c;c;c;
+73;c;c;c;c;c;c;c;h;
+74;c;c;c;c;c;c;c;u;
+75;c;c;c;c;c;c;h;u;
+76;c;c;c;c;c;c;u;u;
+77;c;c;c;c;c;u;c;c;
+78;c;c;c;c;u;c;c;u;
+79;c;c;c;c;u;u;u;u;
+80;c;c;c;u;c;c;h;u;
+81;c;c;c;u;u;u;u;u;
+82;c;c;u;c;c;u;u;u;
+83;c;c;u;u;u;u;u;u;

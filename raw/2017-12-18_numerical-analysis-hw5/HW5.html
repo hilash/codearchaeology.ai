@@ -1,0 +1,464 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>HW5</title><meta name="generator" content="MATLAB 8.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-12-18"><meta name="DC.source" content="HW5.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">HW5</a></li><li><a href="#2">(a) Solve the equation <img src="HW5_eq02639061353444216815.png" alt="$x^5-2x-10=0$"></a></li><li><a href="#3">(b) Solve the equation <img src="HW5_eq08265960400530253032.png" alt="$f=x^5-2x-10=0$"> using  the Newton, Secant, and Bisection methods</a></li><li><a href="#4">(b.1) Newton method: <img src="HW5_eq15363082837471703614.png" alt="$x_{0}=b,\quad x_{k+1}=x_{k}-\frac{f\left(x_{k}\right)}{f^{'}\left(x_{k}\right)}=\frac{4x_{k}^{5}+10}{5x_{k}^{4}-2}$"></a></li><li><a href="#5">(b.2) Secant method: <img src="HW5_eq07322813218411459646.png" alt="$x_{0}=b,\quad x_{k+1}=x_{k}-f\left(x_{k}\right)\frac{x_{k}-x_{k-1}}{f\left(x_{k}\right)-f\left(x_{k-1}\right)}=x_{k}-\left(x_{k}^{5}-2x_{k}-10\right)\frac{x_{k}-x_{k-1}}{x_{k}^{5}-x_{k-1}^{5}-2x_{k}+2x_{k-1}}$"></a></li><li><a href="#6">(b.3) Bisection method: <img src="HW5_eq09594336631528534196.png" alt="$f\left(a\right)\cdot f\left(b\right)<0 ,$"> <img src="HW5_eq17332066737391003847.png" alt="$c=\frac{a+b}{2}$"></a></li><li><a href="#7">(b.4) - tests, verify that the code implments the algorithm correctly</a></li><li><a href="#12">(c) The convergence rate of the iterations for solving the equation</a></li></ul></div><h2>HW5<a name="1"></a></h2><pre class="codeinput"><span class="comment">% print data nicely</span>
+format <span class="string">long</span>;
+format <span class="string">compact</span>;
+</pre><h2>(a) Solve the equation <img src="HW5_eq02639061353444216815.png" alt="$x^5-2x-10=0$"><a name="2"></a></h2><pre>The real root in [1,3] is 1.6794</pre><pre class="codeinput">p = [1 0 0 0 -2 -10];
+r = roots(p)
+root = r(imag(r)==0)
+</pre><pre class="codeoutput">r =
+  1.679397315646853 + 0.000000000000000i
+  0.413747370254642 + 1.569735547129343i
+  0.413747370254642 - 1.569735547129343i
+ -1.253446028078067 + 0.829717913315591i
+ -1.253446028078067 - 0.829717913315591i
+root =
+   1.679397315646853
+</pre><h2>(b) Solve the equation <img src="HW5_eq08265960400530253032.png" alt="$f=x^5-2x-10=0$"> using  the Newton, Secant, and Bisection methods<a name="3"></a></h2><pre class="codeinput">a=1;
+b=3;
+iterations_num=20;
+tol=10^(-14);
+syms <span class="string">f(x)</span>;
+f(x) = x^5-2*x-10;
+</pre><h2>(b.1) Newton method: <img src="HW5_eq15363082837471703614.png" alt="$x_{0}=b,\quad x_{k+1}=x_{k}-\frac{f\left(x_{k}\right)}{f^{'}\left(x_{k}\right)}=\frac{4x_{k}^{5}+10}{5x_{k}^{4}-2}$"><a name="4"></a></h2><pre class="codeinput">[root,i,x,error]=newton(f,a,b,tol,iterations_num)
+</pre><pre class="codeoutput">Netown method converge to the root: 1.6794 after 7 steps
+root =
+   1.679397315646853
+i =
+     8
+x =
+  Columns 1 through 3
+   3.000000000000000   2.436724565756824   2.029130597460316
+  Columns 4 through 6
+   1.783357809503184   1.691302619891177   1.679572300132953
+  Columns 7 through 8
+   1.679397354033717   1.679397315646852
+error =
+  Columns 1 through 3
+                   0   0.757327250109971   0.349733281813463
+  Columns 4 through 6
+   0.103960493856330   0.011905304244324   0.000174984486100
+  Columns 7 through 8
+   0.000000038386864   0.000000000000002
+</pre><h2>(b.2) Secant method: <img src="HW5_eq07322813218411459646.png" alt="$x_{0}=b,\quad x_{k+1}=x_{k}-f\left(x_{k}\right)\frac{x_{k}-x_{k-1}}{f\left(x_{k}\right)-f\left(x_{k-1}\right)}=x_{k}-\left(x_{k}^{5}-2x_{k}-10\right)\frac{x_{k}-x_{k-1}}{x_{k}^{5}-x_{k-1}^{5}-2x_{k}+2x_{k-1}}$"><a name="5"></a></h2><pre class="codeinput">[root,i,x,error]=secant(f,a,b,a,b, tol,iterations_num)
+</pre><pre class="codeoutput">Secant method converge to the root: 1.6794 after 13 steps
+root =
+   1.679397315646853
+i =
+    15
+x =
+  Columns 1 through 3
+   1.000000000000000   3.000000000000000   1.092436974789916
+  Columns 4 through 6
+   1.177760896270846   2.773181928222976   1.279278969516385
+  Columns 7 through 9
+   1.365842105641307   1.964333811829041   1.570808013086686
+  Columns 10 through 12
+   1.645325437411965   1.684509147901910   1.679174724219964
+  Columns 13 through 15
+   1.679395893414492   1.679397316043883   1.679397315646849
+error =
+  Columns 1 through 3
+                   0                   0   0.586960340856937
+  Columns 4 through 6
+   0.501636419376008   1.093784612576123   0.400118346130468
+  Columns 7 through 9
+   0.313555210005547   0.284936496182187   0.108589302560167
+  Columns 10 through 12
+   0.034071878234889   0.005111832255056   0.000222591426889
+  Columns 13 through 15
+   0.000001422232361   0.000000000397030   0.000000000000004
+</pre><h2>(b.3) Bisection method: <img src="HW5_eq09594336631528534196.png" alt="$f\left(a\right)\cdot f\left(b\right)<0 ,$"> <img src="HW5_eq17332066737391003847.png" alt="$c=\frac{a+b}{2}$"><a name="6"></a></h2><pre class="codeinput">[root,i,x,error]=bisection(f,a,b, tol,iterations_num)
+</pre><pre class="codeoutput">Bisection method did not converge to the root: 1.6794 after 20 steps
+root =
+   1.679397315646853
+i =
+    20
+x =
+  Columns 1 through 3
+   2.000000000000000   1.500000000000000   1.750000000000000
+  Columns 4 through 6
+   1.625000000000000   1.687500000000000   1.656250000000000
+  Columns 7 through 9
+   1.671875000000000   1.679687500000000   1.675781250000000
+  Columns 10 through 12
+   1.677734375000000   1.678710937500000   1.679199218750000
+  Columns 13 through 15
+   1.679443359375000   1.679321289062500   1.679382324218750
+  Columns 16 through 18
+   1.679412841796875   1.679397583007813   1.679389953613281
+  Columns 19 through 20
+   1.679393768310547   1.679395675659180
+error =
+  Columns 1 through 3
+   0.320602684353147   0.179397315646853   0.070602684353147
+  Columns 4 through 6
+   0.054397315646853   0.008102684353147   0.023147315646853
+  Columns 7 through 9
+   0.007522315646853   0.000290184353147   0.003616065646853
+  Columns 10 through 12
+   0.001662940646853   0.000686378146853   0.000198096896853
+  Columns 13 through 15
+   0.000046043728147   0.000076026584353   0.000014991428103
+  Columns 16 through 18
+   0.000015526150022   0.000000267360959   0.000007362033572
+  Columns 19 through 20
+   0.000003547336306   0.000001639987674
+</pre><h2>(b.4) - tests, verify that the code implments the algorithm correctly<a name="7"></a></h2><p>test 1 - check converge to root 1</p><pre class="codeinput">a=0;
+b=1.1;
+iterations_num=100;
+tol=10^(-14);
+syms <span class="string">f(x)</span>;
+f(x) = (x-1)*(x-2)*(x-3)*(x-4)*(x-5);
+newton(f,a,b,tol,iterations_num);
+secant(f,a,b,a,b, tol,iterations_num);
+bisection(f,a,b, tol,iterations_num);
+</pre><pre class="codeoutput">Netown method converge to the root: 1 after 6 steps
+Secant method converge to the root: 1 after 8 steps
+Bisection method did not converge to the root: 1 after 100 steps
+</pre><p>test 2- the bisection did not converge because of the problem of subtracting close number. so - let's take a more tolerace tolerace. (we take 10^(-6) which is the standart matlab tolerance, (as in 'fsolve')</p><pre class="codeinput">tol = 10^(-6);
+iterations_num=20;
+newton(f,a,b,tol,iterations_num);
+secant(f,a,b,a,b, tol,iterations_num);
+bisection(f,a,b, tol,iterations_num);
+</pre><pre class="codeoutput">Netown method converge to the root: 1 after 4 steps
+Secant method converge to the root: 1 after 6 steps
+Bisection method converge to the root: 1 after 19 steps
+</pre><p>test 3 - check what happens if (a,b) includes more than one root.          we should expect inconclusive results</p><pre class="codeinput">a = 1.7;
+b = 3.2;
+newton(f,a,b,tol,iterations_num);
+secant(f,a,b,a,b, tol,iterations_num);
+bisection(f,a,b, tol,iterations_num);
+</pre><pre class="codeoutput">Netown method converge to the root: 3 after 3 steps
+Secant method converge to the root: 4 after 9 steps
+Bisection method failes: f(a)*f(b) &gt; 0. please choose other values.
+</pre><p>test 4 - check what happens if (a,b) is really close to root</p><pre class="codeinput">a = 2.9;
+b = 3.1;
+tol = 10^(-14);
+newton(f,a,b,tol,iterations_num);
+secant(f,a,b,a,b, tol,iterations_num);
+bisection(f,a,b, tol,iterations_num);
+</pre><pre class="codeoutput">Netown method converge to the root: 3 after 4 steps
+Secant method converge to the root: 3 after 2 steps
+Bisection method did not converge to the root: 3 after 20 steps
+</pre><p>test 5 - check a function that around 0, very different than          it's behavior elsewhere. newton and secant would           divide by zero (the slop of the direvative of tanh at 0).</p><pre class="codeinput">a = -1;
+b = 1;
+tol = 10^(-14);
+f(x) = tanh(5*x);
+<span class="keyword">try</span>
+    newton(f,a,b,tol,iterations_num);
+<span class="keyword">catch</span> ME
+    warning(getReport(ME));
+<span class="keyword">end</span>
+<span class="keyword">try</span>
+    secant(f,a,b,a,b, tol,iterations_num);
+<span class="keyword">catch</span> ME
+    warning(getReport(ME));
+<span class="keyword">end</span>
+
+bisection(f,a,b, tol,iterations_num);
+</pre><pre class="codeoutput">Warning: The following error occurred converting from sym to double:
+Error using symengine (line 59)
+Division by zero.
+Error in newton (line 34)
+        x(i) = x(i-1) - (f(x(i-1)))/(df(x(i-1)));
+Error in HW5 (line 84)
+    newton(f,a,b,tol,iterations_num);
+Error in evalmxdom&gt;instrumentAndRun (line 97)
+text = evalc(evalstr);
+Error in evalmxdom (line 21)
+[data,text,laste] =
+instrumentAndRun(file,cellBoundaries,imageDir,imagePrefix,options);
+Error in publish (line 164)
+    dom = evalmxdom(file,dom,cellBoundaries,prefix,imageDir,outputDir,options);
+Error in mdbpublish (line 55)
+outputPath = publish(file, options); 
+Secant method converge to the root: 0 after 1 steps
+Bisection method converge to the root: 0 after 1 steps
+</pre><h2>(c) The convergence rate of the iterations for solving the equation<a name="12"></a></h2><pre>         $f=x^5-2x-10=0$ using  the Newton, Secant, and Bisection
+         methods.</pre><pre class="codeinput">a=1;
+b=3;
+iterations_num=20;
+tol=10^(-14);
+syms <span class="string">f(x)</span>;
+f(x) = x^5-2*x-10;
+
+<span class="comment">% calculate the roots using all methods</span>
+[root,i,x,error]=newton(f,a,b,tol,iterations_num);
+error1 = error(2:end);
+[root,i,x,error]=secant(f,a,b,a,b, tol,iterations_num);
+error2 = error(3:end);
+[root,i,x,error]=bisection(f,a,b, tol,iterations_num);
+error3 = error;
+
+Errors = {error1, error2, error3};
+Titles = {<span class="string">'Newton'</span>, <span class="string">'Secant'</span>, <span class="string">'Bisection'</span>};
+
+figure(<span class="string">'position'</span>, [0, 0, 1000, 800]);
+
+<span class="keyword">for</span> i=1:3
+
+    error = Errors{i};
+    x_n = log(error(1:end-1));
+    y_n = log(error(2:end));
+    x1 = linspace(min(x_n),max(x_n));
+
+    subplot(2,2,i);
+
+    <span class="comment">% calculate fit - only for error ranges</span>
+    disp([<span class="string">'Linear fit of the error convergence of the '</span>, Titles{i}, <span class="string">' method'</span>]);
+    f = fit(x_n',y_n',<span class="string">'poly1'</span>)
+
+    <span class="comment">% we can use 'fit', but we'll use 'polyfit' and 'polyval' as requested</span>
+    p = polyfit(x_n,y_n,1);
+    f1 = polyval(p,x1);
+    plot(x_n,y_n,<span class="string">'o'</span>,x1,f1,<span class="string">'-'</span>);
+
+    title(sprintf(<span class="string">'Error convergence of %s method'</span>, Titles{i}));
+    ylabel(<span class="string">'$$\log E_{n+1}$$'</span>, <span class="string">'Interpreter'</span>, <span class="string">'Latex'</span>);
+    xlabel(<span class="string">'$$\log E_{n}$$'</span>  ,<span class="string">'Interpreter'</span>, <span class="string">'Latex'</span>);
+    axis <span class="string">tight</span>;
+    legend(<span class="string">'data'</span>,sprintf(<span class="string">'fit: y=%f*x+%f'</span>,p(1),p(2)));
+    legend(<span class="string">'Location'</span>,<span class="string">'northwest'</span>);
+
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">Netown method converge to the root: 1.6794 after 7 steps
+Secant method converge to the root: 1.6794 after 13 steps
+Bisection method did not converge to the root: 1.6794 after 20 steps
+Linear fit of the error convergence of the Newton method
+f = 
+     Linear model Poly1:
+     f(x) = p1*x + p2
+     Coefficients (with 95% confidence bounds):
+       p1 =        1.98  (1.927, 2.033)
+       p2 =     -0.1258  (-0.5541, 0.3025)
+Linear fit of the error convergence of the Secant method
+f = 
+     Linear model Poly1:
+     f(x) = p1*x + p2
+     Coefficients (with 95% confidence bounds):
+       p1 =       1.558  (1.495, 1.622)
+       p2 =     0.01968  (-0.4874, 0.5267)
+Linear fit of the error convergence of the Bisection method
+f = 
+     Linear model Poly1:
+     f(x) = p1*x + p2
+     Coefficients (with 95% confidence bounds):
+       p1 =      0.8917  (0.6802, 1.103)
+       p2 =      -1.434  (-3.188, 0.3199)
+</pre><img vspace="5" hspace="5" src="HW5_01.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% HW5
+
+% print data nicely
+format long;
+format compact;
+
+%% (a) Solve the equation $x^5-2x-10=0$
+%  The real root in [1,3] is 1.6794
+p = [1 0 0 0 -2 -10];
+r = roots(p)
+root = r(imag(r)==0)
+
+%% (b) Solve the equation $f=x^5-2x-10=0$ using  the Newton, Secant, and Bisection methods
+a=1;
+b=3;
+iterations_num=20;
+tol=10^(-14);
+syms f(x);
+f(x) = x^5-2*x-10;
+
+%% (b.1) Newton method: $x_{0}=b,\quad x_{k+1}=x_{k}-\frac{f\left(x_{k}\right)}{f^{'}\left(x_{k}\right)}=\frac{4x_{k}^{5}+10}{5x_{k}^{4}-2}$
+[root,i,x,error]=newton(f,a,b,tol,iterations_num)
+
+%% (b.2) Secant method: $x_{0}=b,\quad x_{k+1}=x_{k}-f\left(x_{k}\right)\frac{x_{k}-x_{k-1}}{f\left(x_{k}\right)-f\left(x_{k-1}\right)}=x_{k}-\left(x_{k}^{5}-2x_{k}-10\right)\frac{x_{k}-x_{k-1}}{x_{k}^{5}-x_{k-1}^{5}-2x_{k}+2x_{k-1}}$
+[root,i,x,error]=secant(f,a,b,a,b, tol,iterations_num)
+
+
+%% (b.3) Bisection method: $f\left(a\right)\cdot f\left(b\right)<0 ,$ $c=\frac{a+b}{2}$
+[root,i,x,error]=bisection(f,a,b, tol,iterations_num)
+
+%% (b.4) - tests, verify that the code implments the algorithm correctly
+% test 1 - check converge to root 1
+a=0;
+b=1.1;
+iterations_num=100;
+tol=10^(-14);
+syms f(x);
+f(x) = (x-1)*(x-2)*(x-3)*(x-4)*(x-5);
+newton(f,a,b,tol,iterations_num);
+secant(f,a,b,a,b, tol,iterations_num);
+bisection(f,a,b, tol,iterations_num);
+
+%%
+% test 2- the bisection did not converge because of the problem of subtracting
+% close number. so - let's take a more tolerace tolerace. 
+% (we take 10^(-6) which is the standart matlab tolerance, (as in 'fsolve')
+
+tol = 10^(-6);
+iterations_num=20;
+newton(f,a,b,tol,iterations_num);
+secant(f,a,b,a,b, tol,iterations_num);
+bisection(f,a,b, tol,iterations_num);
+
+
+%%
+% test 3 - check what happens if (a,b) includes more than one root.
+%          we should expect inconclusive results
+a = 1.7;
+b = 3.2;
+newton(f,a,b,tol,iterations_num);
+secant(f,a,b,a,b, tol,iterations_num);
+bisection(f,a,b, tol,iterations_num);
+
+
+%%
+% test 4 - check what happens if (a,b) is really close to root
+a = 2.9;
+b = 3.1;
+tol = 10^(-14); 
+newton(f,a,b,tol,iterations_num);
+secant(f,a,b,a,b, tol,iterations_num);
+bisection(f,a,b, tol,iterations_num);
+
+
+%%
+% test 5 - check a function that around 0, very different than
+%          it's behavior elsewhere. newton and secant would
+%           divide by zero (the slop of the direvative of tanh at 0).
+a = -1;
+b = 1;
+tol = 10^(-14); 
+f(x) = tanh(5*x);
+try
+    newton(f,a,b,tol,iterations_num);
+catch ME
+    warning(getReport(ME));
+end
+try
+    secant(f,a,b,a,b, tol,iterations_num);
+catch ME
+    warning(getReport(ME));
+end
+
+bisection(f,a,b, tol,iterations_num);
+
+
+%% (c) The convergence rate of the iterations for solving the equation
+%           $f=x^5-2x-10=0$ using  the Newton, Secant, and Bisection
+%           methods.
+a=1;
+b=3;
+iterations_num=20;
+tol=10^(-14);
+syms f(x);
+f(x) = x^5-2*x-10;
+
+% calculate the roots using all methods
+[root,i,x,error]=newton(f,a,b,tol,iterations_num);
+error1 = error(2:end);
+[root,i,x,error]=secant(f,a,b,a,b, tol,iterations_num);
+error2 = error(3:end);
+[root,i,x,error]=bisection(f,a,b, tol,iterations_num);
+error3 = error;
+
+Errors = {error1, error2, error3};
+Titles = {'Newton', 'Secant', 'Bisection'};
+
+figure('position', [0, 0, 1000, 800]);
+
+for i=1:3
+    
+    error = Errors{i};
+    x_n = log(error(1:end-1));
+    y_n = log(error(2:end));
+    x1 = linspace(min(x_n),max(x_n));
+
+    subplot(2,2,i);
+    
+    % calculate fit - only for error ranges
+    disp(['Linear fit of the error convergence of the ', Titles{i}, ' method']);
+    f = fit(x_n',y_n','poly1')
+    
+    % we can use 'fit', but we'll use 'polyfit' and 'polyval' as requested
+    p = polyfit(x_n,y_n,1);
+    f1 = polyval(p,x1);
+    plot(x_n,y_n,'o',x1,f1,'-');
+
+    title(sprintf('Error convergence of %s method', Titles{i}));
+    ylabel('$$\log E_{n+1}$$', 'Interpreter', 'Latex');
+    xlabel('$$\log E_{n}$$'  ,'Interpreter', 'Latex');
+    axis tight;
+    legend('data',sprintf('fit: y=%f*x+%f',p(1),p(2)));
+    legend('Location','northwest');
+
+end
+
+##### SOURCE END #####
+--></body></html>

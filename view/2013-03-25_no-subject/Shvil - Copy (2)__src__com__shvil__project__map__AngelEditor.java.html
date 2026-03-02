@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shvil - Copy (2)__src__com__shvil__project__map__AngelEditor.java - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ed007e; background-color: #1e0010 } /* Error */
+.highlight .esc { color: #f8f8f2 } /* Escape */
+.highlight .g { color: #f8f8f2 } /* Generic */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #ff4689 } /* Operator */
+.highlight .x { color: #f8f8f2 } /* Other */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #ff4689 } /* Generic.Deleted */
+.highlight .ge { color: #f8f8f2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #f8f8f2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #f8f8f2 } /* Generic.Error */
+.highlight .gh { color: #f8f8f2 } /* Generic.Heading */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .go { color: #66d9ef } /* Generic.Output */
+.highlight .gp { color: #ff4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #f8f8f2 } /* Generic.Traceback */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #ff4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #ff4689 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #ff4689 } /* Operator.Word */
+.highlight .pm { color: #f8f8f2 } /* Punctuation.Marker */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style>
+
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<a href="/project/2013-03-25_no-subject/" class="back-link">&laquo; Back to No Subject</a>
+
+<div class="viewer-header">
+    <h1>Shvil - Copy (2)__src__com__shvil__project__map__AngelEditor.java</h1>
+    <div class="viewer-meta">
+        <span class="tag">Java</span>
+        <span>9.9 KB</span>
+        
+    </div>
+</div>
+
+
+<div class="code-container">
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span></pre></div></td><td class="code"><div><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">com.shvil.project.map</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.annotation.TargetApi</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.app.ActionBar</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.app.Activity</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.app.AlertDialog</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.content.Intent</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.content.res.Resources</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.os.Build</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.util.Log</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.view.Menu</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.view.MenuInflater</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.view.MenuItem</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.view.View</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.view.Window</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.widget.CheckBox</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">android.widget.EditText</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.shvil.project.MyApplication</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.shvil.project.R</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.shvil.project.db.Angel</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.shvil.project.db.AngelDao</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.shvil.project.sync.SyncState</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AngelEditor</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Activity</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span>
+<span class="w">	</span><span class="c1">// This Activity can be started by more than one action</span>
+<span class="w">	</span><span class="c1">// Each action is represented as a &quot;state&quot; constant</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">STATE_EDIT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">STATE_INSERT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">STATE_VIEW</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// The activity incoming intent data</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">INTENT_IN_DATA_ANGEL_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;angel_in_id&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">INTENT_IN_DATA_ANGEL_LAT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;angel_in_lat&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">INTENT_IN_DATA_ANGEL_LON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;angel_in_lon&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">INTENT_IN_DATA_ANGEL_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;angel_in_position&quot;</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// The Activity return Intent data</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">INTENT_OUT_DATA_ANGEL_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;angel_out_id&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">INTENT_OUT_DATA_ANGEL_LAT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;angel_out_lat&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">INTENT_OUT_DATA_ANGEL_LON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;angel_out_lon&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">INTENT_OUT_DATA_ANGEL_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;angel_out_position&quot;</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">MyApplication</span><span class="w"> </span><span class="n">mApplication</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">AngelDao</span><span class="w"> </span><span class="n">mAngelDao</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mState</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">mAngelID</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">mAngelLatitude</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">mAngelLongitude</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">mAngelPosition</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Angel</span><span class="w"> </span><span class="n">mAngel</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ViewHolder</span><span class="w"> </span><span class="n">viewHolder</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ViewHolder</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="kd">public</span><span class="w"> </span><span class="n">EditText</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">	    </span><span class="kd">public</span><span class="w"> </span><span class="n">EditText</span><span class="w"> </span><span class="n">address</span><span class="p">;</span>
+<span class="w">		</span><span class="kd">public</span><span class="w"> </span><span class="n">EditText</span><span class="w"> </span><span class="n">phone1</span><span class="p">;</span>
+<span class="w">		</span><span class="kd">public</span><span class="w"> </span><span class="n">EditText</span><span class="w"> </span><span class="n">phone2</span><span class="p">;</span>
+<span class="w">		</span><span class="kd">public</span><span class="w"> </span><span class="n">EditText</span><span class="w"> </span><span class="n">information</span><span class="p">;</span>
+<span class="w">		</span><span class="kd">public</span><span class="w"> </span><span class="n">CheckBox</span><span class="w"> </span><span class="n">passport</span><span class="p">;</span>
+<span class="w">		</span><span class="kd">public</span><span class="w"> </span><span class="n">CheckBox</span><span class="w"> </span><span class="n">stamp</span><span class="p">;</span>
+<span class="w">		</span><span class="kd">public</span><span class="w"> </span><span class="n">CheckBox</span><span class="w"> </span><span class="n">religious</span><span class="p">;</span>
+<span class="w">	  </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@TargetApi</span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="na">VERSION_CODES</span><span class="p">.</span><span class="na">ICE_CREAM_SANDWICH</span><span class="p">)</span>
+<span class="w">	</span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">);</span>
+<span class="w">        </span><span class="n">requestWindowFeature</span><span class="p">(</span><span class="n">Window</span><span class="p">.</span><span class="na">FEATURE_LEFT_ICON</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getIntent</span><span class="p">();</span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">getAction</span><span class="p">();</span>
+<span class="w">        </span><span class="n">mApplication</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">MyApplication</span><span class="p">)</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">getApplication</span><span class="p">();</span>
+<span class="w">        </span><span class="n">mAngelDao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mApplication</span><span class="p">.</span><span class="na">daoSession</span><span class="p">.</span><span class="na">getAngelDao</span><span class="p">();</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="n">mAngelID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">getLongExtra</span><span class="p">(</span><span class="n">INTENT_IN_DATA_ANGEL_ID</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mAngelLatitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">getDoubleExtra</span><span class="p">(</span><span class="n">INTENT_IN_DATA_ANGEL_LAT</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mAngelLongitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">getDoubleExtra</span><span class="p">(</span><span class="n">INTENT_IN_DATA_ANGEL_LON</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mAngelPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">getLongExtra</span><span class="p">(</span><span class="n">INTENT_IN_DATA_ANGEL_POSITION</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_EDIT</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">action</span><span class="p">))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        	</span><span class="n">setTheme</span><span class="p">(</span><span class="n">android</span><span class="p">.</span><span class="na">R</span><span class="p">.</span><span class="na">style</span><span class="p">.</span><span class="na">Theme_Holo_Light_DarkActionBar</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">STATE_EDIT</span><span class="p">;</span>
+<span class="w">            </span><span class="n">mAngel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mAngelDao</span><span class="p">.</span><span class="na">load</span><span class="p">(</span><span class="n">mAngelID</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mAngel</span><span class="p">.</span><span class="na">setRecord_state</span><span class="p">(</span><span class="n">SyncState</span><span class="p">.</span><span class="na">RECORD_STATE_EDIT</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_INSERT</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">action</span><span class="p">))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        	</span><span class="n">setTheme</span><span class="p">(</span><span class="n">android</span><span class="p">.</span><span class="na">R</span><span class="p">.</span><span class="na">style</span><span class="p">.</span><span class="na">Theme_Holo_Light_DarkActionBar</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">STATE_INSERT</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">long</span><span class="w"> </span><span class="n">server_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="n">mAngel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Angel</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mAngelLatitude</span><span class="p">,</span><span class="w"> </span><span class="n">mAngelLongitude</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">byte</span><span class="p">)</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">SyncState</span><span class="p">.</span><span class="na">RECORD_STATE_ADD</span><span class="p">,</span><span class="w"> </span><span class="n">server_time</span><span class="p">);</span>
+<span class="w">            </span>
+<span class="w">            </span><span class="n">ActionBar</span><span class="w"> </span><span class="n">actionBar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getActionBar</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">actionBar</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">){</span>
+<span class="w">    	        </span><span class="n">actionBar</span><span class="p">.</span><span class="na">setDisplayHomeAsUpEnabled</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="w">    	        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="na">VERSION</span><span class="p">.</span><span class="na">SDK_INT</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">Build</span><span class="p">.</span><span class="na">VERSION_CODES</span><span class="p">.</span><span class="na">ICE_CREAM_SANDWICH</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    	        	</span><span class="n">actionBar</span><span class="p">.</span><span class="na">setHomeButtonEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="w">    			</span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_VIEW</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">action</span><span class="p">))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">//getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));</span>
+<span class="w">        	</span><span class="c1">//setTheme(android.R.style.Theme_Translucent);</span>
+<span class="w">        	</span><span class="n">mState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">STATE_VIEW</span><span class="p">;</span>
+<span class="w">            </span><span class="n">mAngel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mAngelDao</span><span class="p">.</span><span class="na">load</span><span class="p">(</span><span class="n">mAngelID</span><span class="p">);</span>
+<span class="w">            </span>
+<span class="w">            </span><span class="n">Resources</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mApplication</span><span class="p">.</span><span class="na">getResources</span><span class="p">();</span>
+<span class="w">            </span><span class="n">getWindow</span><span class="p">().</span><span class="na">setFeatureDrawable</span><span class="p">(</span><span class="n">Window</span><span class="p">.</span><span class="na">FEATURE_LEFT_ICON</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="na">getDrawable</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">ic_angel_32</span><span class="p">));</span>
+<span class="w">            </span><span class="c1">// TODO</span>
+<span class="w">            </span><span class="n">setTitle</span><span class="p">(</span><span class="s">&quot;Shvil Angel&quot;</span><span class="p">);</span>
+<span class="w">	    </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="s">&quot;AngelEditor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Unknown action, exiting&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">finish</span><span class="p">();</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">infalte_angel_layout</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">STATE_VIEW</span><span class="p">){</span>
+<span class="w">        	</span><span class="n">change_to_view_mode</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span><span class="w">    </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">infalte_angel_layout</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    	</span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">angel_editor</span><span class="p">);</span>
+<span class="w">	    </span><span class="n">viewHolder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ViewHolder</span><span class="p">();</span>
+<span class="w">		    </span>
+<span class="w">	    </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">EditText</span><span class="p">)</span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">angel_editor_name</span><span class="p">);</span>
+<span class="w">	    </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">EditText</span><span class="p">)</span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">angel_editor_address</span><span class="p">);</span>
+<span class="w">	    </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">phone1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">EditText</span><span class="p">)</span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">angel_editor_phone1</span><span class="p">);</span>
+<span class="w">	    </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">phone2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">EditText</span><span class="p">)</span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">angel_editor_phone2</span><span class="p">);</span>
+<span class="w">	    </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">information</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">EditText</span><span class="p">)</span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">angel_editor_information</span><span class="p">);</span>
+<span class="w">	    </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">passport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CheckBox</span><span class="p">)</span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">angel_editor_passport</span><span class="p">);</span>
+<span class="w">	    </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">stamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CheckBox</span><span class="p">)</span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">angel_editor_stamp</span><span class="p">);</span>
+<span class="w">	    </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">religious</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CheckBox</span><span class="p">)</span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">angel_editor_religious</span><span class="p">);</span>
+<span class="w">	    </span>
+<span class="w">	    </span><span class="c1">// get data</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">mAngel</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">address</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">mAngel</span><span class="p">.</span><span class="na">getCity</span><span class="p">());</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">phone1</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">mAngel</span><span class="p">.</span><span class="na">getPhone1</span><span class="p">());</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">phone2</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">mAngel</span><span class="p">.</span><span class="na">getPhone2</span><span class="p">());</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">information</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">mAngel</span><span class="p">.</span><span class="na">getInformation</span><span class="p">());</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">passport</span><span class="p">.</span><span class="na">setChecked</span><span class="p">(</span><span class="n">mAngel</span><span class="p">.</span><span class="na">getPassport</span><span class="p">());</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">stamp</span><span class="p">.</span><span class="na">setChecked</span><span class="p">(</span><span class="n">mAngel</span><span class="p">.</span><span class="na">getStamp</span><span class="p">());</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">religious</span><span class="p">.</span><span class="na">setChecked</span><span class="p">(</span><span class="n">mAngel</span><span class="p">.</span><span class="na">getReligious</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">change_to_view_mode</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">	    </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">setEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">address</span><span class="p">.</span><span class="na">setEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">phone1</span><span class="p">.</span><span class="na">setEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">phone2</span><span class="p">.</span><span class="na">setEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">information</span><span class="p">.</span><span class="na">setEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">passport</span><span class="p">.</span><span class="na">setEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">stamp</span><span class="p">.</span><span class="na">setEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="w">        </span><span class="n">viewHolder</span><span class="p">.</span><span class="na">religious</span><span class="p">.</span><span class="na">setEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="c1">// remove empty fields</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">phone2</span><span class="p">.</span><span class="na">getText</span><span class="p">().</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span>
+<span class="w">        	</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">phone2</span><span class="p">.</span><span class="na">setVisibility</span><span class="p">(</span><span class="n">View</span><span class="p">.</span><span class="na">GONE</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        	</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">phone2</span><span class="p">.</span><span class="na">setVisibility</span><span class="p">(</span><span class="n">View</span><span class="p">.</span><span class="na">VISIBLE</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">information</span><span class="p">.</span><span class="na">getText</span><span class="p">().</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span>
+<span class="w">        	</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">information</span><span class="p">.</span><span class="na">setVisibility</span><span class="p">(</span><span class="n">View</span><span class="p">.</span><span class="na">GONE</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        	</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">information</span><span class="p">.</span><span class="na">setVisibility</span><span class="p">(</span><span class="n">View</span><span class="p">.</span><span class="na">VISIBLE</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">passport</span><span class="p">.</span><span class="na">isChecked</span><span class="p">()){</span>
+<span class="w">        	</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">passport</span><span class="p">.</span><span class="na">setVisibility</span><span class="p">(</span><span class="n">View</span><span class="p">.</span><span class="na">GONE</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        	</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">passport</span><span class="p">.</span><span class="na">setVisibility</span><span class="p">(</span><span class="n">View</span><span class="p">.</span><span class="na">VISIBLE</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w">	</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">stamp</span><span class="p">.</span><span class="na">isChecked</span><span class="p">()){</span>
+<span class="w">        	</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">stamp</span><span class="p">.</span><span class="na">setVisibility</span><span class="p">(</span><span class="n">View</span><span class="p">.</span><span class="na">GONE</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        	</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">stamp</span><span class="p">.</span><span class="na">setVisibility</span><span class="p">(</span><span class="n">View</span><span class="p">.</span><span class="na">VISIBLE</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">religious</span><span class="p">.</span><span class="na">isChecked</span><span class="p">()){</span>
+<span class="w">        	</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">religious</span><span class="p">.</span><span class="na">setVisibility</span><span class="p">(</span><span class="n">View</span><span class="p">.</span><span class="na">GONE</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        	</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">religious</span><span class="p">.</span><span class="na">setVisibility</span><span class="p">(</span><span class="n">View</span><span class="p">.</span><span class="na">VISIBLE</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">///////////////// OPTIONS MENU /////////////////////////////////////////////////////////</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">onCreateOptionsMenu</span><span class="p">(</span><span class="n">Menu</span><span class="w"> </span><span class="n">menu</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    	</span><span class="kd">super</span><span class="p">.</span><span class="na">onCreateOptionsMenu</span><span class="p">(</span><span class="n">menu</span><span class="p">);</span>
+<span class="w">        </span><span class="n">MenuInflater</span><span class="w"> </span><span class="n">inflater</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getMenuInflater</span><span class="p">();</span>
+<span class="w">        </span><span class="n">inflater</span><span class="p">.</span><span class="na">inflate</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">menu</span><span class="p">.</span><span class="na">angel_editor_menu</span><span class="p">,</span><span class="w"> </span><span class="n">menu</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">onOptionsItemSelected</span><span class="p">(</span><span class="n">MenuItem</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="na">getItemId</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">angel_editor_menu_save</span><span class="p">:</span>
+<span class="w">            	</span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">mState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">STATE_EDIT</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">mState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">STATE_INSERT</span><span class="p">)){</span>
+<span class="w">            		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">saveAngel</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span><span class="p">){</span>
+<span class="w">            			</span><span class="n">exitActivity</span><span class="p">();</span>
+<span class="w">            		</span><span class="p">}</span>
+<span class="w">            		</span>
+<span class="w">            	</span><span class="p">}</span>
+<span class="w">            	</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">STATE_VIEW</span><span class="p">){</span>
+<span class="w">            		</span><span class="n">exitActivity</span><span class="p">();</span>
+<span class="w">            	</span><span class="p">}</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">            </span><span class="k">default</span><span class="p">:</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">onOptionsItemSelected</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">saveAngel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    	</span>
+<span class="w">    	</span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">getText</span><span class="p">().</span><span class="na">toString</span><span class="p">().</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+<span class="w">    			</span><span class="p">(</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">address</span><span class="p">.</span><span class="na">getText</span><span class="p">().</span><span class="na">toString</span><span class="p">().</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+<span class="w">    			</span><span class="p">(</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">phone1</span><span class="p">.</span><span class="na">getText</span><span class="p">().</span><span class="na">toString</span><span class="p">().</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)){</span>
+<span class="w">    		</span>
+<span class="w">    		</span><span class="n">AlertDialog</span><span class="p">.</span><span class="na">Builder</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AlertDialog</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">    		</span><span class="n">builder</span><span class="p">.</span><span class="na">setIcon</span><span class="p">(</span><span class="n">android</span><span class="p">.</span><span class="na">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">ic_menu_info_details</span><span class="p">);</span>
+<span class="w">    		</span><span class="n">builder</span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">error</span><span class="p">);</span>
+<span class="w">    		</span><span class="n">builder</span><span class="p">.</span><span class="na">setMessage</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">angel_editor_dialog_error</span><span class="p">);</span>
+<span class="w">    		</span><span class="n">builder</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+<span class="w">    		</span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    	</span><span class="p">}</span>
+<span class="w">    	</span>
+<span class="w">    	</span><span class="n">mAngel</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">getText</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">    	</span><span class="n">mAngel</span><span class="p">.</span><span class="na">setCity</span><span class="p">(</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">address</span><span class="p">.</span><span class="na">getText</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">    	</span><span class="n">mAngel</span><span class="p">.</span><span class="na">setPhone1</span><span class="p">(</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">phone1</span><span class="p">.</span><span class="na">getText</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">    	</span><span class="n">mAngel</span><span class="p">.</span><span class="na">setPhone2</span><span class="p">(</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">phone2</span><span class="p">.</span><span class="na">getText</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">    	</span><span class="n">mAngel</span><span class="p">.</span><span class="na">setInformation</span><span class="p">(</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">information</span><span class="p">.</span><span class="na">getText</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">    	</span><span class="n">mAngel</span><span class="p">.</span><span class="na">setPassport</span><span class="p">(</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">passport</span><span class="p">.</span><span class="na">isChecked</span><span class="p">());</span>
+<span class="w">    	</span><span class="n">mAngel</span><span class="p">.</span><span class="na">setStamp</span><span class="p">(</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">stamp</span><span class="p">.</span><span class="na">isChecked</span><span class="p">());</span>
+<span class="w">        </span><span class="n">mAngel</span><span class="p">.</span><span class="na">setReligious</span><span class="p">(</span><span class="n">viewHolder</span><span class="p">.</span><span class="na">religious</span><span class="p">.</span><span class="na">isChecked</span><span class="p">());</span>
+<span class="w">        </span>
+<span class="w">    	</span><span class="n">mAngelID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mAngelDao</span><span class="p">.</span><span class="na">insertOrReplace</span><span class="p">(</span><span class="n">mAngel</span><span class="p">);</span>
+<span class="w">    	</span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">exitActivity</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    	</span><span class="n">Intent</span><span class="w"> </span><span class="n">resultIntent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">();</span><span class="w">  </span>
+<span class="w">    	</span><span class="n">resultIntent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="n">INTENT_OUT_DATA_ANGEL_ID</span><span class="p">,</span><span class="w"> </span><span class="n">mAngelID</span><span class="p">);</span>
+<span class="w">    	</span><span class="n">resultIntent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="n">INTENT_OUT_DATA_ANGEL_LAT</span><span class="p">,</span><span class="w"> </span><span class="n">mAngelLatitude</span><span class="p">);</span>
+<span class="w">    	</span><span class="n">resultIntent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="n">INTENT_OUT_DATA_ANGEL_LON</span><span class="p">,</span><span class="w"> </span><span class="n">mAngelLongitude</span><span class="p">);</span>
+<span class="w">    	</span><span class="n">resultIntent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="n">INTENT_OUT_DATA_ANGEL_POSITION</span><span class="p">,</span><span class="w"> </span><span class="n">mAngelPosition</span><span class="p">);</span>
+<span class="w">    	</span><span class="n">setResult</span><span class="p">(</span><span class="n">Activity</span><span class="p">.</span><span class="na">RESULT_OK</span><span class="p">,</span><span class="w"> </span><span class="n">resultIntent</span><span class="p">);</span>
+<span class="w">    	</span><span class="n">finish</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div></td></tr></table></div>
+
+</div>
+
+
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+
+
+</body>
+</html>

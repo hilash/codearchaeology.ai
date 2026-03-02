@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<ListPreference
+		    android:title="Language"
+			android:key="pref_language_id"
+			android:entries="@array/pref_locale_array"
+			android:entryValues="@array/pref_locale_values_array"
+			android:defaultValue="il"
+			android:icon="@android:drawable/ic_menu_edit"/>
+	<PreferenceCategory 
+        android:title="Map"
+        android:key="pref_map_category">
+		<ListPreference
+			    android:title="Get Shvil Updates"
+				android:key="pref_updates_frequency_id"
+				android:summary="how often to get updates"
+				android:entries="@array/pref_update_freq_array"
+				android:entryValues="@array/pref_update_freq_values_array"
+				android:defaultValue="1"
+				android:icon="@android:drawable/ic_menu_edit"/>
+		<ListPreference
+			    android:title="Get Location Updates"
+				android:key="pref_updates_frequency_id"
+				android:summary="how often to get updates"
+				android:entries="@array/pref_update_freq_array"
+				android:entryValues="@array/pref_update_freq_values_array"
+				android:defaultValue="1"
+				android:icon="@android:drawable/ic_menu_edit"/>
+		<CheckBoxPreference
+		    android:title="Share Location"
+			android:key="pref_share_location_id"
+			android:summaryOn ="shvil trackers can see your location - so you can meet friends along the road"
+			android:summaryOff="others can't see your location"
+			android:icon="@android:drawable/ic_menu_edit"/>
+		<CheckBoxPreference
+		    android:title="Map Items Zoom Level"
+			android:key="pref_overlay_zoom_level_id"
+			android:summaryOn ="TODO"
+			android:summaryOff="TODO"
+			android:icon="@android:drawable/ic_menu_edit"/>
+	</PreferenceCategory>
+</PreferenceScreen>

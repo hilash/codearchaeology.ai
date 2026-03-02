@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <echo message="Copying jar file to osmosis plugin dir"/>
+  <copy todir="C:\Users\Purple Fire/Application Data/Openstreetmap/Osmosis/Plugins" file="C:\Users\Purple Fire\workspace\mapsforge\mapsforge-map-writer\target/mapsforge-map-writer-0.3.0-jar-with-dependencies.jar" overwrite="true"/>
+</target>
+</project>

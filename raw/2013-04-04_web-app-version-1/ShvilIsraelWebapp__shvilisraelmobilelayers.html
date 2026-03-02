@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Untitled</title>
+<script type="text/javascript" src="lib/dojo/dojo/dojo.js" data-dojo-config="'parseOnLoad':true,'async':true,'packages':[{'name':'gridx','location':'../gridx'},{'name':'clipart','location':'../../clipart'},{'name':'maqettaSamples','location':'../../../samples'},{'name':'maqetta','location':'../../maqetta'},{'name':'shapes','location':'../../shapes'},{'name':'zazl','location':'../../zazl'},{'name':'widgets','location':'../../custom'}],'themeMap':[['Android','',['themes/android/android.css']],['BlackBerry','',['themes/blackberry/blackberry.css']],['iPad','',['themes/ipad/ipad.css']],['iPhone','',['themes/iphone/iphone.css']],['.*','',['themes/iphone/iphone.css']]],'mblThemeFiles':[], mblLoadCompatPattern: /\/samples\/themes\/.*\.css$/"></script>
+<script type="text/javascript">
+require([
+  "dijit/dijit",
+  "dojo/parser",
+  "maqetta/space",
+  "maqetta/AppStates",
+  "dojox/mobile",
+  "dojox/mobile/deviceTheme",
+  "dojox/mobile/compat",
+  "dojox/mobile/CheckBox"
+]);
+</script>
+<style>@import "themes/claro/claro.css";@import "app.css";
+</style>
+<script type="text/javascript" src="app.js"></script>
+<script src="modernizr-latest.js"></script>
+<script>
+
+function hideAddressBar()
+{
+  if(!window.location.hash)
+  {
+      if(document.height < window.outerHeight)
+      {
+          document.body.style.height = (window.outerHeight + 50) + 'px';
+      }
+
+      setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
+  }
+}
+
+function init_check_boxes() {
+
+	window.addEventListener("load", function(){ if(!window.pageYOffset){ hideAddressBar(); } } );
+	window.addEventListener("orientationchange", hideAddressBar );
+
+	if (Modernizr.localstorage) {
+		init_check_box("check_angel", "layers.check.angels");
+		init_check_box("check_user", "layers.check.users");
+		init_check_box("check_water", "layers.check.general_water");
+		init_check_box("check_information", "layers.check.general_information");
+		init_check_box("check_sleep", "layers.check.general_sleep");
+		init_check_box("check_warning", "layers.check.general_error");
+	}
+}
+
+function init_check_box(element_id, element_localstore_string) {
+	if ((localStorage[element_localstore_string] == null) || (localStorage[element_localstore_string] == "true")) {
+		localStorage[element_localstore_string] = "true";
+		document.getElementById(element_id).checked = true;
+	}
+	else {
+		localStorage[element_localstore_string] = "false";
+		document.getElementById(element_id).checked = false;
+	}
+}
+
+function toggleCheckbox(element, element_localstore_string)
+{
+   if (Modernizr.localstorage) {
+	   if (element.checked){
+			localStorage[element_localstore_string] = "true";
+		}
+		else {
+			localStorage[element_localstore_string] = "false";
+		}
+	}
+}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"></meta>
+</head>
+<body class="claro" data-maq-device="iphone" data-maq-flow-layout="true" data-maq-comptype="mobile" data-maq-ws="collapse" id="myapp" data-maq-appstates="{}" onload="init_check_boxes();">
+ <h1 label="הגדרות" data-dojo-type="dojox.mobile.Heading">
+<div label="הקודם" data-dojo-type="dojox.mobile.ToolBarButton" onclick="location.href='shvilisraelmobileindex.html'"></div>
+</h1>
+ <div label="הגדרות מפה" data-dojo-type="dojox.mobile.RoundRectCategory"></div>
+ <ul data-dojo-type="dojox.mobile.RoundRectList">
+   <li data-dojo-type="dojox.mobile.ListItem" rightText="מלאכי השביל" rightIcon="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/24/Emotes-face-angel-icon.png">
+     <input type="checkbox" data-dojo-type="dojox.mobile.CheckBox" id="check_angel"  data-dojo-props="
+      onChange:function(checked){ toggleCheckbox(this, 'layers.check.angels') }"></input>
+   </li>
+   <li data-dojo-type="dojox.mobile.ListItem" rightText="מטיילים" rightIcon="http://icons.iconarchive.com/icons/fatcow/farm-fresh/32/walk-icon.png">
+     <input type="checkbox" data-dojo-type="dojox.mobile.CheckBox" id="check_user"  data-dojo-props="
+      onChange:function(checked){ toggleCheckbox(this, 'layers.check.users') }"></input>
+   </li>
+   <li data-dojo-type="dojox.mobile.ListItem" rightText="מקורות מים" rightIcon="http://icons.iconarchive.com/icons/yusuke-kamiyamane/fugue/16/water-icon.png">
+     <input type="checkbox" data-dojo-type="dojox.mobile.CheckBox" id="check_water"  data-dojo-props="
+      onChange:function(checked){ toggleCheckbox(this, 'layers.check.general_water') }"></input>
+   </li>
+   <li data-dojo-type="dojox.mobile.ListItem" rightText="מידע על השביל" rightIcon="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/32/Status-dialog-information-icon.png">
+     <input type="checkbox" data-dojo-type="dojox.mobile.CheckBox" id="check_information"  data-dojo-props="
+      onChange:function(checked){ toggleCheckbox(this, 'layers.check.general_information') }"></input>
+   </li>
+   <li data-dojo-type="dojox.mobile.ListItem" rightText="לינה" rightIcon="http://icons.iconarchive.com/icons/fatcow/farm-fresh/32/bed-icon.png">
+     <input type="checkbox" data-dojo-type="dojox.mobile.CheckBox" id="check_sleep"  data-dojo-props="
+      onChange:function(checked){ toggleCheckbox(this, 'layers.check.general_sleep') }"></input>
+   </li>
+   <li data-dojo-type="dojox.mobile.ListItem" rightText="אזהרות" rightIcon="http://icons.iconarchive.com/icons/creative-freedom/shimmer/32/Warning-icon.png">
+     <input type="checkbox" data-dojo-type="dojox.mobile.CheckBox" id="check_warning" data-dojo-props="
+      onChange:function(checked){ toggleCheckbox(this, 'layers.check.general_sleep') }"></input>
+   </li>
+ </ul>
+ <div label="אודות" data-dojo-type="dojox.mobile.RoundRectCategory"></div>
+ <ul data-dojo-type="dojox.mobile.RoundRectList">
+   <li data-dojo-type="dojox.mobile.ListItem" style="width: 281px; height: 62px;">
+     <label style="font-size: 10px;" class="mblListItemLabel">
+       Developed by Hila Shmuel,</label>
+     <label style="font-size: 10px;" class="mblListItemLabel">
+       <br> <a href="http://http://www.shvili.co.il" target="_blank">http://www.shvili.co.il/</a>
+	   <br>השימוש באפליקציה והשלכותיו באחריות המשתמש בלבד!</label>
+   </li>
+ </ul>
+</body>
+</html>

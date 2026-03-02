@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorder__Recorder__Form1.cs - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ed007e; background-color: #1e0010 } /* Error */
+.highlight .esc { color: #f8f8f2 } /* Escape */
+.highlight .g { color: #f8f8f2 } /* Generic */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #ff4689 } /* Operator */
+.highlight .x { color: #f8f8f2 } /* Other */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #ff4689 } /* Generic.Deleted */
+.highlight .ge { color: #f8f8f2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #f8f8f2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #f8f8f2 } /* Generic.Error */
+.highlight .gh { color: #f8f8f2 } /* Generic.Heading */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .go { color: #66d9ef } /* Generic.Output */
+.highlight .gp { color: #ff4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #f8f8f2 } /* Generic.Traceback */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #ff4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #ff4689 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #ff4689 } /* Operator.Word */
+.highlight .pm { color: #f8f8f2 } /* Punctuation.Marker */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style>
+
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<a href="/project/2011-07-23_recorder/" class="back-link">&laquo; Back to Recorder</a>
+
+<div class="viewer-header">
+    <h1>Recorder__Recorder__Form1.cs</h1>
+    <div class="viewer-meta">
+        <span class="tag">C#</span>
+        <span>18.1 KB</span>
+        
+    </div>
+</div>
+
+
+<div class="code-container">
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span></pre></div></td><td class="code"><div><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.ComponentModel</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Drawing</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Windows.Forms</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.IO</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Runtime.InteropServices</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Win32</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Threading</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Reflection</span><span class="p">;</span>
+
+<span class="c1">//a simple recorder, 8-bit per sample, with one channel.</span>
+<span class="c1">//by Hila Shmuel</span>
+<span class="c1">// </span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Recorder</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="n">errors_e</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ERROR_RECORDER_NO_MIC_DETECTED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="n">x1000</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Form1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Form</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">NumberOfSamples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">512</span><span class="p">;</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">SamplesPerSec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4000</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">IntPtr</span><span class="w"> </span><span class="n">hWaveIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">;</span>
+<span class="w">        </span><span class="n">IntPtr</span><span class="w"> </span><span class="n">dwCallback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">;</span>
+<span class="w">        </span><span class="n">IntPtr</span><span class="w"> </span><span class="n">DataPtr</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">WAVEINCAPS</span><span class="w"> </span><span class="n">WaveInCaps</span><span class="p">;</span>
+<span class="w">        </span><span class="n">WAVEFORMATEX</span><span class="w"> </span><span class="n">WaveFormat</span><span class="p">;</span>
+<span class="w">        </span><span class="n">WAVEHDR</span><span class="w"> </span><span class="n">WaveHdr</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">byte</span><span class="p">[]</span><span class="w"> </span><span class="n">WaveArrayBuffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="p">[</span><span class="n">NumberOfSamples</span><span class="p">];</span><span class="c1">// byte = for 8-bit samle</span>
+<span class="w">        </span><span class="kt">byte</span><span class="p">[]</span><span class="w"> </span><span class="n">WaveArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="p">[</span><span class="n">NumberOfSamples</span><span class="p">];</span><span class="c1">// byte = for 8-bit samle - copy for graphics</span>
+<span class="w">        </span><span class="kt">byte</span><span class="p">[]</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="p">[</span><span class="n">NumberOfSamples</span><span class="p">];</span>
+
+<span class="w">        </span><span class="c1">// varibles for the frequency analysis</span>
+<span class="w">        </span><span class="kt">double</span><span class="p">[]</span><span class="w"> </span><span class="n">REX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">NumberOfSamples</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">];</span>
+<span class="w">        </span><span class="kt">double</span><span class="p">[]</span><span class="w"> </span><span class="n">IMX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">NumberOfSamples</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">];</span>
+<span class="w">        </span><span class="kt">double</span><span class="p">[]</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">NumberOfSamples</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">];</span>
+
+<span class="w">        </span><span class="c1">// graphics</span>
+<span class="w">        </span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">WaveArrayNormalized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="n">NumberOfSamples</span><span class="p">];</span>
+<span class="w">        </span><span class="n">Pen</span><span class="w"> </span><span class="n">RedPen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pen</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">Red</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Pen</span><span class="w"> </span><span class="n">BlackPen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pen</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">Black</span><span class="p">);</span><span class="w"> </span><span class="c1">//TODO: where to init this?</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="n">Graphics</span><span class="w"> </span><span class="n">timeDomainGraphics</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Graphics</span><span class="w"> </span><span class="n">timeDomainBufferGraphics</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Image</span><span class="w"> </span><span class="n">timeDomainBuffer</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">timeDomainWidth</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">timeDomainHeight</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">timeDomainHalfHeight</span><span class="p">;</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="n">Graphics</span><span class="w"> </span><span class="n">frequencyDomainGraphics</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Graphics</span><span class="w"> </span><span class="n">frequencyDomainBufferGraphics</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Image</span><span class="w"> </span><span class="n">frequencyDomainBuffer</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">frequencyDomainWidth</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">frequencyDomainHeight</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">frequencyDomainHalfHeight</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// notes</span>
+<span class="w">        </span><span class="n">ABCHandler</span><span class="w"> </span><span class="n">abc_handler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ABCHandler</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// threads synchronization</span>
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_recording</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Mutex</span><span class="w"> </span><span class="n">WaveArrayBufferAvailable</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Mutex</span><span class="w"> </span><span class="n">RecordingLoopDone</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Mutex</span><span class="w"> </span><span class="n">DrawingLoopDone</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">Form1</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">InitializeComponent</span><span class="p">();</span>
+<span class="w">            </span>
+<span class="w">            </span><span class="n">start_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="n">stop_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">useFFT</span><span class="p">.</span><span class="n">Checked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span>
+<span class="w">            </span><span class="c1">//graphics</span>
+<span class="w">            </span><span class="n">timeDomain</span><span class="p">.</span><span class="n">BackColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Color</span><span class="p">.</span><span class="n">LightGray</span><span class="p">;</span>
+<span class="w">            </span><span class="n">timeDomainGraphics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timeDomain</span><span class="p">.</span><span class="n">CreateGraphics</span><span class="p">();</span>
+<span class="w">            </span><span class="n">timeDomainWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timeDomain</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="p">;</span>
+<span class="w">            </span><span class="n">timeDomainHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timeDomain</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="p">;</span>
+<span class="w">            </span><span class="n">timeDomainHalfHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timeDomain</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span><span class="p">;</span>
+<span class="w">            </span><span class="n">timeDomainBuffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">(</span><span class="n">timeDomainWidth</span><span class="p">,</span><span class="w"> </span><span class="n">timeDomainHeight</span><span class="p">);</span>
+<span class="w">            </span><span class="n">timeDomainBufferGraphics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Graphics</span><span class="p">.</span><span class="n">FromImage</span><span class="p">(</span><span class="n">timeDomainBuffer</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">frequencyDomain</span><span class="p">.</span><span class="n">BackColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Color</span><span class="p">.</span><span class="n">LightGray</span><span class="p">;</span>
+<span class="w">            </span><span class="n">frequencyDomainGraphics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frequencyDomain</span><span class="p">.</span><span class="n">CreateGraphics</span><span class="p">();</span>
+<span class="w">            </span><span class="n">frequencyDomainWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frequencyDomain</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="p">;</span>
+<span class="w">            </span><span class="n">frequencyDomainHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frequencyDomain</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="p">;</span>
+<span class="w">            </span><span class="n">frequencyDomainHalfHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frequencyDomain</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span><span class="p">;</span>
+<span class="w">            </span><span class="n">frequencyDomainBuffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">(</span><span class="n">frequencyDomainWidth</span><span class="p">,</span><span class="w"> </span><span class="n">frequencyDomainHeight</span><span class="p">);</span>
+<span class="w">            </span><span class="n">frequencyDomainBufferGraphics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Graphics</span><span class="p">.</span><span class="n">FromImage</span><span class="p">(</span><span class="n">frequencyDomainBuffer</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">WaveArrayBufferAvailable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Mutex</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+<span class="w">            </span><span class="n">RecordingLoopDone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Mutex</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+<span class="w">            </span><span class="n">DrawingLoopDone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Mutex</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+<span class="w">           </span>
+<span class="w">            </span><span class="c1">// STEP 1: get the number of waveform-audio input devices present in the system.</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">NumOfDevs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WinMM</span><span class="p">.</span><span class="n">waveInGetNumDevs</span><span class="p">();</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">NumOfDevs</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;No microphone detected!\nPlease connect a microphone and run the program again.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Recorder By Hila Shmuel&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">Environment</span><span class="p">.</span><span class="n">Exit</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">errors_e</span><span class="p">.</span><span class="n">ERROR_RECORDER_NO_MIC_DETECTED</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// STEP 2: let the user select a sound input device</span>
+<span class="w">                </span><span class="n">InputDevice</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Choose Input Device&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">InputDevice</span><span class="p">.</span><span class="n">SelectedIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">                </span><span class="n">InputDevice</span><span class="p">.</span><span class="n">Show</span><span class="p">();</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">NumOfDevs</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">WinMM</span><span class="p">.</span><span class="n">waveInGetDevCaps</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="k">ref</span><span class="w"> </span><span class="n">WaveInCaps</span><span class="p">,</span><span class="w"> </span><span class="n">Marshal</span><span class="p">.</span><span class="n">SizeOf</span><span class="p">(</span><span class="n">WaveInCaps</span><span class="p">));</span>
+<span class="w">                    </span><span class="n">InputDevice</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">WaveInCaps</span><span class="p">.</span><span class="n">szPname</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">InputDevice_SelectedIndexChanged</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">InputDevice</span><span class="p">.</span><span class="n">SelectedIndex</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">start_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">                </span><span class="n">stop_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">start_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">stop_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">start_record_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">InputDevice</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="n">start_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="n">stop_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// initialize the WAVEFORMAT structure</span>
+<span class="w">            </span><span class="n">WaveFormat</span><span class="p">.</span><span class="n">wFormatTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WinMM</span><span class="p">.</span><span class="n">WAVE_FORMAT_PCM</span><span class="p">;</span>
+<span class="w">            </span><span class="n">WaveFormat</span><span class="p">.</span><span class="n">nChannels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span>
+<span class="w">            </span><span class="n">WaveFormat</span><span class="p">.</span><span class="n">nSamplesPerSec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SamplesPerSec</span><span class="p">;</span>
+<span class="w">            </span><span class="n">WaveFormat</span><span class="p">.</span><span class="n">wBitsPerSample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span><span class="p">;</span>
+<span class="w">            </span><span class="n">WaveFormat</span><span class="p">.</span><span class="n">nBlockAlign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">short</span><span class="p">)((</span><span class="n">WaveFormat</span><span class="p">.</span><span class="n">nChannels</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">WaveFormat</span><span class="p">.</span><span class="n">wBitsPerSample</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">8</span><span class="p">));</span><span class="w"> </span><span class="c1">//= 2, number of bytes per sample</span>
+<span class="w">            </span><span class="n">WaveFormat</span><span class="p">.</span><span class="n">nAvgBytesPerSec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">uint</span><span class="p">)(</span><span class="n">WaveFormat</span><span class="p">.</span><span class="n">nSamplesPerSec</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">WaveFormat</span><span class="p">.</span><span class="n">nBlockAlign</span><span class="p">);</span><span class="w"> </span><span class="c1">//  SamplesPerSec; </span>
+<span class="w">            </span><span class="n">WaveFormat</span><span class="p">.</span><span class="n">cbSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// STEP 3: open the selected input device</span>
+<span class="w">            </span><span class="c1">//result = WinMM.waveInOpen(ref hWaveIn, (uint)(InputDevice.SelectedIndex - 1), ref WaveFormat, dwCallback, 0, WinMM.CALLBACK_NULL);</span>
+<span class="w">            </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WinMM</span><span class="p">.</span><span class="n">waveInOpen</span><span class="p">(</span><span class="k">ref</span><span class="w"> </span><span class="n">hWaveIn</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint</span><span class="p">)(</span><span class="n">InputDevice</span><span class="p">.</span><span class="n">SelectedIndex</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w"> </span><span class="k">ref</span><span class="w"> </span><span class="n">WaveFormat</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">WinMM</span><span class="p">.</span><span class="n">MMSYSERR_NOERROR</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Failed to open sound input device!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Recorder By Hila Shmuel&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">InputDevice</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">start_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">                </span><span class="n">stop_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">                </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">// STEP 4: start the device. At this point, the sound bytes will not reach your program</span>
+<span class="w">            </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WinMM</span><span class="p">.</span><span class="n">waveInStart</span><span class="p">(</span><span class="n">hWaveIn</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">WinMM</span><span class="p">.</span><span class="n">MMSYSERR_NOERROR</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Failed to start recording!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Recorder By Hila Shmuel&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">InputDevice</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">start_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">                </span><span class="n">stop_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">                </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">// make DataPtr a pointer to the buffer array, where the device will put the samples</span>
+<span class="w">            </span><span class="k">unsafe</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">fixed</span><span class="w"> </span><span class="p">(</span><span class="kt">byte</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buffer</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">DataPtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">IntPtr</span><span class="p">)</span><span class="n">p</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">// create &amp; open for writing a temporery ABC music sheet file</span>
+<span class="w">            </span><span class="n">abc_handler</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// create 2 threads: one for recording a buffer, the other for drawing it</span>
+<span class="w">            </span><span class="n">is_recording</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">ThreadStart</span><span class="w"> </span><span class="n">recordingLoopThreadStart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadStart</span><span class="p">(</span><span class="n">recording_loop</span><span class="p">);</span>
+<span class="w">            </span><span class="n">Thread</span><span class="w"> </span><span class="n">recordingLoopThread</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(</span><span class="n">recordingLoopThreadStart</span><span class="p">);</span>
+<span class="w">            </span><span class="n">recordingLoopThread</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+
+<span class="w">            </span><span class="n">ThreadStart</span><span class="w"> </span><span class="n">drawingLoopThreadStart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadStart</span><span class="p">(</span><span class="n">drawing_loop</span><span class="p">);</span>
+<span class="w">            </span><span class="n">Thread</span><span class="w"> </span><span class="n">drawingLoopThread</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(</span><span class="n">drawingLoopThreadStart</span><span class="p">);</span>
+<span class="w">            </span><span class="n">drawingLoopThread</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">recording_loop</span><span class="p">()</span><span class="w"> </span><span class="c1">// TODO: add mutex!</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">is_recording</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">RecordingLoopDone</span><span class="p">.</span><span class="n">WaitOne</span><span class="p">();</span>
+
+<span class="w">                </span><span class="n">WaveHdr</span><span class="p">.</span><span class="n">lpData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataPtr</span><span class="p">;</span>
+<span class="w">                </span><span class="n">WaveHdr</span><span class="p">.</span><span class="n">dwBufferLength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">NumberOfSamples</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">WaveFormat</span><span class="p">.</span><span class="n">nBlockAlign</span><span class="p">;</span><span class="w"> </span><span class="c1">// length in bytes</span>
+<span class="w">                </span><span class="n">WaveHdr</span><span class="p">.</span><span class="n">dwFlags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+
+<span class="w">                </span><span class="c1">// STEP 5: Call wave InPrepareHeader and  waveInAddBuffer to allow Windows to stream the sound bytes to your own buffer</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WinMM</span><span class="p">.</span><span class="n">waveInPrepareHeader</span><span class="p">(</span><span class="n">hWaveIn</span><span class="p">,</span><span class="w"> </span><span class="k">ref</span><span class="w"> </span><span class="n">WaveHdr</span><span class="p">,</span><span class="w"> </span><span class="n">Marshal</span><span class="p">.</span><span class="n">SizeOf</span><span class="p">(</span><span class="n">WaveHdr</span><span class="p">));</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">WinMM</span><span class="p">.</span><span class="n">MMSYSERR_NOERROR</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Failed to prepare buffer!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Recorder By Hila Shmuel&quot;</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">InputDevice</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">start_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">stop_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">RecordingLoopDone</span><span class="p">.</span><span class="n">ReleaseMutex</span><span class="p">();</span>
+<span class="w">                    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">                </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WinMM</span><span class="p">.</span><span class="n">waveInAddBuffer</span><span class="p">(</span><span class="n">hWaveIn</span><span class="p">,</span><span class="w"> </span><span class="k">ref</span><span class="w"> </span><span class="n">WaveHdr</span><span class="p">,</span><span class="w"> </span><span class="n">Marshal</span><span class="p">.</span><span class="n">SizeOf</span><span class="p">(</span><span class="n">WaveHdr</span><span class="p">));</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">WinMM</span><span class="p">.</span><span class="n">MMSYSERR_NOERROR</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Failed to add buffer!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Recorder By Hila Shmuel&quot;</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">InputDevice</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">start_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">stop_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">RecordingLoopDone</span><span class="p">.</span><span class="n">ReleaseMutex</span><span class="p">();</span>
+<span class="w">                    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">                </span><span class="c1">// wait for the API buffer to fill</span>
+<span class="w">                </span><span class="k">while</span><span class="w"> </span><span class="p">(((</span><span class="n">WaveHdr</span><span class="p">.</span><span class="n">dwFlags</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">WinMM</span><span class="p">.</span><span class="n">WHDR_DONE</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">WinMM</span><span class="p">.</span><span class="n">WHDR_DONE</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">hWaveIn</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">false</span><span class="p">))</span><span class="w"> </span><span class="p">;</span>
+
+<span class="w">                </span><span class="c1">// copy the data from the API buffer to WaveArrayBuffer, when available</span>
+<span class="w">                </span><span class="n">WaveArrayBufferAvailable</span><span class="p">.</span><span class="n">WaitOne</span><span class="p">();</span>
+<span class="w">                </span><span class="n">Marshal</span><span class="p">.</span><span class="n">Copy</span><span class="p">(</span><span class="n">DataPtr</span><span class="p">,</span><span class="w"> </span><span class="n">WaveArrayBuffer</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">NumberOfSamples</span><span class="p">);</span>
+<span class="w">                </span><span class="n">WaveArrayBufferAvailable</span><span class="p">.</span><span class="n">ReleaseMutex</span><span class="p">();</span>
+
+<span class="w">                </span><span class="n">RecordingLoopDone</span><span class="p">.</span><span class="n">ReleaseMutex</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">drawing_loop</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">is_recording</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">DrawingLoopDone</span><span class="p">.</span><span class="n">WaitOne</span><span class="p">();</span>
+
+<span class="w">                </span><span class="c1">// create a copy for WaveArrayBuffer, to use whithin this function</span>
+<span class="w">                </span><span class="n">WaveArrayBufferAvailable</span><span class="p">.</span><span class="n">WaitOne</span><span class="p">();</span>
+<span class="w">                </span><span class="n">WaveArrayBuffer</span><span class="p">.</span><span class="n">CopyTo</span><span class="p">(</span><span class="n">WaveArray</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">);</span>
+<span class="w">                </span><span class="n">WaveArrayBufferAvailable</span><span class="p">.</span><span class="n">ReleaseMutex</span><span class="p">();</span>
+<span class="w">                </span>
+<span class="w">                </span><span class="c1">//calculate FFT</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NumberOfSamples</span><span class="p">;</span><span class="w"> </span><span class="n">ip</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">REX</span><span class="p">[</span><span class="n">ip</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WaveArray</span><span class="p">[</span><span class="n">ip</span><span class="p">];</span>
+<span class="w">                    </span><span class="n">IMX</span><span class="p">[</span><span class="n">ip</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">maxpitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">                </span><span class="kt">double</span><span class="w"> </span><span class="n">fit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">useFFT</span><span class="p">.</span><span class="n">Checked</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">maxpitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DFT</span><span class="p">.</span><span class="n">FFT</span><span class="p">(</span><span class="n">REX</span><span class="p">,</span><span class="w"> </span><span class="n">IMX</span><span class="p">,</span><span class="w"> </span><span class="m">512</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">fit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">REX</span><span class="p">[</span><span class="n">maxpitch</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">frequencyDomainHeight</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">else</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">maxpitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DFT</span><span class="p">.</span><span class="n">furier</span><span class="p">(</span><span class="n">WaveArray</span><span class="p">,</span><span class="w"> </span><span class="n">REX</span><span class="p">,</span><span class="w"> </span><span class="n">IMX</span><span class="p">,</span><span class="w"> </span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="m">512</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">fit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">output</span><span class="p">[</span><span class="n">maxpitch</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">frequencyDomainHeight</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">                </span><span class="c1">// TODO: add the invoke stuff, else - make the program crash sometimes.</span>
+<span class="w">                </span><span class="n">pitch</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">maxpitch</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span>
+<span class="w">                </span>
+<span class="w">                </span><span class="c1">// print time domain - using double buffering</span>
+<span class="w">                </span><span class="n">timeDomainBufferGraphics</span><span class="p">.</span><span class="n">Clear</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">LightGray</span><span class="p">);</span>
+<span class="w">                </span><span class="n">timeDomainBufferGraphics</span><span class="p">.</span><span class="n">DrawLine</span><span class="p">(</span><span class="n">RedPen</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">timeDomainHalfHeight</span><span class="p">,</span><span class="w"> </span><span class="n">timeDomainWidth</span><span class="p">,</span><span class="w"> </span><span class="n">timeDomainHalfHeight</span><span class="p">);</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">timeDomainWidth</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">WaveArrayNormalized</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timeDomainHeight</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">timeDomainHeight</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">WaveArray</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="kt">byte</span><span class="p">.</span><span class="n">MaxValue</span><span class="p">);</span>
+
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">timeDomainWidth</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">timeDomainBufferGraphics</span><span class="p">.</span><span class="n">DrawLine</span><span class="p">(</span><span class="n">BlackPen</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">WaveArrayNormalized</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">WaveArrayNormalized</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">]);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="n">timeDomainGraphics</span><span class="p">.</span><span class="n">DrawImage</span><span class="p">(</span><span class="n">timeDomainBuffer</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">);</span>
+<span class="w">               </span>
+<span class="w">                </span>
+<span class="w">                </span><span class="c1">//print frequency domain</span>
+<span class="w">                </span><span class="n">frequencyDomainBufferGraphics</span><span class="p">.</span><span class="n">Clear</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">LightGray</span><span class="p">);</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fit</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">frequencyDomainWidth</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">useFFT</span><span class="p">.</span><span class="n">Checked</span><span class="p">)</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="n">frequencyDomainBufferGraphics</span><span class="p">.</span><span class="n">DrawLine</span><span class="p">(</span><span class="n">BlackPen</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">frequencyDomainHeight</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">REX</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fit</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">frequencyDomainHeight</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">REX</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fit</span><span class="p">));</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="k">else</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="n">frequencyDomainBufferGraphics</span><span class="p">.</span><span class="n">DrawLine</span><span class="p">(</span><span class="n">BlackPen</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">frequencyDomainHeight</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">output</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fit</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">frequencyDomainHeight</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">output</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fit</span><span class="p">));</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                    </span><span class="n">frequencyDomainGraphics</span><span class="p">.</span><span class="n">DrawImage</span><span class="p">(</span><span class="n">frequencyDomainBuffer</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span>
+<span class="w">                </span>
+<span class="w">                </span><span class="c1">// determine to add new note to sheet</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">true</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">abc_handler</span><span class="p">.</span><span class="n">addNoteToMusicSheet</span><span class="p">(</span><span class="n">maxpitch</span><span class="p">))</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">//abc_handler.ConvertToPDF();</span>
+<span class="w">                    </span><span class="c1">// load pdf to screen</span>
+<span class="w">                    </span><span class="c1">//axAcroPDF1.LoadFile(&quot;c:\\file.pdf&quot;);</span>
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">                </span><span class="n">DrawingLoopDone</span><span class="p">.</span><span class="n">ReleaseMutex</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">stop_record_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// timer1.Enabled = false;</span>
+<span class="w">            </span><span class="n">InputDevice</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="n">start_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="n">stop_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">is_recording</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">RecordingLoopDone</span><span class="p">.</span><span class="n">WaitOne</span><span class="p">();</span>
+<span class="w">            </span><span class="n">DrawingLoopDone</span><span class="p">.</span><span class="n">WaitOne</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// STEP (end): stop the device, and close it.</span>
+<span class="w">            </span><span class="n">WinMM</span><span class="p">.</span><span class="n">waveInStop</span><span class="p">(</span><span class="n">hWaveIn</span><span class="p">);</span>
+<span class="w">            </span><span class="n">WinMM</span><span class="p">.</span><span class="n">waveInReset</span><span class="p">(</span><span class="n">hWaveIn</span><span class="p">);</span>
+<span class="w">            </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WinMM</span><span class="p">.</span><span class="n">waveInClose</span><span class="p">(</span><span class="n">hWaveIn</span><span class="p">);</span>
+<span class="w">            </span><span class="n">WinMM</span><span class="p">.</span><span class="n">waveInUnprepareHeader</span><span class="p">(</span><span class="n">hWaveIn</span><span class="p">,</span><span class="w"> </span><span class="k">ref</span><span class="w"> </span><span class="n">WaveHdr</span><span class="p">,</span><span class="w"> </span><span class="n">Marshal</span><span class="p">.</span><span class="n">SizeOf</span><span class="p">(</span><span class="n">WaveHdr</span><span class="p">));</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">WinMM</span><span class="p">.</span><span class="n">MMSYSERR_NOERROR</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Failed to close the device!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Recorder By Hila Shmuel&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">InputDevice</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">start_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">                </span><span class="n">stop_record</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">                </span><span class="c1">//timer enables == false</span>
+<span class="w">                </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">// can record again only if stop ended successfully</span>
+<span class="w">            </span><span class="n">RecordingLoopDone</span><span class="p">.</span><span class="n">ReleaseMutex</span><span class="p">();</span>
+<span class="w">            </span><span class="n">DrawingLoopDone</span><span class="p">.</span><span class="n">ReleaseMutex</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// TODO: close &amp; delete temporery file for ABC shit</span>
+<span class="w">            </span><span class="c1">//abc_handler.deleteABCfile();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="cm">/*</span>
+<span class="cm">        private void  timer1_Tick(object sender, EventArgs e)</span>
+<span class="cm">        {</span>
+<span class="cm">            // timer1.Enabled = false;</span>
+
+<span class="cm">            //Copy the data from the buffer to WaveArray </span>
+<span class="cm">            while (((WaveHdr.dwFlags &amp; WinMM.WHDR_DONE) != WinMM.WHDR_DONE) &amp;&amp; (hWaveIn.Equals(IntPtr.Zero)==false)) ;</span>
+<span class="cm">            //while ((WaveHdr.dwFlags &amp; WinMM.WHDR_DONE) != WinMM.WHDR_DONE) ;</span>
+<span class="cm">            Marshal.Copy(DataPtr, WaveArray, 0, (int)NumberOfSamples);</span>
+
+<span class="cm">            //\ see big endian char copy</span>
+<span class="cm">            WaveHdr.lpData = DataPtr;</span>
+<span class="cm">            WaveHdr.dwBufferLength = (int)NumberOfSamples * WaveFormat.nBlockAlign; // length in bytes</span>
+<span class="cm">            WaveHdr.dwFlags = 0;</span>
+
+<span class="cm">            //calculate FFT</span>
+<span class="cm">            for (int ip = 0; ip &lt; NumberOfSamples; ip++)</span>
+<span class="cm">            {</span>
+<span class="cm">                REX[ip] = WaveArray[ip];</span>
+<span class="cm">                IMX[ip] = 0;</span>
+<span class="cm">            }</span>
+
+<span class="cm">            // for FFT (much better!!!)use the first line. for DFT(called DFT.furier), use the second</span>
+<span class="cm">            maxvalue = DFT.FFT(REX, IMX, 512);</span>
+<span class="cm">            //maxvalue = DFT.furier(WaveArray, REX, IMX, output, 512);</span>
+
+<span class="cm">            pitch.Text = maxvalue.ToString();</span>
+
+<span class="cm">   </span>
+<span class="cm">            // print time domain - using double buffering</span>
+<span class="cm">            timeDomainBufferGraphics.Clear(Color.LightGray);</span>
+<span class="cm">            timeDomainBufferGraphics.DrawLine(RedPen, 0, timeDomainHalfHeight, timeDomainWidth, timeDomainHalfHeight);</span>
+<span class="cm">            for (int j = 0; j &lt; timeDomainWidth; j++)</span>
+<span class="cm">            {</span>
+<span class="cm">                WaveArrayNormalized[j] = timeDomainHeight - (int)(timeDomainHeight * (double)WaveArray[j] / byte.MaxValue);</span>
+<span class="cm">                </span>
+<span class="cm">            }</span>
+<span class="cm">            for (int j = 0; j &lt; timeDomainWidth - 1; j++)</span>
+<span class="cm">            {</span>
+<span class="cm">                timeDomainBufferGraphics.DrawLine(black_pen, j, WaveArrayNormalized[j],</span>
+<span class="cm">                                                          j + 1, WaveArrayNormalized[j + 1]);</span>
+<span class="cm">            }</span>
+<span class="cm">            timeDomainGraphics.DrawImage(timeDomainBuffer, 0, 0);</span>
+<span class="cm">            </span>
+
+<span class="cm">            //print frequency domain    </span>
+<span class="cm">            </span>
+<span class="cm">            timeDomainWidth = frequencyDomain.Size.Width;</span>
+<span class="cm">            timeDomainHeight = frequencyDomain.Size.Height;</span>
+<span class="cm">            halfWidth = fquencyDomain.Size.Width / 2;</span>
+<span class="cm">            timeDomainHalfHeight = frequencyDomain.Size.Height / 2;</span>
+
+<span class="cm">            objGraphic2 = frequencyDomain.CreateGraphics();</span>
+
+<span class="cm">            objGraphic2.Clear(Color.LightGray);</span>
+<span class="cm">            pen.Color = Color.Black;</span>
+<span class="cm">                fit = maxvalue / timeDomainHeight;</span>
+<span class="cm">            for (int j = 0; j &lt; 511; j++)</span>
+<span class="cm">            {</span>
+<span class="cm">                // forre FFT use the first line. for DFT, use the second</span>
+<span class="cm">                objGraphic2.DrawLine(pen, j, timeDomainHeight - (int)(REX[j] / fit), j + 1, timeDomainHeight - (int)(REX[j+1] / fit));</span>
+<span class="cm">                //objGraphic2.DrawLine(pen, j, timeDomainHeight - (int)(output[j] / fit), j + 1, timeDomainHeight - (int)(output[j+1] / fit));</span>
+<span class="cm">            }</span>
+<span class="cm">            </span>
+
+<span class="cm">            // STEP 5 again: Call wave InPrepareHeader and  waveInAddBuffer to allow Windows to stream the sound bytes to your own buffer</span>
+<span class="cm">            int i = WinMM.waveInPrepareHeader(hWaveIn, ref WaveHdr, Marshal.SizeOf(WaveHdr));</span>
+<span class="cm">            if (i != WinMM.MMSYSERR_NOERROR)</span>
+<span class="cm">            {</span>
+<span class="cm">                MessageBox.Show(&quot;Failed to prepare buffer!&quot;, &quot;Recorder By Hila Shmuel&quot;);</span>
+<span class="cm">                InputDevice.Enabled = true;</span>
+<span class="cm">                start_record.Enabled = false;</span>
+<span class="cm">                stop_record.Enabled = false;</span>
+<span class="cm">                return;</span>
+<span class="cm">            }</span>
+
+<span class="cm">            i = WinMM.waveInAddBuffer(hWaveIn, ref WaveHdr, Marshal.SizeOf(WaveHdr));</span>
+<span class="cm">            if (i != WinMM.MMSYSERR_NOERROR)</span>
+<span class="cm">            {</span>
+<span class="cm">                MessageBox.Show(&quot;Failed to add buffer!&quot;, &quot;Recorder By Hila Shmuel&quot;);</span>
+<span class="cm">                InputDevice.Enabled = true;</span>
+<span class="cm">                start_record.Enabled = false;</span>
+<span class="cm">                stop_record.Enabled = false;</span>
+<span class="cm">                return;</span>
+<span class="cm">            }</span>
+
+<span class="cm">            // determine to add new note to sheet</span>
+<span class="cm">            if (true == abc_handler.addNoteToMusicSheet((int)maxvalue))</span>
+<span class="cm">            {</span>
+<span class="cm">                //abc_handler.ConvertToPDF();</span>
+<span class="cm">                // load pdf to screen</span>
+<span class="cm">                //axAcroPDF1.LoadFile(&quot;c:\\file.pdf&quot;);</span>
+<span class="cm">            }</span>
+
+<span class="cm">            // timer1.Enabled = true;</span>
+<span class="cm">        }</span>
+<span class="cm">         */</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div></td></tr></table></div>
+
+</div>
+
+
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+
+
+</body>
+</html>

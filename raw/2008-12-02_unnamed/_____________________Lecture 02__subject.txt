@@ -1,0 +1,1 @@
+dictionaries: worst-case queries, via FKS and cuckoo hashing

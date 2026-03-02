@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShvilIsraelWebapp__lib__dojo__dojox__calc__Readme.txt - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ed007e; background-color: #1e0010 } /* Error */
+.highlight .esc { color: #f8f8f2 } /* Escape */
+.highlight .g { color: #f8f8f2 } /* Generic */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #ff4689 } /* Operator */
+.highlight .x { color: #f8f8f2 } /* Other */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #ff4689 } /* Generic.Deleted */
+.highlight .ge { color: #f8f8f2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #f8f8f2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #f8f8f2 } /* Generic.Error */
+.highlight .gh { color: #f8f8f2 } /* Generic.Heading */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .go { color: #66d9ef } /* Generic.Output */
+.highlight .gp { color: #ff4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #f8f8f2 } /* Generic.Traceback */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #ff4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #ff4689 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #ff4689 } /* Operator.Word */
+.highlight .pm { color: #f8f8f2 } /* Punctuation.Marker */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style>
+
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<a href="/project/2013-04-04_web-app-version-1/" class="back-link">&laquo; Back to Web App Version 1</a>
+
+<div class="viewer-header">
+    <h1>ShvilIsraelWebapp__lib__dojo__dojox__calc__Readme.txt</h1>
+    <div class="viewer-meta">
+        <span class="tag">Unknown</span>
+        <span>11.6 KB</span>
+        
+    </div>
+</div>
+
+
+<div class="code-container">
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span></pre></div></td><td class="code"><div><pre><span></span>Dojo Toolkit Graphing Calculator Project Readme
+Author: Jason Hays
+Trac ID: jason_hays22
+
+Contents:
+	Expressions
+	Variables, Functions, and uninitializing variables
+	toFrac in GraphPro
+	Numbers and bases
+	Graphing equations
+	Substitutes for hard to type characters
+	Making Functions
+	Decimal points, commas, and semicolons in different languages
+	Important mathematical functions
+
+
+
+---------------Expressions----------------
+The calculator has the ability to simplify a valid expression.
+With Augmented Mathematical Syntax, users are allowed to use nonstandard operators in their expressions.  Those operators include ^, !, and radical.
+
+^ is used for exponentiation.
+	It is a binary operator, which means it needs a number on both the left and right side (like multiplication and division)
+	2^5 is an example of valid use of ^, and represents two to the power of five.
+
+! is used for factorial.
+	It supports numbers that are not whole numbers through the use of the gamma function.  It uses the number on its left side.  Both 2! and 2.6! are examples of valid input in America. (2,6! is valid in some nations)
+
+radicals can be used for either square root or various other roots.
+	to use it as a square root sign, there should only be a number on its right.  If you put a number on the left as well, then it will use that number as the root.
+
+To evaluate an expression, type in a valid expression, such as 2*(10+5), into the input box.  If you are using GraphPro, then it is the smaller text box.
+	After you have chosen an expression, press Enter on either your keyboard or on the lower right of the calculator.
+		If it did not evaluate, make sure you correctly closed your parentheses.
+	In the Standard calculator, the answer will appear in the input box, in GraphPro, the answer will appear in the larger text box above.
+	On the keyboard, you can navigate through your previous inputs with the up and down arrow keys.
+
+If you enter an operator when the textbox is empty or highlighted (like *) then Ans* should appear.  That means the answer you got before will be multiplied by whatever you input next.
+So try Ans*3.  Whenever you start the calculator, Ans is set to zero.
+
+
+--------------Variables, Functions, and uninitializing variables----------------
+A variable is basically something that stores a value.  If you saw Ans in the previous example, you&#39;ve also seen a variable.
+If you want to store your own number somewhere, you&#39;ll need to use the = operator.
+
+	Valid variable and function names include cannot start with numbers, do not include spaces, but can start with the alphabet (a-z or A-Z) and can have numbers within the names &quot;var1&quot; is a valid name
+
+	Input &quot;myVar = 2&quot; into the textbox and press &quot;Enter.&quot;  You&#39;ve just saved a variable.  Now if you ever type myVar into an expression, 2 will appear (unless you change it to something else).
+	Variables are best used to store Ans.  Ans is overridden whenever you evaluate an expression, so it is good to store the value of Ans somewhere else before it is overridden.
+
+	If you want a variable (like myVar) to become empty, or undefined, you just need to set it equal to undefined.
+	Now try &quot;myVar = undefined&quot;  Now myVar is no longer defined.
+
+	Functions are very useful for finding answers and gathering data.
+		You can use functions by inputting their name and their arguments.
+		For this example, I&#39;ll be using the functions named &quot;sqrt&quot; and &quot;pow&quot;
+
+		sqrt is a function with one argument.  That argument has a name too, its name is &#39;x.&#39; x is a very common name amongst built in functions
+			So, let&#39;s run a function.  Input &quot;sqrt&quot; then input a left parenthesis (all arguments of a function go within parentheses).  Now type a value for x, like 2.
+			Now close the parentheses with the right parenthesis.  If you used 2, you should have &quot;sqrt(2)&quot; in the text box.  If you press enter, you should get the square root of 2 back from the calculator.
+
+		Now for &quot;pow&quot; it has two arguments &#39;x&#39; and &#39;y&#39;
+			Type in &quot;pow(&quot; and pick a value for &#39;x&#39; (I am picking 2 again)
+			but now, you need to separate the value you gave x with a list separator.  Depending on your location, it is either a comma or a semicolon.  I&#39;m in America, and I use commas.
+			by this point, I have &quot;pow(2,&quot;
+			Now we need a value for &#39;y&#39; (I&#39;m using 3).  Put a &#39;)&#39; and now I have &#39;pow(2,3)&#39;
+			Press Enter, and, following my example, you should get 8
+
+		In this calculator, there are several ways to input arguments.
+			You&#39;ve already seen the first way, just input numbers in a specific order based on the names.
+
+			The second way is with an arbitrary order, and storage.
+			With &#39;pow&#39; I can input &quot;pow(y=3, x=2)&quot; and get the exact answer as before.  x and y will retain their assigned values, so you will need to set them to undefined it you want to try the next way.
+
+			The third way is to let the calculator ask you for the values.  Input &quot;pow()&quot;  If the values have been assigned globally, then it will use those values, but otherwise, it will ask for values of x and y.  They will not be stored globally this way.
+
+	I&#39;ll go ahead and mention that because of the way the calculator parses, underscores should not be used to name a variable like _#_ (where # is an integer of any length) 
+
+---------------toFrac()----------------
+toFrac is a function that takes one parameter, x, and converts it to a fraction for you.  It is only in GraphPro, not the Standard mode.
+	It will try to simplify pi, square roots, and rational numbers where the denominator is less than a set bound (100 right now).
+	Immediately after the calculator starts, toFrac may seen slow, but it just needs to finish loading when the calculator starts.  After that, it will respond without delay.
+	For an example, input &quot;toFrac(.5)&quot; or (,5 for some).  It will return &quot;1/2&quot;
+	For a more complicated example, input &quot;toFrac(atan(1))&quot; to get back &quot;pi/4&quot;  (atan is also known as &quot;arc tangent&quot; or &quot;inverse tangent&quot;)
+
+--------------Numbers and bases----------------
+This calculator supports multiple bases, and not only that, but non integer versions of multiple bases.
+	What is a base?  Well, the numbers you know and love are base 10.  That means that you count to all of the numbers up until 10 before you move on to add to the tenths place.
+		So, what about base 2?  All of the numbers up until 2 are 0 and 1.  If you want to type a base 2 number into the calculator, simply input &quot;0b&quot; (meaning base 2) followed by some number of 1&#39;s and 0&#39;s. 0b101 is 5 in base 10
+
+		Hexadecimal is 0x, and octal is 0o, but i won&#39;t go into too much detail on those here.
+		If you want an arbitrary integer base, type the number in the correct base, insert &#39;#&#39; and put the radix on the end.  &quot;.1#3&quot; is the same as 1/3 in base 10
+			Because there is not yet cause for it, you cannot have a base that is not a whole number.
+
+--------------Graphing Equations----------------
+First thing is first, in GraphPro only, the &quot;Graph&quot; button in the top left corner opens the Graph Window
+	So, now you should see a single text box adjacent to &quot;y=&quot;
+	Type the right side of the equation using &#39;x&#39; as the independent variable.
+	&quot;sin(x)&quot; for example.  To Graph it, make sure the checkbox to the left of the equation is selected, and press the Draw Selected button.
+	You can change the color in the color tab.  By default, it is black.  Under window options, you can change the window size and x/y boundaries
+
+	Let&#39;s add a second function.  Go to the Add Function button, select the mode you want, and press Create.  Another input box will appear.
+	If you selected x= as the Mode, then y is the independent variable for the line (an example is &quot;x=sin(y)&quot;).
+		If you want to erase, check the checkboxes you want to erase, and press &quot;Erase Selected&quot;
+		And similarly, Delete Selected will delete the chosen functions
+
+	&quot;Close&quot; will terminate the Graph Window completely
+
+---------------Substitutes for hard to type characters---------------
+Some characters are not simple to add in for keyboard users, so there are substitutes that are much easier to add into the text box.
+
+	pi or PI can be used in place of the special character for it.
+	For epsilon, eps or E can be used.
+	radical has replacement functions.  sqrt(x) or pow(x,y) can be used instead.
+
+--------------Making Functions-----------------
+My favorite part.  Before we start, I&#39;ll mention that Augmented Mathematical Syntax is allowed in the Function Generator (yay).
+	Ok, now the bad news: to prevent some security issues, keywords new and delete are forbidden.
+	Sorry, it is a math calculator, not a game container; not that that would be so bad, but it is to keep it from being used for some evil purposes.
+
+	Ok, onto function making.  Most JavaScript arithmetic is supported here, but, some syntax was overlapping mathematical syntax, so ++Variable no longer increases the contents of Variable because of ++1, but Variable++ does increase it (same deal with --)
+		Strings have incredibly limited support. Objects have near zero support
+	So, let&#39;s make a Function:
+		Press the &quot;Func&quot; button.  A Function Window should pop up.
+		Enter a name into the &quot;functionName&quot; box.  (it must follow the name guidelines in the variables section)  I&#39;m putting myFunc
+		Enter the variables you want into the arguments box (I&#39;ll put &quot;x,y&quot; so I have two arguments x and y)
+		Now enter the giant text box.
+		Type &quot;return &quot; and then the expression you want to give to the calculator.  I&#39;m putting &quot;return x*2 + y/2&quot;
+		Then press Save.  Now your function should appear in the functionName list and you can call it in the Calculator.
+
+		If you want to Delete a function you made, select it in the function Name list, and then press Delete.
+		If you altered a previously saved function (and haven&#39;t saved over the old one) you can reset the text back to its original state with the Reset button.
+		Clear will empty out all of the text boxes in the Function Window
+		Close terminates the Function Window
+
+---------------Decimal points, commas, and semicolons in different languages----------------
+In America, 3.5 is three and one half. Comma is used to separate function parameters and list members.
+
+In some nations, 3,5 is three and one half.  In lists, ;&#39;s are used to separate its members.
+So, when you evaluate expressions, 3,5 will be valid, but in the function generator, some ambiguous texts prevent me from allowing the conversion of that format to JavaScript.  So I cannot parse it in the Function Generator.
+And here is my example:
+var	i = 3,5;
+	b = 2;
+I cannot discern whether the semicolon between i and b are list separators or the JavaScript character for end the line.  b could be intended as a global variable, and i is a local variable, but I don&#39;t know that.  So language conversion isn&#39;t supported in Function Making.
+
+--------------Important mathematical Functions---------------
+Here is a list of functions you may find useful and their variable arguments:
+
+sqrt(x)	returns the square root of x
+x is in radians for all trig functions
+sin(x)	returns the sine of x
+asin(x)	returns the arc sine of x
+cos(x)	returns the cosine of x
+acos(x)	returns the arc cosine of x
+tan(x)	returns the tangent of x
+atan(x)	returns the arc tangent of x
+
+atan2(y, x)	returns the arc tangent of y and x
+Round(x)	returns the rounded integer form of x
+Int(x)		Cuts off the decimal digits of x
+Ceil(x)		If x has decimal digits, get the next highest integer
+
+ln(x)	return the natural log of x
+log(x)	return log base 10 of x
+pow(x, y) return x to the power of y
+
+permutations(n, r)	get the permutations for n choose r
+P(n, r) see permutations
+combinations(n, r)	get the combinations for n choose r
+C(n, r) see combinations
+
+toRadix(number, baseOut)	convert a number to a different base (baseOut)
+toBin(number)			convert number to a binary number
+toOct(number)			convert number to an octal number
+toHex(number)			convert number to a hexadecimal number
+</pre></div></td></tr></table></div>
+
+</div>
+
+
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+
+
+</body>
+</html>

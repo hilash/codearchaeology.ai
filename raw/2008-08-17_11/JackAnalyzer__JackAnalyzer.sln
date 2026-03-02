@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JackAnalyzer", "JackAnalyzer\JackAnalyzer.vcproj", "{E1D98FA0-0645-46C1-8E21-E05F2590EC06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3F1C3CA2-56D0-4C1F-B8B6-C80C1E7DFA1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1D98FA0-0645-46C1-8E21-E05F2590EC06}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E1D98FA0-0645-46C1-8E21-E05F2590EC06}.Debug|Win32.Build.0 = Debug|Win32
+		{E1D98FA0-0645-46C1-8E21-E05F2590EC06}.Release|Win32.ActiveCfg = Release|Win32
+		{E1D98FA0-0645-46C1-8E21-E05F2590EC06}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<PreferenceCategory 
+        android:title="@string/pref_title_map"
+        android:key="pref_id_map">
+		<ListPreference
+			    android:title="@string/pref_title_db_updates_frequency"
+				android:key="pref_id_db_updates_frequency"
+				android:summary="@string/pref_summary_db_updates_frequency"
+				android:entries="@array/pref_array_db_updates_frequency"
+				android:entryValues="@array/pref_arrayvalues_db_updates_frequency"
+				android:defaultValue="1"/>
+		<ListPreference
+			    android:title="@string/pref_title_location_updates_frequency"
+				android:key="pref_id_location_updates_frequency"
+				android:summary="@string/pref_summary_location_updates_frequency"
+				android:entries="@array/pref_array_location_updates_frequency"
+				android:entryValues="@array/pref_arrayvalues_location_updates_frequency"
+				android:defaultValue="1"/>
+		<CheckBoxPreference
+		    android:title="@string/pref_title_share_location"
+			android:key="pref_id_share_location"
+			android:summaryOn = "@string/pref_summary_on_share_location"
+			android:summaryOff="@string/pref_summary_off_share_location"/>
+	</PreferenceCategory>
+</PreferenceScreen>

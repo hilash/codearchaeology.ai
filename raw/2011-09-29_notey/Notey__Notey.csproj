@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9FA2F4F8-3E40-485E-AE2C-0CA12EE7BFA2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Recorder</RootNamespace>
+    <AssemblyName>Recorder</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Release\Recorder.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbcParser.cs" />
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="configuration.cs" />
+    <Compile Include="ConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigurationForm.Designer.cs">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FilesHandler.cs" />
+    <Compile Include="Analysis.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="FingeringChart.cs" />
+    <Compile Include="FingeringsPicture.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IPlayRecord.cs" />
+    <Compile Include="MCI.cs" />
+    <Compile Include="Memory.cs" />
+    <Compile Include="NoteDrawer.cs" />
+    <Compile Include="NotesDetector.cs" />
+    <Content Include="RecorderHeroOld.txt" />
+    <Compile Include="RecorderHero.cs" />
+    <Compile Include="SavingRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SavingRecordForm.Designer.cs">
+      <DependentUpon>SavingRecordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaveGraphics.cs" />
+    <Compile Include="NotesDB.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Resources\AssemblyInfo.cs" />
+    <Compile Include="WaveIn.cs" />
+    <Compile Include="Win32Waveform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="MainForm_RecordingLoop.sequencediagram" />
+    <None Include="MainForm_RecordingLoop_3.sequencediagram" />
+    <None Include="Resources\noteflagdown.png" />
+    <None Include="Resources\noteflagup.png" />
+    <None Include="Resources\noteflag.png" />
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigurationForm.resx">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_RecordingLoop.sequencediagram.layout">
+      <DependentUpon>MainForm_RecordingLoop.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_RecordingLoop_3.sequencediagram.layout">
+      <DependentUpon>MainForm_RecordingLoop_3.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SavingRecordForm.resx">
+      <DependentUpon>SavingRecordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recorder picture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock %28noteDrawer%29.png" />
+    <None Include="Resources\Stop-icon.png" />
+    <None Include="Resources\Play-icon.png" />
+    <None Include="Resources\Pause-icon.png" />
+    <None Include="Resources\stop-red-icon.png" />
+    <None Include="Resources\Microphone-icon.png" />
+    <None Include="Resources\new_page1.png" />
+    <None Include="Resources\save1.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\new_page.png" />
+    <None Include="Resources\pause.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\open.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\recorderPictureHoles.txt" />
+    <None Include="Resources\recorderFingering.txt" />
+    <EmbeddedResource Include="Resources\abcm2ps.exe" />
+    <None Include="Resources\Devices-media-floppy-icon.png" />
+    <None Include="Resources\BalanceTheStraw.png" />
+    <Content Include="Resources\directoryIcon.gif" />
+    <None Include="Resources\folder1.png" />
+    <None Include="Resources\Flute-icon.png" />
+    <None Include="Resources\File-Types-MIDI-icon.png" />
+    <Content Include="Resources\Flute.ico" />
+    <Content Include="Resources\GClef.png" />
+    <None Include="Resources\Icon-Save-Small.jpg" />
+    <Content Include="Resources\ghostscript_med.png" />
+    <Content Include="Resources\Icon-Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

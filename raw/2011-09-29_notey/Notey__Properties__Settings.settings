@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Recorder.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="NeedToConfig" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="GhostScriptPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\gs\gs9.04\bin\gswin32c.exe</Value>
+    </Setting>
+    <Setting Name="abcm2psPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\Notey\Notey\abcm2ps-5.9.24\abcm2ps.exe</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,62 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Drawing;
+
+namespace Wave
+{
+    /// <summary>
+    /// class wraping function to draw a graph
+    /// </summary>
+    static class WaveGraphics
+    {
+        // TODO: add documenatation
+        /// <summary>
+        /// draw a graph from the given samples, in the given graphics object
+        /// </summary>
+        /// <param name="graph"></param>
+        /// <param name="graphSamples"></param>
+        /// <param name="maxAmplitude"></param>
+        /// <param name="background"></param>
+        /// <param name="foreground"></param>
+        /// <param name="numberOfSamplesToDraw"></param>
+        static public void DrawGraph(Graphics graph,
+                                        int[] graphSamples,
+                                        int maxAmplitude,   // TODO: find a different name for this varible
+                                        Color background,
+                                        Pen foreground,
+                                        int numberOfSamplesToDraw)
+        {
+            int width = (int)graph.VisibleClipBounds.Width;
+            int height = (int)graph.VisibleClipBounds.Height;
+            float stretch = 0;
+
+            //TODO: maybe draw polygon?!
+
+            // use double buffering, for better performance
+            Image bufferImg = new Bitmap(width, height);
+            Graphics bufferImgGraphics = Graphics.FromImage(bufferImg);
+            bufferImgGraphics.Clear(background);
+
+            numberOfSamplesToDraw = Math.Min(numberOfSamplesToDraw, graphSamples.Length);
+            stretch = (float)width / (float)numberOfSamplesToDraw;
+
+            if (maxAmplitude < graphSamples.Max())
+            {
+                maxAmplitude = graphSamples.Max();
+            }
+
+            int a = 0;
+            int b = height - (int)(height * graphSamples[0] / maxAmplitude);
+
+            for (int i = 0; i < numberOfSamplesToDraw - 1; i++)
+            {
+                a = b;
+                b = height - (int)(height * graphSamples[i + 1] / maxAmplitude);
+                bufferImgGraphics.DrawLine(foreground, i * stretch, a - 1, (i + 1) * stretch, b - 1);
+            }
+            graph.DrawImage(bufferImg, 0, 0);
+        }
+    }
+}

@@ -1,0 +1,62 @@
+package com.shvil.project;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+
+import com.google.android.maps.GeoPoint;
+import com.google.android.maps.MapView;
+import com.google.android.maps.MyLocationOverlay;
+
+
+public class MapFragment2 extends TitledFragment {
+	
+	private MapView map=null;
+    private MyLocationOverlay me=null;
+    
+    public MapFragment2() {
+    	FRAGMENT_TITLE = "Map";
+    }
+
+    /*
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+    	// Inflate the layout for this fragment
+        return inflater.inflate(R.layout.map_fragment, container, false);
+    }
+    */
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                              Bundle savedInstanceState) {
+      return(new FrameLayout(getActivity()));
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+      super.onActivityCreated(savedInstanceState);
+
+      map=new MapView(getActivity(), "AEB69DE659CDB80808E72495CBDDC1FBDC1D1A81");
+      map.setClickable(true);
+
+      map.getController().setCenter(new GeoPoint(35410000, 139460000));
+      map.getController().setZoom(17);
+      map.setBuiltInZoomControls(true);
+
+      /*
+      Drawable marker=getResources().getDrawable(R.drawable.marker);
+
+      marker.setBounds(0, 0, marker.getIntrinsicWidth(),
+                              marker.getIntrinsicHeight());
+       */
+      //map.getOverlays().add(new SitesOverlay(marker));
+
+      me=new MyLocationOverlay(getActivity(), map);
+      map.getOverlays().add(me);
+
+      ((ViewGroup)getView()).addView(map);
+    }
+}

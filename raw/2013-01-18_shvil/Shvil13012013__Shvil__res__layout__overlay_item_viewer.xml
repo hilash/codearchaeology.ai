@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+     <LinearLayout
+         android:id="@+id/overlay_item_viewer_linear_layout"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content" >
+
+     </LinearLayout>
+    
+     <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFD9EAF4" >
+
+                <TextView
+                    android:id="@+id/overlay_item_viewer_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_margin="@dimen/padding_small"
+                    android:layout_weight="0.20"
+                    android:text="Small Text"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <ImageButton
+                    android:id="@+id/overlay_item_viewer_delete"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:background="@null"
+                    android:onClick="deletePostDialog"
+                    android:src="@android:drawable/ic_delete" />
+
+                <ImageButton
+                    android:id="@+id/overlay_item_viewer_edit"
+                    android:layout_width="34dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="right"
+                    android:background="@null"
+                    android:src="@android:drawable/ic_menu_edit" />
+
+            </LinearLayout>
+            
+</LinearLayout>

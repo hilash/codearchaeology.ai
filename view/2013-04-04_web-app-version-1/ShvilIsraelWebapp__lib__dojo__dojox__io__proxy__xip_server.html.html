@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShvilIsraelWebapp__lib__dojo__dojox__io__proxy__xip_server.html - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ed007e; background-color: #1e0010 } /* Error */
+.highlight .esc { color: #f8f8f2 } /* Escape */
+.highlight .g { color: #f8f8f2 } /* Generic */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #ff4689 } /* Operator */
+.highlight .x { color: #f8f8f2 } /* Other */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #ff4689 } /* Generic.Deleted */
+.highlight .ge { color: #f8f8f2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #f8f8f2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #f8f8f2 } /* Generic.Error */
+.highlight .gh { color: #f8f8f2 } /* Generic.Heading */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .go { color: #66d9ef } /* Generic.Output */
+.highlight .gp { color: #ff4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #f8f8f2 } /* Generic.Traceback */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #ff4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #ff4689 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #ff4689 } /* Operator.Word */
+.highlight .pm { color: #f8f8f2 } /* Punctuation.Marker */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style>
+
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<a href="/project/2013-04-04_web-app-version-1/" class="back-link">&laquo; Back to Web App Version 1</a>
+
+<div class="viewer-header">
+    <h1>ShvilIsraelWebapp__lib__dojo__dojox__io__proxy__xip_server.html</h1>
+    <div class="viewer-meta">
+        <span class="tag">HTML</span>
+        <span>10.2 KB</span>
+        
+        <button id="run-btn" class="gmail-action-btn client-runnable" onclick="runCode()">&#9654; Run Code</button>
+        
+    </div>
+</div>
+
+
+<div class="code-container">
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span></pre></div></td><td class="code"><div><pre><span></span><span class="cm">&lt;!--</span>
+<span class="cm">	/*</span>
+<span class="cm">		Copyright (c) 2004-2011, The Dojo Foundation</span>
+<span class="cm">		All Rights Reserved.</span>
+<span class="cm">	</span>
+<span class="cm">		Licensed under the Academic Free License version 2.1 or above OR the</span>
+<span class="cm">		modified BSD license. For more information on Dojo licensing, see:</span>
+<span class="cm">	</span>
+<span class="cm">			http://dojotoolkit.org/community/licensing.shtml</span>
+<span class="cm">	*/</span>
+<span class="cm">	Pieces taken from Dojo source to make this file stand-alone</span>
+<span class="cm">--&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">meta</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;isAllowed.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+	<span class="cm">&lt;!--</span>
+<span class="cm">	BY DEFAULT THIS FILE DOES NOT WORK SO THAT YOU DON&#39;T ACCIDENTALLY EXPOSE</span>
+<span class="cm">	ALL OF YOUR XHR-ENABLED SERVICES ON YOUR SITE. </span>
+<span class="cm">	</span>
+<span class="cm">	In order for this file to work, you need to uncomment the start and end script tags,</span>
+<span class="cm">	and you should define a function with the following signature:</span>
+<span class="cm">	</span>
+<span class="cm">	function isAllowedRequest(request){</span>
+<span class="cm">		return false;	</span>
+<span class="cm">	}</span>
+<span class="cm">	</span>
+<span class="cm">	Return true out of the function if you want to allow the cross-domain request.</span>
+<span class="cm">	</span>
+<span class="cm">	DON&#39;T DEFINE THIS FUNCTION IN THIS FILE! Define it in a separate file called isAllowed.js</span>
+<span class="cm">	and include it in this page with a script tag that has a src attribute pointing to the file.</span>
+<span class="cm">	See the very first script tag in this file for an example. You do not have to place the</span>
+<span class="cm">	script file in the same directory as this file, just update the path above if you move it</span>
+<span class="cm">	somewhere else.</span>
+<span class="cm">	</span>
+<span class="cm">	Customize the isAllowedRequest function to restrict what types of requests are allowed</span>
+<span class="cm">	for this server. The request object has the following properties:</span>
+<span class="cm">	- requestHeaders: an object with the request headers that are to be added to</span>
+<span class="cm">	                  the XHR request.</span>
+<span class="cm">	- method: the HTTP method (GET, POST, etc...)</span>
+<span class="cm">	- uri: The URI for the request.</span>
+<span class="cm">	- data: The URL-encoded data for the request. For a GET request, this would</span>
+<span class="cm">	        be the querystring parameters. For a POST request, it wll be the</span>
+<span class="cm">	        body data.</span>
+<span class="cm">	        </span>
+<span class="cm">	See xip_client.html for more info on the xip fragment identifier protocol.	</span>
+<span class="cm">	--&gt;</span>
+	
+	<span class="cm">&lt;!-- Security protection: uncomment the script tag to enable. --&gt;</span>
+	<span class="cm">&lt;!-- script type=&quot;text/javascript&quot; --&gt;</span>
+	// <span class="cm">&lt;!--</span>
+<span class="cm">		//Core XHR handling taken from Dojo IO code.</span>
+<span class="cm">		dojo = {};</span>
+<span class="cm">		dojo.hostenv = {};</span>
+<span class="cm">		// These are in order of decreasing likelihood; this will change in time.</span>
+<span class="cm">		dojo.hostenv._XMLHTTP_PROGIDS = [&#39;Msxml2.XMLHTTP&#39;, &#39;Microsoft.XMLHTTP&#39;, &#39;Msxml2.XMLHTTP.4.0&#39;];</span>
+<span class="cm">		</span>
+<span class="cm">		dojo.hostenv.getXmlhttpObject = function(){</span>
+<span class="cm">				var http = null;</span>
+<span class="cm">			var last_e = null;</span>
+<span class="cm">			try{ http = new XMLHttpRequest(); }catch(e){}</span>
+<span class="cm">				if(!http){</span>
+<span class="cm">				for(var i=0; i&lt;3; ++i){</span>
+<span class="cm">					var progid = dojo.hostenv._XMLHTTP_PROGIDS[i];</span>
+<span class="cm">					try{</span>
+<span class="cm">						http = new ActiveXObject(progid);</span>
+<span class="cm">					}catch(e){</span>
+<span class="cm">						last_e = e;</span>
+<span class="cm">					}</span>
+<span class="cm">		</span>
+<span class="cm">					if(http){</span>
+<span class="cm">						dojo.hostenv._XMLHTTP_PROGIDS = [progid];  // so faster next time</span>
+<span class="cm">						break;</span>
+<span class="cm">					}</span>
+<span class="cm">				}</span>
+<span class="cm">		</span>
+<span class="cm">				/*if(http &amp;&amp; !http.toString) {</span>
+<span class="cm">					http.toString = function() { &quot;[object XMLHttpRequest]&quot;; }</span>
+<span class="cm">				}*/</span>
+<span class="cm">			}</span>
+<span class="cm">		</span>
+<span class="cm">			if(!http){</span>
+<span class="cm">				throw &quot;xip_server.html: XMLHTTP not available: &quot; + last_e;</span>
+<span class="cm">			}</span>
+<span class="cm">		</span>
+<span class="cm">			return http;</span>
+<span class="cm">		}</span>
+
+<span class="cm">		dojo.setHeaders = function(http, headers){</span>
+<span class="cm">			if(headers) {</span>
+<span class="cm">				for(var header in headers) {</span>
+<span class="cm">					var headerValue = headers[header];</span>
+<span class="cm">					http.setRequestHeader(header, headerValue);</span>
+<span class="cm">				}</span>
+<span class="cm">			}</span>
+<span class="cm">		}</span>
+
+<span class="cm">	//MSIE has the lowest limit for URLs with fragment identifiers,</span>
+<span class="cm">	//at around 4K. Choosing a slightly smaller number for good measure.</span>
+<span class="cm">	xipUrlLimit = 4000;</span>
+<span class="cm">	xipIdCounter = 1;</span>
+
+<span class="cm">	function xipServerInit(){</span>
+<span class="cm">		xipStateId = &quot;&quot;;</span>
+<span class="cm">		xipCurrentHash = &quot;&quot;;</span>
+<span class="cm">		xipRequestMessage = &quot;&quot;;</span>
+<span class="cm">		xipResponseParts = [];</span>
+<span class="cm">		xipPartIndex = 0;</span>
+<span class="cm">	}</span>
+
+<span class="cm">	function pollHash(){</span>
+<span class="cm">		//Can&#39;t use location.hash because at least Firefox does a decodeURIComponent on it.</span>
+<span class="cm">		var urlParts = window.location.href.split(&quot;#&quot;);</span>
+<span class="cm">		if(urlParts.length == 2){</span>
+<span class="cm">			var newHash = urlParts[1];</span>
+<span class="cm">			if(newHash != xipCurrentHash){</span>
+<span class="cm">				try{</span>
+<span class="cm">					messageReceived(newHash);</span>
+<span class="cm">				}catch(e){</span>
+<span class="cm">					//Make sure to not keep processing the error hash value.</span>
+<span class="cm">					xipCurrentHash = newHash;</span>
+<span class="cm">					throw e;</span>
+<span class="cm">				}</span>
+<span class="cm">				xipCurrentHash = newHash;</span>
+<span class="cm">			}</span>
+<span class="cm">		}</span>
+<span class="cm">	}</span>
+
+<span class="cm">	function messageReceived(encodedData){</span>
+<span class="cm">		var msg = unpackMessage(encodedData);</span>
+<span class="cm">		</span>
+<span class="cm">		switch(msg.command){</span>
+<span class="cm">			case &quot;ok&quot;:</span>
+<span class="cm">				sendResponsePart();</span>
+<span class="cm">				break;</span>
+<span class="cm">			case &quot;start&quot;:</span>
+<span class="cm">				xipRequestMessage = &quot;&quot;;</span>
+<span class="cm">				xipRequestMessage += msg.message;</span>
+<span class="cm">				setClientUrl(&quot;ok&quot;);</span>
+<span class="cm">				break;</span>
+<span class="cm">			case &quot;part&quot;:</span>
+<span class="cm">				xipRequestMessage += msg.message;			</span>
+<span class="cm">				setClientUrl(&quot;ok&quot;);</span>
+<span class="cm">				break;</span>
+<span class="cm">			case &quot;end&quot;:</span>
+<span class="cm">				setClientUrl(&quot;ok&quot;);</span>
+<span class="cm">				xipRequestMessage += msg.message;</span>
+<span class="cm">				sendXhr();</span>
+<span class="cm">				break;</span>
+<span class="cm">		}</span>
+<span class="cm">	}</span>
+
+<span class="cm">	function sendResponse(encodedData){</span>
+<span class="cm">		//Break the message into parts, if necessary.</span>
+<span class="cm">		xipResponseParts = [];</span>
+<span class="cm">		var resData = encodedData;</span>
+<span class="cm">		var urlLength = xipClientUrl.length;</span>
+<span class="cm">		var partLength = xipUrlLimit - urlLength;</span>
+<span class="cm">		var resIndex = 0;</span>
+
+<span class="cm">		while((resData.length - resIndex) + urlLength &gt; xipUrlLimit){</span>
+<span class="cm">			var part = resData.substring(resIndex, resIndex + partLength);</span>
+<span class="cm">			//Safari will do some extra hex escaping unless we keep the original hex</span>
+<span class="cm">			//escaping complete.</span>
+<span class="cm">			var percentIndex = part.lastIndexOf(&quot;%&quot;);</span>
+<span class="cm">			if(percentIndex == part.length - 1 || percentIndex == part.length - 2){</span>
+<span class="cm">				part = part.substring(0, percentIndex);</span>
+<span class="cm">			}</span>
+<span class="cm">			xipResponseParts.push(part);</span>
+<span class="cm">			resIndex += part.length;</span>
+<span class="cm">		}</span>
+<span class="cm">		xipResponseParts.push(resData.substring(resIndex, resData.length));</span>
+<span class="cm">		</span>
+<span class="cm">		xipPartIndex = 0;</span>
+<span class="cm">		sendResponsePart();</span>
+<span class="cm">	}</span>
+<span class="cm">	</span>
+<span class="cm">	function sendResponsePart(){</span>
+<span class="cm">		if(xipPartIndex &lt; xipResponseParts.length){</span>
+<span class="cm">			//Get the message part.</span>
+<span class="cm">			var partData = xipResponseParts[xipPartIndex];</span>
+<span class="cm">			</span>
+<span class="cm">			//Get the command.</span>
+<span class="cm">			var cmd = &quot;part&quot;;</span>
+<span class="cm">			if(xipPartIndex + 1 == xipResponseParts.length){</span>
+<span class="cm">				cmd = &quot;end&quot;;</span>
+<span class="cm">			}else if (xipPartIndex == 0){</span>
+<span class="cm">				cmd = &quot;start&quot;;</span>
+<span class="cm">			}</span>
+
+<span class="cm">			setClientUrl(cmd, partData);</span>
+<span class="cm">			xipPartIndex++;</span>
+<span class="cm">		}else{</span>
+<span class="cm">			xipServerInit();</span>
+<span class="cm">		}</span>
+<span class="cm">	}</span>
+
+<span class="cm">	function setClientUrl(cmd, message){</span>
+<span class="cm">		var clientUrl = makeClientUrl(cmd, message);</span>
+<span class="cm">		//Safari won&#39;t let us replace across domains.</span>
+<span class="cm">		if(navigator.userAgent.indexOf(&quot;Safari&quot;) == -1){</span>
+<span class="cm">			xipClientWindow.location.replace(clientUrl);</span>
+<span class="cm">		}else{</span>
+<span class="cm">			xipClientWindow.location = clientUrl;</span>
+<span class="cm">		}</span>
+<span class="cm">	}</span>
+
+<span class="cm">	function makeClientUrl(cmd, message){</span>
+<span class="cm">		var clientUrl = xipClientUrl + &quot;#&quot; + (xipIdCounter++) + &quot;:&quot; + cmd;</span>
+<span class="cm">		if(message){</span>
+<span class="cm">			clientUrl += &quot;:&quot; + message;</span>
+<span class="cm">		}</span>
+<span class="cm">		return clientUrl</span>
+<span class="cm">	}</span>
+
+<span class="cm">	function xhrDone(xhr){</span>
+<span class="cm">		/* Need to pull off and return the following data:</span>
+<span class="cm">			- responseHeaders</span>
+<span class="cm">			- status</span>
+<span class="cm">			- statusText</span>
+<span class="cm">			- responseText</span>
+<span class="cm">		*/</span>
+<span class="cm">		var response = {};</span>
+<span class="cm">	</span>
+<span class="cm">		if(typeof(xhr.getAllResponseHeaders) != &quot;undefined&quot;){</span>
+<span class="cm">			var allHeaders = xhr.getAllResponseHeaders();</span>
+<span class="cm">			if(allHeaders){</span>
+<span class="cm">				response.responseHeaders = allHeaders;</span>
+<span class="cm">			}</span>
+<span class="cm">		}</span>
+<span class="cm">		</span>
+<span class="cm">		if(xhr.status == 0 || xhr.status){</span>
+<span class="cm">			response.status = xhr.status;</span>
+<span class="cm">		}</span>
+<span class="cm">		</span>
+<span class="cm">		if(xhr.statusText){</span>
+<span class="cm">			response.statusText = xhr.statusText;</span>
+<span class="cm">		}</span>
+<span class="cm">		</span>
+<span class="cm">		if(xhr.responseText){</span>
+<span class="cm">			response.responseText = xhr.responseText;</span>
+<span class="cm">		}</span>
+<span class="cm">	</span>
+<span class="cm">		//Build a string of the response object.</span>
+<span class="cm">		var result = &quot;&quot;;</span>
+<span class="cm">		var isFirst = true;</span>
+<span class="cm">		for (var param in response){</span>
+<span class="cm">			if(isFirst){</span>
+<span class="cm">				isFirst = false;</span>
+<span class="cm">			}else{</span>
+<span class="cm">				result += &quot;&amp;&quot;;</span>
+<span class="cm">			}</span>
+<span class="cm">			result += param + &quot;=&quot; + encodeURIComponent(response[param]);</span>
+<span class="cm">		}</span>
+<span class="cm">		sendResponse(result);</span>
+<span class="cm">	}</span>
+
+<span class="cm">	function sendXhr(){</span>
+<span class="cm">		var request = {};</span>
+<span class="cm">		var nvPairs = xipRequestMessage.split(&quot;&amp;&quot;);</span>
+<span class="cm">		var i = 0;</span>
+<span class="cm">		var nameValue = null;</span>
+<span class="cm">		for(i = 0; i &lt; nvPairs.length; i++){</span>
+<span class="cm">			if(nvPairs[i]){</span>
+<span class="cm">				var nameValue = nvPairs[i].split(&quot;=&quot;);</span>
+<span class="cm">				request[decodeURIComponent(nameValue[0])] = decodeURIComponent(nameValue[1]);</span>
+<span class="cm">			}</span>
+<span class="cm">		}</span>
+
+<span class="cm">		//Split up the request headers, if any.</span>
+<span class="cm">		var headers = {};</span>
+<span class="cm">		if(request.requestHeaders){</span>
+<span class="cm">			nvPairs = request.requestHeaders.split(&quot;\r\n&quot;);</span>
+<span class="cm">			for(i = 0; i &lt; nvPairs.length; i++){</span>
+<span class="cm">				if(nvPairs[i]){</span>
+<span class="cm">					nameValue = nvPairs[i].split(&quot;: &quot;);</span>
+<span class="cm">					headers[decodeURIComponent(nameValue[0])] = decodeURIComponent(nameValue[1]);</span>
+<span class="cm">				}</span>
+<span class="cm">			}</span>
+
+<span class="cm">			request.requestHeaders = headers;</span>
+<span class="cm">		}</span>
+<span class="cm">		</span>
+<span class="cm">		if(isAllowedRequest(request)){</span>
+<span class="cm">		</span>
+<span class="cm">			//The request is allowed, so set up the XHR object.</span>
+<span class="cm">			var xhr = dojo.hostenv.getXmlhttpObject();</span>
+<span class="cm">			</span>
+<span class="cm">			//Start timer to look for readyState.</span>
+<span class="cm">			var xhrIntervalId = setInterval(function(){</span>
+<span class="cm">			</span>
+<span class="cm">				if(xhr.readyState == 4){</span>
+<span class="cm">					clearInterval(xhrIntervalId);</span>
+<span class="cm">					xhrDone(xhr);</span>
+<span class="cm">				}</span>
+<span class="cm">			}, 10);</span>
+
+<span class="cm">			//Actually start up the XHR request.</span>
+<span class="cm">			xhr.open(request.method, request.uri, true);</span>
+<span class="cm">			dojo.setHeaders(xhr, request.requestHeaders);</span>
+<span class="cm">			</span>
+<span class="cm">			var content = &quot;&quot;;</span>
+<span class="cm">			if(request.data){</span>
+<span class="cm">				content = request.data;</span>
+<span class="cm">			}</span>
+
+<span class="cm">			try{</span>
+<span class="cm">				xhr.send(content);</span>
+<span class="cm">			}catch(e){</span>
+<span class="cm">				if(typeof xhr.abort == &quot;function&quot;){</span>
+<span class="cm">					xhr.abort();</span>
+<span class="cm">					xhrDone({status: 404, statusText: &quot;xip_server.html error: &quot; + e});</span>
+<span class="cm">				}</span>
+<span class="cm">			}</span>
+<span class="cm">		}</span>
+<span class="cm">	}</span>
+
+<span class="cm">	function unpackMessage(encodedMessage){</span>
+<span class="cm">		var parts = encodedMessage.split(&quot;:&quot;);</span>
+<span class="cm">		var command = parts[1];</span>
+<span class="cm">		encodedMessage = parts[2] || &quot;&quot;;</span>
+
+<span class="cm">		var config = null;</span>
+<span class="cm">		if(command == &quot;init&quot;){</span>
+<span class="cm">			var configParts = encodedMessage.split(&quot;&amp;&quot;);</span>
+<span class="cm">			config = {};</span>
+<span class="cm">			for(var i = 0; i &lt; configParts.length; i++){</span>
+<span class="cm">				var nameValue = configParts[i].split(&quot;=&quot;);</span>
+<span class="cm">				config[decodeURIComponent(nameValue[0])] = decodeURIComponent(nameValue[1]);</span>
+<span class="cm">			}</span>
+<span class="cm">		}</span>
+<span class="cm">		return {command: command, message: encodedMessage, config: config};</span>
+<span class="cm">	}</span>
+
+<span class="cm">	function onServerLoad(){</span>
+<span class="cm">		xipServerInit();</span>
+
+<span class="cm">		//Decode the init params</span>
+<span class="cm">		var config = unpackMessage(window.location.href.split(&quot;#&quot;)[1]).config;</span>
+
+<span class="cm">		xipStateId = config.id;</span>
+<span class="cm">		xipClientUrl = config.client;</span>
+<span class="cm">		</span>
+<span class="cm">		//Make sure we don&#39;t have a javascript: url, just for good measure.</span>
+<span class="cm">		if(xipClientUrl.split(&quot;:&quot;)[0].match(/javascript/i)){</span>
+<span class="cm">			throw &quot;Invalid client URL&quot;;</span>
+<span class="cm">		}</span>
+<span class="cm">		if(!xipStateId.match(/^XhrIframeProxy[0-9]+$/)){</span>
+<span class="cm">			throw &quot;Invalid state ID&quot;;</span>
+<span class="cm">		}</span>
+<span class="cm">	</span>
+<span class="cm">		setInterval(pollHash, 10);</span>
+<span class="cm">		</span>
+<span class="cm">		var serverUrl = window.location.href.split(&quot;#&quot;)[0];</span>
+<span class="cm">		document.getElementById(&quot;iframeHolder&quot;).innerHTML = &#39;&lt;iframe name=&quot;&#39;</span>
+<span class="cm">			+ xipStateId + &#39;_clientEndPoint&#39;</span>
+<span class="cm">			+ &#39;&quot; src=&quot;javascript:false&quot;&gt;&#39;</span>
+<span class="cm">			+ &#39;&lt;/iframe&gt;&#39;;</span>
+<span class="cm">		xipClientWindow = document.getElementsByTagName(&quot;iframe&quot;)[0];</span>
+<span class="cm">		xipClientWindow.src = makeClientUrl(&quot;init&quot;, &#39;id=&#39; + xipStateId + &quot;&amp;callback=&quot; + encodeURIComponent(config.callback));</span>
+<span class="cm">		if(xipClientWindow.contentWindow){</span>
+<span class="cm">			xipClientWindow = xipClientWindow.contentWindow;</span>
+<span class="cm">		}</span>
+<span class="cm">	}</span>
+
+<span class="cm">	if(typeof(window.addEventListener) == &quot;undefined&quot;){</span>
+<span class="cm">		window.attachEvent(&quot;onload&quot;, onServerLoad);</span>
+<span class="cm">	}else{</span>
+<span class="cm">		window.addEventListener(&#39;load&#39;, onServerLoad, false);</span>
+<span class="cm">	}</span>
+<span class="cm">	// --&gt;</span>
+	<span class="cm">&lt;!-- &lt;/script&gt; --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>The Dojo Toolkit -- xip_server.html<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+
+	<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This file is used for Dojo&#39;s XMLHttpRequest Iframe Proxy. This is the the file
+	that should go on the server that will actually be doing the XHR request.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;iframeHolder&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div></td></tr></table></div>
+
+</div>
+
+
+
+<div id="output-panel" class="output-panel client-runnable" style="display: none;">
+    <h3>Output</h3>
+    <div id="output-status" class="output-status"></div>
+    <pre id="output-stdout" class="output-stdout"></pre>
+    <pre id="output-stderr" class="output-stderr"></pre>
+</div>
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+
+<script>
+var _viewerFilename = "ShvilIsraelWebapp__lib__dojo__dojox__io__proxy__xip_server.html";
+var _viewerProject = "2013-04-04_web-app-version-1";
+var _viewerExt = _viewerFilename.substring(_viewerFilename.lastIndexOf('.')).toLowerCase();
+var _isClientRunnable = ['.js', '.html', '.htm'].indexOf(_viewerExt) !== -1;
+
+function runCode() {
+    var btn = document.getElementById('run-btn');
+    var panel = document.getElementById('output-panel');
+    var status = document.getElementById('output-status');
+    var stdout = document.getElementById('output-stdout');
+    var stderr = document.getElementById('output-stderr');
+
+    btn.disabled = true;
+    btn.textContent = 'Running...';
+    panel.style.display = 'block';
+    status.textContent = 'Executing...';
+    status.className = 'output-status running';
+    stdout.textContent = '';
+    stderr.textContent = '';
+    stderr.style.display = 'none';
+
+    if (_viewerExt === '.js') {
+        // Client-side JS execution in sandboxed iframe
+        var codeEl = document.querySelector('.code-container .highlight pre');
+        var code = codeEl ? codeEl.textContent : '';
+        var logs = [];
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('sandbox', 'allow-scripts');
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+
+        function onMsg(e) {
+            if (e.source !== iframe.contentWindow) return;
+            if (e.data === '__DONE__') {
+                clearTimeout(timeout);
+                window.removeEventListener('message', onMsg);
+                document.body.removeChild(iframe);
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                status.textContent = 'Success';
+                status.className = 'output-status success';
+                stdout.textContent = logs.join('\n') || '(no output)';
+                return;
+            }
+            logs.push(e.data);
+        }
+        window.addEventListener('message', onMsg);
+
+        var wrappedCode = '(' + function() {
+            var _log = [];
+            console.log = function() {
+                var args = Array.prototype.slice.call(arguments);
+                var line = args.map(function(a) {
+                    return typeof a === 'object' ? JSON.stringify(a) : String(a);
+                }).join(' ');
+                _log.push(line);
+                parent.postMessage(line, '*');
+            };
+            console.error = console.warn = console.info = console.log;
+            try {
+                /* __CODE__ */
+            } catch(e) {
+                parent.postMessage('Error: ' + e.message, '*');
+            }
+            parent.postMessage('__DONE__', '*');
+        }.toString().replace('/* __CODE__ */', code) + ')()';
+
+        iframe.srcdoc = '<html><body class="static-mode"><script>' + wrappedCode + '<\/script></body></html>';
+
+        var timeout = setTimeout(function() {
+            window.removeEventListener('message', onMsg);
+            if (iframe.parentNode) document.body.removeChild(iframe);
+            btn.disabled = false;
+            btn.textContent = '\u25B6 Run Code';
+            status.textContent = 'Timed out (5s)';
+            status.className = 'output-status error';
+            stdout.textContent = logs.join('\n') + '\n(timed out after 5s)';
+        }, 5000);
+
+    } else if (_viewerExt === '.html' || _viewerExt === '.htm') {
+        // Client-side HTML rendering in iframe
+        status.textContent = '';
+        status.className = 'output-status success';
+        stdout.textContent = '';
+        var iframe = document.createElement('iframe');
+        iframe.className = 'run-iframe';
+        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+        iframe.src = '/raw/' + encodeURIComponent(_viewerProject) + '/' + encodeURIComponent(_viewerFilename);
+        stdout.style.display = 'none';
+        panel.appendChild(iframe);
+        btn.disabled = false;
+        btn.textContent = '\u25B6 Run Code';
+
+    } else {
+        // Server-side execution (Python, C, C++)
+        fetch('/run/' + encodeURIComponent(_viewerProject) + '/' + encodeURIComponent(_viewerFilename), { method: 'POST' })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                if (data.success) {
+                    status.textContent = 'Success (exit code: 0)';
+                    status.className = 'output-status success';
+                } else {
+                    status.textContent = 'Failed (exit code: ' + data.return_code + ')';
+                    status.className = 'output-status error';
+                }
+                stdout.textContent = data.stdout || '(no output)';
+                if (data.stderr) {
+                    stderr.textContent = data.stderr;
+                    stderr.style.display = 'block';
+                }
+            })
+            .catch(function(err) {
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                status.textContent = 'Error: ' + err.message;
+                status.className = 'output-status error';
+            });
+    }
+}
+</script>
+
+
+</body>
+</html>

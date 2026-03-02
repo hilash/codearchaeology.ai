@@ -1,0 +1,150 @@
+<resources>
+
+    <string name="app_name">Shvil</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section1">Section 1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main"> Shvil</string>
+    <string name="title_activity_map"> Map</string>
+    <string name="title_activity_profile"> My Profile</string>
+    <string name="title_activity_messages"> Messages</string>
+    <string name="title_activity_people"> People</string>
+    <string name="title_activity_angels"> Angels</string>
+    <string name="title_activity_settings"> Settings</string>
+    <string name="title_activity_help">Help</string>
+    <string name="title_activity_about">About</string>
+    <string name="title_activity_syncdb">Sync Database</string>
+    <string name="title_activity_recent_messages"> Messages</string>
+    <string name="title_activity_note_editor"> Notes Editor</string>
+    <string name="title_activity_angel_editor"> Angels Editor</string>
+    <string name="title_activity_general_item_editor"> General Editor</string>
+    
+    <string name="support_email">""</string>
+    <string name="shit">SHIT</string>
+    <string name="googlemaps_sdk_key">0T4xcx7NxlCMzlEeqE5jXKnh0w0tPLOFIQDFu-Q</string>
+    <string name="buttonMyLocation">location</string>
+    
+    <string name="menu_overlay_title_angels">Angels</string>
+    <string name="menu_overlay_title_people">Travelers</string>
+    <string name="menu_overlay_title_water">Water</string>
+    <string name="menu_overlay_title_info">Shvil info</string>
+    <string name="menu_overlay_title_diary">My Notes</string>
+    <string name="menu_overlay_title_sleep">Sleep</string>
+    
+    <string name="menu_fragment_item_profile">Profile</string>
+    <string name="menu_fragment_item_messages">Messages</string>
+    <string name="menu_fragment_item_people">People</string>
+    <string name="menu_fragment_item_angels">Angels</string>
+    <string name="menu_fragment_item_syncdb">Sync Database</string>
+    <string name="menu_fragment_item_settings">Settings</string>
+    <string name="menu_fragment_item_help">Help</string>
+    <string name="menu_fragment_item_about">About</string>
+
+    
+    <string name="menu_report_title_add_note">Add Note</string>
+    <string name="menu_report_title_add_problem">Shvils problem</string>
+    <string-array name="empty_array"></string-array>
+
+	<string name="angel_editor_name_hint">Angels Name</string>
+	<string name="angel_editor_phone1_hint">Phone</string>
+	<string name="angel_editor_phone2_hint">Another phone</string>
+	<string name="angel_editor_address_hint">Address</string>
+	<string name="angel_editor_religious_text">Religious</string>
+	<string name="angel_editor_passport_text">Passport</string>
+	<string name="angel_editor_stamp_text">Stamp</string>
+	<string name="angel_editor_information_hint">Angels information</string>
+	<string name="angel_editor_dialog_error">Angels name, address and first phone can not be empty</string>
+	<string name="save">Save</string>
+	<string name="error">Error</string>
+	<string name="refresh">refresh</string>
+	<string name="menu_overlay_title_water_hide">Water hiding</string>
+	<string name="general_item_editor_title_hint">Title</string>
+	<string name="general_item_editor_text_hint">Text</string>
+	<string name="general_item_editor_dialog_error">You can not leave title or text empty!</string> 
+	
+	<string name="pref_title_language">Language</string>
+	<string name="pref_title_map">Map</string>
+	<string name="pref_title_db_updates_frequency">Get Shvil Updates</string>
+	<string name="pref_title_location_updates_frequency">Get Location Updates</string>
+	<string name="pref_title_share_location">Share Location</string>
+	<string name="pref_summary_db_updates_frequency">how often to get updates</string>
+	<string name="pref_summary_location_updates_frequency">how often to get gps updates</string>
+	<string name="pref_summary_on_share_location">shvil trackers can see your location - so you can meet friends along the road</string>
+	<string name="pref_summary_off_share_location">others can not see your location</string>
+	
+	
+	<string-array name="pref_array_language">
+		<item>English</item>
+		<item>עברית</item>
+	</string-array>
+	<string-array name="pref_arrayvalues_language">
+		<item>en</item>
+		<item>il</item>
+	</string-array>
+
+	<string-array name="pref_array_db_updates_frequency">
+		<item>Every 1 hour</item>
+		<item>Every 6 hours</item>
+		<item>Every 24 hours</item>
+		<item>Off</item>
+	</string-array>
+	<string-array name="pref_arrayvalues_db_updates_frequency">
+		<item>1</item>
+		<item>5</item>
+		<item>24</item>
+		<item>0</item>
+	</string-array>	
+	
+	<string-array name="pref_array_location_updates_frequency">
+		<item>Every 1 hour</item>
+		<item>Every 6 hours</item>
+		<item>Every 24 hours</item>
+		<item>Off</item>
+	</string-array>
+	<string-array name="pref_arrayvalues_location_updates_frequency">
+		<item>1</item>
+		<item>5</item>
+		<item>24</item>
+		<item>0</item>
+	</string-array>
+	
+	<string name="about_activity_layout_app_name">Shvil Israel</string>
+	<string name="about_activity_layout_developer_name">Development by Hila Shmuel</string>
+	<string name="about_activity_layout_support">support: </string>
+	
+
+	
+	
+	
+	<string name="pref_help_description">If you can not find the help youre looking for, see the contact section</string>
+	<string name="pref_help_privacy_title">Privacy</string>
+	<string name="pref_help_battary_title">Battary Life</string>
+	<string name="pref_help_privacy_desc">You can your privacy level by using the Settings on the Menu.
+Your pictures, sound records, text notes, and water hiding plcaes are private!
+and no one but you can see them.
+this data is stored loaly in your phone only</string>
+	<string name="pref_help_privacy_location_title">Location</string>	
+	<string name="pref_help_privacy_location">You can enable or disable your location privacy in the Settings men</string>	
+	<string name="pref_help_contact_title">Contact</string>	
+	<string name="pref_help_contact_desc">For support you can use the following ways:</string>	
+	<string name="pref_help_contact_email_title">Email</string>	
+	<string name="pref_help_contact_website_title">Website</string>	
+	<string name="website_url">www.shvilisraelapp.com</string>	
+	<string name="pref_help_privacy_personal_title">Private Map Items</string>	
+	<string name="pref_help_privacy_personal_desc">Your pictures, text notes, sound recording and water hiding places are private. they are stoed localy on your phone, and no one but you can access them.</string>	
+	<string name="sync_db_acitivity_desc">If you notice inconsistency reagrding the map items, you can re-download the entire map items.
+\nBefore you start downloading, we advise to connect your android device to a charger and have wifi connection available.
+\n\nThis update may take few minutes or more, depending on the size of the update.
+</string>	
+	<string name="sync_db_activity_button">Start Sync</string>	
+	<string name="overlay_item_viewe_like">Like</string>	
+	<string name="overlay_item_viewe_likes_divider"> ● </string>	
+	<string name="overlay_item_viewe_dislike">Dislike</string>	
+	<string name="my_profile_user_info_title">User Information</string>	
+	<string name="my_profile_user_info_title_desc">other users can see this information</string>	
+	<string name="my_profile_user_title">Username</string>	
+	<string name="menu_overlay_title_error">Problem</string>
+	
+</resources>

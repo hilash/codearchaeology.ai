@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShvilIsraelWebapp__lib__dojo__gridx__tests__support__stores__test_jsonRestStore.php - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ed007e; background-color: #1e0010 } /* Error */
+.highlight .esc { color: #f8f8f2 } /* Escape */
+.highlight .g { color: #f8f8f2 } /* Generic */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #ff4689 } /* Operator */
+.highlight .x { color: #f8f8f2 } /* Other */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #ff4689 } /* Generic.Deleted */
+.highlight .ge { color: #f8f8f2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #f8f8f2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #f8f8f2 } /* Generic.Error */
+.highlight .gh { color: #f8f8f2 } /* Generic.Heading */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .go { color: #66d9ef } /* Generic.Output */
+.highlight .gp { color: #ff4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #f8f8f2 } /* Generic.Traceback */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #ff4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #ff4689 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #ff4689 } /* Operator.Word */
+.highlight .pm { color: #f8f8f2 } /* Punctuation.Marker */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style>
+
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<a href="/project/2013-04-04_web-app-version-1/" class="back-link">&laquo; Back to Web App Version 1</a>
+
+<div class="viewer-header">
+    <h1>ShvilIsraelWebapp__lib__dojo__gridx__tests__support__stores__test_jsonRestStore.php</h1>
+    <div class="viewer-meta">
+        <span class="tag">PHP</span>
+        <span>6.6 KB</span>
+        
+    </div>
+</div>
+
+
+<div class="code-container">
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span></pre></div></td><td class="code"><div><pre><span></span><span class="cp">&lt;?php</span>
+<span class="c1">//    require_once(&#39;FirePHPCore/fb.php&#39;);  </span>
+<span class="c1">//    ob_start(); </span>
+
+	<span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Content-Type: &quot;</span> <span class="o">.</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;CONTENT_TYPE&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;application/json&#39;</span> <span class="o">?</span> <span class="s1">&#39;application/json&#39;</span> <span class="o">:</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">));</span>
+
+	<span class="nv">$store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JsonRestStore</span><span class="p">();</span>
+	<span class="k">switch</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;REQUEST_METHOD&quot;</span><span class="p">])</span> <span class="p">{</span>
+		<span class="k">case</span> <span class="s2">&quot;GET&quot;</span><span class="o">:</span>
+<span class="c1">//            fb($_REQUEST, &#39;GET&#39;);</span>
+			<span class="k">echo</span> <span class="nv">$store</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="k">case</span> <span class="s2">&quot;PUT&quot;</span><span class="o">:</span>
+<span class="c1">//            fb($_REQUEST, &#39;PUT&#39;);</span>
+			<span class="nv">$store</span><span class="o">-&gt;</span><span class="na">put</span><span class="p">();</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="k">case</span> <span class="s2">&quot;DELETE&quot;</span><span class="o">:</span>
+<span class="c1">//            fb($_REQUEST, &#39;DELETE&#39;);</span>
+			<span class="nv">$store</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="k">case</span> <span class="s2">&quot;POST&quot;</span><span class="o">:</span>
+<span class="c1">//            fb($_REQUEST, &#39;POST&#39;);</span>
+			<span class="nv">$fh</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s1">&#39;test_jsonRestStore.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">);</span>
+			<span class="k">if</span><span class="p">(</span><span class="nb">array_key_exists</span><span class="p">(</span><span class="s1">&#39;totalsize&#39;</span><span class="p">,</span> <span class="nv">$_REQUEST</span><span class="p">)){</span>
+				<span class="nb">fwrite</span><span class="p">(</span><span class="nv">$fh</span><span class="p">,</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;totalsize&#39;</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="p">);</span>
+			<span class="p">}</span>
+			<span class="nb">fclose</span><span class="p">(</span><span class="nv">$fh</span><span class="p">);</span>
+			<span class="k">break</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">function</span> <span class="nf">compare</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">){</span>
+		<span class="k">if</span><span class="p">(</span><span class="nv">$a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nv">$b</span><span class="p">[</span><span class="mi">0</span><span class="p">]){</span>
+			<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+			<span class="k">return</span> <span class="nv">$a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nv">$b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">JsonRestStore</span><span class="p">{</span>
+	<span class="k">public</span> <span class="nv">$totalCount</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+	<span class="k">public</span> <span class="nv">$jsonArray</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+		<span class="s2">&quot;identifier&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
+	<span class="p">);</span>
+
+	<span class="k">function</span> <span class="fm">__construct</span><span class="p">(){</span>
+		<span class="nv">$fh</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s1">&#39;test_jsonRestStore.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+		<span class="nv">$str</span> <span class="o">=</span> <span class="nb">fgets</span><span class="p">(</span><span class="nv">$fh</span><span class="p">);</span>
+		<span class="k">if</span><span class="p">(</span><span class="nv">$str</span><span class="p">){</span>
+			<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">totalCount</span> <span class="o">=</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nv">$str</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">chars</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">chars</span><span class="p">);</span>
+		<span class="nb">fclose</span><span class="p">(</span><span class="nv">$fh</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="c1">//PipeLine----------------------------------------------------------------------------</span>
+	<span class="k">private</span> <span class="nv">$chars</span> <span class="o">=</span> <span class="s2">&quot;0,1,2,3, ,4,5,6,7, ,8,9,a,b, ,c,d,e,f, ,g,h,i,j, ,k,l,m,n, ,k,o,p,q, ,r,s,t,u, ,v,w,x,y, ,z&quot;</span><span class="p">;</span>
+	<span class="k">private</span> <span class="nv">$seed</span> <span class="o">=</span> <span class="mi">9973</span><span class="p">;</span>
+
+	<span class="k">private</span> <span class="k">function</span> <span class="nf">getNumber</span><span class="p">(</span><span class="nv">$r</span><span class="p">){</span>
+		<span class="nv">$a</span> <span class="o">=</span> <span class="mi">8887</span><span class="p">;</span>
+		<span class="nv">$c</span> <span class="o">=</span> <span class="mi">9643</span><span class="p">;</span>
+		<span class="nv">$m</span> <span class="o">=</span> <span class="mi">8677</span><span class="p">;</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">seed</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$a</span> <span class="o">*</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">seed</span> <span class="o">+</span> <span class="nv">$c</span><span class="p">)</span> <span class="o">%</span> <span class="nv">$m</span><span class="p">;</span>
+		<span class="nv">$res</span> <span class="o">=</span> <span class="nb">floor</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">seed</span> <span class="o">/</span> <span class="nv">$m</span> <span class="o">*</span> <span class="nv">$r</span><span class="p">);</span>
+		<span class="k">return</span> <span class="nv">$res</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">private</span> <span class="k">function</span> <span class="nf">getString</span><span class="p">(){</span>
+		<span class="nv">$len</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getNumber</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+		<span class="nv">$sb</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+		<span class="nv">$cnt</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">chars</span><span class="p">);</span>
+		<span class="k">for</span><span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$len</span><span class="p">;</span> <span class="o">++</span><span class="nv">$i</span><span class="p">){</span>
+			<span class="nv">$sb</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">chars</span><span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getNumber</span><span class="p">(</span><span class="nv">$cnt</span><span class="p">)];</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="nb">implode</span><span class="p">(</span><span class="nv">$sb</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="k">private</span> <span class="k">function</span> <span class="nf">getRow</span><span class="p">(</span><span class="nv">$index</span><span class="p">){</span>
+		<span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+			<span class="s2">&quot;id&quot;</span> <span class="o">=&gt;</span> <span class="nv">$index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+<span class="c1">//            &quot;number&quot; =&gt; $this-&gt;totalCount - $index</span>
+			<span class="s2">&quot;number&quot;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getNumber</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">totalCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+			<span class="s2">&quot;string&quot;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getString</span><span class="p">(),</span>
+			<span class="s2">&quot;order&quot;</span> <span class="o">=&gt;</span> <span class="nv">$index</span> <span class="o">+</span> <span class="mi">1</span>
+		<span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="k">private</span> <span class="k">function</span> <span class="nf">getItems</span><span class="p">(){</span>
+		<span class="nv">$items</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+		<span class="k">for</span><span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">totalCount</span><span class="p">;</span> <span class="o">++</span><span class="nv">$i</span><span class="p">){</span>
+			<span class="nv">$items</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getRow</span><span class="p">(</span><span class="nv">$i</span><span class="p">);</span>
+		<span class="p">}</span>
+<span class="c1">//        fb($items, &#39;getItems&#39;);</span>
+<span class="c1">//        fb(count($items), &#39;getItems&#39;);</span>
+		<span class="k">return</span> <span class="nv">$items</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">private</span> <span class="k">function</span> <span class="nf">query</span><span class="p">(</span><span class="nv">$items</span><span class="p">){</span>
+		<span class="nv">$keys</span> <span class="o">=</span> <span class="nb">array_keys</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+		<span class="nv">$querys</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+		<span class="k">foreach</span><span class="p">(</span><span class="nv">$keys</span> <span class="k">as</span> <span class="nv">$key</span><span class="p">){</span>
+			<span class="k">if</span><span class="p">(</span><span class="nb">array_key_exists</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$_REQUEST</span><span class="p">)){</span>
+				<span class="nv">$q</span> <span class="o">=</span> <span class="nv">$_REQUEST</span><span class="p">[</span><span class="nv">$key</span><span class="p">];</span>
+				<span class="k">if</span> <span class="p">(</span><span class="nb">strlen</span><span class="p">(</span><span class="nv">$q</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nv">$q</span><span class="p">[</span><span class="nb">strlen</span><span class="p">(</span><span class="nv">$q</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;*&quot;</span><span class="p">)</span> <span class="p">{</span>
+					<span class="nv">$q</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$q</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$q</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+				<span class="p">}</span>
+				<span class="nv">$querys</span><span class="p">[</span><span class="nv">$key</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$q</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="k">if</span><span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$querys</span><span class="p">)){</span>
+			<span class="nv">$ret</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+			<span class="k">foreach</span> <span class="p">(</span><span class="nv">$items</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">)</span> <span class="p">{</span>
+				<span class="k">if</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">match</span><span class="p">(</span><span class="nv">$item</span><span class="p">,</span> <span class="nv">$querys</span><span class="p">)){</span>
+					<span class="nv">$ret</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$item</span><span class="p">;</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+			<span class="nv">$items</span> <span class="o">=</span> <span class="nv">$ret</span><span class="p">;</span>
+		<span class="p">}</span>
+<span class="c1">//        fb($items, &#39;query&#39;);</span>
+<span class="c1">//        fb(count($items), &#39;query&#39;);</span>
+		<span class="k">return</span> <span class="nv">$items</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">private</span> <span class="k">function</span> <span class="nf">patch</span><span class="p">(</span><span class="nv">$items</span><span class="p">){</span>
+		<span class="nv">$fh</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s1">&#39;test_jsonRestStore.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+		<span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="nb">feof</span><span class="p">(</span><span class="nv">$fh</span><span class="p">)){</span>
+			<span class="nv">$str</span> <span class="o">=</span> <span class="nb">fgets</span><span class="p">(</span><span class="nv">$fh</span><span class="p">);</span>
+			<span class="nv">$record</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nv">$str</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+			
+			<span class="k">if</span><span class="p">(</span><span class="nv">$record</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;+&#39;</span><span class="p">){</span>
+				<span class="nv">$obj</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$record</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+				<span class="k">for</span><span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$items</span><span class="p">);</span> <span class="o">++</span><span class="nv">$i</span><span class="p">){</span>
+					<span class="k">if</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nv">$record</span><span class="p">[</span><span class="mi">1</span><span class="p">]){</span>
+						<span class="k">foreach</span><span class="p">(</span><span class="nv">$obj</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">){</span>
+							<span class="nv">$items</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="nv">$key</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$value</span><span class="p">;</span>
+						<span class="p">}</span>
+						<span class="k">break</span><span class="p">;</span>
+					<span class="p">}</span>
+				<span class="p">}</span>
+				<span class="k">if</span><span class="p">(</span><span class="nv">$i</span> <span class="o">==</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$items</span><span class="p">)){</span>
+					<span class="nv">$newItem</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+					<span class="k">foreach</span><span class="p">(</span><span class="nv">$obj</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">){</span>
+						<span class="nv">$newItem</span><span class="p">[</span><span class="nv">$key</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$value</span><span class="p">;</span>
+					<span class="p">}</span>
+					<span class="nv">$items</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$newItem</span><span class="p">;</span>
+				<span class="p">}</span>
+			<span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$record</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">){</span>
+				<span class="k">for</span><span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$items</span><span class="p">);</span> <span class="o">++</span><span class="nv">$i</span><span class="p">){</span>
+					<span class="k">if</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nv">$record</span><span class="p">[</span><span class="mi">1</span><span class="p">]){</span>
+						<span class="nb">array_splice</span><span class="p">(</span><span class="nv">$items</span><span class="p">,</span> <span class="nv">$i</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+						<span class="k">break</span><span class="p">;</span>
+					<span class="p">}</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="nb">fclose</span><span class="p">(</span><span class="nv">$fh</span><span class="p">);</span>
+<span class="c1">//        fb($items, &#39;patch&#39;);</span>
+<span class="c1">//        fb(count($items), &#39;patch&#39;);</span>
+		<span class="k">return</span> <span class="nv">$items</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">private</span> <span class="k">function</span> <span class="nf">sort</span><span class="p">(</span><span class="nv">$items</span><span class="p">){</span>
+		<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;QUERY_STRING&#39;</span><span class="p">];</span>
+		<span class="nv">$idx</span> <span class="o">=</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$query</span><span class="p">,</span> <span class="s1">&#39;sort(&#39;</span><span class="p">);</span>
+		<span class="k">if</span><span class="p">(</span><span class="nv">$idx</span> <span class="o">!==</span> <span class="k">false</span><span class="p">){</span>
+			<span class="nv">$query</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$query</span><span class="p">,</span> <span class="nv">$idx</span> <span class="o">+</span> <span class="mi">5</span><span class="p">);</span>
+			<span class="nv">$idx</span> <span class="o">=</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$query</span><span class="p">,</span> <span class="s1">&#39;)&#39;</span><span class="p">);</span>
+			<span class="k">if</span><span class="p">(</span><span class="nv">$idx</span> <span class="o">!==</span> <span class="k">false</span><span class="p">){</span>
+				<span class="nv">$toSort</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+				<span class="nv">$dict</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+				<span class="nv">$query</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$query</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$idx</span><span class="p">);</span>
+				<span class="nv">$attrs</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
+				<span class="nv">$cols</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+				<span class="nv">$args</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+				<span class="k">foreach</span><span class="p">(</span><span class="nv">$items</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">){</span>
+					<span class="nv">$dict</span><span class="p">[</span><span class="nv">$item</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="nv">$item</span><span class="p">;</span>
+				<span class="p">}</span>
+				<span class="k">foreach</span><span class="p">(</span><span class="nv">$attrs</span> <span class="k">as</span> <span class="nv">$attr</span><span class="p">){</span>
+					<span class="nv">$desc</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$attr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">;</span>
+					<span class="k">if</span><span class="p">(</span><span class="nv">$desc</span> <span class="o">||</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$attr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;+&#39;</span><span class="p">){</span>
+						<span class="nv">$attr</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$attr</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+					<span class="p">}</span>
+					<span class="nv">$cols</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$attr</span><span class="p">;</span>
+					<span class="nv">$a</span> <span class="o">=</span> <span class="s1">&#39;attrname&#39;</span><span class="o">.</span><span class="nv">$attr</span><span class="p">;</span>
+					<span class="nv">$$a</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+					<span class="k">foreach</span><span class="p">(</span><span class="nv">$items</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">){</span>
+						<span class="nb">array_push</span><span class="p">(</span><span class="nv">$$a</span><span class="p">,</span> <span class="nv">$item</span><span class="p">[</span><span class="nv">$attr</span><span class="p">]);</span>
+					<span class="p">}</span>
+					<span class="nv">$toSort</span><span class="p">[]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nv">$$a</span><span class="p">;</span>
+					<span class="nv">$args</span><span class="p">[]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nv">$$a</span><span class="p">;</span>
+					<span class="nv">$args</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$desc</span> <span class="o">?</span> <span class="nx">SORT_DESC</span> <span class="o">:</span> <span class="nx">SORT_ASC</span><span class="p">;</span>
+					<span class="nv">$args</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$attr</span> <span class="o">==</span> <span class="s1">&#39;string&#39;</span> <span class="o">?</span> <span class="nx">SORT_STRING</span> <span class="o">:</span> <span class="nx">SORT_NUMERIC</span><span class="p">;</span>
+				<span class="p">}</span>
+				<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nb">in_array</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nv">$cols</span><span class="p">)){</span>
+					<span class="nv">$cols</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">&#39;id&#39;</span><span class="p">;</span>
+					<span class="nv">$arr</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+					<span class="k">foreach</span><span class="p">(</span><span class="nv">$items</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">){</span>
+						<span class="nv">$arr</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$item</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">];</span>
+					<span class="p">}</span>
+					<span class="nv">$toSort</span><span class="p">[]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nv">$arr</span><span class="p">;</span>
+					<span class="nv">$args</span><span class="p">[]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nv">$arr</span><span class="p">;</span>
+					<span class="nv">$args</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">SORT_ASC</span><span class="p">;</span>
+					<span class="nv">$args</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">SORT_NUMERIC</span><span class="p">;</span>
+				<span class="p">}</span>
+				<span class="nb">call_user_func_array</span><span class="p">(</span><span class="s1">&#39;array_multisort&#39;</span><span class="p">,</span> <span class="nv">$args</span><span class="p">);</span>
+				<span class="nv">$result</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+				<span class="k">foreach</span><span class="p">(</span><span class="nv">$toSort</span><span class="p">[</span><span class="nb">array_search</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nv">$cols</span><span class="p">)]</span> <span class="k">as</span> <span class="nv">$i</span><span class="p">){</span>
+					<span class="nv">$result</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$dict</span><span class="p">[</span><span class="nv">$i</span><span class="p">];</span>
+				<span class="p">}</span>
+				<span class="nv">$items</span> <span class="o">=</span> <span class="nv">$result</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+<span class="c1">//        fb($items, &#39;sort&#39;);</span>
+<span class="c1">//        fb(count($items), &#39;sort&#39;);</span>
+		<span class="k">return</span> <span class="nv">$items</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">private</span> <span class="k">function</span> <span class="nf">slice</span><span class="p">(</span><span class="nv">$items</span><span class="p">){</span>
+		<span class="k">if</span><span class="p">(</span><span class="nb">array_key_exists</span><span class="p">(</span><span class="s2">&quot;HTTP_RANGE&quot;</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">)){</span>
+			<span class="nv">$range</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;HTTP_RANGE&quot;</span><span class="p">];</span>
+			<span class="nv">$range</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$range</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+			<span class="nv">$range</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="nv">$range</span><span class="p">);</span>
+			<span class="nv">$start</span> <span class="o">=</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nv">$range</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+			<span class="nv">$end</span> <span class="o">=</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nv">$range</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+			<span class="nv">$items</span> <span class="o">=</span> <span class="nb">array_slice</span><span class="p">(</span><span class="nv">$items</span><span class="p">,</span> <span class="nv">$start</span><span class="p">);</span>
+			<span class="k">if</span><span class="p">(</span><span class="nv">$end</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+				<span class="nv">$items</span> <span class="o">=</span> <span class="nb">array_slice</span><span class="p">(</span><span class="nv">$items</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$end</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="nv">$start</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+<span class="c1">//        fb($items, &#39;slice&#39;);</span>
+<span class="c1">//        fb(count($items), &#39;slice&#39;);</span>
+		<span class="k">return</span> <span class="nv">$items</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">public</span> <span class="k">function</span> <span class="nf">addTotalCount</span><span class="p">(</span><span class="nv">$items</span><span class="p">){</span>
+		<span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Content-Range: /&quot;</span><span class="o">.</span><span class="nb">count</span><span class="p">(</span><span class="nv">$items</span><span class="p">));</span>
+		<span class="k">return</span> <span class="nv">$items</span><span class="p">;</span>
+	<span class="p">}</span>
+
+
+	<span class="c1">//Public-------------------------------------------------------------------------------</span>
+	<span class="k">public</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(){</span>
+		<span class="k">return</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">slice</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addTotalCount</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sort</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">patch</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getItems</span><span class="p">()))))));</span>
+	<span class="p">}</span>
+
+	<span class="k">public</span> <span class="k">function</span> <span class="nf">put</span><span class="p">(){</span>
+		<span class="nv">$id</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;PATH_INFO&#39;</span><span class="p">];</span>
+		<span class="nv">$id</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$id</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+		<span class="nv">$contents</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">&#39;php://input&#39;</span><span class="p">);</span>
+		<span class="nv">$fh</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s1">&#39;test_jsonRestStore.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">);</span>
+		<span class="nb">fwrite</span><span class="p">(</span><span class="nv">$fh</span><span class="p">,</span> <span class="s1">&#39;+ &#39;</span><span class="o">.</span><span class="nv">$id</span><span class="o">.</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="nv">$contents</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="p">);</span>
+		<span class="nb">fclose</span><span class="p">(</span><span class="nv">$fh</span><span class="p">);</span>
+<span class="c1">//        fb($contents, &#39;put item&#39;);</span>
+	<span class="p">}</span>
+
+	<span class="k">public</span> <span class="k">function</span> <span class="nf">delete</span><span class="p">(){</span>
+		<span class="nv">$id</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;PATH_INFO&#39;</span><span class="p">];</span>
+<span class="c1">//        fb($_SERVER, &#39;delete item&#39;);</span>
+		<span class="nv">$id</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$id</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+		<span class="nv">$fh</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s1">&#39;test_jsonRestStore.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">);</span>
+		<span class="nb">fwrite</span><span class="p">(</span><span class="nv">$fh</span><span class="p">,</span> <span class="s1">&#39;- &#39;</span><span class="o">.</span><span class="nv">$id</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="p">);</span>
+		<span class="nb">fclose</span><span class="p">(</span><span class="nv">$fh</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="c1">//Util------------------------------------------------------------------------</span>
+	<span class="k">public</span> <span class="k">function</span> <span class="nf">match</span><span class="p">(</span><span class="nv">$item</span><span class="p">,</span> <span class="nv">$querys</span><span class="p">){</span>
+		<span class="k">foreach</span><span class="p">(</span><span class="nb">array_keys</span><span class="p">(</span><span class="nv">$querys</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$key</span><span class="p">){</span>
+			<span class="k">if</span><span class="p">(</span><span class="nv">$querys</span><span class="p">[</span><span class="nv">$key</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nb">strpos</span><span class="p">(</span><span class="nb">strtolower</span><span class="p">(</span><span class="nv">$item</span><span class="p">[</span><span class="nv">$key</span><span class="p">]),</span> <span class="nb">strtolower</span><span class="p">(</span><span class="nv">$querys</span><span class="p">[</span><span class="nv">$key</span><span class="p">]))</span> <span class="o">===</span> <span class="k">false</span><span class="p">){</span>
+				<span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre></div></td></tr></table></div>
+
+</div>
+
+
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+
+
+</body>
+</html>

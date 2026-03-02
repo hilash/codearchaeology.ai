@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Recorder">
+</Property><Property Name="Solution File" Value="C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder.sln">
+</Property><Property Name="User Options File" Value="C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Recorder.suo">
+</Property><Property Name="Date" Value="יום ראשון 24 אפריל 2011">
+</Property><Property Name="Time" Value="11:40">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Recorder.sln" Description="File successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder.sln">
+</Event><Event ErrorLevel="0" Project="" Source="Recorder.suo" Description="File successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder.suo">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Recorder.csproj" Description="Project file successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder\Recorder.csproj">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Recorder.csproj.user" Description="Project user file successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder\Recorder.csproj.user">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\DFT.cs" Description="File successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder\DFT.cs">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Form1.cs" Description="File successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder\Form1.cs">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Form1.Designer.cs" Description="File successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder\Form1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Multimedia.cs" Description="File successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder\Multimedia.cs">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Program.cs" Description="File successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder\Program.cs">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Properties\Resources.Designer.cs" Description="File successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Properties\Settings.Designer.cs" Description="File successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Properties\Settings.settings" Description="File successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Resources\Recorder picture.jpg" Description="File successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder\Resources\Recorder picture.jpg">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Form1.resx" Description="File successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder\Form1.resx">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Properties\Resources.resx" Description="File successfully backed up as C:\Users\Purple Fire\Downloads\רקורדר משופץ - עותק שני ליוני\רקורדר משופץ - עותק שני ליוני\Recorder\Backup\Recorder\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Recorder.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Recorder" Source="Recorder\Recorder.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Recorder.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Recorder.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Recorder" Source="Recorder\Recorder.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

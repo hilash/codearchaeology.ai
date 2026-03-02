@@ -1,0 +1,10 @@
+D:\Hila\DAL\DAL\bin\Release\DAL.exe
+D:\Hila\DAL\DAL\bin\Release\DAL.pdb
+D:\Hila\DAL\DAL\obj\Release\ResolveAssemblyReference.cache
+D:\Hila\DAL\DAL\obj\Release\DAL.exe
+D:\Hila\DAL\DAL\obj\Release\DAL.pdb
+C:\Hila\DAL\DAL\bin\Release\DAL.pdb
+C:\Hila\DAL\DAL\obj\Release\ResolveAssemblyReference.cache
+C:\Hila\DAL\DAL\obj\Release\DAL.pdb
+C:\Hila\DAL\DAL\bin\Release\DAL.dll
+C:\Hila\DAL\DAL\obj\Release\DAL.dll

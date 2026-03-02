@@ -1,0 +1,236 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Drawing;
+using System.Threading;
+using Notes;
+
+namespace Recorder
+{
+    /// <summary>
+    /// Given the ABC file with notes, while playing in the recorder,
+    /// the class checks whether the note that has been play is the correct one,
+    /// and display it. In other words: Like GuitarHero, but for Recorder.
+    /// 
+    /// the image is updating only when new notes are given,
+    /// so it depends in the incoming rate of the notes.
+    /// 
+    /// </summary>
+    public class RecorderHero
+    {
+        /// <summary>
+        /// The music data, notes to be played
+        /// </summary>
+        private RecordingData recodingData;
+
+        /// <summary>
+        /// color of each note - black (noraml), red (error), green (correct)
+        /// </summary>
+        private List<Color> NotesColors;
+
+        /// <summary>
+        /// Responsible for creating the music sheet graphcis
+        /// </summary>
+        private NoteDrawer Drawer;
+
+        /// <summary>
+        /// The note that is currently playing
+        /// </summary>
+        private int CurrentNoteIndex = -1;
+
+        /// <summary>
+        /// The index of the first note in the current music sheet
+        /// </summary>
+        private int FirstNoteInPage = 0;
+
+        /// <summary>
+        /// The number of notes that can be displayed in one music sheet page
+        /// </summary>
+        private int NotesCountPerPage = 0;
+
+        /// <summary>
+        /// The time the recording start
+        /// </summary>
+        private int StartTime = 0;
+
+        /// <summary>
+        /// Decide whether to update the notes ot not.
+        /// </summary>
+        private bool IsPlaying = false;
+
+
+        private Thread PlayNotesThread = null;
+
+        bool ClearNeeded = false;
+
+        /// <summary>
+        /// Create a music sheet with the given notes
+        /// </summary>
+        /// <param name="graphics">Where to paint the music sheet</param>
+        /// <param name="abcFilePath">The notes to be played</param>
+        public RecorderHero(Graphics graphics, string abcFilePath)
+        {
+            Drawer = new NoteDrawer();
+
+            // convert to notes
+            recodingData = AbcParser.AbcToNotes(abcFilePath);
+
+            // Creating a new music sheet, with first notes in it
+             Restart(graphics);
+        }
+
+        /// <summary>
+        /// restart the RecorderHero - notes index and music sheet.
+        /// </summary>
+        /// <param name="graphics"></param>
+        public void Restart(Graphics graphics)
+        {
+            lock (this)
+            {
+                // Creating a new music sheet, with first notes in it
+                CurrentNoteIndex = 0;
+                FirstNoteInPage = 0;
+                NotesCountPerPage = 0;
+                StartTime = System.Environment.TickCount;
+                IsPlaying = false;
+
+                // Set initial notes colors
+                NotesColors = new List<Color>(recodingData.Notes.Count);
+                for (int i = 0; i < recodingData.Notes.Count; i++)
+                {
+                    NotesColors.Add(Color.Black);
+                }
+
+                // Create new Music Sheet - get number of notes in current music sheet
+                Update(graphics);
+
+                Thread PlayNotesThread = new Thread(new ThreadStart(PlayNotes));
+                PlayNotesThread.Start();
+            }
+        }
+
+        /// <summary>
+        /// Given the note that is currently played, Update the music sheet
+        /// </summary>
+        /// <param name="graphics"></param>
+        /// <param name="note"></param>
+        /// <returns> the note that should be played right now</returns>
+        public Note UpdateNote(Graphics graphics, Note note)
+        {
+            lock (this)
+            {
+                if (0 <= CurrentNoteIndex)
+                {
+                    // clear music sheet
+                    if (ClearNeeded)
+                    {
+                        Drawer.Clear(graphics, Color.White, new SolidBrush(Color.Black));
+                        ClearNeeded = false;
+                    }
+
+                    if (CurrentNoteIndex == -1)
+                    {
+                        //for (int i = 0; i < NotesColors.Count; i++)
+                        {
+                            NotesColors[NotesColors.Count - 1] = Color.Black;
+                        }
+                    }
+
+                    if (note.MIDI == recodingData.Notes[CurrentNoteIndex].MIDI)
+                    {
+                        NotesColors[CurrentNoteIndex] = Color.Green;
+                    }
+                    else
+                    {
+                        NotesColors[CurrentNoteIndex] = Color.Red;
+                    }
+
+                    Update(graphics);
+                    if (-1 != CurrentNoteIndex)
+                    {
+                        return recodingData.Notes[CurrentNoteIndex];
+                    }
+                   
+                }
+
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// When resize, or need to change note's color, redraw the music sheet
+        /// </summary>
+        /// <param name="graphics"></param>
+        public void Update(Graphics graphics)
+        {
+            lock (this)
+            {
+                // Create new Music Sheet - get number of notes in current music sheet
+                NotesCountPerPage = Drawer.DrawNotes(graphics,
+                    Color.White,
+                    new SolidBrush(Color.Black),
+                    null,
+                    null);
+
+                // give that number of notes -TODO: FIX THIS STATEMENT LIMIT ERROR
+                int min = Math.Min(NotesCountPerPage, recodingData.Notes.Count);
+                if (FirstNoteInPage < min)
+                {
+                    NotesCountPerPage = Drawer.DrawNotes(graphics,
+                        Color.White,
+                        new SolidBrush(Color.Black),
+                        recodingData.Notes.GetRange(FirstNoteInPage, min),
+                        NotesColors.GetRange(FirstNoteInPage, min));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Notify the RecorderHero that the user has 
+        /// </summary>
+        /// <param name="graphics"></param>
+        public void Play(Graphics graphics)
+        {
+            IsPlaying = true;
+            StartTime = System.Environment.TickCount;
+
+            // Update graphics
+            Update(graphics);
+        }
+
+        /// <summary>
+        /// This function runs in a different thread, and loop over the notes,
+        /// (based on their duration), and updates the CurrentNoteIndex 
+        /// </summary>
+        private void PlayNotes()
+        {
+            int duration = 0;
+            int noteIndex = 0;
+
+            for (int i = 0; i < recodingData.Notes.Count; i++)
+            {
+                lock (this)
+                {
+                    CurrentNoteIndex = i;
+                    if (FirstNoteInPage + NotesCountPerPage <= i)
+                    {
+                        FirstNoteInPage = i;
+                        ClearNeeded = true;
+                    }
+                    duration = recodingData.Notes[CurrentNoteIndex].Duration * 2;
+                    noteIndex = CurrentNoteIndex;
+                }
+                
+               
+            }
+
+            Thread.Sleep(duration);
+            lock (this)
+            {
+                NotesColors[noteIndex] = Color.Black;
+                CurrentNoteIndex = -1;
+            }
+        }
+    }
+}

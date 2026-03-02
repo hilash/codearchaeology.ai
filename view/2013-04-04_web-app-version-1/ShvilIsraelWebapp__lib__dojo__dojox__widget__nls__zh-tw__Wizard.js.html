@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShvilIsraelWebapp__lib__dojo__dojox__widget__nls__zh-tw__Wizard.js - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ed007e; background-color: #1e0010 } /* Error */
+.highlight .esc { color: #f8f8f2 } /* Escape */
+.highlight .g { color: #f8f8f2 } /* Generic */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #ff4689 } /* Operator */
+.highlight .x { color: #f8f8f2 } /* Other */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #ff4689 } /* Generic.Deleted */
+.highlight .ge { color: #f8f8f2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #f8f8f2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #f8f8f2 } /* Generic.Error */
+.highlight .gh { color: #f8f8f2 } /* Generic.Heading */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .go { color: #66d9ef } /* Generic.Output */
+.highlight .gp { color: #ff4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #f8f8f2 } /* Generic.Traceback */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #ff4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #ff4689 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #ff4689 } /* Operator.Word */
+.highlight .pm { color: #f8f8f2 } /* Punctuation.Marker */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style>
+
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<a href="/project/2013-04-04_web-app-version-1/" class="back-link">&laquo; Back to Web App Version 1</a>
+
+<div class="viewer-header">
+    <h1>ShvilIsraelWebapp__lib__dojo__dojox__widget__nls__zh-tw__Wizard.js</h1>
+    <div class="viewer-meta">
+        <span class="tag">JavaScript</span>
+        <span>0.1 KB</span>
+        
+        <button id="run-btn" class="gmail-action-btn client-runnable" onclick="runCode()">&#9654; Run Code</button>
+        
+    </div>
+</div>
+
+
+<div class="code-container">
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><span class="c1">//&gt;&gt;built</span>
+<span class="nx">define</span><span class="p">(</span><span class="s2">&quot;dojox/widget/nls/zh-tw/Wizard&quot;</span><span class="p">,({</span><span class="nx">next</span><span class="o">:</span><span class="s2">&quot;下一步&quot;</span><span class="p">,</span><span class="nx">previous</span><span class="o">:</span><span class="s2">&quot;上一步&quot;</span><span class="p">,</span><span class="nx">done</span><span class="o">:</span><span class="s2">&quot;完成&quot;</span><span class="p">}));</span>
+</pre></div></td></tr></table></div>
+
+</div>
+
+
+
+<div id="output-panel" class="output-panel client-runnable" style="display: none;">
+    <h3>Output</h3>
+    <div id="output-status" class="output-status"></div>
+    <pre id="output-stdout" class="output-stdout"></pre>
+    <pre id="output-stderr" class="output-stderr"></pre>
+</div>
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+
+<script>
+var _viewerFilename = "ShvilIsraelWebapp__lib__dojo__dojox__widget__nls__zh-tw__Wizard.js";
+var _viewerProject = "2013-04-04_web-app-version-1";
+var _viewerExt = _viewerFilename.substring(_viewerFilename.lastIndexOf('.')).toLowerCase();
+var _isClientRunnable = ['.js', '.html', '.htm'].indexOf(_viewerExt) !== -1;
+
+function runCode() {
+    var btn = document.getElementById('run-btn');
+    var panel = document.getElementById('output-panel');
+    var status = document.getElementById('output-status');
+    var stdout = document.getElementById('output-stdout');
+    var stderr = document.getElementById('output-stderr');
+
+    btn.disabled = true;
+    btn.textContent = 'Running...';
+    panel.style.display = 'block';
+    status.textContent = 'Executing...';
+    status.className = 'output-status running';
+    stdout.textContent = '';
+    stderr.textContent = '';
+    stderr.style.display = 'none';
+
+    if (_viewerExt === '.js') {
+        // Client-side JS execution in sandboxed iframe
+        var codeEl = document.querySelector('.code-container .highlight pre');
+        var code = codeEl ? codeEl.textContent : '';
+        var logs = [];
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('sandbox', 'allow-scripts');
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+
+        function onMsg(e) {
+            if (e.source !== iframe.contentWindow) return;
+            if (e.data === '__DONE__') {
+                clearTimeout(timeout);
+                window.removeEventListener('message', onMsg);
+                document.body.removeChild(iframe);
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                status.textContent = 'Success';
+                status.className = 'output-status success';
+                stdout.textContent = logs.join('\n') || '(no output)';
+                return;
+            }
+            logs.push(e.data);
+        }
+        window.addEventListener('message', onMsg);
+
+        var wrappedCode = '(' + function() {
+            var _log = [];
+            console.log = function() {
+                var args = Array.prototype.slice.call(arguments);
+                var line = args.map(function(a) {
+                    return typeof a === 'object' ? JSON.stringify(a) : String(a);
+                }).join(' ');
+                _log.push(line);
+                parent.postMessage(line, '*');
+            };
+            console.error = console.warn = console.info = console.log;
+            try {
+                /* __CODE__ */
+            } catch(e) {
+                parent.postMessage('Error: ' + e.message, '*');
+            }
+            parent.postMessage('__DONE__', '*');
+        }.toString().replace('/* __CODE__ */', code) + ')()';
+
+        iframe.srcdoc = '<html><body class="static-mode"><script>' + wrappedCode + '<\/script></body></html>';
+
+        var timeout = setTimeout(function() {
+            window.removeEventListener('message', onMsg);
+            if (iframe.parentNode) document.body.removeChild(iframe);
+            btn.disabled = false;
+            btn.textContent = '\u25B6 Run Code';
+            status.textContent = 'Timed out (5s)';
+            status.className = 'output-status error';
+            stdout.textContent = logs.join('\n') + '\n(timed out after 5s)';
+        }, 5000);
+
+    } else if (_viewerExt === '.html' || _viewerExt === '.htm') {
+        // Client-side HTML rendering in iframe
+        status.textContent = '';
+        status.className = 'output-status success';
+        stdout.textContent = '';
+        var iframe = document.createElement('iframe');
+        iframe.className = 'run-iframe';
+        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+        iframe.src = '/raw/' + encodeURIComponent(_viewerProject) + '/' + encodeURIComponent(_viewerFilename);
+        stdout.style.display = 'none';
+        panel.appendChild(iframe);
+        btn.disabled = false;
+        btn.textContent = '\u25B6 Run Code';
+
+    } else {
+        // Server-side execution (Python, C, C++)
+        fetch('/run/' + encodeURIComponent(_viewerProject) + '/' + encodeURIComponent(_viewerFilename), { method: 'POST' })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                if (data.success) {
+                    status.textContent = 'Success (exit code: 0)';
+                    status.className = 'output-status success';
+                } else {
+                    status.textContent = 'Failed (exit code: ' + data.return_code + ')';
+                    status.className = 'output-status error';
+                }
+                stdout.textContent = data.stdout || '(no output)';
+                if (data.stderr) {
+                    stderr.textContent = data.stderr;
+                    stderr.style.display = 'block';
+                }
+            })
+            .catch(function(err) {
+                btn.disabled = false;
+                btn.textContent = '\u25B6 Run Code';
+                status.textContent = 'Error: ' + err.message;
+                status.className = 'output-status error';
+            });
+    }
+}
+</script>
+
+
+</body>
+</html>

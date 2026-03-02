@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/diary_fragment_sdcard_problem"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center"
+        android:background="#FF6600"
+        android:clickable="true"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:onClick="myClickMethod"
+        android:text="problem with SD card "
+        android:textColor="#ffffff"
+        android:textStyle="bold|italic"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@id/android:list"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.50" 
+        android:divider="@null"
+		android:dividerHeight="0dp"
+		android:background="#FFB3C3CD">
+
+    </ListView>
+
+    <View
+    	android:layout_width="fill_parent"
+    	android:layout_height="4dp"
+    	android:background="#FFFFBB33">
+	</View>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#cccccc"
+        android:layout_gravity="bottom" >
+
+        <ImageButton
+            android:id="@+id/cameraButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:onClick="myClickMethod"
+            android:background="@null"
+            android:src="@android:drawable/ic_menu_camera" />
+
+        <ImageButton
+            android:id="@+id/recordButton"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.33"
+            android:onClick="myClickMethod"
+            android:background="@null"
+            android:src="@android:drawable/ic_btn_speak_now" />
+
+        <ImageButton
+            android:id="@+id/writeButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:onClick="myClickMethod"
+            android:background="@null"
+            android:src="@android:drawable/ic_menu_edit" />
+
+        </LinearLayout>
+
+    </LinearLayout>    
+    

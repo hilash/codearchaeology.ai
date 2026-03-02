@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using localhost;
+
+public partial class Song : System.Web.UI.Page
+{
+    int ID1;
+    SongPage SP;
+    string tmp;
+    
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
+            ID1 = int.Parse(Request.QueryString["ID"]);
+        }
+        catch (Exception Ex)
+        {
+            Response.Write(Ex.ToString());
+        }
+        Service S = new Service();
+        SP = new SongPage();
+        SP = S.SongData(ID1);
+        SP_ID.Text = SP.Song_ID.ToString();
+        SP_Song_Name.Text = SP.Song_Name;
+        SP_Artist_Name.Text = SP.Artist_Name;
+        SP_Artist_ID.Text = SP.Artist_ID.ToString();
+        SP_Album_Name.Text = SP.Album_Name;
+        SP_Album_ID.Text = SP.Album_ID.ToString();
+        SP_Lyrics.Text = SP.Song_Lyrics;
+        Response.Write(SP.Song_Clip);
+        movie.Attributes["value"] = @"http://www.youtube.com/v/"+SP.Song_Clip;
+        embedSrc.Attributes["src"]=@"http://www.youtube.com/v/"+SP.Song_Clip;
+        
+        
+        //SP.Song_Clip = "hila";
+        SP_Genre.Text = SP.Song_Genre;
+        SP_Pic.ImageUrl = SP.Song_Pic;
+        SP_Lenght.Text = SP.Song_Length.ToString();
+        SP_Song_Pop.Text = SP.Song_Pop.ToString();
+    }
+}

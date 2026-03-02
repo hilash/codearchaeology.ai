@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2011-09-29_notey - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<!-- Gmail email action bar -->
+<div class="email-action-bar">
+    <a href="/" class="back-link">&laquo; Back to Inbox</a>
+    <div class="email-action-buttons">
+        <a href="/project/2011-12-10_kapara-on-you/" class="gmail-action-btn" id="prev-btn">&lsaquo; Newer</a>
+        <a href="/project/2011-09-27_recorder-newds/" class="gmail-action-btn" id="next-btn">Older &rsaquo;</a>
+        <form method="post" action="/delete/2011-09-29_notey" onsubmit="return confirm('Delete this project permanently?');" style="display:inline;">
+            <button type="submit" class="gmail-action-btn" style="color:var(--gmail-red);">Delete</button>
+        </form>
+    </div>
+</div>
+
+<!-- Subject line (like Gmail email subject) -->
+<div class="email-subject-bar">
+    <h1 class="email-subject">Notey</h1>
+    
+    
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    
+    
+        
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+    
+    
+    <div class="email-labels">
+        
+        <span class="email-label">ABC notation</span>
+        
+        <span class="email-label">C#</span>
+        
+        <span class="email-label">music parsing</span>
+        
+        <span class="email-label">Fourier transform</span>
+        
+        <span class="email-label">Windows Forms</span>
+        
+        <span class="email-label">Executable</span>
+        
+        <span class="email-label">XML</span>
+        
+    </div>
+    
+</div>
+
+<!-- Sender info (like Gmail email header) -->
+<div class="email-message">
+    <div class="email-sender-bar">
+        <div class="email-sender-left">
+            <span class="email-sender-avatar">H</span>
+            <div class="email-sender-info">
+                <div class="email-sender-name">
+                    <strong>Hila Shmuel &lt;&gt;</strong>
+                    
+                </div>
+                <div class="email-sender-subject">
+                    Notey
+                </div>
+            </div>
+        </div>
+        <div class="email-date">
+            Thu, 29 Sep 2011 20:08:28 +0300
+        </div>
+    </div>
+
+    <!-- Message body -->
+    <div class="email-message-body">
+        
+            The code mainly consists of a parser, specifically the AbcParser class, which reads ABC formatted music files, processes the musical notes and chords, and stores them in a structured format. The parser handles various aspects of the ABC file, including headers and note parsing, while also providing methods for handling configurations and exceptions related to Fourier transformations. The software also incorporates a user interface for managing configurations critical for processing the ABC files and includes information about the application and its creator.
+        
+    </div>
+
+    
+
+    <!-- Attachments (files styled like Gmail attachment cards) -->
+    
+    <div class="email-attachments">
+        <div class="email-attachments-header">
+            <span class="attachment-icon">&#128206;</span> 114 attachments
+        </div>
+        <div class="email-attachment-list">
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__AbcParser.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__AbcParser.cs</div>
+                        <div class="attachment-card-size">8.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__AbcParser.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__AboutForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__AboutForm.Designer.cs</div>
+                        <div class="attachment-card-size">5.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__AboutForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__AboutForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__AboutForm.cs</div>
+                        <div class="attachment-card-size">0.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__AboutForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Analysis.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Analysis.cs</div>
+                        <div class="attachment-card-size">8.8 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Analysis.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__ConfigurationForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__ConfigurationForm.Designer.cs</div>
+                        <div class="attachment-card-size">17.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__ConfigurationForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__ConfigurationForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__ConfigurationForm.cs</div>
+                        <div class="attachment-card-size">2.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__ConfigurationForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Delegates.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Delegates.cs</div>
+                        <div class="attachment-card-size">2.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Delegates.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__FilesHandler.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__FilesHandler.cs</div>
+                        <div class="attachment-card-size">6.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__FilesHandler.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__FingeringChart.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__FingeringChart.cs</div>
+                        <div class="attachment-card-size">1.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__FingeringChart.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__FingeringsPicture.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__FingeringsPicture.cs</div>
+                        <div class="attachment-card-size">5.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__FingeringsPicture.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__IPlayRecord.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__IPlayRecord.cs</div>
+                        <div class="attachment-card-size">7.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__IPlayRecord.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__MCI.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__MCI.cs</div>
+                        <div class="attachment-card-size">8.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__MCI.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__MainForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__MainForm.Designer.cs</div>
+                        <div class="attachment-card-size">64.8 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__MainForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__MainForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__MainForm.cs</div>
+                        <div class="attachment-card-size">36.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__MainForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Memory.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Memory.cs</div>
+                        <div class="attachment-card-size">3.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Memory.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__NoteDrawer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__NoteDrawer.cs</div>
+                        <div class="attachment-card-size">17.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__NoteDrawer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__NotesDB.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__NotesDB.cs</div>
+                        <div class="attachment-card-size">9.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__NotesDB.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__NotesDetector.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__NotesDetector.cs</div>
+                        <div class="attachment-card-size">3.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__NotesDetector.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Program.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Program.cs</div>
+                        <div class="attachment-card-size">0.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Program.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Properties__Resources.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Properties__Resources.Designer.cs</div>
+                        <div class="attachment-card-size">9.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Properties__Resources.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Properties__Settings.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Properties__Settings.Designer.cs</div>
+                        <div class="attachment-card-size">2.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Properties__Settings.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__RecorderHero.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__RecorderHero.cs</div>
+                        <div class="attachment-card-size">10.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__RecorderHero.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__AssemblyInfo.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__AssemblyInfo.cs</div>
+                        <div class="attachment-card-size">1.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__AssemblyInfo.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__SavingRecordForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__SavingRecordForm.Designer.cs</div>
+                        <div class="attachment-card-size">13.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__SavingRecordForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__SavingRecordForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__SavingRecordForm.cs</div>
+                        <div class="attachment-card-size">8.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__SavingRecordForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__WaveGraphics.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__WaveGraphics.cs</div>
+                        <div class="attachment-card-size">2.8 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__WaveGraphics.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__WaveIn.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__WaveIn.cs</div>
+                        <div class="attachment-card-size">13.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__WaveIn.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Win32Waveform.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Win32Waveform.cs</div>
+                        <div class="attachment-card-size">6.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Win32Waveform.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__bin__Release__Recorder.XML">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__bin__Release__Recorder.XML</div>
+                        <div class="attachment-card-size">41.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__bin__Release__Recorder.XML.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">XML</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__configuration.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__configuration.cs</div>
+                        <div class="attachment-card-size">2.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__configuration.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__AbcParser.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__AbcParser.cs</div>
+                        <div class="attachment-card-size">8.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__AbcParser.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__AboutForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__AboutForm.Designer.cs</div>
+                        <div class="attachment-card-size">5.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__AboutForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__AboutForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__AboutForm.cs</div>
+                        <div class="attachment-card-size">0.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__AboutForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__AboutForm.resx">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__AboutForm.resx</div>
+                        <div class="attachment-card-size">169.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__AboutForm.resx.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">resx</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Analysis.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Analysis.cs</div>
+                        <div class="attachment-card-size">8.8 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Analysis.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__App.config">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__App.config</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__App.config.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">config</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__ConfigurationForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__ConfigurationForm.Designer.cs</div>
+                        <div class="attachment-card-size">17.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__ConfigurationForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__ConfigurationForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__ConfigurationForm.cs</div>
+                        <div class="attachment-card-size">2.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__ConfigurationForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__ConfigurationForm.resx">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__ConfigurationForm.resx</div>
+                        <div class="attachment-card-size">6.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__ConfigurationForm.resx.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">resx</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Delegates.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Delegates.cs</div>
+                        <div class="attachment-card-size">3.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Delegates.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__FilesHandler.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__FilesHandler.cs</div>
+                        <div class="attachment-card-size">6.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__FilesHandler.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__FingeringChart.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__FingeringChart.cs</div>
+                        <div class="attachment-card-size">1.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__FingeringChart.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__FingeringsPicture.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__FingeringsPicture.cs</div>
+                        <div class="attachment-card-size">5.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__FingeringsPicture.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__IPlayRecord.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__IPlayRecord.cs</div>
+                        <div class="attachment-card-size">7.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__IPlayRecord.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__MCI.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__MCI.cs</div>
+                        <div class="attachment-card-size">8.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__MCI.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__MainForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__MainForm.Designer.cs</div>
+                        <div class="attachment-card-size">64.8 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__MainForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__MainForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__MainForm.cs</div>
+                        <div class="attachment-card-size">36.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__MainForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__MainForm.resx">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__MainForm.resx</div>
+                        <div class="attachment-card-size">175.8 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__MainForm.resx.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">resx</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Memory.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Memory.cs</div>
+                        <div class="attachment-card-size">3.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Memory.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__NoteDrawer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__NoteDrawer.cs</div>
+                        <div class="attachment-card-size">17.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__NoteDrawer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__NotesDB.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__NotesDB.cs</div>
+                        <div class="attachment-card-size">9.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__NotesDB.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__NotesDetector.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__NotesDetector.cs</div>
+                        <div class="attachment-card-size">3.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__NotesDetector.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Notey.csproj">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Notey.csproj</div>
+                        <div class="attachment-card-size">9.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Notey.csproj.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">csproj</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Program.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Program.cs</div>
+                        <div class="attachment-card-size">0.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Program.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Properties__Resources.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Properties__Resources.Designer.cs</div>
+                        <div class="attachment-card-size">9.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Properties__Resources.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Properties__Resources.resx">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Properties__Resources.resx</div>
+                        <div class="attachment-card-size">78.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Properties__Resources.resx.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">resx</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Properties__Settings.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Properties__Settings.Designer.cs</div>
+                        <div class="attachment-card-size">2.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Properties__Settings.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Properties__Settings.settings">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Properties__Settings.settings</div>
+                        <div class="attachment-card-size">0.8 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Properties__Settings.settings.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">settings</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__RecorderHero.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__RecorderHero.cs</div>
+                        <div class="attachment-card-size">10.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__RecorderHero.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__RecorderHeroOld.txt">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__RecorderHeroOld.txt</div>
+                        <div class="attachment-card-size">7.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__RecorderHeroOld.txt.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">txt</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__AssemblyInfo.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__AssemblyInfo.cs</div>
+                        <div class="attachment-card-size">1.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__AssemblyInfo.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__BalanceTheStraw.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__BalanceTheStraw.png</div>
+                        <div class="attachment-card-size">3.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__BalanceTheStraw.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__Devices-media-floppy-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__Devices-media-floppy-icon.png</div>
+                        <div class="attachment-card-size">2.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__Devices-media-floppy-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__File-Types-MIDI-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__File-Types-MIDI-icon.png</div>
+                        <div class="attachment-card-size">3.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__File-Types-MIDI-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__Flute-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__Flute-icon.png</div>
+                        <div class="attachment-card-size">1.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__Flute-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__Flute.ico">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__Flute.ico</div>
+                        <div class="attachment-card-size">108.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__Flute.ico.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">ico</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__GClef.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__GClef.png</div>
+                        <div class="attachment-card-size">2.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__GClef.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__Icon-Save-Small.jpg">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__Icon-Save-Small.jpg</div>
+                        <div class="attachment-card-size">2.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__Icon-Save-Small.jpg.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">jpg</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__Icon-Save.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__Icon-Save.png</div>
+                        <div class="attachment-card-size">24.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__Icon-Save.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__Microphone-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__Microphone-icon.png</div>
+                        <div class="attachment-card-size">2.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__Microphone-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__Pause-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__Pause-icon.png</div>
+                        <div class="attachment-card-size">1.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__Pause-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__Places-folder-orange-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__Places-folder-orange-icon.png</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__Places-folder-orange-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__Play-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__Play-icon.png</div>
+                        <div class="attachment-card-size">2.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__Play-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__Recorder picture.jpg">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__Recorder picture.jpg</div>
+                        <div class="attachment-card-size">42.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__Recorder picture.jpg.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">jpg</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__Stop-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__Stop-icon.png</div>
+                        <div class="attachment-card-size">2.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__Stop-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__directoryIcon.gif">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__directoryIcon.gif</div>
+                        <div class="attachment-card-size">0.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__directoryIcon.gif.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">gif</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__folder1.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__folder1.png</div>
+                        <div class="attachment-card-size">0.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__folder1.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__ghostscript_med.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__ghostscript_med.png</div>
+                        <div class="attachment-card-size">2.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__ghostscript_med.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__lock (noteDrawer).png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__lock (noteDrawer).png</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__lock (noteDrawer).png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__new_page.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__new_page.png</div>
+                        <div class="attachment-card-size">1.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__new_page.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__new_page1.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__new_page1.png</div>
+                        <div class="attachment-card-size">0.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__new_page1.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__note.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__note.png</div>
+                        <div class="attachment-card-size">1.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__note.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__noteflag.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__noteflag.png</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__noteflag.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__noteflagdown.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__noteflagdown.png</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__noteflagdown.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__noteflagup.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__noteflagup.png</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__noteflagup.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__notey1.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__notey1.png</div>
+                        <div class="attachment-card-size">142.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__notey1.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__notey2.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__notey2.png</div>
+                        <div class="attachment-card-size">113.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__notey2.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__notey3.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__notey3.png</div>
+                        <div class="attachment-card-size">119.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__notey3.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__open.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__open.png</div>
+                        <div class="attachment-card-size">2.8 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__open.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__pause.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__pause.png</div>
+                        <div class="attachment-card-size">2.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__pause.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__play.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__play.png</div>
+                        <div class="attachment-card-size">2.5 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__play.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__recorderFingering.txt">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__recorderFingering.txt</div>
+                        <div class="attachment-card-size">0.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__recorderFingering.txt.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">txt</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__recorderPictureHoles.txt">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__recorderPictureHoles.txt</div>
+                        <div class="attachment-card-size">0.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__recorderPictureHoles.txt.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">txt</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__refresh.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__refresh.png</div>
+                        <div class="attachment-card-size">2.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__refresh.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__save.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__save.png</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__save.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__save1.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__save1.png</div>
+                        <div class="attachment-card-size">0.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__save1.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__stop-red-icon.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__stop-red-icon.png</div>
+                        <div class="attachment-card-size">1.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__stop-red-icon.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Resources__stop.png">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Resources__stop.png</div>
+                        <div class="attachment-card-size">2.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Resources__stop.png.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">png</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__SavingRecordForm.Designer.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__SavingRecordForm.Designer.cs</div>
+                        <div class="attachment-card-size">13.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__SavingRecordForm.Designer.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__SavingRecordForm.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__SavingRecordForm.cs</div>
+                        <div class="attachment-card-size">8.1 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__SavingRecordForm.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__SavingRecordForm.resx">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__SavingRecordForm.resx</div>
+                        <div class="attachment-card-size">6.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__SavingRecordForm.resx.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">resx</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__WaveGraphics.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__WaveGraphics.cs</div>
+                        <div class="attachment-card-size">2.8 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__WaveGraphics.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__WaveIn.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__WaveIn.cs</div>
+                        <div class="attachment-card-size">13.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__WaveIn.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__Win32Waveform.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__Win32Waveform.cs</div>
+                        <div class="attachment-card-size">6.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__Win32Waveform.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__bin__Debug__Recorder.exe.config">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__bin__Debug__Recorder.exe.config</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__bin__Debug__Recorder.exe.config.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">config</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__bin__Debug__Recorder.vshost.exe.config">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__bin__Debug__Recorder.vshost.exe.config</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__bin__Debug__Recorder.vshost.exe.config.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">config</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__bin__Release__Recorder.XML">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__bin__Release__Recorder.XML</div>
+                        <div class="attachment-card-size">41.0 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__bin__Release__Recorder.XML.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">XML</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__bin__Release__Recorder.exe.config">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__bin__Release__Recorder.exe.config</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__bin__Release__Recorder.exe.config.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">config</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__bin__Release__Recorder.vshost.exe.Config">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__bin__Release__Recorder.vshost.exe.Config</div>
+                        <div class="attachment-card-size">1.3 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__bin__Release__Recorder.vshost.exe.Config.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">Config</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__configuration.cs">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__configuration.cs</div>
+                        <div class="attachment-card-size">2.2 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__configuration.cs.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">cs</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__obj__Debug__Notey.csproj.FileListAbsolute.txt">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__obj__Debug__Notey.csproj.FileListAbsolute.txt</div>
+                        <div class="attachment-card-size">1.6 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__obj__Debug__Notey.csproj.FileListAbsolute.txt.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">txt</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__obj__Debug__Recorder.csproj.FileListAbsolute.txt">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__obj__Debug__Recorder.csproj.FileListAbsolute.txt</div>
+                        <div class="attachment-card-size">8.4 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__obj__Debug__Recorder.csproj.FileListAbsolute.txt.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">txt</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__obj__Release__Notey.csproj.FileListAbsolute.txt">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__obj__Release__Notey.csproj.FileListAbsolute.txt</div>
+                        <div class="attachment-card-size">1.7 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__obj__Release__Notey.csproj.FileListAbsolute.txt.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">txt</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+            <div class="file-expandable">
+                <div class="email-attachment-card" data-project="2011-09-29_notey" data-filename="Notey__obj__Release__Recorder.csproj.FileListAbsolute.txt">
+                    <div class="attachment-card-icon">&#128196;</div>
+                    <div class="attachment-card-info">
+                        <div class="attachment-card-name">Notey__obj__Release__Recorder.csproj.FileListAbsolute.txt</div>
+                        <div class="attachment-card-size">11.9 KB</div>
+                    </div>
+                    <a href="/view/2011-09-29_notey/Notey__obj__Release__Recorder.csproj.FileListAbsolute.txt.html" class="attachment-open-link" onclick="event.stopPropagation();">Open &rsaquo;</a>
+                    <span class="file-lang">txt</span>
+                </div>
+                <div class="file-content-area" style="display:none;"></div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <!-- Gmail-style reply/forward bar -->
+    <div class="email-reply-bar">
+        <a href="/project/2011-12-10_kapara-on-you/" class="gmail-action-btn">&lsaquo; Newer</a>
+        <a href="/project/2011-09-27_recorder-newds/" class="gmail-action-btn">Older &rsaquo;</a>
+    </div>
+</div>
+
+
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+<script>
+document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
+    if (e.key === 'ArrowLeft') {
+        var prev = document.getElementById('prev-btn');
+        if (prev) window.location.href = prev.href;
+    } else if (e.key === 'ArrowRight') {
+        var next = document.getElementById('next-btn');
+        if (next) window.location.href = next.href;
+    }
+});
+
+/* Expandable file content */
+var imgExts = ['.jpg','.jpeg','.png','.gif','.bmp','.svg','.webp'];
+var fileItems = document.querySelectorAll('.email-attachment-card');
+
+fileItems.forEach(function(item) {
+    item.style.cursor = 'pointer';
+    item.addEventListener('click', function() {
+        var area = item.closest('.file-expandable').querySelector('.file-content-area');
+        if (!area) return;
+        if (area.style.display !== 'none') {
+            area.style.display = 'none';
+            item.classList.remove('attachment-active');
+        } else {
+            area.style.display = 'block';
+            item.classList.add('attachment-active');
+        }
+    });
+});
+
+/* Load and expand all files on page load with a single API call */
+var projectName = fileItems.length > 0 ? fileItems[0].getAttribute('data-project') : null;
+if (projectName) {
+    fetch('/api/project/' + encodeURIComponent(projectName) + '.json')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            var fileMap = {};
+            data.files.forEach(function(f) { fileMap[f.filename] = f; });
+
+            fileItems.forEach(function(item) {
+                var wrapper = item.closest('.file-expandable');
+                var area = wrapper.querySelector('.file-content-area');
+                if (!area) return;
+                var filename = item.getAttribute('data-filename');
+                var ext = filename.substring(filename.lastIndexOf('.')).toLowerCase();
+
+                if (imgExts.indexOf(ext) !== -1) {
+                    area.innerHTML = '<div class="file-preview-img"><img src="/raw/' + encodeURIComponent(projectName) + '/' + encodeURIComponent(filename) + '" alt="' + filename + '"></div>';
+                } else {
+                    var file = fileMap[filename];
+                    if (!file || file.binary) {
+                        area.innerHTML = '<div class="file-preview-loading">' + (file ? 'Binary file' : 'File not found') + '</div>';
+                    } else if (!file.content) {
+                        area.innerHTML = '<div class="file-preview-loading">Empty file</div>';
+                    } else {
+                        var langClass = file.language ? ' class="language-' + file.language.toLowerCase() + '"' : '';
+                        area.innerHTML = '<pre class="file-preview-code"><code' + langClass + '>' + escapeHtml(file.content) + '</code></pre>';
+                        area.querySelectorAll('pre code').forEach(function(block) { hljs.highlightElement(block); });
+                        addRunButton(area, projectName, filename, file.content);
+                    }
+                }
+
+                area.setAttribute('data-loaded', '1');
+                area.style.display = 'block';
+                item.classList.add('attachment-active');
+            });
+        })
+        .catch(function() {
+            fileItems.forEach(function(item) {
+                var wrapper = item.closest('.file-expandable');
+                var area = wrapper.querySelector('.file-content-area');
+                if (area) area.innerHTML = '<div class="file-preview-loading">Failed to load</div>';
+            });
+        });
+}
+
+function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+</script>
+
+</body>
+</html>

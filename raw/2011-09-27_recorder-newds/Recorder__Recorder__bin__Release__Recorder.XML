@@ -1,0 +1,784 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Recorder</name>
+    </assembly>
+    <members>
+        <member name="M:Wave.WaveIn.#ctor(System.UInt32,System.UInt32)">
+            <summary>
+            constructor for WaveIn, a class for recording raw sound wave from microphone
+            </summary>
+        </member>
+        <member name="M:Wave.WaveIn.getDevices">
+            <summary>
+            Return a list contains the names of waveform-audio input devices present in the system
+            If there are no such devicesm raise an exception
+            </summary>
+            <returns>list of waveform-audio input devices</returns>
+        </member>
+        <member name="M:Wave.WaveIn.startDevice(System.UInt32,System.String)">
+            <summary>
+            open the waveform-audio input device, and start recording.
+            At this point, the sound bytes (date) will not reach your program.
+            </summary>
+            <param name="uDeviceID"></param>
+        </member>
+        <member name="M:Wave.WaveIn.WriteChars(System.IO.BinaryWriter,System.String)">
+            <summary>
+            TAKEN FROM PIVOKE LIBARAY EXAMPLES
+            Save the current record buffers to the specified file.
+            </summary>
+            <param name="fileName">Name of file to be saved</param>
+            <returns>MMSYSERR.NOERROR if successful</returns>
+        </member>
+        <member name="M:Wave.WaveIn.stopDevice">
+            <summary>
+            stop the device, and close it
+            </summary>
+        </member>
+        <member name="M:Wave.WaveIn.recordBuffer(System.Byte[],System.Int32)">
+            <summary>
+            record sounds from waveform-audio device, and return buffer with samples.
+            put the thread to sleep while waiting for the audio input to return from the device.
+            </summary>
+            <param name="waveArray">array of bytes, with size at least (numberOfSamples), given as WaveIn parameter </param>
+            <param name="sleepTime">amount of time the thread is put to sleep between each check for input, in milliseconds</param>
+        </member>
+        <member name="M:Wave.WaveIn.Dispose">
+            <summary>
+            Frees any memory allocated for the buffer.
+            </summary>
+        </member>
+        <member name="F:Recorder.SavingRecordForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Recorder.SavingRecordForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Recorder.SavingRecordForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Recorder.FilesHandlerException">
+            <summary>
+            FilesHandler exception class
+            </summary>
+        </member>
+        <member name="M:Recorder.FilesHandlerException.#ctor(System.String)">
+            <summary>
+            FilesHandler exception
+            </summary>
+            <param name="reason">String describing the cause of the error</param>
+        </member>
+        <member name="T:Recorder.FilesHandler">
+            <summary>
+            Class that Handles converting from .abc file to .ps to  .pdf
+            </summary>
+        </member>
+        <member name="T:Wave.WaveGraphics">
+            <summary>
+            class wraping function to draw a graph
+            </summary>
+        </member>
+        <member name="M:Wave.WaveGraphics.DrawGraph(System.Drawing.Graphics,System.Int32[],System.Int32,System.Drawing.Color,System.Drawing.Pen,System.Int32)">
+            <summary>
+            draw a graph from the given samples, in the given graphics object
+            </summary>
+            <param name="graph"></param>
+            <param name="graphSamples"></param>
+            <param name="maxAmplitude"></param>
+            <param name="background"></param>
+            <param name="foreground"></param>
+            <param name="numberOfSamplesToDraw"></param>
+        </member>
+        <member name="T:Recorder.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Recorder.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Recorder.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Recorder.Properties.Resources.recorderFingering">
+             <summary>
+               Looks up a localized string similar to 72;c;c;c;c;c;c;c;c;
+            73;c;c;c;c;c;c;c;h;
+            74;c;c;c;c;c;c;c;u;
+            75;c;c;c;c;c;c;h;u;
+            76;c;c;c;c;c;c;u;u;
+            77;c;c;c;c;c;u;c;c;
+            78;c;c;c;c;u;c;c;u;
+            79;c;c;c;c;u;u;u;u;
+            80;c;c;c;u;c;c;h;u;
+            81;c;c;c;u;u;u;u;u;
+            82;c;c;u;c;c;u;u;u;
+            83;c;c;u;u;u;u;u;u;
+            84;c;u;c;u;u;u;u;u;
+            85;u;c;c;u;u;u;u;u;
+            86;u;u;c;u;u;u;u;u;
+            87;u;u;c;c;c;c;c;u;
+            88;h;c;c;c;c;c;u;u;
+            89;h;c;c;c;c;u;c;u;
+            90;h;c;c;c;u;c;u;u;
+            91;h;c;c;c;u;u;u;u;
+            92;h;c;c;u;c;u;u;u;
+            93;h;c;c;u;u;u;u;u;
+            94;h;c;c;u;c;c;c;u;
+            95;h;c;c;u;c;c;u;u;
+            96;h;c;u [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="P:Recorder.Properties.Resources.recorderPictureHoles">
+             <summary>
+               Looks up a localized string similar to 0; 20; 205; 10; 10;
+            1; 50; 205; 10; 10;
+            2; 50; 237; 10; 10;
+            3; 50; 268; 10; 10;
+            4; 50; 302; 10; 10;
+            5; 50; 337; 10; 10;
+            6; 50; 364; 10; 10;
+            7; 45; 393; 10; 10;.
+             </summary>
+        </member>
+        <member name="T:Recorder.IPlayNotes">
+            <summary>
+            A generic interface for playing music
+            </summary>
+        </member>
+        <member name="T:Recorder.PlayNotes">
+            <summary>
+            an abstarct class for the genering playing music interface,
+            used to contain some implemantation
+            </summary>
+        </member>
+        <member name="T:Recorder.PlayNotesByBeep">
+            <summary>
+            Given notes, play them via the computer speaker
+            </summary>
+        </member>
+        <member name="T:Recorder.PlayNotesByWave">
+            <summary>
+            Given notes, synthesized a waveform to each note
+            </summary>
+        </member>
+        <member name="M:Recorder.PlayNotesByWave.WriteChars(System.IO.BinaryWriter,System.String)">
+            <summary>
+            TAKEN FROM PIVOKE LIBARAY EXAMPLES
+            Save the current record buffers to the specified file.
+            </summary>
+            <param name="fileName">Name of file to be saved</param>
+            <returns>MMSYSERR.NOERROR if successful</returns>
+        </member>
+        <member name="T:Recorder.PlayNotesByWaveFile">
+            <summary>
+            WAVE file player
+            </summary>
+        </member>
+        <member name="M:Recorder.PlayNotesByWaveFile.#ctor(System.String)">
+            <summary>
+            Wave file player
+            </summary>
+            <param name="_waveFilePath">path of the wave filr to play</param>
+        </member>
+        <member name="M:Recorder.PlayNotesByWaveFile.Play">
+            <summary>
+            Play or Resume
+            </summary>
+        </member>
+        <member name="M:Recorder.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:Recorder.AbcParser">
+            <summary>
+            Parser for the ABC file format
+            based on http://stephen.homedns.org/public/ABCquickRefv0_5.pdf
+            </summary>
+        </member>
+        <member name="M:Recorder.AbcParser.AbcToNotes(System.String)">
+            <summary>
+            Parse ABC file to list of Notes
+            </summary>
+            <param name="abcFilePath">Path of the ABC file to parse</param>
+            <returns>List of Notes (programm class) in the ABC file</returns>
+        </member>
+        <member name="T:PInvokeLibrary.Memory">
+            <summary>
+            Contains methods for allocating and freeing memory.
+            </summary>
+        </member>
+        <member name="F:PInvokeLibrary.Memory.LMEM_FIXED">
+            <summary>
+            Allocates fixed memory. The return value is a pointer to the memory object.
+            </summary>
+        </member>
+        <member name="F:PInvokeLibrary.Memory.LMEM_ZEROINIT">
+            <summary>
+            Initializes memory contents to zero.
+            </summary>
+        </member>
+        <member name="F:PInvokeLibrary.Memory.LMEM_MOVEABLE">
+            <summary>
+            Enables the memory allocation to move if it cannot be allocated in place.
+            </summary>
+        </member>
+        <member name="F:PInvokeLibrary.Memory.LMEM_MODIFY">
+            <summary>
+            Allows modification of the attributes of the memory object.
+            </summary>
+        </member>
+        <member name="M:PInvokeLibrary.Memory.LocalAlloc(System.UInt32,System.UInt32)">
+            <summary>
+            This function allocates the specified number of bytes from the heap. In
+            the linear Microsoft® Windows® CE application programming interface (API)
+            environment, there is no difference between the local heap and the global
+            heap.
+            </summary>
+            <param name="uFlags">[in] Specifies how to allocate memory. If zero is
+            specified, the default is the LMEM_FIXED flag. This parameter is a combination
+            of LMEM_FIXED and LMEM_ZEROINIT. </param>
+            <param name="uBytes">[in] Specifies the number of bytes to allocate.</param>
+            <returns>A handle to the newly allocated memory object indicates success.
+            NULL indicates failure. To get extended error information,
+            call GetLastError.</returns>
+        </member>
+        <member name="M:PInvokeLibrary.Memory.LocalFree(System.IntPtr)">
+            <summary>
+            This function frees the specified local memory object and invalidates its handle.
+            </summary>
+            <param name="hMem">Handle to the local memory object. This handle is returned
+            by either the LocalAlloc or LocalReAlloc function.</param>
+            <returns>NULL indicates success. A handle to the local memory object indicates
+            failure. To get extended error information, call GetLastError.</returns>
+        </member>
+        <member name="M:PInvokeLibrary.Memory.LocalReAlloc(System.IntPtr,System.UInt32,System.UInt32)">
+            <summary>
+            This function changes the size or the attributes of a specified local
+            memory object. The size can increase or decrease.
+            </summary>
+            <param name="hMem">[in] Handle to the local memory object to be reallocated.
+            This handle is returned by either the LocalAlloc or LocalReAlloc function.</param>
+            <param name="uBytes">[in] New size, in bytes, of the memory block. If fuFlags
+            specifies the LMEM_MODIFY flag, this parameter is ignored.</param>
+            <param name="fuFlags">[in] Flag that specifies how to reallocate the local
+            memory object. If the LMEM_MODIFY flag is specified, this parameter modifies
+            the attributes of the memory object, and the uBytes parameter is ignored.
+            Otherwise, this parameter controls the reallocation of the memory object.
+            The LMEM_MODIFY can be combined with LMEM_MOVEABLE.
+            If this parameter does not specify LMEM_MODIFY, this parameter can be any
+            combination of LMEM_MOVEABLE and LMEM_ZEROINIT.</param>
+            <returns>A handle to the reallocated memory object indicates success.
+            NULL indicates failure. To get extended error information, call
+            GetLastError.</returns>
+        </member>
+        <member name="T:Recorder.MainForm">
+            <summary>
+            The program main form, includes all the user interface controls and functionality
+            </summary>
+        </member>
+        <member name="F:Recorder.MainForm.NumberOfSamples">
+            <summary>
+            Number of samples, given each time from the recording device (microphone).
+            Must be a power of 2 (for the furier transfrom analysis).
+            The bigger that number, the more accureate the notes detection result,
+            but the running time is affected.
+            </summary>
+        </member>
+        <member name="F:Recorder.MainForm.SamplesPerSec">
+            <summary>
+            The recording device sampling rate. usually, one of the following numbers:
+            11025, 22050, 44100, ... 
+            </summary>
+        </member>
+        <member name="F:Recorder.MainForm.RecorderMaxFrequency">
+            <summary>
+            The max frequency (note) of the recorder instrument.
+            Used for displaying the frequency spectrum.
+            </summary>
+        </member>
+        <member name="F:Recorder.MainForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Recorder.MainForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Recorder.MainForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Recorder.AboutForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Recorder.AboutForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Recorder.AboutForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Notes.NoteDrawer">
+            <summary>
+            Creates an empty music sheet and display note on it
+            </summary>
+        </member>
+        <member name="F:Notes.NoteDrawer.stavesLocation">
+            <summary>
+            the locations of each stave on the graphics control
+            </summary>
+        </member>
+        <member name="F:Notes.NoteDrawer.NotesLocation">
+            <summary>
+            the locations of all the places notes can be printed on the graphics control
+            </summary>
+        </member>
+        <member name="F:Notes.NoteDrawer.NotesRect">
+            <summary>
+            the bounding rectangle for each note on the graphics control
+            </summary>
+        </member>
+        <member name="F:Notes.NoteDrawer.DrawenNotes">
+            <summary>
+            buffer of all the notes that currently shown on the graphics control
+            </summary>
+        </member>
+        <member name="M:Notes.NoteDrawer.Draw(System.Drawing.Graphics,System.Drawing.Color,System.Drawing.Brush,System.Drawing.Brush,Notes.Note)">
+            <summary>
+            
+            </summary>
+            <param name="graphics"></param>
+            <param name="background"></param>
+            <param name="brushSheet"></param>
+            <param name="brushNote"></param>
+            <param name="note"></param>
+            <returns>Number of Notes can be displayed</returns>
+        </member>
+        <member name="M:Notes.NoteDrawer.DrawNotes(System.Drawing.Graphics,System.Drawing.Color,System.Drawing.Brush,System.Collections.Generic.List{Notes.Note},System.Collections.Generic.List{System.Drawing.Color})">
+            <summary>
+            Given List of Notes and their colors, simply draw them.
+            </summary>
+            <param name="graphics"></param>
+            <param name="notes"></param>
+            <param name="notesColors"></param>
+            <returns>number of notes that can be drawen</returns>
+        </member>
+        <member name="M:Notes.NoteDrawer.RedrawNote(System.Drawing.Graphics,System.Drawing.Brush,Notes.Note,System.Int32)">
+            <summary>
+            Redraw a note at a specidic location
+            </summary>
+            <param name="graphics"></param>
+            <param name="brushNote"></param>
+            <param name="note"></param>
+            <param name="noteIndex"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Notes.NoteDrawer.DrawEmptyMusicSheet(System.Drawing.Graphics,System.Drawing.Color,System.Drawing.Brush)" -->
+        <member name="T:Recorder.MCIException">
+            <summary>
+            MCI exception class
+            </summary>
+        </member>
+        <member name="M:Recorder.MCIException.#ctor(System.String)">
+            <summary>
+            MCI exception
+            </summary>
+            <param name="reason">String describing the cause of the error</param>
+        </member>
+        <member name="T:Recorder.MCI">
+            <summary>
+            simple C# Wrapper for the windows API MCI -  Media Control Interface.
+            MCI provides standard commands for playing multimedia devices and 
+            recording multimedia resource files. These commands are a generic
+            interface to nearly every kind of multimedia device.
+            </summary>
+        </member>
+        <member name="M:Recorder.MCI.StartRecording">
+            <summary>
+            Start recording from microphone
+            </summary>
+        </member>
+        <member name="M:Recorder.MCI.StopRecording(System.String)">
+            <summary>
+            Stop recording from microphone
+            </summary>
+            <param name="filePath">where to save the recording</param>
+        </member>
+        <member name="F:Win32.WinMM.WAVE_INVALIDFORMAT">
+            <summary>
+            Used by dwFormats in WAVEINCAPS and WAVEOUTCAPS
+            Invalid format
+            </summary>
+        </member>
+        <member name="F:Win32.WinMM.WAVE_FORMAT_1M08">
+            <summary>
+            Used by dwFormats in WAVEINCAPS and WAVEOUTCAPS
+            11.025 kHz, Mono,   8-bit
+            </summary>
+        </member>
+        <member name="F:Win32.WinMM.WAVE_FORMAT_1S08">
+            <summary>
+            Used by dwFormats in WAVEINCAPS and WAVEOUTCAPS
+            11.025 kHz, Stereo, 8-bit
+            </summary>
+        </member>
+        <member name="F:Win32.WinMM.WAVE_FORMAT_1M16">
+            <summary>
+            Used by dwFormats in WAVEINCAPS and WAVEOUTCAPS
+            11.025 kHz, Mono,   16-bit
+            </summary>
+        </member>
+        <member name="F:Win32.WinMM.WAVE_FORMAT_1S16">
+            <summary>
+            Used by dwFormats in WAVEINCAPS and WAVEOUTCAPS
+            11.025 kHz, Stereo, 16-bit
+            </summary>
+        </member>
+        <member name="F:Win32.WinMM.WAVE_FORMAT_2M08">
+            <summary>
+            Used by dwFormats in WAVEINCAPS and WAVEOUTCAPS
+            22.05  kHz, Mono,   8-bit
+            </summary>
+        </member>
+        <member name="F:Win32.WinMM.WAVE_FORMAT_2S08">
+            <summary>
+            Used by dwFormats in WAVEINCAPS and WAVEOUTCAPS
+            22.05  kHz, Stereo, 8-bit
+            </summary>
+        </member>
+        <member name="F:Win32.WinMM.WAVE_FORMAT_2M16">
+            <summary>
+            Used by dwFormats in WAVEINCAPS and WAVEOUTCAPS
+            22.05  kHz, Mono,   16-bit
+            </summary>
+        </member>
+        <member name="F:Win32.WinMM.WAVE_FORMAT_2S16">
+            <summary>
+            Used by dwFormats in WAVEINCAPS and WAVEOUTCAPS
+            22.05  kHz, Stereo, 16-bit
+            </summary>
+        </member>
+        <member name="F:Win32.WinMM.WAVE_FORMAT_4M08">
+            <summary>
+            Used by dwFormats in WAVEINCAPS and WAVEOUTCAPS
+            44.1   kHz, Mono,   8-bit
+            </summary>
+        </member>
+        <member name="F:Win32.WinMM.WAVE_FORMAT_4S08">
+            <summary>
+            Used by dwFormats in WAVEINCAPS and WAVEOUTCAPS
+            44.1   kHz, Stereo, 8-bit
+            </summary>
+        </member>
+        <member name="F:Win32.WinMM.WAVE_FORMAT_4M16">
+            <summary>
+            Used by dwFormats in WAVEINCAPS and WAVEOUTCAPS
+            44.1   kHz, Mono,   16-bit
+            </summary>
+        </member>
+        <member name="F:Win32.WinMM.WAVE_FORMAT_4S16">
+            <summary>
+            Used by dwFormats in WAVEINCAPS and WAVEOUTCAPS
+            44.1   kHz, Stereo, 16-bit
+            </summary>
+        </member>
+        <member name="T:Notes.NotesDetector">
+            <summary>
+            Given last notes samples, detect which (if any) note has been played
+            </summary>
+        </member>
+        <member name="F:Notes.NotesDetector.minimalNoteTime">
+            <summary>
+            if captured the same samples at least in that time, declare it a note
+            </summary>
+        </member>
+        <member name="M:Notes.NotesDetector.#ctor">
+            <summary>
+            constructor for the class NotesDetector
+            </summary>
+        </member>
+        <member name="M:Notes.NotesDetector.DetectNote(Notes.Note,System.Int32)">
+            <summary>
+            Detect the note based on the last and current samples
+            This function is used to be called repeatedly, once for every note sample.
+            given a note, a check is preform based on the last samples, whether this note
+            is a valid note (with sufficient length) or not.
+            Based on the detection, if there are enough samples, the function return the 
+            new note, or the same prevous note with longer duration.
+            </summary>
+            <param name="note">A note sample. This may not produce a note, in cases the the note's samples
+            appears to be a noise</param>
+            <param name="timePlayed">The time this note has been played</param>
+            <returns>The Note played</returns>
+        </member>
+        <member name="T:Notes.LimitedList`1">
+            <summary>
+            Fixed Size List implematation
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Analysis.FurierTransform.preformTranform(Analysis.FurierTransform.TRANSFORM,System.Byte[],System.Double[],System.UInt32,System.UInt32)">
+            <summary>
+            preform a frequncy analysis
+            </summary>
+            <param name="transform"></param>
+            <param name="inputBuffer">must be at least at size of numberOfSamples</param>
+            <param name="outputBuffer">must be bigger than numberOfSamples/2</param>
+            <param name="numberOfSamples"></param>
+            <returns>the max pitch (frequency)</returns>
+        </member>
+        <member name="M:Analysis.FurierTransform.DFT(System.Byte[],System.Double[],System.Double[],System.Double[],System.Int32)">
+            <summary>
+            fourier tranform.
+            </summary>
+            <param name="XX">wave samples.</param>
+            <param name="REX"></param>
+            <param name="IMX"></param>
+            <param name="output"></param>
+            <param name="n">length of n</param>
+            <returns></returns>
+        </member>
+        <member name="M:Analysis.FurierTransform.FFT(System.Double[],System.Double[],System.Double[],System.Int32)">
+            <summary>
+            Fast-Fourier transform. Given wave samples at array REX[n], preform a frequency analysis
+            and return the result in REX[n/2]
+            </summary>
+            <param name="REX"> input array at size n, contains the wavesamples. output array, at size (n/2)</param>
+            <param name="IMX"> input array, must be initialized to zeros.</param>
+            <param name="n"></param>
+            <returns>frequency analysis of the given wave</returns>
+        </member>
+        <member name="F:Recorder.ConfigurationForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Recorder.ConfigurationForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Recorder.ConfigurationForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Recorder.ConfigurationForm.#ctor">
+            <summary>
+            Let the user changes the programm configurations
+            </summary>
+        </member>
+        <member name="T:Notes.Note">
+            <summary>
+            represantation of a musical note
+            </summary>
+        </member>
+        <member name="F:Notes.Note.NoteDescription">
+            <summary>
+            note scientific name (without ocatve): "A", "A#", "B",...
+            </summary>
+        </member>
+        <member name="F:Notes.Note.Octave">
+            <summary>
+            note's ocatves - from C-1 to G9 (-1,...9)
+            </summary>
+        </member>
+        <member name="F:Notes.Note.Frequency">
+            <summary>
+            note's pitch
+            </summary>
+        </member>
+        <member name="F:Notes.Note.MIDI">
+            <summary>
+            note's MIDI number - from 0..127
+            </summary>
+        </member>
+        <member name="F:Notes.Note.LineIndex">
+            <summary>
+            an internal index used for drawing the note on the correct line.
+            with this numbering, a note "X" and "X#" would have the same value.
+            example:
+                notes - "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
+                index -  0,   0,    1,   1,    2,   3,   3,    4,   4,    5,   5,    6
+            </summary>
+        </member>
+        <member name="F:Notes.Note.IsSharp">
+            <summary>
+            does the note has sharp or flat
+            </summary>
+        </member>
+        <member name="F:Notes.Note.ABC">
+            <summary>
+            the note abc notation
+            </summary>
+        </member>
+        <member name="F:Notes.Note.Duration">
+            <summary>
+            length of the note, in milliseconds
+            </summary>
+        </member>
+        <member name="F:Notes.Note.Length">
+            <summary>
+            length of the note: 1/2, 1/4, 1/8,...
+            </summary>
+        </member>
+        <member name="T:Notes.NoteComparer">
+            <summary>
+            a comparer for comparing between notes based on their frequencies
+            </summary>
+        </member>
+        <member name="T:Notes.NotesDB">
+            <summary>
+            create a Table contains notes and their descriptions,
+            and allow search note given frequency
+            </summary>
+        </member>
+        <member name="M:Notes.NotesDB.CreateNotesTable">
+            <summary>
+            create a list of notes, with MIDI index 0... 127
+            </summary>
+            <returns>list of notes and information</returns>
+        </member>
+        <member name="M:Notes.NotesDB.FindNote(System.Single)">
+            <summary>
+            find note base on given frequency
+            </summary>
+            <param name="frequency">pitch, frequency in Hertz</param>
+            <returns>the note that has the closest pitch to the given frequency</returns>
+        </member>
+        <member name="T:Recorder.RecorderHero">
+            <summary>
+            The RecorderHero class
+            </summary>
+        </member>
+        <member name="F:Recorder.RecorderHero.Drawer">
+            <summary>
+            Draws the notes on graphics object
+            </summary>
+        </member>
+        <member name="F:Recorder.RecorderHero.AbcData">
+            <summary>
+            Holds the ABC notes
+            </summary>
+        </member>
+        <member name="F:Recorder.RecorderHero.RecorderHeroThread">
+            <summary>
+            Thread that runs over the notes, and update the graphics
+            </summary>
+        </member>
+        <member name="F:Recorder.RecorderHero.NotesGraphics">
+            <summary>
+            Saves the graphics object, should be accsessed by the recorderHeroThread and when resized.
+            </summary>
+        </member>
+        <member name="F:Recorder.RecorderHero.NotesColors">
+            <summary>
+            The colors of the notes
+            </summary>
+        </member>
+        <member name="F:Recorder.RecorderHero.CurrentNoteIndex">
+            <summary>
+            current note to be played
+            </summary>
+        </member>
+        <member name="F:Recorder.RecorderHero.NotesPerPage">
+            <summary>
+            Number of notes that can be displayed in music sheet
+            </summary>
+        </member>
+        <member name="F:Recorder.RecorderHero.FirstNoteInPage">
+            <summary>
+            The first note to be displayed in the current music sheet
+            </summary>
+        </member>
+        <member name="F:Recorder.RecorderHero.m_isPlaying">
+            <summary>
+            Boolean to tell if currently playing.
+            </summary>
+        </member>
+        <member name="F:Recorder.RecorderHero.m_sleepMultiplier">
+            <summary>
+            Sleep multiplier by the notes duration
+            </summary>
+        </member>
+        <member name="M:Recorder.RecorderHero.#ctor(System.Drawing.Graphics,System.String)">
+            <summary>
+            Open a new RecorderHero instance
+            </summary>
+            <param name="graphics">The notes music sheet panel</param>
+            <param name="abcFilePath">ABC File contains notes</param>
+        </member>
+        <member name="M:Recorder.RecorderHero.Start">
+            <summary>
+            Starts a new thread that runs over the notes, and display the current note to be played
+            </summary>
+        </member>
+        <member name="M:Recorder.RecorderHero.Stop">
+            <summary>
+            Stops the thread that should runs over the notes
+            </summary>
+        </member>
+        <member name="M:Recorder.RecorderHero.Dispose">
+            <summary>
+            Dispose the recorderHero object
+            </summary>
+        </member>
+        <member name="M:Recorder.RecorderHero.UpdateCurrentNote(Notes.Note)">
+            <summary>
+            Notify which note was just played
+            </summary>
+            <param name="currentNote">Note that was just played</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Recorder.RecorderHero.OnPaint(System.Drawing.Graphics)" -->
+        <member name="M:Recorder.RecorderHero.Restart(System.Drawing.Graphics)">
+            <summary>
+            Creating a new music sheet with the notes data
+            </summary>
+            <param name="graphics"></param>
+        </member>
+        <member name="M:Recorder.RecorderHero.NotesIteration">
+            <summary>
+            This function should be running in a different thread, and updates the graphics
+            </summary>
+        </member>
+        <member name="P:Recorder.RecorderHero.isPlaying">
+            <summary>
+            Is the RecorderHero currently active
+            </summary>
+        </member>
+        <member name="P:Recorder.RecorderHero.SleepMultiplier">
+            <summary>
+            How mutch to speed up/down the notes duration
+            </summary>
+        </member>
+    </members>
+</doc>

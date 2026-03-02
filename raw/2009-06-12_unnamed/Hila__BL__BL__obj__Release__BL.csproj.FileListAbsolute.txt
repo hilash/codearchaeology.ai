@@ -1,0 +1,7 @@
+C:\Hila\BL\BL\bin\Release\BL.pdb
+C:\Hila\BL\BL\bin\Release\DAL.dll
+C:\Hila\BL\BL\bin\Release\DAL.pdb
+C:\Hila\BL\BL\obj\Release\ResolveAssemblyReference.cache
+C:\Hila\BL\BL\obj\Release\BL.pdb
+C:\Hila\BL\BL\bin\Release\BL.exe
+C:\Hila\BL\BL\obj\Release\BL.exe

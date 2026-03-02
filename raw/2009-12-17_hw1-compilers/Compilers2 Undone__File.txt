@@ -1,0 +1,20 @@
+PROGRAM WhileExample
+a FIXED;
+b FIXED;
+c FIXED;
+x FIXED;
+{
+a= -11;
+b= a+10;
+x=a+1;
+WHILE(a<=1)
+{
+WHILE((c<=b) | (c<=x))
+{
+IF (a==-12) THEN
+b=12345;
+FI
+}
+a=a+10;
+}
+}

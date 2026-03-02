@@ -1,0 +1,240 @@
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_margin="10dip"
+        android:gravity="center" >
+
+        <TableRow
+            android:id="@+id/TableRow01"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.33"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/report_dialog_button_camera"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:onClick="onReportDialogClick"
+                    android:src="@drawable/ic_camera_64" />
+
+                <TextView
+                    android:id="@+id/TextView03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="TextView" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.33"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/report_dialog_button_mic"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:onClick="onReportDialogClick"
+                    android:src="@drawable/ic_microphone" />
+
+                <TextView
+                    android:id="@+id/TextView02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="TextView" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.33"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/report_dialog_button_note"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:onClick="onReportDialogClick"
+                    android:src="@drawable/ic_note" />
+
+                <TextView
+                    android:id="@+id/TextView01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="TextView" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow03"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dip" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.33"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/report_dialog_button_water_hide"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:onClick="onReportDialogClick"
+                    android:src="@drawable/ic_water_carrier" />
+
+                <TextView
+                    android:id="@+id/TextView06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="TextView" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.33"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/report_dialog_button_water"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:onClick="onReportDialogClick"
+                    android:src="@drawable/ic_water" />
+
+                <TextView
+                    android:id="@+id/TextView05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="TextView" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.33"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/report_dialog_button_angel"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:onClick="onReportDialogClick"
+                    android:src="@drawable/ic_angel_64" />
+
+                <TextView
+                    android:id="@+id/TextView04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="TextView" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow02"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dip" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.33"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/report_dialog_button_sleep"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:onClick="onReportDialogClick"
+                    android:src="@drawable/ic_bed" />
+
+                <TextView
+                    android:id="@+id/TextView07"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="TextView" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.33"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/report_dialog_button_info"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:onClick="onReportDialogClick"
+                    android:src="@drawable/ic_map_marker_48" />
+
+                <TextView
+                    android:id="@+id/TextView08"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="TextView" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.33"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/report_dialog_button_error"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:onClick="onReportDialogClick"
+                    android:src="@drawable/ic_map_warning_64" />
+
+                <TextView
+                    android:id="@+id/TextView09"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="TextView" />
+
+            </LinearLayout>
+        </TableRow>
+
+    </TableLayout>

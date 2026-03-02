@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<Preference
+			android:summary="@string/pref_help_description"/>
+	
+	<PreferenceScreen android:title="@string/pref_help_privacy_title">
+		<Preference android:summary="@string/pref_help_privacy_desc"/>
+		<Preference android:title="@string/pref_help_privacy_location_title" android:summary="@string/pref_help_privacy_location"/>
+		<Preference android:title="@string/pref_help_privacy_personal_title" android:summary="@string/pref_help_privacy_personal_desc"/>
+	</PreferenceScreen>
+	<PreferenceScreen android:title="@string/pref_help_battary_title">
+		
+	</PreferenceScreen><PreferenceScreen android:title="@string/pref_help_contact_title">
+		<Preference android:summary="@string/pref_help_contact_desc"/>
+		<Preference android:title="@string/pref_help_contact_email_title" android:summary="@string/support_email"/>
+		<Preference android:title="@string/pref_help_contact_website_title" android:summary="@string/website_url"/>
+	</PreferenceScreen>
+</PreferenceScreen>

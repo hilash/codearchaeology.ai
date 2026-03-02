@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="static">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXE1__lathe15.wav - Gmail</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="20 Years of //TODO">
+    <meta property="og:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages. From my first C program at age 14 to DNS sniffers and Project Euler.">
+    <meta property="og:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <meta property="og:url" content="https://codearchaeology.ai">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="20 Years of //TODO">
+    <meta name="twitter:description" content="Code archaeology from Gmail — 148 projects across 20 years, 17 programming languages.">
+    <meta name="twitter:image" content="https://codearchaeology.ai/static/og-image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ed007e; background-color: #1e0010 } /* Error */
+.highlight .esc { color: #f8f8f2 } /* Escape */
+.highlight .g { color: #f8f8f2 } /* Generic */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #ff4689 } /* Operator */
+.highlight .x { color: #f8f8f2 } /* Other */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #ff4689 } /* Generic.Deleted */
+.highlight .ge { color: #f8f8f2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #f8f8f2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #f8f8f2 } /* Generic.Error */
+.highlight .gh { color: #f8f8f2 } /* Generic.Heading */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted */
+.highlight .go { color: #66d9ef } /* Generic.Output */
+.highlight .gp { color: #ff4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #f8f8f2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #f8f8f2 } /* Generic.Traceback */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #ff4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #ff4689 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #ff4689 } /* Operator.Word */
+.highlight .pm { color: #f8f8f2 } /* Punctuation.Marker */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mb { color: #ae81ff } /* Literal.Number.Bin */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sa { color: #e6db74 } /* Literal.String.Affix */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #a6e22e } /* Name.Function.Magic */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */</style>
+
+</head>
+<body class="static-mode">
+    <!-- Top Navigation Strip -->
+    <div class="gmail-topnav">
+        <div class="gmail-topnav-left">
+            <a href="/">Google</a>
+            <span class="sep">|</span>
+            <a href="/"><b>Gmail</b></a>
+            <span class="sep">|</span>
+            <a href="/">Calendar</a>
+            <span class="sep">|</span>
+            <a href="/">Code Archaeology</a>
+            <span class="sep">|</span>
+            <a href="/skill.md" class="skill-btn-rainbow">Download Skill &darr;</a>
+        </div>
+        <div class="gmail-topnav-right">
+            20 Years of <b style="color:#CC0000;">//TODO</b>
+            <a href="/">Settings</a>
+            <a href="/">Help</a>
+        </div>
+    </div>
+
+    <!-- Header: Logo + Search -->
+    <div class="gmail-header">
+        <a href="/" class="gmail-logo">
+            <span class="gmail-logo-img">
+                <span class="gmail-logo-google"><span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span></span><span class="gmail-logo-mail"> Mail</span>
+            </span>
+            <span class="gmail-beta">BETA</span>
+        </a>
+        <span class="gmail-page-title">20 Years of <span style="color:#CC0000;font-weight:bold;">//TODO</span></span>
+        
+<div class="gmail-search">
+    <form method="get" action="/" style="display:flex;align-items:center;gap:4px;">
+        <input type="text" name="q" value="" placeholder="">
+        <button type="submit" class="gmail-search-btn">Search Mail</button>
+    </form>
+</div>
+
+    </div>
+
+    <!-- Main Layout -->
+    <div class="gmail-layout">
+        <!-- Left Sidebar -->
+        <div class="gmail-sidebar">
+            <a href="/" class="gmail-compose-link">Compose Mail</a>
+
+            <ul class="gmail-nav-list">
+                <li class="active"><a href="/">Inbox <span class="gmail-nav-count">(0)</span></a></li>
+                <li><a href="/?sort=newest&view=table">Starred &#9734;</a></li>
+                <li><a href="/?notes=has_notes&view=table">Sent Mail</a></li>
+                <li><a href="/?sort=oldest&view=table">All Mail</a></li>
+                <li><a href="/">Spam</a></li>
+                <li><a href="/">Trash</a></li>
+            </ul>
+
+            
+
+
+            <div class="gmail-sidebar-heading">Contacts</div>
+            <div class="gmail-sidebar-sub">
+                <a href="/">Quick Contacts</a>
+            </div>
+
+            <div class="gmail-sidebar-heading">Invite a friend</div>
+            <div class="gmail-sidebar-sub" style="color:var(--gmail-muted);font-size:11px;">
+                Give to:
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="gmail-main">
+            
+<div class="gmail-detail-container">
+
+<a href="/project/2010-05-12_unnamed/" class="back-link">&laquo; Back to Unnamed</a>
+
+<div class="viewer-header">
+    <h1>EXE1__lathe15.wav</h1>
+    <div class="viewer-meta">
+        <span class="tag">Unknown</span>
+        <span>21.3 KB</span>
+        
+    </div>
+</div>
+
+
+<div class="code-container">
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span></pre></div></td><td class="code"><div><pre><span></span>RIFFU  WAVEfmt      @  �&gt;    data T  ���Rd�V�&lt; P ���� T���� �����s,��Zy^ � ���J	�  D�r�����w�� 
+�`�B�#� ������&gt;����a��h� ��#���� v�a���L������;���.�j
+�F�D� �2�		��`����4 �W ����R 	�S ��)����I�!� ��D
+2����T ]��������  ��2�=��}�k�&#39;�!� P �� ~������|�� �s�8 �t ��� ��b��s��������������?� ���?��� y���a ������Y�����]�2��� ��_��^C�y����T f#�� ��s�_6�����r��  e
+�
+{?���G��q�
+����b���
+cI�������b%��=�����l��������� ���!������y�$W�%�8��������g�r��d�	F��g�
+�������A�� ��7v�7�� Z�`����Y,G�	��������@ ����E��w�	��L�J���C�� #P�  �&lt;�z�_���b����U��� ���4��������
+��N�����	�$ ��+�
+N�B�` ��E�R������b����(�����������N�����
++���4���6�J�h��5z�$��	 u� ���:�V� �9
+��/�F�W������B$�O -	��^���T���
+e���)���wv�`�9�������� F�F�W�������������2���������&quot;���
+c���L���|ؔ��J�6�
+^&quot;$���	w�N��5��o�	�
+V����6���J����&lt;K���t�����|�L�����1������:���,��� ���D3�������Th� ��� n�K�:��Y ��A v3���� ���sʧ�����	3
+E	�d�&#39;�+�$x2�������O	&#39;��
+�
+o����6�R�@�����q���	��	�=�B���N����iF�r��
+�b���o���.�$���}��� �;������p����������
+VN�b�&quot;�������&lt;�.��	�Z	#�#�/�2�&quot;�&#39;��������� k����
+�6�D���F۠�g�s� a��|�&amp;�� �
+��*��xW���	q�6��e�f���B�P���Tc����T��(�:� �����*��b��%	����������[�$�
+����-#7-&amp;�/&amp; /�c�����2���Z�b�S��DglH�
+���������Q�7�i����u��Z
+=6�����5���E���3�h�E��L�����#��� Oy	H~9�����S�J�8
+B
+���e�� �\��t�����^R!�&#39;�3#&amp;��N
+@I�����x�|������r�?6��	K��	N�t�x�&amp;�0�-�
+����
+��N�Q ��=���&quot;�
+��T��8 &quot;�z�^�k�)K;�B ����!��So��������e�����w��
+�o*F#-�/&#39;�_����J�E�C�&amp;�����c������X�������_���� m�q%w*�B����9�$���M���������	#��\� ��`��:�����y� �D�,��������	��KI+�b*�~J �w�2��,�_�7���j��M����
+}y	�E5�������� ��������X�Jm�$I|������3���P�u�}���� &gt;  	Z
+M�� W
+�M-u����O���l��j����V�	�E @+�-�)�(B{0�N������`���e�^������}~
+��) ��X�����������&lt;��YD��i���%�
+��n�(��m�?����+���v�.����e	�		�	��i�z��t�?��u�������B��&quot;k/�.Q+6&amp;������*��*��[�y�����O��
+�
+.�������������H���#��	����1�
+*�� ���������Z����������By�
+�
+�f��c��߬���������%�,�,!��[���G�E�d�c���E�L�����9/���J���\�������G�:y��a�8��#�t�����-�/�����&amp;��)� =��;/��
+�
+m ��;����;�����*�;�2;-�*�4e$G�s	8����ߒ�9���&gt;�I��
+ �`�
+?��
+���������&#39;�:� O�����+��:�`0����i�2��K�#��-�x�������7��$�� }�N�j���%����������H2I�M�?�(&amp;�c�P���������� xW#��v����Y���H�L���i/�j���v�.��-�F-
+.�z����������I�r�/����H��y	{+�� ��g�����������*�wEN�LM6Ij��
+�s�X�f�U�(.�3+��;���$���_�%�`�C����њ�E��3���%�g ��w���X�	���O�$		��	4���%!R��ỹ����%���L����W8�S�I]6�9x�	��)�Hר��(�-# ���%	x�Ω�����	6 K��e������J��T�*$^%OMry/���k�����N��R�S$�3@��Q��O��������&amp;��.8F�A}&amp;S&amp;�!��܍�H�t�+U�y�&#39;�3����߳���r��������m!�	���������ךϰ������$Z 	����!�J M���w�w q+���
+�3�$��&gt;�h�=�E�/�G�6���V�4?45-!1�:W&quot;
+������5�u�p�#4=7#$������s�4�`����/	�
+=A��������U�7��T�aD&#39;d,*%fR9$�������������0	�?� D{����E�G���˻����F;�%�+�&amp;D)JJ�j�(���(�A���.�&#39;
+�z����~ϯ������i�{#�k��I�bۯ�r��*��[%��`�������k����t�������&quot;�(EB�/��$�Uܺ�Oů�ՙ��L}\|&amp;CrH�@����������&lt;���AJ��-i/,#���$�#ۊ�r�I�5���A�R�����8�.�p�&#39;�vH5��&quot;A8�v�w�D���c���	,|�&amp;�RmN�����Rʠ��l������Zp3TL^&gt;GD.��
+!�a���Z����^�3�&lt;I*�i
+*����ݯЈ�&quot;�Y�s�
+a�P� ����R�����������&quot;��xfS�3X�{����6���
+��RM�����հ���i�����Y���-iH�&gt;&#39;L�R1&lt;N ��N�3ކ��ʩ�M���+�1�8.�X�6�#�zٓ�&gt;������6�-��h ��U���?�x
+c
+�\�
+�
+��������p���5�L��:��#����6đ���0�G�H��2�%�@�Y�GR3���}�����g���A�d��� v/�4��Wd ��r��ڢ��׺�.�6��
+ un� �	��$�!�7������
+O
+{�9	}86N
+X�=��O6���]��v��ͅ����&amp;,J�M%0H&#39;RD���pσ�0��������$�4
+R�%����7�~�٘�&lt;���x
+f+
+D=3 ��Q�����Z2��,�J �I+0�8��^�b%��������ɹ���r~�G9�I�/�((%���!����,���s���&#39;6#�*5V���z��У۳��7�m��
+��y,�,����p�x���L��$�	�*#a=�}�Q
+B��$�������Ԡ�g�\&amp;�M�&lt;*�(Z��y�~���:��� J#�#��!G
+�2 ��g���V��N�J�5���CI�V	�� ��Z��n�=��
+E &amp;�,Fz!C��&gt;A�!̉מ��۾O�[��D�+*U�&gt;K3�4�&amp;M�M�x�6�Jձ���V��*	&#39;�#$s=���Q�u�8�&gt;�X�R�*���K�g&quot;��~p
+���o��������X�,:�:x��-�ղ��&gt;�����V܏��YKBlA#.�&gt;b7=B�����\ԭʮ޾���&quot;�&amp;�-,��	����-��������������b9&quot;s&#39;C�&amp;��������U����@���3{s�����q��l�.ȅ��}��*�I�4�9�J�0�?w����֢���*��2�- �%�$�4�6�~�����ā���l��L
+z� f!1�f	^U�����T�$�9�
+��|5G.ɱ�z�굉������0���&quot;	Bs-�2!Ie6Gl��ۓ�[ٚݟ��0���)*/k�&#39;;�^��m��������� �	�!�%�#�k	����	�!�=1 �	2hԢ���t���u͢�w�����O!�12+�4G=0x����s�{�����2�
+K�&quot;0%$&lt;����������|�B���H�aO�� � �����NJ+��A$�$���۠�H��3�F�ش���&gt;7Z%u$�G�=�#I&gt; ���ߕ������
+o�*&#39;y%[$�� &#39;����ғڕצ������t�� �Y��	)/�|��&#39;�G�����Ƹ����i�����|�.k+%�E�3TX��������o�����&#39;
+�p� &amp;���Q?���ֺ�6ש�|������ce&#39;3
+6%��
+��%;�W�����7���nՇֈ����a&amp;�+@�5�F.�� 5@�S��K�^�n�� Q
+�&amp;�$�&gt;���e�����%����������� C���|�%�O�
+�qѴ���ʼ���K��R����
+j+�+�&amp;a?mH�!_-�w��D�&#39;�
+ڬԍ�x_�{�S#.#v�������zޖ�B֜ݬ��/�Mu�X!&amp;*� � &#39;.�,�1f�{�E�ȉ�\�$���͑Ӆ�� ��5 -�7�G�5� ������eڑ�yҺ�������:)}��1���� �W�����S�����n1r@�!A!�)�-o&gt;�-�	C�8���)��G�o�����K�h��%�/�%�:�G�+ � �-������u�����z�����n@+Q  ?+�1��Y�Z����@������N��L�&quot;R&quot;(8E&gt;� �� ���e��y�湺����ԭ�`��
+�2}(�0�FJ�+3�&quot;A��a�{���o�V̉�^��l&gt; a!��%���R �]�W����۝������ �
+�!�%6IA&gt;?�!��,G�t�3��҆�ô�غɻ�Y�q�.�*�A�[�F�9�&gt;�o	g����$�ʗ�������#�*�#
+D���d�ڔ�ۥ�
+؆�L����/fJ�K�,-3&gt;&gt;H��k�׸���)��u��Ӵ�-!�$�H�_�Q1BfE�,�W����Y̠�W�ǔ���M��w�)*K+�&amp;��B��?���O�8���G�l�D��
+��D7B/�D�J-�����ɽ�4�&quot;���&amp;�y���b�B�Z4RwOUQn8Q#T����ɵ-���I��ӻ�&amp;�%�(.q.+����������d��w���4�/&lt;()�O|N0�6w���ø�i����̰����?DH?A P%RB�2,��_���0���z�=��Ԭ�����&quot;�(k(��#
+l�N������������ �&quot;-,7N�&quot;&quot;�$X�,�tڴ�ź��o�������� )&lt;D8�A2I�A=},�	� m�Qےӫ�w�5�7�:�:���
+�#K(5r(���l���Q����p���v� Z0&quot;7���������9�Ц�������Q.�5�@�G�H�;^,*E���#Ր����Mб����!��6
+5+ ��v����O�   r	X(,��2.����Ǭ���p�K�2����$�/f5�8�9j&gt;61�
+%{W�����V�+��aԉ��� ��	e���h�[�m�5��.�T��$���0��	�B���-Ϯ�7���p��� �&#39;�:�5w23,�-��=��ݮ���b��Oػ۵���Yh
+TR
+��is�����Y�MP%�P�$� /��`���:����ͪ�l�}����n (+�2$0l/�*&#39;������W���ӷٹ����~�}�*e�8��d
+1���!���=�A���+������	���3�p��w�����f!&#39;�/2&amp;�1�$�&quot;}�
+�:�����ڐ���u�o��I����
+X6��
+�	��	�� ����A	�
+�����*��&gt;���8�J�5����a
+
+�n(�&lt;�!&amp;!m�	T��i�%���W�:�b�������#���71|r���	��D g!e
+V���
+��v���$�R��`��(���I���6�X�F!�^��e���
+5
+����I�!��������&lt;�D������������
+�K�2G
+
+�M���5���+�:�f������������������R{H�	���	B
+)	r��� &gt;�\���-�������o�����N�U���[���z��
+�
+��
+!\���	�X
+G=�p�E�4��� �����x�g�����C�w��	9
+�&lt;�ah�W| ����M�T����b������X���&#39; ,�x�r������&quot;���
+�		����e�m6P���������]�8�����%3����J
+�;�1�k�0�_	�������P���U�I��� �]��;�~�b ��� #��}���
+��
+�S
+�u������������������Q�y� �����j�����@	d	!�� � ���} �����W�%����! ����Y����!�R@�	���Zb	F	�Hf&gt;�������������*����+ ���{���,
+
+	;��y�%	�HL  ��j����H������W�M�5�%���{����&gt;�e�(�	�
+B	�
+g=
+W�������3�F���Y���������
+:�	&lt;�c&#39;p���D�����g�����v�{����*�{�B��,�M%$a i�d��e��	@�#@�����
+����=�����6���U�O��P��r�qr����#k�!&amp;�� 	z�$�� ����O����?���
+���#G[�
+&lt;
+fN) B- �z	��T
+e
+�c�	��(����@���ϱ���z�����L(�&amp;W(�/�*�1^&#39;�,�� ^�z��+߂ў�A�T�
+�u�M���P�q
+q� N�� ;Y 	���&quot;�nH&quot;	G���I�K���?ŋ���tؐ����6�:ZE9CvE8�,P�f���w��������F޻�P�-�n�-��&gt;h=�yh�M�]�����A����K�
+�!�5�,B�_f I�-�&amp;���g�����سܻ�:	�7(�BxJ�&lt;uD2C*6�(�
+�� �
+��w�������$�t�&amp;�*�������{�
+�@�g��%�P����i)&quot;�/�+�
+���d�\ب�����;����׷�r��� D&amp;�G�Q@�&lt;\?�)����&amp;ߒݓ��������k�t��	��9�-�V�n�����������cQ�S��&lt;�0�!6	r�*�D����̷����G��ل�.�=�%z)?1z?C�38�&amp;I������DޯӴ����ڈ�{�M�� �S�
+���[���s�Q���i����Or	L`+
+�	1�	
+q��
+i��� 
+����Ǘ٬ߢ�N�n��$�k��L3�920h2 ,�#�� ���G����qօ�+���u��
+�
+}��v	VL��� ����!�&lt;���U ��r	Y}�2#�$
+O`���(b��
+����#�u����1����r��K�mG�.C%�-~2�&amp;� 	&gt;����	�y�M�����-�� �l��
+O	�B�6���&lt;�
+�d��� #��
+*
+�
+&#39;�h
+�#p����H��G�w����� ( &amp;
+]�Z���� ������hm�!�(�7�&#39;E&amp;:�2	���W�&amp;�|ػ�\�M�;ߝ�����
+R�\��{d���1�I�����:�c C	��~t
+�����8�/�����g�� � :Gy� ��t�����[�������
+
+x�$�$�B${�f�������&gt;ܦ�}�E�����p�&gt; ���
+��E���D��O�5
+R�o�
+t
+u�Q8 5�G�	�`�&lt;��A�������&gt;���	�u0�������C������ ��+�D
+
+|�E��|�
+�������a�������8��������* V�����	����	����
+A�	��	&gt;S	0]�c�(�M�h�;�
+�1����#������a����	.	���	u
+��t�f����\�*����I����P �������	�
+w�b	&amp; )� ����f�&quot;��z���e�����	�
+�� ��MZM�����* �	��q� ��
+��N�������/)W����������b����������������� U &lt;	����E~�5�;�~�n���4�����X�*��=������������p%-�7�+�*����#��Y������s �����=:	o�;X�����F�k�j��u��-��:���q�� ��2�����B ��&amp;���x�����a��H4 �]nr_�`���Z���j��b��p�q���n�����1�8������#�� ����q ����s��@x��������H�#��i�����S�L��@��4J��� E
+&quot;�� 	�� ��  �4%��)�{��� ���[ ��-�]��@ ��z���&amp;�������8!��C b������ ,����)�/�t������1�:
+�����������(�I�3��D����	��8�v� ��WA�� G�k���$ � Q D�u �I��5�`��i���h�4�j K��1�TT�A ��Z����l����Q��.&gt;������������C�����U�]	� � W�
+�}	z�&gt; I�k� ���X�s��N�6�������y�E��.� �&lt;��7�&quot; ��� ��� #����
+6�x��_�]�����	�2 � �  ����&lt;��8�)�� w�T�����������}���;�E �~�&quot;]��P5
+��������U�V�6���������&gt;�;���v ��A��=I
+v��������h�h�����E�:��&amp;��F���b�2���� ���	�6 *��`��������������	���jCg��f����������0���	�
+���z �	�ae�	���G��� 4�����G�� ��.TF
+����)�������3�����������jX ��Q����G�������R��
+V���k&amp;r-��!�[	�d����ت�ض��5���{�1:�
+a
+B���#�[�������`�k%�
+�	f	8�
+���E���I�D:�������	�v� ����r�����Edf&#39;A&amp;M.�8�?.�+������}���ݫ�\������C���	�{ 2 ���&quot; ��{������.�%���! ����������������������Z���?�r����(
+,S&lt;�1���:�������{۾�F�M���=�N�&lt;a&amp;���l	� }�A���j�8myu���9���*�i�����������
+� g7�n�
+�������G���4���	��
+��$F&quot;S(�&amp;�	�
+8y	�K�D��������	�������O���2�����u
+s �����&quot;H�+G�
+��f	���P��������R�0��l�E�$��� �] �@�	W{������J �������D����DO	�S ����6|��� �X�� �����1�`�����K���]���p���-�� ��T��W� &#39;t`m
+�{	�
+d^�����k�
+���i�0�q�����7����t���s��.���k��]q�Ol�-9�{�.ER	Q1��~�=:{�KP �0�����&#39;�D����]���B��� ��� N���~����G����7V� �0�st�/���$1��i������?�P,���v���9���M�7��������������@*3 �	R���� G�y�����Z��&amp;�� Z������ � ������k�� uI����*� w��;� �g���E���W����������}F��-��&#39;������ ����
+���&#39;�����Z��������o�
+����
+�����{���h����l� ����^���5 f�&gt; }U�a B [������������  ��F����F��4����  �N�����a�E�k ����[ ���&lt;7�����&amp;� xW�4 8 ��j���! ^��e��������L�?���8����� ������sp�����E�� &quot; 	�@���p v9�����JS  9&#39;�N��D ����sE�Q������� �g�������&#39;�&quot;��Q�E	�����`�������	+����������J��~�= J�� ��`���Y��@�B�S�!�
+�&quot;���Y����-��v�9n���� � ���F������- L�=	|��;�� k�q 2_ ��3�����o �[������:�������x���	���
+�o�@��Q�  	b O��1�7���|���;�3���5�������m����S���r��K���h�O�Z���
+Z��L7��) ~+���|���W���&amp;�g���|�����������X���  ������,[
+�u��
+S�&quot;�O�?����%�+���r�����5ԏ��l	:�(�&amp;�1}:�+�B&amp;�c��V��[���Ѡ֙����
+�$=z%#G�������F�&gt;�(��6
+�
+@�%�&amp;s%�q���&#39;����������o���k����E؂�&gt;�pë̂����%G11?$F�5�7�7����O����Ͱ��ʗ���4����
+��l#5/9!0�l���3��{�&gt;�$�&gt;�^��I3%=�-�/�*�&quot;X,	��l��D�ܹ��N�L�t+���&amp;��x���֋��Ɍ�Q�&amp;��
+�,�6�&gt;�?w1HGM?[F���l�Hϗ� �&#39;��{�O,��+o.� �[����ѷȗ�����5���wH&#39;�*�96�7�9�&quot;��:���dז�G��@&#39;W���=�J�����ؐ�4�z���L�O�g��&amp;.6�/nL�L�G�M�.X�&#39;������0ӣ�m�d���L�&quot; �)k&gt;�.�
+���aܹ�P���c�:���� 4
+;
+&gt;7Q1; ��x��������� g-�|��(�E&gt;��2��Z�����d�Kӭκ��-&quot;)&gt;;EOFS�Q�E�)AD�j���`�U�������:����%]9�5�,�E%�pލ�&lt;�~���0ĕ�g���&quot;�0(:�9H8�+	 7������N��|��	x�)W@	�J����������&quot;����}�[�,�&#39;sL�W�FJJ4�%�=������ɵ;����+�)��*y.*&quot;%_� ��|���-�����X��k�2�t-�-
+7�&lt;�7Y,��[�o���B�&quot;�l�
+?����&#39;&amp;��^+������{�j�T�@��������#=�63�H�=r#C
+F�������x˅���&amp;غ���)�&amp;�*�U�	�I��ܹ����� �&amp;�,�6%�/M/�/�%�A�Z�q������.ۢ��${������������ �|�7��A����$�-hD�1~J!1�_��\�π�	۳�:ߓ����
+D�a&gt;d
+e �����*�p�%�����
+�,&amp;�&quot;./:
+���p�������~����C�Z&lt;��j��p�p���)
+e
+C$:.`% +,� ��W	���	�G���ֹ�`��g�.�-w�&quot;�8�J	r������w�O�P���3	y?	f����Y
+�{���U���:
+��;�&#39;	��������B�3��ON��!xl
+��R�C%����:���4�w����Y��������s����
+]�����t
+|�H�
+v����	-2�@�w�(���������?���*�O���%�&#39;���[����
+�h
+�
+�:k
+;
+��Y �
+����@��
+�[���m�c��:���cl��������
+�� /�a�b�J�S���	Qq
+�� &amp;�\���J�����������g����������������F�+0
+�
+�
+�
+Ti]
+���
+z	��&quot;�����
+�&quot;�6�����&lt;�1���������A��+��X�$
+\A�
+����
+����
+B����z������d�z�R������D����~�(��� ����
+��
+��
+	�&#39;����^U������$�=���.������������L���� �
+]1z�
+�
+s���J��w,�����8�������]�&lt;�L��&#39;� ������	t��
+]O�����	X	�����$��z�����Y��c�O���q��������l��o�E��	5�
+�
+�
+	J��(�	NO2k�� ��������������b�(�&gt;�O�p���)���lkBR]�
+6
+d�c��rt�w��m�����y���������|�U�U�{�Y�������9�D����&gt;H
+���
+V� ������J��������p���� �.�a���1��j&quot;
+x
+k&gt;U5	������%������y�$�o��V���I����&amp; ���v�&#39;t�	����
+P	�
+�M�
+����	��*�� L���S�������B�	��s � ��M��=�CT	w	Q*  ��0��=���1����������i����3�����D�0 *��	�����	�����P� ���@����J�*��������!�T�:��e�[y�� �c5	A
+A��	�3 I~G���C �����r���~�4����������&lt;�� :�`���G�I�F k� b���� ^��e5 j���E����4���q���.�)��G���K�f�oA�B�@
+�
+:���l�1J����������j�J�6���H�����N���0 ��Eh� Zp������	���� {�N������  �&gt;���f�����G�]�������M����6 �� ��j^U�JP0	
+e��������U�
+�������������r�C�(�6�%���E����	��_��
+���
+ i 
+8�� ��m��\���c���h����d�8���L�� ������L �� �4�v�����)�����- F�)���0������������S���m�_� O�� r���%� &lt;����c	��.{�Dv��c	� �B�-��t����|������������z���i�P ���.�t -�_�| �U,���� ����E�}�������O�%�v�Q #��&amp;�t�C���G�%�*�a	�{��)�
+�#��t��}����=��&amp; ��D���L������6 ���D������H����J����� ���� �1�� ���S �� \F��j�E��d���	s���N�i��Tkp�{ ��|������ ������ t���b��_f�) � �9����E� ���d��\(������C���������&#39; ��p�B ��3	����AAq��� �������J	����d ���� � 3�CG�r�����1q���#���� j���C#�f~���q�v��`���Z� A�PL��l�Y���� ��%�c �K�����-�?8�� �  � �i�����+����=� ��r����������.����Y���&#39;����i��	K��� ��p�R����� �6 6�������������������� ]�=�&gt;�l�h�]���� 0���������s������T����h�l	� .�	�����5�+�-�T�I���T �?	�!:J����7�a�����N O������h�_������ y��|���M�8�s����]��S���S &lt;�9 � ? ��	H ��1��� �B�J�E�T�����P zn����8 ��)4NY�O�w�w���� L����xf�*������������������F��0���U�:�p 	- ������.L*4 V�[:�E��V 	@�{���������	���^���*���{w���z�����%S���\��� �`��� ��	ez��W�w�
+��� w���0 �J��g������d���[���*�q�U�l��	����&quot; 	 �|���D���q��p�m��W�3p�s�&quot;G�� � f�\���A��������������0���Z���w�VF�I
+g ��� � �m������ ��w�d����u������M�&quot;������� (�:�x���J ;��������&amp;h�� �+_�h�O9m�����������@�F���s�����&quot;��c��3�
+�v�r1������ �� +M=�Mw� &#39;�A��9�w��I ������B����f�n�������q�D�����@ ���1�l�������� �6�U r ��A� f�o�~|��F��;���1�S��K�=�&lt;���6	�� �8���=�/�wj�&#39;�����d������������9	���$c������&quot;X���� ��� ��I%��:B�e���b�=��� �&quot;�Y���I���&amp;
+���s��	��
+�,��_�.�5��Z�����3�9���1�Dz��C������ ��� 1�t�� M^���$�&quot;��d$ �&#39;R{�
+x } ����(�_�� ���� ������ �����q������ ����	�o� �dJ��&quot;���F�C���(	��t��� ����� k�����o��n� ����t g�������&#39;���M���� 9w $
+1� j	�	 7�
+�������1�������&lt;�R�U��u��/v}�4�D�+ �(8���R����������Q���P�L����l�[�a��
+)��m��
+	�
+E	��F�*��a��?���$�����&#39;�n�e���&lt; ��,�i.�����R	�Lx��`�������[�&lt;�bצف�a��������%j&amp;�(����6��B����]�:�j����/��m
+���!�	�p�W�!�o�A���|��R j�F.�&quot;y�
+����0��kϋģ���f�	�O�x����&amp;�?&gt;�?KF=C�1�*m����;��Ѱ���A�O�]�+�( � �%r&quot;�. �p����� �-��-���I�(96
+�0:A-3�H�]�a˲�3��������Y�,�+^2#G�R�X�]�P�,5$���Y�[��H����œ�d��
+%
+�I~+k#�iN+���;����A���Q����%�@0@�$�������O�侟�^�Jŭ����Շk �,h:RH)S�R�Y�[�3��
+=��Ѷ��·�μl��7���r�;�- �- wU�&quot;	�����n������l�
+����m�#*0o�����������̍���������z��t�%26�H)B�.&amp;6�A�:�!$����H߀�V�k�����f���B����t\k�%h�����}�&amp;�������%����X���3A�1��J�����]�+׏���ʛ���s���
+o�,�&gt;RF&lt;p3�;t2)&quot;]�N��ݾ�[�WФ�������G D�1n�w6`�	����l������=a6����Y]o!�/e������L�t��R����������
+���#�:�;8=�=~7�(i��I����������W�M�)�������wX������}����e�B����!���*�p �[
+R��0��@����ʌɶ��x����u
+��&#39;�1W:z=�?U2�%���	n���:��Ʒѽ���9�l���k� 
+?{�5�9n	��C������N��������	!�(A}�IX�
+���
+���_��,�Ҿ�t�������+�!�%�6?2�&lt;5�-����������ٕ��ӿ�Q�(�%�����w��t��
+8��#��������ap����	�&lt;�mE	�� ���Z��k�����T�D�������i���(�[�&amp;� �%+U,�-�0�&amp;� 
+!�����3���&lt;�vѤ�����J�;�l�
+�\cB)��������w�� ����
+���	s ���A������������������z��c�0������Z64%�&#39;B+�)b!�$�!� 5�������	խ����q�r�9�s �	I&lt;��8;�@0 ������T�)�����v
+�W/r�	� �����Z���������D
+�8��m�c�����B��,ݢ�����}�&quot;V&#39;�-�+c(�$�TgM����N�-���@ݶ�@�J�����[�c��+E@I.������������`�!�
+s
+��^���&#39;���������+�F��s��f4�����������7�~���]�&lt;�Z
+s�z(�0�$+��&quot;&quot;O��$�f�q�oڈ���B�^���j�M�����(
+���&quot;���H�7�$���}��F����S�i�
+��
+� ����S�&amp;�)������Z���������P��M��������.�������J��j
+�T#v,�*�%�!�����z�}���;�dޅל�;�F�����F�+D���&lt;���r
+4�������������&amp;��&#39; ���t���
+����/������ �I�0(	�
+w
+8�q�
+��w�9�D�;���r�Y���j���
+��$�&#39;~,�&amp;��������Y�O���a۳֮ۛ� �&gt;���0�
+^�M���C�PB����s�{��\���e
+����$u�����I����o��r��t��3	��	k
+
+�
+`-��_���;�����O��N���#��&#39;	zO� �&quot;!J##��������^�n���B�������{����
+(0��5
+�|�t`�T&gt;�`���)���V��@vi:�
+�
+�����n��;��5�v�� � ��E��(��������x�d����TfV@\R��Y�b����k����V��v�{�� _ �$���d:�D��,��&#39;����k�������l
+&#39;�9�S�n�������������;�&lt;��JP�&gt;��y�F�4�������$������ 
+��� ����{���&lt;�����
+jG	�w��,$l�^�\�
+���i�f������U�$E4�����M��0��7�����&amp;���
+���`������������
+�_��Y�� U���f��_��]����� b4
+��
+�b�-�+������0�T�p�����Va��
+�����)��������&#39;\Z����)���p��&amp;�F
+� �	3I��� ����&amp;���������z�F�M�8
+?&gt;	� ���q����w�X�����B
+�Q ��d
+�#d��{�����0������h��F������ x��� ������������w��������� �� ��3���������d ���
+o\BSe�y�1�������X����
+�Q��A���Y�&quot;��5��s����� !��?pn�������(�J�� 5	�vR
+5��Y
+/�������K���`�=�N	��D�C���c�5�%���� ����~2������A���GQ9�	�=4��;��������� � ��*�?�w�M�&lt; EvO�� P� �u���4�^���U6=[-��x����M����[Av
+��� � �1���h����������A��	
+��x����_������������� ���.������;��@�����M�9�Z��� �F	Bv���B3����~��K�C_��l�������. ��2��� y���
+����������[��������_�=���]� ��b�
+��&gt;q	� �f���O�������+��#���s���}�����-�������e���U[	�E���	�i�n|�� v� -� 
+���^�f���2�{&quot;���e�������� ^�n q����R ���
+C�
+����%�� ��#�Q����B���N � �&gt;�?�P�F����
+����D�n����A�����\
+�?G
+]���������x������q^�������������������
+���f ~�l�� E�I����&quot;��������h�r�Y�z�5�j�������&#39;����J��V���^�������\��� � H�&quot;��������9��E�Fk��������&quot;������
+ q^�	����$���GO�$���o��� @ �&quot;,�5��*�(+ * V&#39;���Z����|M � ?�k�����!�����(���,&amp;�5LIST�   INFOICMT�   NOISE module has been applied :
+
+Parameters:
+Noise added	: Gaussian
+
+Results:
+SNR		: 15.00 dB
+--------------------------------------------------------------------
+ ISFT   SPDemo, Technion, IIT ICRD   04/11/10 16:42:29 
+</pre></div></td></tr></table></div>
+
+</div>
+
+
+
+
+</div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gmail-footer">
+        <div class="gmail-footer-storage">You are currently browsing 0 projects across 20 years.</div>
+        <div class="gmail-footer-links">
+            Gmail view: <b>standard with code</b> | <a href="/?view=grid">grid view</a> | <a href="/?view=table">table view</a>
+        </div>
+        <div>&copy;2006 Google</div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    
+
+
+</body>
+</html>

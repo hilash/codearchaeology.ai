@@ -1,0 +1,31 @@
+<resources>
+
+    <string name="app_name">Shvil</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section1">Section 1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main"> Shvil</string>
+    <string name="title_activity_map"> Map</string>
+    <string name="title_activity_profile"> My Profile</string>
+    <string name="title_activity_messages"> Messages</string>
+    <string name="title_activity_people"> People</string>
+    <string name="title_activity_angels"> Angels</string>
+    <string name="title_activity_recent_messages"> Messages</string>
+    <string name="title_activity_note_editor"> Notes Editor</string>
+    
+    <string name="shit">SHIT</string>
+    <string name="googlemaps_sdk_key">0T4xcx7NxlCMzlEeqE5jXKnh0w0tPLOFIQDFu-Q</string>
+    <string name="buttonMyLocation">location</string>
+    
+    <string name="menu_overlay_title_angels">Angels</string>
+    <string name="menu_overlay_title_travelers">Travelers</string>
+    <string name="menu_overlay_title_water">Water</string>
+    <string name="menu_overlay_title_info">Shvil info</string>
+    <string name="menu_overlay_title_personal">My Notes</string>
+    
+    <string name="menu_report_title_add_note">Add Note</string>
+    <string name="menu_report_title_add_problem">Shvils problem</string>
+    
+</resources>

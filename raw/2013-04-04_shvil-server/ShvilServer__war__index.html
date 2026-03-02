@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shvil Isral Map - Shvil Israel Application</title>
+    <style type="text/css">
+	  html { height: 100% }
+	  body { height: 100%; margin: 0; padding: 0 }
+	  #map-canvas { height: 100% }
+	</style>
+	<style>
+	 .outer {
+	 	display: table;
+	    width: 100%;
+	    height: 40px;
+	    padding: 5px;
+	    background: #606c88; /* Old browsers */
+		/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYwNmM4OCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzZjRjNmIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+		background: -moz-linear-gradient(top,  #606c88 0%, #3f4c6b 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#606c88), color-stop(100%,#3f4c6b)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #606c88 0%,#3f4c6b 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #606c88 0%,#3f4c6b 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #606c88 0%,#3f4c6b 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #606c88 0%,#3f4c6b 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-8 */
+	 }
+	</style>
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=iw&region=IL"></script>
+    <script>
+      var map;
+      var angels = [];
+      var users  = [];
+      var general_items = [];
+      
+      var angels_markers = [];
+      var users_markers  = [];
+      var general_water_markers = [];
+      var general_error_markers = [];
+      var general_information_markers = [];
+      var general_sleep_markers = [];
+      
+	  var angel_image = 'http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/24/Emotes-face-angel-icon.png';
+	  var user_image  = 'http://icons.iconarchive.com/icons/fatcow/farm-fresh/32/walk-icon.png';
+	  var general_water_image = "http://icons.iconarchive.com/icons/yusuke-kamiyamane/fugue/16/water-icon.png";
+	  var general_error_image = "http://icons.iconarchive.com/icons/creative-freedom/shimmer/32/Warning-icon.png";
+	  var general_information_image = "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/32/Status-dialog-information-icon.png";
+	  var general_sleep_image = "http://icons.iconarchive.com/icons/fatcow/farm-fresh/32/bed-icon.png";
+
+      var GENERAL_ITEM_TYPE_WATER = 0
+      var GENERAL_ITEM_TYPE_WATER_HIDE = 1
+      var GENERAL_ITEM_TYPE_ERROR = 2
+      var GENERAL_ITEM_TYPE_INFORMATION = 3
+      var GENERAL_ITEM_TYPE_PEOPLE = 4
+      var GENERAL_ITEM_TYPE_SLEEP = 5
+      
+      var json_resp = [{"city":"\u0027קיבוץ אליפז(צמוד לפארק תמנע) ","name":"","phone1":"","phone2":"","information":"לינה על מזרנים בסלון מקלחת, מטבח , אינטרנט וכביסה. אין מכולת רק קיוסק עם בירות קרות :)","latitude":29.79466,"longitude":35.01525,"passport":false,"stamp":false,"religious":false,"id":84001,"counter":0,"record_state":0,"server_time":508381539},
+                       {"city":"שמשית","name":"","phone1":"","phone2":"","information":"לינה בחדר, מקלחת, ארוחה חמה, הסעה בתיאום מראש (מרחק דקות מצומת המוביל), אינטרנט","latitude":32.735027,"longitude":35.247952,"passport":false,"stamp":false,"religious":false,"id":11007,"counter":0,"record_state":0,"server_time":1364550271719}]      
+
+
+	  var infowindow = new google.maps.InfoWindow({
+		content: ""
+	  });
+
+      function initialize() {
+        var location = new google.maps.LatLng(32.0930801, 34.7832606);
+        var mapOptions = {
+          zoom: 12,
+          center: location,
+          mapTypeId: google.maps.MapTypeId.TERRAIN
+        };
+        
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        
+     	// Bounds for North America
+        var strictBounds = new google.maps.LatLngBounds(
+          new google.maps.LatLng(33.36724, 34.11255), 
+          new google.maps.LatLng(29.32472, 35.85938)
+        );
+
+        // Listen for the dragend event
+        google.maps.event.addListener(map, 'dragend', function() {
+          if (strictBounds.contains(map.getCenter())) return;
+
+          // We're out of bounds - Move the map back within the bounds
+
+          var c = map.getCenter(),
+              x = c.lng(),
+              y = c.lat(),
+              maxX = strictBounds.getNorthEast().lng(),
+              maxY = strictBounds.getNorthEast().lat(),
+              minX = strictBounds.getSouthWest().lng(),
+              minY = strictBounds.getSouthWest().lat();
+
+          if (x < minX) x = minX;
+          if (x > maxX) x = maxX;
+          if (y < minY) y = minY;
+          if (y > maxY) y = maxY;
+
+          map.setCenter(new google.maps.LatLng(y, x));
+        });
+        
+
+        // TODO - add showReportDialog here
+        google.maps.event.addListener(map, 'click', function(event) {
+        	//addMarker(event.latLng);
+        });
+        google.maps.event.addListener(map, 'click', function() {
+            infowindow.close();
+          });
+        //var ctaLayer = new google.maps.KmlLayer("https://maps.google.com/maps/ms?ie=UTF8&oe=UTF8&authuser=0&msa=0&output=kml&msid=214509396816488912345.00047aecb73cd7499f5be");
+        var ctaLayer = new google.maps.KmlLayer("http://ftp.bquest.org/Temp/Israel.kml");
+        ctaLayer.setMap(map);
+        
+        getMapItemsFromServer("USER",  addUsersToMap);
+    	getMapItemsFromServer("ANGEL",  addAngelsToMap);
+    	getMapItemsFromServer("GENERAL_ITEM",  addGeneralItemsToMap);
+      }
+      
+      
+      function getMapItemsFromServer(record_type, output_handler_function)
+    	{
+    		var http = new XMLHttpRequest();
+    		http.open("POST", "shvilserver", true);
+    		http.setRequestHeader("Content-Type", "text/plain; charset=utf-8");
+    		http.setRequestHeader("action", "sync");
+    		http.setRequestHeader("record_type", record_type);
+    		http.setRequestHeader("user_id", "0");
+    		http.setRequestHeader("max_server_time", "0");
+
+    	
+    		http.onreadystatechange = function() {
+    			if (http.readyState == 4 && http.status == 200) {
+    				output_handler_function(http.responseText);
+    			}
+    		}
+
+    		http.send("[]");
+    	}
+      
+    function addUsersToMap(usersJSON)
+  	{
+  		users = eval("(function(){return " + usersJSON + ";})()");
+  		for (var i = 0; i < users.length; i++)
+  		{
+  			addUserToMap(i, users[i], map);
+  	    }
+  	}
+  	
+
+  	function addUserToMap(user_index, user, mymap) {
+          var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(user.latitude, user.longitude),
+            map: mymap,
+  		  icon: user_image
+          });
+          marker.user_index = user_index;
+          users_markers.push(marker);
+  		google.maps.event.addListener(marker, 'click', function() {
+  			user = users[marker.user_index];
+  			infowindow.content = "";
+  			//infowindow.open(map,marker);
+  		});
+  	}
+  	
+  	
+  	 function addGeneralItemsToMap(usersJSON)
+  	{
+  		general_items = eval("(function(){return " + usersJSON + ";})()");
+  		for (var i = 0; i < general_items.length; i++)
+  		{
+  			addGeneralItemToMap(i, general_items[i], map);
+  	    }
+  	}
+  	
+
+  	function addGeneralItemToMap(general_item_index, general_item, mymap) {
+  		
+  		var general_item_image = "";
+  		var current_general_item_markers = [];
+  		
+  		switch (general_item.type)
+  		{
+  		case GENERAL_ITEM_TYPE_WATER_HIDE:
+  		case GENERAL_ITEM_TYPE_PEOPLE:
+  			return;
+  			break;
+  		case GENERAL_ITEM_TYPE_WATER:
+  			general_item_image = general_water_image;
+  			current_general_item_markers = general_water_markers;
+  			break;
+  		case GENERAL_ITEM_TYPE_ERROR:
+  			general_item_image = general_error_image;
+  			current_general_item_markers = general_error_markers;
+  			break;
+  		case GENERAL_ITEM_TYPE_INFORMATION:
+  			general_item_image = general_information_image;
+  			current_general_item_markers = general_information_markers;
+  			break;
+  		case GENERAL_ITEM_TYPE_SLEEP:  			
+  			general_item_image = general_sleep_image;
+  			current_general_item_markers = general_sleep_markers;
+  			break;
+  		default:
+  		  return;
+  		  break;
+  		}
+  		
+          var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(general_item.latitude, general_item.longitude),
+            map: mymap,
+  		    icon: general_item_image
+          });
+          marker.general_item_index = general_item_index;
+          current_general_item_markers.push(marker);
+          
+  		google.maps.event.addListener(marker, 'click', function() {
+  			general_item = general_items[marker.general_item_index];
+  			infowindow.content = "";
+  			//infowindow.open(map,marker);
+  		});
+  	}
+  	
+	function addAngelsToMap(angelsJSON)
+	{
+		angels = eval("(function(){return " + angelsJSON + ";})()");
+		//angels = json_resp;
+		for (var i = 0; i < angels.length; i++)
+		{
+			addAngelToMap(i, angels[i], map);
+	    }
+	}
+
+	function addAngelToMap(angel_index, angel, mymap) {
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(angel.latitude, angel.longitude),
+          map: mymap,
+		  icon: angel_image
+        });
+        marker.angel_index = angel_index;
+        angels_markers.push(marker);
+		google.maps.event.addListener(marker, 'click', function() {
+			angel = angels[marker.angel_index];
+			infowindow.content = getAngelHTMLDescription(angel);
+			infowindow.open(map,marker);
+		});
+	}
+	
+	function getAngelHTMLDescription(angel){
+
+		var informationString = 
+'<div id="content">'+
+'<div id="siteNotice">'+
+'</div>'+
+'<h2 dir="rtl" style="">' + 
+angel.city + ', ' + angel.name + '</h2>' + 
+'<hr style="background:#0EC4C1; border:0; height:3px" />'+
+
+'<p style="direction: rtl; ">'+
+'<img alt="info" src="http://icons.iconarchive.com/icons/kyo-tux/delikate/16/Info-icon.png" style="width: 16px; height: 16px;" />' +
+'&nbsp;' + angel.information + '</p>'+
+'<p style="direction: rtl; ">'+
+
+'<img alt="phone" src="http://icons.iconarchive.com/icons/wwalczyszyn/android-style-honeycomb/16/Phone-icon.png" style="width: 16px; height: 16px;" />' +
+'&nbsp;' + angel.phone1 + '</p>'+
+'<p style="direction: rtl; ">'+
+'</p>';
+
+if  (angel.phone2){
+informationString += 
+'<p style="direction: rtl;">'+
+'<img alt="phone" src="http://icons.iconarchive.com/icons/wwalczyszyn/android-style-honeycomb/16/Phone-icon.png" style="width: 16px; height: 16px;" />' +
+'&nbsp;' + angel.phone2 + '</p>'+
+'<p style="direction: rtl; ">'+
+'</p>';}
+
+if (angel.religious){
+informationString += '<p style="direction: rtl;">' +
+'<img alt="yes" src="http://icons.iconarchive.com/icons/icojam/blue-bits/16/symbol-check-icon.png" style="width: 16px; height: 16px;" />&nbsp;דתי</p>';
+}
+
+if (angel.passport){
+informationString += 
+'<p style="direction: rtl;">'+
+'<img alt="yes" src="http://icons.iconarchive.com/icons/icojam/blue-bits/16/symbol-check-icon.png" style="width: 16px; height: 16px;" />&nbsp;דרכון</p>';
+
+}
+
+if (angel.stamp){
+informationString += 
+'<p style="direction: rtl;">'+
+'<img alt="yes" src="http://icons.iconarchive.com/icons/icojam/blue-bits/16/symbol-check-icon.png" style="width: 16px; height: 16px;" />&nbsp;חותמת</p></body>';
+}
+
+informationString += 
+'</div>'+
+'</div>';
+
+return informationString;
+	}
+	
+	///// GENERAL add/remove markers
+      // Sets the map on all markers in the array.
+      function setAllMap(markers, map) {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(map);
+        }
+      }
+
+      // Removes the overlays from the map, but keeps them in the array.
+      function clearOverlays(markers) {
+        setAllMap(markers, null);
+      }
+
+      // Shows any overlays currently in the array.
+      function showOverlays(markers) {
+        setAllMap(markers, map);
+      }
+
+      // Deletes all markers in the array by removing references to them.
+      function deleteOverlays(markers) {
+        clearOverlays(markers);
+        markers = [];
+      }
+      
+      function handleOverlayCheck(markers, element) {
+    	  var img = element.children[0];
+    	  if (markers) {
+    		  if (markers[0].map) {
+    			  clearOverlays(markers);
+    		  } 
+    		  else {
+    			  showOverlays(markers);
+    		  }
+    	  }
+    	  toggleLayerImage(img);
+      }
+      
+      function toggleLayerImage(element) {
+    	  
+    	  if (element.style.opacity == "0.5"){
+    		  element.style.opacity = "1";
+    		  element.style.filter = 'alpha(opacity=100)';
+    	  }
+    	  else {
+    		  element.style.opacity = "0.5";
+    		  element.style.filter = 'alpha(opacity=50)';
+    	  }
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+    <div class="outer">
+    	<div style="display: table-cell; vertical-align: middle; width: 100%; position: static;">
+      		<img src="https://sites.google.com/site/shvilisraelapp/ic_shvil_small.png" alt="Shvil Icon" height="42" width="42"
+      		style="float:right; margin:0px 10px;">
+      	      	
+      		<a href="#" onclick="handleOverlayCheck(angels_markers, this);" style="float:left; vertical-align: middle; margin:2px;" >
+    			<img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/24/Emotes-face-angel-icon.png"
+    			onmouseover="toggleLayerImage(this)" onmouseout="toggleLayerImage(this)"
+    			style="opacity:1; filter:alpha(opacity=100);"/>
+			</a>
+			<a href="#" onclick="handleOverlayCheck(users_markers, this);" style="float:left; vertical-align: middle; margin:2px;" >
+    			<img src="http://icons.iconarchive.com/icons/fatcow/farm-fresh/32/walk-icon.png"
+    			onmouseover="toggleLayerImage(this)" onmouseout="toggleLayerImage(this)"
+    			style="opacity:1; filter:alpha(opacity=100);"/>
+			</a>
+			<a href="#" onclick="handleOverlayCheck(general_water_markers, this);" style="float:left; vertical-align: middle; margin:2px;" >
+    			<img src="http://icons.iconarchive.com/icons/yusuke-kamiyamane/fugue/16/water-icon.png"
+    			onmouseover="toggleLayerImage(this)" onmouseout="toggleLayerImage(this)"
+    			style="opacity:1; filter:alpha(opacity=100);"/>
+			</a>
+			<a href="#" onclick="handleOverlayCheck(general_error_markers, this);" style="float:left; vertical-align: middle; margin:2px;" >
+    			<img src="http://icons.iconarchive.com/icons/creative-freedom/shimmer/32/Warning-icon.png"
+    			onmouseover="toggleLayerImage(this)" onmouseout="toggleLayerImage(this)"
+    			style="opacity:1; filter:alpha(opacity=100);"/>
+			</a>
+			<a href="#" onclick="handleOverlayCheck(general_information_markers, this);" style="float:left; vertical-align: middle; margin:2px;" >
+    			<img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/32/Status-dialog-information-icon.png"
+    			onmouseover="toggleLayerImage(this)" onmouseout="toggleLayerImage(this)"
+    			style="opacity:1; filter:alpha(opacity=100);"/>
+			</a>
+			<a href="#" onclick="handleOverlayCheck(general_sleep_markers, this);" style="float:left; vertical-align: middle; margin:2px;" >
+    			<img src="http://icons.iconarchive.com/icons/fatcow/farm-fresh/32/bed-icon.png"
+    			onmouseover="toggleLayerImage(this)" onmouseout="toggleLayerImage(this)"
+    			style="opacity:1; filter:alpha(opacity=100);"/>
+			</a>
+
+		</div>
+    </div>
+    <div id="map-canvas"></div>
+  </body>
+</html>
